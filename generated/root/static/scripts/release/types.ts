@@ -1,6 +1,22 @@
 export type CreditsModeT = "bottom" | "inline";
-export type LazyReleaseActionT = "TODO: Support TypeNode ObjectTypeAnnotation" | "TODO: Support TypeNode ObjectTypeAnnotation" | "TODO: Support TypeNode ObjectTypeAnnotation";
-export type ActionT = "TODO: Support TypeNode ObjectTypeAnnotation" | "TODO: Support TypeNode GenericTypeAnnotation";
-export type LoadedTracksMapT = "TODO: Support TypeNode GenericTypeAnnotation";
-export type LazyReleaseStateT = "TODO: Support TypeNode ObjectTypeAnnotation";
-export type StateT = "TODO: Support TypeNode GenericTypeAnnotation";
+export type LazyReleaseActionT = {
+    medium: MediumWithRecordingsT;
+    type: "toggle-medium";
+} | {
+    expanded: boolean;
+    mediums: $ReadOnlyArray;
+    type: "toggle-all-mediums";
+} | {
+    medium: MediumWithRecordingsT;
+    tracks: $ReadOnlyArray;
+    type: "load-tracks";
+};
+export type ActionT = {
+    type: "toggle-credits-mode";
+} | LazyReleaseActionT;
+export type LoadedTracksMapT = $ReadOnlyMap;
+export type LazyReleaseStateT = {
+    expandedMediums: $ReadOnlyMap;
+    loadedTracks: LoadedTracksMapT;
+};
+export type StateT = $ReadOnly;

@@ -2,7 +2,7 @@ import assert from "node:assert";
 import { factory, NodeFlags, SyntaxKind } from "typescript";
 import { convertIdentifier } from "./identifier";
 import { convertExpression } from "./expr";
-import { convertTypeAnnotation } from "./type-annot";
+import { convertTypeNode } from "./type-node";
 
 export function convertVariableDeclaration(source: any, flag?: "export") {
     return factory.createVariableStatement(
@@ -10,10 +10,11 @@ export function convertVariableDeclaration(source: any, flag?: "export") {
         factory.createVariableDeclarationList(
             (source.declarations as any[]).map(decl => {
                 assert(decl.type == "VariableDeclarator")
+                const typeAnnot = decl.id.typeAnnotation?.typeAnnotation
                 return factory.createVariableDeclaration(
                     convertIdentifier(decl.id),
                     undefined,
-                    convertTypeAnnotation(decl.id.typeAnnotation?.typeAnnotation), // TODO: type annotation
+                    typeAnnot && convertTypeNode(typeAnnot),
                     convertExpression(decl.init),
                 )
             }),
