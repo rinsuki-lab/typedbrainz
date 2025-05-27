@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
 import fs from "fs";
 import path from "path";
 import type { JedOptions as JedOptions } from "jed";

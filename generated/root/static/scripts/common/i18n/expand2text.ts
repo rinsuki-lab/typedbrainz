@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
 import { l as lActual, ln as lnActual, lp as lpActual } from "../i18n.js";
 import { l_admin as lAdminActual, ln_admin as lnAdminActual } from "./admin.js";
 import expand, { NO_MATCH as NO_MATCH, Parser as Parser, VarArgsClass as VarArgsClass, VarArgsObject as VarArgsObject, createCondSubstParser as createCondSubstParser, createTextContentParser as createTextContentParser, parseContinuousString as parseContinuousString, parseStringVarSubst as parseStringVarSubst, state as state, VarArgs as VarArgs } from "./expand2.js";

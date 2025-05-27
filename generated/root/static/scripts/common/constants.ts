@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
 import { WS_EDIT_RESPONSE_NO_CHANGES_T } from "../../../../declared-types.js"
 import { WS_EDIT_RESPONSE_OK_T } from "../../../../declared-types.js"
 import { QualityT } from "../../../../declared-types.js"

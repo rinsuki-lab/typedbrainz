@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
 import { EDIT_SET_TRACK_LENGTHS_T } from "../../declared-types.js"
 import { EDIT_HISTORIC_SET_TRACK_LENGTHS_FROM_CDTOC_T } from "../../declared-types.js"
 import { EDIT_RELEASEGROUP_SET_COVER_ART_T } from "../../declared-types.js"

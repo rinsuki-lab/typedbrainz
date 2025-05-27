@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
 import fs from "fs";
 import path from "path";
 import { MB_SERVER_ROOT as MB_SERVER_ROOT, STATIC_RESOURCES_LOCATION as STATIC_RESOURCES_LOCATION } from "./scripts/common/DBDefs.mjs";

@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
 import * as wrapGettext from "./wrapGettext.js";
 export const l_statistics: "TODO: Support TypeNode FunctionTypeAnnotation" = "Unknown Expression Type: CallExpression";
 export const ln_statistics: "TODO: Support TypeNode FunctionTypeAnnotation" = "Unknown Expression Type: CallExpression";

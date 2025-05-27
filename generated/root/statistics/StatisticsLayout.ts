@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
 import Tabs from "../components/Tabs.js";
 import Layout from "../layout/index.js";
 import { unwrapNl as unwrapNl } from "../static/scripts/common/i18n.js";
