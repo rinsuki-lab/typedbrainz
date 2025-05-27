@@ -5,6 +5,7 @@ import { convertTypeAlias } from "./type-alias.js"
 import { convertVariableDeclaration } from "./var-decl.js"
 import { convertOpaqueType } from "./opaque-type.js"
 import { ConverterContext } from "../context.js"
+import { convertIdentifier } from "./identifier.js"
 
 export function convertAST(ctx: ConverterContext, body: any): readonly Statement[] {
     switch (body.type) {
@@ -12,7 +13,23 @@ export function convertAST(ctx: ConverterContext, body: any): readonly Statement
         return [convertImportDeclaration(body)]
     }
     case "ExportNamedDeclaration": {
-        assert(body.specifiers.length === 0)
+        if (body.declaration == null) {
+            return [factory.createExportDeclaration(
+                undefined,
+                false, // TODO ?
+                factory.createNamedExports((body.specifiers as any[]).map((specifier) => {
+                    assert.equal(specifier.type, "ExportSpecifier")
+                    return factory.createExportSpecifier(
+                        false, // TODO
+                        convertIdentifier(specifier.local),
+                        convertIdentifier(specifier.exported),
+                    )
+                })),
+                undefined, // TODO
+                undefined, // TODO
+            )]
+        }
+        assert.equal(body.specifiers.length, 0)
         switch (body.declaration.type) {
         case "TypeAlias":
             return [convertTypeAlias(body.declaration, "export")]
