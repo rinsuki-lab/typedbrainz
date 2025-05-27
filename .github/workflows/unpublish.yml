@@ -1,0 +1,23 @@
+name: NPM Unpublish
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to unpublish (e.g. 1.0.0)'
+        required: true
+
+jobs:
+  unpublish:
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Unpublish version
+        run: npm unpublish typedbrainz@${{ github.event.inputs.version }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
