@@ -1,5 +1,6 @@
 // @ts-expect-error
-import { parse } from "flow-parser"
+import flow from "flow-parser"
+const { parse } = flow
 import assert from "node:assert"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join } from "node:path"
