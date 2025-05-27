@@ -4,6 +4,7 @@ import { MergeableEntityTypeT } from "../../declared-types.js"
 import { UserTagT } from "../../declared-types.js"
 import { AggregatedTagT } from "../../declared-types.js"
 import { MergeableEntityT } from "../../declared-types.js"
+import { SeededRelationshipT } from "../../declared-types.js"
 import { ReleaseArtT } from "../../declared-types.js"
 import { EventArtT } from "../../declared-types.js"
 import { RelatableEntityT } from "../../declared-types.js"
@@ -73,10 +74,10 @@ export type CatalystStashT = {
     release_artwork: ReleaseArtT;
     release_artwork_count: number;
     release_cdtoc_count: number;
-    seeded_relationships: "WIP convertTypeNode: NullableTypeAnnotation";
+    seeded_relationships: $ReadOnlyArray<SeededRelationshipT> | null | undefined;
     series_ordering_types: {};
     server_languages: $ReadOnlyArray<ServerLanguageT>;
-    source_entity: "WIP convertTypeNode: NullableTypeAnnotation";
+    source_entity: RelatableEntityT | null | undefined;
     subscribed: boolean;
     to_merge: $ReadOnlyArray<MergeableEntityT>;
     top_tags: $ReadOnlyArray<AggregatedTagT>;
@@ -109,10 +110,10 @@ export type SanitizedCatalystContextT = {
         current_iswcs: $ReadOnlyArray<string>;
         current_language: string;
         genre_map: {};
-        seeded_relationships: "WIP convertTypeNode: NullableTypeAnnotation";
+        seeded_relationships: $ReadOnlyArray<SeededRelationshipT> | null | undefined;
         series_ordering_types: {};
         server_languages: $ReadOnlyArray<ServerLanguageT>;
-        source_entity: "WIP convertTypeNode: NullableTypeAnnotation";
+        source_entity: RelatableEntityT | null | undefined;
     };
     user: ActiveEditorT | null;
 };

@@ -5,11 +5,12 @@ import { MediumWithRecordingsT } from "../../../../declared-types.js"
 import { ReleaseWithMediumsT } from "../../../../declared-types.js"
 import { LanguageT } from "../../../../declared-types.js"
 import { NonUrlRelatableEntityT } from "../../../../declared-types.js"
-import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import { DatePeriodRoleT } from "../../../../declared-types.js"
 import { DatePeriodFieldT } from "../../../../declared-types.js"
 import { LinkAttrTypeT } from "../../../../declared-types.js"
 import { LinkTypeT } from "../../../../declared-types.js"
+import { TrackWithRecordingT } from "../../../../declared-types.js"
+import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import { WorkT } from "../../../../declared-types.js"
 import { UrlT } from "../../../../declared-types.js"
 import { SeriesT } from "../../../../declared-types.js"
@@ -69,14 +70,14 @@ export type RelationshipSourceGroupsT = "WIP convertGenericTypeAnnotation: Quali
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
 export type NonReleaseRelatableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type RelationshipDialogLocationT = {
-    backward: "WIP convertTypeNode: NullableTypeAnnotation";
-    batchSelection: "WIP convertTypeNode: NullableTypeAnnotation";
-    linkTypeId: "WIP convertTypeNode: NullableTypeAnnotation";
-    relationshipId: "WIP convertTypeNode: NullableTypeAnnotation";
+    backward: boolean | null | undefined;
+    batchSelection: boolean | null | undefined;
+    linkTypeId: number | null | undefined;
+    relationshipId: number | null | undefined;
     source: RelatableEntityT;
-    targetType: "WIP convertTypeNode: NullableTypeAnnotation";
-    textPhrase: "WIP convertTypeNode: NullableTypeAnnotation";
-    track: "WIP convertTypeNode: NullableTypeAnnotation";
+    targetType: RelatableEntityTypeT | null | undefined;
+    textPhrase: string | null | undefined;
+    track: TrackWithRecordingT | null | undefined;
 };
 export type RelationshipEditorStateT = {
     dialogLocation: RelationshipDialogLocationT | null;
@@ -224,7 +225,7 @@ export type ReleaseRelationshipEditorStateT = $ReadOnly<_$Spread<$Exact<LazyRele
     mediumsByRecordingId: RecordingMediumsT;
     selectedRecordings: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
     selectedWorks: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
-    submissionError: "WIP convertTypeNode: NullableTypeAnnotation";
+    submissionError: string | null | undefined;
     submissionInProgress: boolean;
 }>>>;
 export type RelationshipSourceGroupsContextT = {

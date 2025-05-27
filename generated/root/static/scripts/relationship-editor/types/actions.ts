@@ -124,7 +124,7 @@ export type RelationshipEditorActionT = {
 } | UpdateRelationshipActionT;
 export type UpdateTargetEntityAutocompleteActionT = {
     action: AutocompleteActionT<NonUrlRelatableEntityT>;
-    linkType: "WIP convertTypeNode: NullableTypeAnnotation";
+    linkType: LinkTypeT | null | undefined;
     source: RelatableEntityT;
     type: "update-autocomplete";
 };

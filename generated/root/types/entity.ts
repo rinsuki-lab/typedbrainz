@@ -73,9 +73,9 @@ export type MinimalEntityT = {
     gid: string;
 };
 export type PartialDateT = {
-    day: "WIP convertTypeNode: NullableTypeAnnotation";
-    month: "WIP convertTypeNode: NullableTypeAnnotation";
-    year: "WIP convertTypeNode: NullableTypeAnnotation";
+    day: number | null | undefined;
+    month: number | null | undefined;
+    year: number | null | undefined;
 };
 export type PartialDateStringsT = {
     day: string;

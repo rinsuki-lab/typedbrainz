@@ -40,7 +40,7 @@ export type StateT<T extends EntityItemT> = {
     showLabel: boolean;
     staticItems: $ReadOnlyArray<OptionItemT<T>>;
     statusMessage: string;
-    totalPages: "WIP convertTypeNode: NullableTypeAnnotation";
+    totalPages: number | null | undefined;
     width: string;
 };
 export type PropsT<T extends EntityItemT> = {

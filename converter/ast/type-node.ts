@@ -43,6 +43,12 @@ export function convertTypeNode(source: any): TypeNode {
         return convertObjectType(source, "export")
     case "GenericTypeAnnotation":
         return convertGenericTypeAnnotation(source)
+    case "NullableTypeAnnotation":
+        return factory.createUnionTypeNode([
+            convertTypeNode(source.typeAnnotation),
+            factory.createLiteralTypeNode(factory.createNull()),
+            factory.createKeywordTypeNode(SyntaxKind.UndefinedKeyword),
+        ]);
     default:
         return factory.createLiteralTypeNode(wipLiteral("convertTypeNode", source.type));
     }
