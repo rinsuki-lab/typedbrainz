@@ -2,6 +2,7 @@ import { factory, SyntaxKind, TypeElement, TypeNode } from "typescript";
 import { convertIdentifier } from "./identifier.js";
 import assert from "node:assert";
 import { convertTypeNode } from "./type-node.js";
+import { convertPropertyName } from "./property-name.js";
 
 export function convertObjectType(source: any, flag?: "export") {
     const spread: TypeNode[] = []
@@ -11,7 +12,7 @@ export function convertObjectType(source: any, flag?: "export") {
         case "ObjectTypeProperty":
             properties.push(factory.createPropertySignature(
                 undefined,
-                convertIdentifier(prop.key),
+                convertPropertyName(prop.key),
                 undefined,
                 convertTypeNode(prop.value),
             ));
