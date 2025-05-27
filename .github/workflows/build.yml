@@ -24,8 +24,8 @@ jobs:
       - run: pnpm install
       - name: Add dummy DBDefs
         run: |
-          touch upstream/root/static/common/DBDefs.mjs
-          touch upstream/root/static/common/DBDefs-client.mjs
+          touch upstream/root/static/scripts/common/DBDefs.mjs
+          touch upstream/root/static/scripts/common/DBDefs-client.mjs
       - run: pnpm build
       - name: Check for uncommitted changes
         id: diff-check
