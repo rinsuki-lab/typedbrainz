@@ -1,13 +1,14 @@
 import { factory, SyntaxKind, TypeNode } from "typescript";
 import { convertObjectType } from "./object-type.js";
-import { convertIdentifier } from "./identifier.js";
+import { convertIdentifier, convertMayQualifiedTypeIdentifier } from "./identifier.js";
 import { wipLiteral } from "../wip.js";
 
 function convertGenericTypeAnnotation(source: any): TypeNode {
     switch (source.id.type) {
+    case "QualifiedTypeIdentifier":
     case "Identifier":
         return factory.createTypeReferenceNode(
-            convertIdentifier(source.id),
+            convertMayQualifiedTypeIdentifier(source.id),
             source.typeParameters == null ? undefined : (source.typeParameters.params as any[]).map(tp => {
                 return convertTypeNode(tp);
             })

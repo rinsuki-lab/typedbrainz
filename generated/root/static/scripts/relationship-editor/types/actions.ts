@@ -6,6 +6,7 @@ import { RecordingT } from "../../../../../declared-types.js"
 import { RelationshipT } from "../../../../../declared-types.js"
 import { WorkT } from "../../../../../declared-types.js"
 import { PartialDateT } from "../../../../../declared-types.js"
+import { LinkAttrT } from "../../../../../declared-types.js"
 import { LanguageT } from "../../../../../declared-types.js"
 import { NonUrlRelatableEntityT } from "../../../../../declared-types.js"
 import { LinkAttrTypeT } from "../../../../../declared-types.js"
@@ -152,7 +153,7 @@ export type BatchCreateWorksDialogActionT = {
     type: "update-link-type";
 } | WorkTypeSelectActionT;
 export type AcceptBatchCreateWorksDialogActionT = {
-    attributes: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    attributes: tree.ImmutableTree<LinkAttrT> | null;
     begin_date: PartialDateT | null;
     end_date: PartialDateT | null;
     ended: boolean;

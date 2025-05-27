@@ -11,4 +11,4 @@ export const REL_STATUS_EDIT: RelationshipEditStatusT = 2;
 export const REL_STATUS_REMOVE: RelationshipEditStatusT = 3;
 export const EMPTY_DIALOG_PARTIAL_DATE = "WIP convertExpression: CallExpression";
 export const EMPTY_DIALOG_DATE_PERIOD = "WIP convertExpression: CallExpression";
-export const RelationshipSourceGroupsContext: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" = "WIP convertExpression: CallExpression";
+export const RelationshipSourceGroupsContext: React.Context<RelationshipSourceGroupsContextT> = "WIP convertExpression: CallExpression";

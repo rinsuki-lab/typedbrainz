@@ -32,7 +32,7 @@ export type StateT = DatePeriodFieldT;
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-export type PropsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier";
+export type PropsT = React.PropsOf<_DateRangeFieldset>;
 "Unknown Type: VariableDeclaration";
 "Unknown Type: ExpressionStatement";
 export default DateRangeFieldset;

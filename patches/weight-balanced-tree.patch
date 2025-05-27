@@ -1,0 +1,67 @@
+diff --git a/iterate.d.ts b/iterate.d.ts
+index 39e5cb501458069fd646f28ce50ff11244cb0594..f61978b587ff6d161df2e79bf839e186324acb06 100644
+--- a/iterate.d.ts
++++ b/iterate.d.ts
+@@ -1,4 +1,4 @@
+-import type {ImmutableTree} from './types';
++import type {ImmutableTree} from './types.ts';
+ 
+ export default function iterate<T>(
+   tree: ImmutableTree<T> | null,
+diff --git a/package.json b/package.json
+index 6a157b7ab7b86d781c25b66ac306daf2454c139e..cba243634752a8f0c0f53dc772ed3abec445d088 100644
+--- a/package.json
++++ b/package.json
+@@ -8,27 +8,27 @@
+   ],
+   "main": "index.mjs",
+   "exports": {
+-    ".": "./index.mjs",
+-    "./create": "./create.mjs",
+-    "./difference": "./difference.mjs",
+-    "./equals": "./equals.mjs",
+-    "./errors": "./errors.mjs",
+-    "./find": "./find.mjs",
+-    "./findNext": "./findNext.mjs",
+-    "./findPrev": "./findPrev.mjs",
+-    "./fromDistinctAscArray": "./fromDistinctAscArray.mjs",
+-    "./iterate": "./iterate.mjs",
+-    "./maxNode": "./maxNode.mjs",
+-    "./maxValue": "./maxValue.mjs",
+-    "./minNode": "./minNode.mjs",
+-    "./minValue": "./minValue.mjs",
+-    "./remove": "./remove.mjs",
+-    "./reverseIterate": "./reverseIterate.mjs",
+-    "./toArray": "./toArray.mjs",
+-    "./types": "./types.mjs",
+-    "./union": "./union.mjs",
+-    "./update": "./update.mjs",
+-    "./zip": "./zip.mjs"
++    ".": {"import": "./index.mjs", "types": "./index.d.ts"},
++    "./create": {"import": "./create.mjs", "types": "./create.d.ts"},
++    "./difference": {"import": "./difference.mjs", "types": "./difference.d.ts"},
++    "./equals": {"import": "./equals.mjs", "types": "./equals.d.ts"},
++    "./errors": {"import": "./errors.mjs", "types": "./errors.d.ts"},
++    "./find": {"import": "./find.mjs", "types": "./find.d.ts"},
++    "./findNext": {"import": "./findNext.mjs", "types": "./findNext.d.ts"},
++    "./findPrev": {"import": "./findPrev.mjs", "types": "./findPrev.d.ts"},
++    "./fromDistinctAscArray": {"import": "./fromDistinctAscArray.mjs", "types": "./fromDistinctAscArray.d.ts"},
++    "./iterate": {"import": "./iterate.mjs", "types": "./iterate.d.ts"},
++    "./maxNode": {"import": "./maxNode.mjs", "types": "./maxNode.d.ts"},
++    "./maxValue": {"import": "./maxValue.mjs", "types": "./maxValue.d.ts"},
++    "./minNode": {"import": "./minNode.mjs", "types": "./minNode.d.ts"},
++    "./minValue": {"import": "./minValue.mjs", "types": "./minValue.d.ts"},
++    "./remove": {"import": "./remove.mjs", "types": "./remove.d.ts"},
++    "./reverseIterate": {"import": "./reverseIterate.mjs", "types": "./reverseIterate.d.ts"},
++    "./toArray": {"import": "./toArray.mjs", "types": "./toArray.d.ts"},
++    "./types": {"types": "./types.ts"},
++    "./union": {"import": "./union.mjs", "types": "./union.d.ts"},
++    "./update": {"import": "./update.mjs", "types": "./update.d.ts"},
++    "./zip": {"import": "./zip.mjs", "types": "./zip.d.ts"}
+   },
+   "author": "Michael Wiencek <mwtuea@gmail.com>",
+   "license": "MIT",
+diff --git a/types.d.ts b/types.ts
+similarity index 100%
+rename from types.d.ts
+rename to types.ts

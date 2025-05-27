@@ -8,6 +8,9 @@ patchedDependencies:
   dts-bundle-generator:
     hash: old4sgrui7gmwluz5h7ex3bkam
     path: patches/dts-bundle-generator.patch
+  weight-balanced-tree:
+    hash: 4fm3qpl25hzucq2pf2ks6ybgqa
+    path: patches/weight-balanced-tree.patch
 
 importers:
 
@@ -23,6 +26,9 @@ importers:
       '@types/node':
         specifier: ^22.15.21
         version: 22.15.21
+      '@types/react':
+        specifier: ^19.1.6
+        version: 19.1.6
       dts-bundle-generator:
         specifier: ^9.5.1
         version: 9.5.1(patch_hash=old4sgrui7gmwluz5h7ex3bkam)
@@ -32,6 +38,9 @@ importers:
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
+      weight-balanced-tree:
+        specifier: ^0.6.1
+        version: 0.6.1(patch_hash=4fm3qpl25hzucq2pf2ks6ybgqa)
 
 packages:
 
@@ -51,6 +60,9 @@ packages:
 
   '@types/node@22.15.21':
     resolution: {integrity: sha512-EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ==}
+
+  '@types/react@19.1.6':
+    resolution: {integrity: sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -88,6 +100,9 @@ packages:
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
+
+  csstype@3.1.3:
+    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
   dts-bundle-generator@9.5.1:
     resolution: {integrity: sha512-DxpJOb2FNnEyOzMkG11sxO2dmxPjthoVWxfKqWYJ/bI/rT1rvTMktF5EKjAYrRZu6Z6t3NhOUZ0sZ5ZXevOfbA==}
@@ -252,6 +267,9 @@ packages:
     resolution: {integrity: sha512-3hu+tD8YzSLGuFYtPRb48vdhKMi0KQV5sn+uWr8+7dMEq/2G/dtLrdDinkLjqq5TIbIBjYJ4Ax/n3YiaW7QM8A==}
     engines: {node: 20 || >=22}
 
+  weight-balanced-tree@0.6.1:
+    resolution: {integrity: sha512-3FHKP1wai9P1KdPz/rM6RHIvTCB3qN4MQ3zWvM8pUu0tcHl3vwWX7RANUx3YqOTLvxmg3DszCeUNpO0gADtgfA==}
+
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
@@ -301,6 +319,10 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
+  '@types/react@19.1.6':
+    dependencies:
+      csstype: 3.1.3
+
   ansi-regex@5.0.1: {}
 
   ansi-regex@6.1.0: {}
@@ -334,6 +356,8 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  csstype@3.1.3: {}
 
   dts-bundle-generator@9.5.1(patch_hash=old4sgrui7gmwluz5h7ex3bkam):
     dependencies:
@@ -486,6 +510,8 @@ snapshots:
   undici-types@6.21.0: {}
 
   walk-up-path@4.0.0: {}
+
+  weight-balanced-tree@0.6.1(patch_hash=4fm3qpl25hzucq2pf2ks6ybgqa): {}
 
   which@2.0.2:
     dependencies:

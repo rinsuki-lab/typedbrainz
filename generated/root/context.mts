@@ -4,6 +4,6 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _
 import * as React from "react";
 export const defaultContext: CatalystContextT = "WIP convertExpression: ObjectExpression";
 "Unknown Type: VariableDeclaration";
-export const CatalystContext: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" = "WIP convertExpression: CallExpression";
+export const CatalystContext: React.Context<CatalystContextT> = "WIP convertExpression: CallExpression";
 "Unknown Type: TypeAlias";
 export const SanitizedCatalystContext: SCC = "WIP convertExpression: CallExpression";

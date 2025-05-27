@@ -24,6 +24,7 @@ import { ArtistT } from "../../../../declared-types.js"
 import { AreaT } from "../../../../declared-types.js"
 import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
+import { LinkAttrT } from "../../../../declared-types.js"
 import { RelatableEntityT } from "../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../src/type-utils.js";
 import * as tree from "weight-balanced-tree";
@@ -35,7 +36,7 @@ export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends R
     _lineage: $ReadOnlyArray<string>;
     _original: RelationshipStateT | null;
     _status: RelationshipEditStatusT;
-    attributes: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    attributes: tree.ImmutableTree<LinkAttrT> | null;
     begin_date: PartialDateT | null;
     editsPending: boolean;
     end_date: PartialDateT | null;
@@ -50,29 +51,29 @@ export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends R
 };
 export type RelationshipStateT = RelationshipStateForTypesT<RelatableEntityT, RelatableEntityT>;
 export type RelationshipPhraseGroupT = {
-    relationships: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    relationships: tree.ImmutableTree<RelationshipStateT> | null;
     textPhrase: string;
 };
 export type RelationshipLinkTypeGroupT = {
     backward: boolean;
-    phraseGroups: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    phraseGroups: tree.ImmutableTree<RelationshipPhraseGroupT> | null;
     typeId: number;
 };
 export type RelationshipLinkTypeGroupKeyT = {
     backward: boolean;
     typeId: number;
 };
-export type RelationshipLinkTypeGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type RelationshipLinkTypeGroupsT = tree.ImmutableTree<RelationshipLinkTypeGroupT> | null;
 export type RelationshipTargetTypeGroupT = [
     RelatableEntityTypeT,
     RelationshipLinkTypeGroupsT
 ];
-export type RelationshipTargetTypeGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type RelationshipTargetTypeGroupsT = tree.ImmutableTree<RelationshipTargetTypeGroupT> | null;
 export type RelationshipSourceGroupT = [
     RelatableEntityT,
     RelationshipTargetTypeGroupsT
 ];
-export type RelationshipSourceGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type RelationshipSourceGroupsT = tree.ImmutableTree<RelationshipSourceGroupT> | null;
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
 export type NonReleaseRelatableEntityTypeT = NonReleaseRelatableEntityT["entityType"];
 export type RelationshipDialogLocationT = {
@@ -127,7 +128,7 @@ export type DialogAttributeT = DialogBooleanAttributeStateT | DialogMultiselectA
 export type DialogAttributesT = $ReadOnlyArray<DialogAttributeT>;
 export type DialogAttributesStateT = {
     attributesList: DialogAttributesT;
-    resultingLinkAttributes: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    resultingLinkAttributes: tree.ImmutableTree<LinkAttrT> | null;
 };
 export type DialogLinkAttributeStateT = {
     creditedAs: string;
@@ -151,11 +152,11 @@ export type ExternalLinkAttrT = {
 };
 export type DialogLinkTypeStateT = {
     autocomplete: AutocompleteStateT<LinkTypeT>;
-    error: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier";
+    error: React.Node;
 };
 export type DialogSourceEntityStateT = $ReadOnly<_$Spread<DialogEntityCreditStateT, {
     entityType: RelatableEntityTypeT;
-    error: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier";
+    error: React.Node;
 }>>;
 export type TargetTypeOptionT = {
     text: string;
@@ -212,15 +213,18 @@ export type MediumWorkStateT = {
     targetTypeGroups: RelationshipTargetTypeGroupsT;
     work: WorkT;
 };
-export type MediumWorkStateTreeT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type MediumWorkStateTreeT = tree.ImmutableTree<MediumWorkStateT> | null;
 export type MediumRecordingStateT = {
     isSelected: boolean;
     recording: RecordingT;
     relatedWorks: MediumWorkStateTreeT;
     targetTypeGroups: RelationshipTargetTypeGroupsT;
 };
-export type MediumRecordingStateTreeT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
-export type MediumStateTreeT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type MediumRecordingStateTreeT = tree.ImmutableTree<MediumRecordingStateT> | null;
+export type MediumStateTreeT = tree.ImmutableTree<[
+    MediumWithRecordingsT,
+    MediumRecordingStateTreeT
+]> | null;
 export type ReleaseRelationshipEditorStateT = $ReadOnly<_$Spread<$Exact<LazyReleaseStateT>, _$Spread<$Exact<RelationshipEditorStateT>, {
     editNoteField: FieldT<string>;
     enterEditForm: FormT<{
@@ -229,8 +233,8 @@ export type ReleaseRelationshipEditorStateT = $ReadOnly<_$Spread<$Exact<LazyRele
     entity: ReleaseWithMediumsAndReleaseGroupT;
     mediums: MediumStateTreeT;
     mediumsByRecordingId: RecordingMediumsT;
-    selectedRecordings: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
-    selectedWorks: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    selectedRecordings: tree.ImmutableTree<RecordingT> | null;
+    selectedWorks: tree.ImmutableTree<WorkT> | null;
     submissionError: string | null | undefined;
     submissionInProgress: boolean;
 }>>>;

@@ -44,7 +44,7 @@ export type StateT<T extends EntityItemT> = {
     width: string;
 };
 export type PropsT<T extends EntityItemT> = {
-    children: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier";
+    children: React.Node;
     dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
     state: StateT<T>;
 };
