@@ -17,11 +17,20 @@ export function doActualConvert(ctx: ConverterContext) {
         if (target == null) break
         if (ctx.alreadyParsedTargets.has(target)) continue
         ctx.alreadyParsedTargets.add(target)
-        const ast = parse(readFileSync(target, "utf-8"))
+        if (!target.endsWith(".js") && !target.endsWith(".mjs")) {
+            console.warn("Skipping non-JS file:", target)
+            continue
+        }
+        const src = readFileSync(target, "utf-8")
+        const ast = parse(src)
         ctx.currentFilePath = target
-        console.log(ast)
+        // console.log(ast)
+        // console.log("Converting", target)
         let dest = createSourceFile("", compatibilityFile, ScriptTarget.ESNext)
-        const statements = (ast.body as any[]).flatMap(ast => convertAST(ctx, ast))
+        const statements = (ast.body as any[]).flatMap(ast => {
+            // console.log(src.slice(...ast.range))
+            return convertAST(ctx, ast)
+        })
         dest = appended(dest, statements.filter(x => x != null))
         for (const s of dest.statements) {
             if (isImportDeclaration(s)) {
@@ -35,6 +44,6 @@ export function doActualConvert(ctx: ConverterContext) {
         const printer = createPrinter()
         const desttext = printer.printFile(dest)
         mkdirSync(dirname(target.replace("upstream", "generated")), { recursive: true })
-        writeFileSync(target.replace("upstream", "generated").replace(/\.js$/, ".ts"), desttext)
+        writeFileSync(target.replace("upstream", "generated").replace(/(\.m?)js$/, "$1ts"), desttext)
     }
 }
