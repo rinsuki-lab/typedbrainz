@@ -1,0 +1,29 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+type $ReadOnlyArray<T> = readonly T[];
+type $ReadOnly<T> = Readonly<T>;
+type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
+type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
+import { TITLES as ADD_NEW_ENTITY_TITLES } from "../../../edit/components/AddEntityDialog.js";
+import { unwrapNl as unwrapNl } from "../../i18n.js";
+import { getCatalystContext as getCatalystContext } from "../../utility/catalyst.js";
+import { isLocationEditor as isLocationEditor, isRelationshipEditor as isRelationshipEditor } from "../../utility/privileges.js";
+import setCookie from "../../utility/setCookie.js";
+import { OPEN_ADD_ENTITY_DIALOG as OPEN_ADD_ENTITY_DIALOG, SEARCH_AGAIN as SEARCH_AGAIN } from "./actions.js";
+import { CLEAR_RECENT_ITEMS as CLEAR_RECENT_ITEMS, ERROR_LOOKUP as ERROR_LOOKUP, ERROR_LOOKUP_TYPE as ERROR_LOOKUP_TYPE, ERROR_SEARCH as ERROR_SEARCH, IS_TOP_WINDOW as IS_TOP_WINDOW, MENU_ITEMS as MENU_ITEMS, PAGE_SIZE as PAGE_SIZE, RECENT_ITEMS_HEADER as RECENT_ITEMS_HEADER } from "./constants.js";
+import { clearRecentItems as clearRecentItems, pushRecentItem as pushRecentItem } from "./recentItems.js";
+import searchItems from "./searchItems.js";
+import type { ActionT as ActionT, EntityItemT as EntityItemT, ItemT as ItemT, SearchActionT as SearchActionT, StateT as StateT } from "./types.js";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+export default "Unknown Expression Type: FunctionDeclaration";

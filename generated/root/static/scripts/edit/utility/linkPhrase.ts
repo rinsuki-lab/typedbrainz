@@ -1,0 +1,40 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+type $ReadOnlyArray<T> = readonly T[];
+type $ReadOnly<T> = Readonly<T>;
+type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
+type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
+import commaList, { commaListText as commaListText } from "../../common/i18n/commaList.js";
+import { VarArgsClass as VarArgsClass, VarArgsObject as VarArgsObject } from "../../common/i18n/expand2.js";
+import { expand2reactWithVarArgsInstance as expand2reactWithVarArgsInstance } from "../../common/i18n/expand2react.js";
+import { expand2textWithVarArgsClass as expand2textWithVarArgsClass } from "../../common/i18n/expand2text.js";
+import linkedEntities from "../../common/linkedEntities.mjs";
+import clean from "../../common/utility/clean.js";
+import { compareStrings as compareStrings } from "../../common/utility/compare.mjs";
+import displayLinkAttribute, { displayLinkAttributeText as displayLinkAttributeText } from "../../common/utility/displayLinkAttribute.js";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: TypeAlias";
+"Unknown Type: TypeAlias";
+export type LinkPhraseProp = "link_phrase" | "long_link_phrase" | "reverse_link_phrase";
+"Unknown Type: ClassDeclaration";
+export type LinkPhraseI18n<T> = {
+    commaList: "TODO: Support TypeNode FunctionTypeAnnotation";
+    defaultValue: T;
+    displayLinkAttribute: "TODO: Support TypeNode FunctionTypeAnnotation";
+    expand: "TODO: Support TypeNode FunctionTypeAnnotation";
+};
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+export const getPhraseAndExtraAttributesText = "Unknown Expression Type: ArrowFunctionExpression";
+export const interpolate = "Unknown Expression Type: ArrowFunctionExpression";
+export const interpolateText = "Unknown Expression Type: ArrowFunctionExpression";
+export const getExtraAttributes = "Unknown Expression Type: ArrowFunctionExpression";
+export const stripAttributes = "Unknown Expression Type: ArrowFunctionExpression";

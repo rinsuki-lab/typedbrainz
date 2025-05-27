@@ -1,0 +1,30 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+type $ReadOnlyArray<T> = readonly T[];
+type $ReadOnly<T> = Readonly<T>;
+type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
+type $Exact<T> = T; // TODO: implement properly
+type $Keys<T> = keyof T;
+type $Values<T> = T[keyof T];
+import * as Sentry from "@sentry/browser";
+import { MAX_RECENT_ENTITIES as MAX_RECENT_ENTITIES } from "../../constants.js";
+import localizeLanguageName from "../../i18n/localizeLanguageName.js";
+import linkedEntities from "../../linkedEntities.mjs";
+import isDatabaseRowId from "../../utility/isDatabaseRowId.js";
+import isGuid from "../../utility/isGuid.js";
+import { localStorage as localStorage } from "../../utility/storage.js";
+import { formatLinkTypePhrases as formatLinkTypePhrases } from "./formatters.js";
+import type { EntityItemT as EntityItemT, OptionItemT as OptionItemT } from "./types.js";
+"Unknown Type: TypeAlias";
+"Unknown Type: TypeAlias";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
