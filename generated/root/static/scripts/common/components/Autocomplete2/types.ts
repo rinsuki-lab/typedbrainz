@@ -1,0 +1,10 @@
+export type SearchableTypeT = "TODO: support IndexedAccessType";
+export type StateT = "TODO: support ObjectTypeAnnotation";
+export type PropsT = "TODO: support ObjectTypeAnnotation";
+export type SearchActionT = "TODO: support ObjectTypeAnnotation";
+export type ActionT = "TODO: support GenericTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation" | "TODO: support ObjectTypeAnnotation";
+export type ActionItemT = "TODO: support ObjectTypeAnnotation";
+export type OptionItemT = "TODO: support ObjectTypeAnnotation";
+export type HeaderItemT = "TODO: support ObjectTypeAnnotation";
+export type ItemT = "TODO: support GenericTypeAnnotation" | "TODO: support GenericTypeAnnotation" | "TODO: support GenericTypeAnnotation";
+export type EntityItemT = "TODO: support GenericTypeAnnotation" | "TODO: support GenericTypeAnnotation" | "TODO: support GenericTypeAnnotation" | "TODO: support GenericTypeAnnotation" | "TODO: support GenericTypeAnnotation";
