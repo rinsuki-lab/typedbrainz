@@ -1,6 +1,6 @@
 {
   "name": "typedbrainz",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/index.js",
   "type": "module",
@@ -12,6 +12,15 @@
     "lib/*.js",
     "lib/*.d.ts"
   ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./types": {
+      "types": "./lib/global.d.ts"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "GPL-2.0-or-later",
