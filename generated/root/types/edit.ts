@@ -15,8 +15,8 @@ export type CompT<T> = {
     old: T;
 };
 export type DiffChangeTypeT = "+" | "-" | "c" | "u";
-export type EditExpireActionT = "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
-export type EditStatusT = "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+export type EditExpireActionT = 1 | 2;
+export type EditStatusT = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 9;
 export type EditT = CurrentEditT | HistoricEditT;
 export type EditWithIdT = $ReadOnly<EditT & {
     id: number;

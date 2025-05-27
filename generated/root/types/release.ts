@@ -18,7 +18,7 @@ import { OptionTreeT } from "../../declared-types.js"
 import { LabelT } from "../../declared-types.js"
 import { PartialDateT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
-export type QualityT = "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+export type QualityT = -1 | 0 | 1 | 2;
 export type ReleaseEventT = {
     country: AreaT | null;
     date: PartialDateT | null;

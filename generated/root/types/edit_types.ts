@@ -1056,7 +1056,7 @@ export type MergeReleasesEditT = $ReadOnly<GenericEditT & {
             vars: {};
         };
         changes: $ReadOnlyArray<MergeReleaseEditDisplayChangeT>;
-        edit_version: "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+        edit_version: 1 | 2 | 3;
         empty_releases: $ReadOnlyArray<ReleaseT>;
         merge_strategy: "append" | "merge";
         new: ReleaseT;

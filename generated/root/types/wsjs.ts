@@ -86,8 +86,8 @@ export type WsJsEditWorkCreateT = {
     name: string;
     type_id: number | null;
 };
-export type WS_EDIT_RESPONSE_OK_T = "TODO: Support TypeNode NumberLiteralTypeAnnotation";
-export type WS_EDIT_RESPONSE_NO_CHANGES_T = "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+export type WS_EDIT_RESPONSE_OK_T = 1;
+export type WS_EDIT_RESPONSE_NO_CHANGES_T = 2;
 export type WsJsEditResponseT = {
     edits: $ReadOnlyArray<({
         edit_type: EDIT_RELATIONSHIP_CREATE_T;

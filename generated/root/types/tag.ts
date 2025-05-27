@@ -19,5 +19,5 @@ export type TagT = {
 export type UserTagT = {
     count: number;
     tag: TagT;
-    vote: "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+    vote: 1 | 0 | -1;
 };

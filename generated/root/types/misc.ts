@@ -9,7 +9,7 @@ export type DeepReadOnly<T> = "TODO: Support TypeNode ConditionalTypeAnnotation"
 export type PagerT = {
     current_page: number;
     entries_per_page: number;
-    first_page: "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+    first_page: 1;
     last_page: number;
     next_page: number | null;
     previous_page: number | null;

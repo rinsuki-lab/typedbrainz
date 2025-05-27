@@ -24,6 +24,12 @@ export function convertTypeNode(source: any) {
         return factory.createUnionTypeNode(source.types.map(convertTypeNode))
     case "StringLiteralTypeAnnotation":
         return factory.createLiteralTypeNode(factory.createStringLiteral(source.value))
+    case "NumberLiteralTypeAnnotation":
+        if (source.value < 0) {
+            return factory.createLiteralTypeNode(factory.createPrefixUnaryExpression(SyntaxKind.MinusToken, factory.createNumericLiteral(Math.abs(source.value))))
+        } else {
+            return factory.createLiteralTypeNode(factory.createNumericLiteral(source.value))
+        }
     case "NumberTypeAnnotation":
         return factory.createKeywordTypeNode(SyntaxKind.NumberKeyword)
     case "StringTypeAnnotation":

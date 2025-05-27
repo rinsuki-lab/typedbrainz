@@ -7,7 +7,7 @@ type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
 export type LanguageT = {
     entityType: "language";
-    frequency: "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+    frequency: 0 | 1 | 2;
     id: number;
     iso_code_1: string | null;
     iso_code_2b: string | null;
@@ -17,7 +17,7 @@ export type LanguageT = {
 };
 export type ScriptT = {
     entityType: "script";
-    frequency: "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
+    frequency: 1 | 2 | 3 | 4;
     id: number;
     iso_code: string;
     iso_number: string | null;
