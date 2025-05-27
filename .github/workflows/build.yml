@@ -22,6 +22,10 @@ jobs:
           node-version: "22"
       - run: corepack enable
       - run: pnpm install
+      - name: Add dummy DBDefs
+        run: |
+          touch upstream/root/static/common/DBDefs.mjs
+          touch upstream/root/static/common/DBDefs-client.mjs
       - run: pnpm build
       - name: Check for uncommitted changes
         id: diff-check
