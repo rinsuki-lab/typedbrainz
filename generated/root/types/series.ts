@@ -3,6 +3,11 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { OptionTreeT } from "../../declared-types.js"
+import { TypeRoleT } from "../../declared-types.js"
+import { RelatableEntityRoleT } from "../../declared-types.js"
+import { CommentRoleT } from "../../declared-types.js"
+import { AnnotationRoleT } from "../../declared-types.js"
 export type SeriesEntityTypeT = "artist" | "event" | "recording" | "release" | "release_group" | "work";
 export type SeriesT = $ReadOnly<AnnotationRoleT & CommentRoleT & RelatableEntityRoleT<"series"> & TypeRoleT<SeriesTypeT> & {
     entity_count: number;

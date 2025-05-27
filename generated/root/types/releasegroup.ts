@@ -3,6 +3,15 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { ReleaseArtT } from "../../declared-types.js"
+import { TypeRoleT } from "../../declared-types.js"
+import { ReviewableRoleT } from "../../declared-types.js"
+import { RatableRoleT } from "../../declared-types.js"
+import { RelatableEntityRoleT } from "../../declared-types.js"
+import { CommentRoleT } from "../../declared-types.js"
+import { ArtistCreditRoleT } from "../../declared-types.js"
+import { AnnotationRoleT } from "../../declared-types.js"
+import { OptionTreeT } from "../../declared-types.js"
 export type ReleaseGroupSecondaryTypeT = OptionTreeT<"release_group_secondary_type">;
 export type ReleaseGroupT = $ReadOnly<AnnotationRoleT & ArtistCreditRoleT & CommentRoleT & RelatableEntityRoleT<"release_group"> & RatableRoleT & ReviewableRoleT & TypeRoleT<ReleaseGroupTypeT> & {
     cover_art: ReleaseArtT;

@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { EditorT } from "../../declared-types.js"
+import { EntityRoleT } from "../../declared-types.js"
 export type AutoEditorElectionT = EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation"> & {
     candidate: EditorT;
     close_time: string;

@@ -3,6 +3,16 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { ReleaseGroupT } from "../../declared-types.js"
+import { IsrcT } from "../../declared-types.js"
+import { PartialDateT } from "../../declared-types.js"
+import { ArtistCreditT } from "../../declared-types.js"
+import { AppearancesT } from "../../declared-types.js"
+import { ReviewableRoleT } from "../../declared-types.js"
+import { RatableRoleT } from "../../declared-types.js"
+import { RelatableEntityRoleT } from "../../declared-types.js"
+import { CommentRoleT } from "../../declared-types.js"
+import { AnnotationRoleT } from "../../declared-types.js"
 export type RecordingT = $ReadOnly<AnnotationRoleT & CommentRoleT & RelatableEntityRoleT<"recording"> & RatableRoleT & ReviewableRoleT & {
     appearsOn: AppearancesT<{
         gid: string;

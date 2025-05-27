@@ -3,6 +3,19 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { ActiveEditorT } from "../../declared-types.js"
+import { MergeableEntityTypeT } from "../../declared-types.js"
+import { UserTagT } from "../../declared-types.js"
+import { AggregatedTagT } from "../../declared-types.js"
+import { MergeableEntityT } from "../../declared-types.js"
+import { ReleaseArtT } from "../../declared-types.js"
+import { EventArtT } from "../../declared-types.js"
+import { RelatableEntityT } from "../../declared-types.js"
+import { CommonsImageT } from "../../declared-types.js"
+import { CollectionT } from "../../declared-types.js"
+import { ArtistCreditFieldT } from "../../declared-types.js"
+import { ArtistCreditT } from "../../declared-types.js"
+import { UnsanitizedEditorT } from "../../declared-types.js"
 export type CatalystActionT = {
     name: string;
 };

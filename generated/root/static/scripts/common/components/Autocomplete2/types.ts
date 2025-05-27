@@ -3,6 +3,11 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { NonUrlRelatableEntityT } from "../../../../../../declared-types.js"
+import { LinkTypeT } from "../../../../../../declared-types.js"
+import { LinkAttrTypeT } from "../../../../../../declared-types.js"
+import { LanguageT } from "../../../../../../declared-types.js"
+import { EditorT } from "../../../../../../declared-types.js"
 export type SearchableTypeT = "TODO: Support TypeNode IndexedAccessType";
 export type StateT<T extends EntityItemT> = {
     canChangeType: "TODO: Support TypeNode FunctionTypeAnnotation";

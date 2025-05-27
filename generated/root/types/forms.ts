@@ -3,6 +3,11 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { StrOrNum } from "../../declared-types.js"
+import { RepeatableFieldT } from "../../declared-types.js"
+import { CompoundFieldT } from "../../declared-types.js"
+import { FieldT } from "../../declared-types.js"
+import { FormT } from "../../declared-types.js"
 export type ConfirmFormT = FormT<{
     cancel: FieldT<string>;
     edit_note: FieldT<string>;

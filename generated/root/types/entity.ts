@@ -3,6 +3,24 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { EditorT } from "../../declared-types.js"
+import { CollectionT } from "../../declared-types.js"
+import { TrackT } from "../../declared-types.js"
+import { UrlT } from "../../declared-types.js"
+import { RelationshipT } from "../../declared-types.js"
+import { RecordingWithArtistCreditT } from "../../declared-types.js"
+import { WorkT } from "../../declared-types.js"
+import { SeriesT } from "../../declared-types.js"
+import { ReleaseT } from "../../declared-types.js"
+import { ReleaseGroupT } from "../../declared-types.js"
+import { RecordingT } from "../../declared-types.js"
+import { PlaceT } from "../../declared-types.js"
+import { LabelT } from "../../declared-types.js"
+import { InstrumentT } from "../../declared-types.js"
+import { GenreT } from "../../declared-types.js"
+import { EventT } from "../../declared-types.js"
+import { ArtistT } from "../../declared-types.js"
+import { AreaT } from "../../declared-types.js"
 export type EntityWithAliasesT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type EntityWithAliasesTypeT = "TODO: Support TypeNode IndexedAccessType";
 export type EntityWithSeriesMapT = {

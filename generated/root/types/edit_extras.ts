@@ -3,6 +3,13 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { ReleaseT } from "../../declared-types.js"
+import { LabelT } from "../../declared-types.js"
+import { MediumFormatT } from "../../declared-types.js"
+import { PartialDateT } from "../../declared-types.js"
+import { AreaT } from "../../declared-types.js"
+import { CompT } from "../../declared-types.js"
+import { TrackWithRecordingT } from "../../declared-types.js"
 export type TracklistChangesAddT = {
     change_type: "+";
     new_track: TrackWithRecordingT;

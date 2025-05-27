@@ -3,6 +3,11 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { VoteT } from "../../declared-types.js"
+import { QualityT } from "../../declared-types.js"
+import { EditorT } from "../../declared-types.js"
+import { HistoricEditT } from "../../declared-types.js"
+import { CurrentEditT } from "../../declared-types.js"
 export type CompT<T> = {
     new: T;
     old: T;

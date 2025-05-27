@@ -3,6 +3,7 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { CatalystContextT } from "../declared-types.js"
 import * as React from "react";
 export const defaultContext: CatalystContextT = "Unknown Expression Type: ObjectExpression";
 "Unknown Type: VariableDeclaration";

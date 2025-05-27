@@ -3,6 +3,11 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { RecordingT } from "../../declared-types.js"
+import { MediumT } from "../../declared-types.js"
+import { ArtistCreditT } from "../../declared-types.js"
+import { LastUpdateRoleT } from "../../declared-types.js"
+import { EntityRoleT } from "../../declared-types.js"
 export type TrackT = $ReadOnly<EntityRoleT<"track"> & LastUpdateRoleT & {
     artist: string;
     artistCredit: ArtistCreditT;

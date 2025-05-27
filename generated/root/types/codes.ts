@@ -3,6 +3,8 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { EntityRoleT } from "../../declared-types.js"
+import { PendingEditsRoleT } from "../../declared-types.js"
 export type IpiCodesRoleT = {
     ipi_codes: $ReadOnlyArray<IpiCodeT>;
 };

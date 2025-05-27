@@ -3,6 +3,11 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { WS_EDIT_RESPONSE_NO_CHANGES_T } from "../../../../declared-types.js"
+import { WS_EDIT_RESPONSE_OK_T } from "../../../../declared-types.js"
+import { QualityT } from "../../../../declared-types.js"
+import { N_l_T } from "../../../../declared-types.js"
+import { PartialDateT } from "../../../../declared-types.js"
 import ENTITIES from "../../../../entities.mjs";
 export { ENTITIES as ENTITIES };
 export const EMPTY_PARTIAL_DATE: PartialDateT = "Unknown Expression Type: CallExpression";

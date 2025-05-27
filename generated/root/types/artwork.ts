@@ -3,6 +3,10 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { OptionTreeT } from "../../declared-types.js"
+import { ReleaseT } from "../../declared-types.js"
+import { EventT } from "../../declared-types.js"
+import { PendingEditsRoleT } from "../../declared-types.js"
 export type ArtworkRoleT = $ReadOnly<PendingEditsRoleT & {
     comment: string;
     event: EventT;

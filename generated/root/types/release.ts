@@ -3,6 +3,19 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { MediumWithRecordingsT } from "../../declared-types.js"
+import { ScriptT } from "../../declared-types.js"
+import { ReleaseGroupT } from "../../declared-types.js"
+import { MediumT } from "../../declared-types.js"
+import { LanguageT } from "../../declared-types.js"
+import { RelatableEntityRoleT } from "../../declared-types.js"
+import { CommentRoleT } from "../../declared-types.js"
+import { ArtistCreditRoleT } from "../../declared-types.js"
+import { AnnotationRoleT } from "../../declared-types.js"
+import { OptionTreeT } from "../../declared-types.js"
+import { LabelT } from "../../declared-types.js"
+import { PartialDateT } from "../../declared-types.js"
+import { AreaT } from "../../declared-types.js"
 export type QualityT = "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation" | "TODO: Support TypeNode NumberLiteralTypeAnnotation";
 export type ReleaseEventT = {
     country: AreaT | null;

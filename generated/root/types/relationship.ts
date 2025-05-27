@@ -3,6 +3,12 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { RelatableEntityT } from "../../declared-types.js"
+import { PendingEditsRoleT } from "../../declared-types.js"
+import { DatePeriodRoleT } from "../../declared-types.js"
+import { RelatableEntityTypeT } from "../../declared-types.js"
+import { TypeRoleT } from "../../declared-types.js"
+import { OptionTreeT } from "../../declared-types.js"
 export type LinkAttrT = {
     credited_as: string;
     text_value: string;

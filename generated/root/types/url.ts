@@ -3,6 +3,7 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { RelatableEntityRoleT } from "../../declared-types.js"
 export type UrlT = RelatableEntityRoleT<"url"> & {
     decoded: string;
     href_url: string;

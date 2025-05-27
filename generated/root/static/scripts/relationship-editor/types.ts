@@ -3,6 +3,31 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { FormT } from "../../../../declared-types.js"
+import { FieldT } from "../../../../declared-types.js"
+import { MediumWithRecordingsT } from "../../../../declared-types.js"
+import { ReleaseWithMediumsT } from "../../../../declared-types.js"
+import { LanguageT } from "../../../../declared-types.js"
+import { NonUrlRelatableEntityT } from "../../../../declared-types.js"
+import { RelatableEntityTypeT } from "../../../../declared-types.js"
+import { DatePeriodRoleT } from "../../../../declared-types.js"
+import { DatePeriodFieldT } from "../../../../declared-types.js"
+import { LinkAttrTypeT } from "../../../../declared-types.js"
+import { LinkTypeT } from "../../../../declared-types.js"
+import { WorkT } from "../../../../declared-types.js"
+import { UrlT } from "../../../../declared-types.js"
+import { SeriesT } from "../../../../declared-types.js"
+import { ReleaseGroupT } from "../../../../declared-types.js"
+import { RecordingT } from "../../../../declared-types.js"
+import { PlaceT } from "../../../../declared-types.js"
+import { LabelT } from "../../../../declared-types.js"
+import { InstrumentT } from "../../../../declared-types.js"
+import { GenreT } from "../../../../declared-types.js"
+import { EventT } from "../../../../declared-types.js"
+import { ArtistT } from "../../../../declared-types.js"
+import { AreaT } from "../../../../declared-types.js"
+import { PartialDateT } from "../../../../declared-types.js"
+import { RelatableEntityT } from "../../../../declared-types.js"
 import * as tree from "weight-balanced-tree";
 import type { OptionItemT as AutocompleteOptionItemT, StateT as AutocompleteStateT } from "../common/components/Autocomplete2/types.js";
 import type { LazyReleaseStateT as LazyReleaseStateT } from "../release/types.js";

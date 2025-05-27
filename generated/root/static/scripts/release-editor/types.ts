@@ -3,6 +3,7 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { ArtistCreditT } from "../../../../declared-types.js"
 import type { Observable as KnockoutObservable } from "knockout";
 export type ReleaseEditorTrackT = {
     artistCredit: KnockoutObservable<ArtistCreditT>;

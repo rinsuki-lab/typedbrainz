@@ -3,6 +3,11 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { OptionTreeT } from "../../declared-types.js"
+import { TypeRoleT } from "../../declared-types.js"
+import { PendingEditsRoleT } from "../../declared-types.js"
+import { EntityRoleT } from "../../declared-types.js"
+import { DatePeriodRoleT } from "../../declared-types.js"
 export type AliasT<T> = $ReadOnly<DatePeriodRoleT & EntityRoleT<"alias"> & PendingEditsRoleT & TypeRoleT<T> & {
     locale: string | null;
     name: string;

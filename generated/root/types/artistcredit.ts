@@ -3,6 +3,7 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { ArtistT } from "../../declared-types.js"
 export type ArtistCreditNameT = {
     artist: ArtistT;
     joinPhrase: string;

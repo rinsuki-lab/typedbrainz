@@ -3,6 +3,12 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { TrackWithRecordingT } from "../../declared-types.js"
+import { PagerT } from "../../declared-types.js"
+import { TrackT } from "../../declared-types.js"
+import { LastUpdateRoleT } from "../../declared-types.js"
+import { OptionTreeT } from "../../declared-types.js"
+import { EntityRoleT } from "../../declared-types.js"
 export type CDTocT = $ReadOnly<EntityRoleT<"cdtoc"> & {
     discid: string;
     freedb_id: string;

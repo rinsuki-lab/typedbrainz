@@ -3,6 +3,30 @@ type $ReadOnlyArray<T> = readonly T[];
 type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
+import { EDIT_RELEASEGROUP_EDIT_T } from "../../declared-types.js"
+import { EDIT_RELEASE_REORDER_MEDIUMS_T } from "../../declared-types.js"
+import { EDIT_RELEASE_EDITRELEASELABEL_T } from "../../declared-types.js"
+import { EDIT_RELEASE_EDIT_T } from "../../declared-types.js"
+import { EDIT_RELEASE_DELETERELEASELABEL_T } from "../../declared-types.js"
+import { EDIT_RELEASE_ADD_ANNOTATION_T } from "../../declared-types.js"
+import { EDIT_RECORDING_EDIT_T } from "../../declared-types.js"
+import { EDIT_MEDIUM_EDIT_T } from "../../declared-types.js"
+import { EDIT_MEDIUM_DELETE_T } from "../../declared-types.js"
+import { EDIT_MEDIUM_ADD_DISCID_T } from "../../declared-types.js"
+import { EDIT_RELEASE_ADDRELEASELABEL_T } from "../../declared-types.js"
+import { WorkT } from "../../declared-types.js"
+import { EDIT_MEDIUM_CREATE_T } from "../../declared-types.js"
+import { ReleaseGroupT } from "../../declared-types.js"
+import { EDIT_RELEASEGROUP_CREATE_T } from "../../declared-types.js"
+import { ReleaseT } from "../../declared-types.js"
+import { EDIT_RELEASE_CREATE_T } from "../../declared-types.js"
+import { EDIT_WORK_CREATE_T } from "../../declared-types.js"
+import { EDIT_RELATIONSHIPS_REORDER_T } from "../../declared-types.js"
+import { EDIT_RELATIONSHIP_DELETE_T } from "../../declared-types.js"
+import { EDIT_RELATIONSHIP_EDIT_T } from "../../declared-types.js"
+import { EDIT_RELATIONSHIP_CREATE_T } from "../../declared-types.js"
+import { PartialDateT } from "../../declared-types.js"
+import { NonUrlRelatableEntityTypeT } from "../../declared-types.js"
 export type WsJsRelationshipEntityT = ({
     entityType: NonUrlRelatableEntityTypeT;
     gid: string;
