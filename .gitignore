@@ -2,3 +2,4 @@ node_modules
 .tsimp
 lib/*
 !lib/global.d.ts
+*.tgz
