@@ -4,8 +4,8 @@ import { MediumT } from "../../declared-types.js"
 import { ArtistCreditT } from "../../declared-types.js"
 import { LastUpdateRoleT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type TrackT = $ReadOnly<_$Spread<EntityRoleT<"track">, _$Spread<LastUpdateRoleT, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type TrackT = $ReadOnly<$_$Spread<EntityRoleT<"track">, $_$Spread<LastUpdateRoleT, {
     artist: string;
     artistCredit: ArtistCreditT;
     editsPending: boolean;
@@ -19,6 +19,6 @@ export type TrackT = $ReadOnly<_$Spread<EntityRoleT<"track">, _$Spread<LastUpdat
     position: number;
     recording: RecordingT;
 }>>>;
-export type TrackWithRecordingT = $ReadOnly<_$Spread<TrackT, {
+export type TrackWithRecordingT = $ReadOnly<$_$Spread<TrackT, {
     recording: RecordingT;
 }>>;

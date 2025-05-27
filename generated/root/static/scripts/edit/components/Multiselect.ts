@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import * as React from "react";
 import Autocomplete2 from "../../common/components/Autocomplete2.js";
 import { default as autocompleteReducer } from "../../common/components/Autocomplete2/reducer.js";

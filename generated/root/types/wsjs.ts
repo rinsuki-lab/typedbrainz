@@ -23,7 +23,7 @@ import { EDIT_RELATIONSHIP_EDIT_T } from "../../declared-types.js"
 import { EDIT_RELATIONSHIP_CREATE_T } from "../../declared-types.js"
 import { PartialDateT } from "../../declared-types.js"
 import { NonUrlRelatableEntityTypeT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type WsJsRelationshipEntityT = {
     entityType: NonUrlRelatableEntityTypeT;
     gid: string;
@@ -53,12 +53,12 @@ export type WsJsRelationshipCommonT = {
     entity0_credit: string;
     entity1_credit: string;
 };
-export type WsJsEditRelationshipCreateT = $ReadOnly<_$Spread<WsJsRelationshipCommonT, {
+export type WsJsEditRelationshipCreateT = $ReadOnly<$_$Spread<WsJsRelationshipCommonT, {
     edit_type: EDIT_RELATIONSHIP_CREATE_T;
     linkOrder: number;
     linkTypeID: number;
 }>>;
-export type WsJsEditRelationshipEditT = $ReadOnly<_$Spread<Partial<WsJsRelationshipCommonT>, {
+export type WsJsEditRelationshipEditT = $ReadOnly<$_$Spread<Partial<WsJsRelationshipCommonT>, {
     edit_type: EDIT_RELATIONSHIP_EDIT_T;
     id: number;
     linkTypeID: number;

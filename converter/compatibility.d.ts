@@ -6,7 +6,7 @@ import type {
     $Exact,
     $Keys,
     $Values,
-    _$Spread
+    $_$Spread
 } from "../src/type-utils.js";
 
 // ---

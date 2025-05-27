@@ -4,8 +4,8 @@ import { TypeRoleT } from "../../declared-types.js"
 import { PendingEditsRoleT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
 import { DatePeriodRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type AliasT<T> = $ReadOnly<_$Spread<DatePeriodRoleT, _$Spread<EntityRoleT<"alias">, _$Spread<PendingEditsRoleT, _$Spread<TypeRoleT<T>, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type AliasT<T> = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<EntityRoleT<"alias">, $_$Spread<PendingEditsRoleT, $_$Spread<TypeRoleT<T>, {
     locale: string | null;
     name: string;
     primary_for_locale: boolean;

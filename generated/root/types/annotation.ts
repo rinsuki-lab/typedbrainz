@@ -12,7 +12,7 @@ import { GenreT } from "../../declared-types.js"
 import { EventT } from "../../declared-types.js"
 import { ArtistT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type AnnotatedEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type AnnotatedEntityTypeT = AnnotatedEntityT["entityType"];
 export type AnnotationRoleT = {

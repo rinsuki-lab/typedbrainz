@@ -8,9 +8,9 @@ import { CommentRoleT } from "../../declared-types.js"
 import { ArtistCreditRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
 import { OptionTreeT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type ReleaseGroupSecondaryTypeT = OptionTreeT<"release_group_secondary_type">;
-export type ReleaseGroupT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<ArtistCreditRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"release_group">, _$Spread<RatableRoleT, _$Spread<ReviewableRoleT, _$Spread<TypeRoleT<ReleaseGroupTypeT>, {
+export type ReleaseGroupT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCreditRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"release_group">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<ReleaseGroupTypeT>, {
     cover_art: ReleaseArtT;
     firstReleaseDate: string | null;
     hasCoverArt: boolean;
@@ -22,7 +22,7 @@ export type ReleaseGroupT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<ArtistC
     typeID: number | null;
     typeName: string | null;
 }>>>>>>>>;
-export type ReleaseGroupTypeT = _$Spread<OptionTreeT<"release_group_type">, {
+export type ReleaseGroupTypeT = $_$Spread<OptionTreeT<"release_group_type">, {
     historic: false;
 }>;
 export type ReleaseGroupHistoricTypeT = {

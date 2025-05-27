@@ -4,7 +4,7 @@ import { RepeatableFieldT } from "../../declared-types.js"
 import { CompoundFieldT } from "../../declared-types.js"
 import { FieldT } from "../../declared-types.js"
 import { FormT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type ConfirmFormT = FormT<{
     cancel: FieldT<string>;
     edit_note: FieldT<string>;

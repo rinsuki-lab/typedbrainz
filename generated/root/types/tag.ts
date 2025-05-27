@@ -1,6 +1,6 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
 import { GenreT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type AggregatedTagT = {
     count: number;
     tag: TagT;

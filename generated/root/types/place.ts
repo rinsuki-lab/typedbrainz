@@ -8,12 +8,12 @@ import { DatePeriodRoleT } from "../../declared-types.js"
 import { RelatableEntityRoleT } from "../../declared-types.js"
 import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type CoordinatesT = {
     latitude: number;
     longitude: number;
 };
-export type PlaceT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"place">, _$Spread<DatePeriodRoleT, _$Spread<RatableRoleT, _$Spread<ReviewableRoleT, _$Spread<TypeRoleT<PlaceTypeT>, {
+export type PlaceT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"place">, $_$Spread<DatePeriodRoleT, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<PlaceTypeT>, {
     address: string;
     area: AreaT | null;
     coordinates: CoordinatesT | null;

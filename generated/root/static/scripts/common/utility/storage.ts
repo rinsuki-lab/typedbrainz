@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import doOrLogError from "./doOrLogError.js";
 export var hasLocalStorage: boolean = "WIP convertLiteral: Literal";
 export var hasSessionStorage: boolean = "WIP convertLiteral: Literal";

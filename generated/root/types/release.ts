@@ -12,7 +12,7 @@ import { OptionTreeT } from "../../declared-types.js"
 import { LabelT } from "../../declared-types.js"
 import { PartialDateT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type QualityT = -1 | 0 | 1 | 2;
 export type ReleaseEventT = {
     country: AreaT | null;
@@ -25,7 +25,7 @@ export type ReleaseLabelT = {
 };
 export type ReleasePackagingT = OptionTreeT<"release_packaging">;
 export type ReleaseStatusT = OptionTreeT<"release_status">;
-export type ReleaseT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<ArtistCreditRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"release">, {
+export type ReleaseT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCreditRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"release">, {
     barcode: string | null;
     combined_format_name: string;
     combined_track_count: string;
@@ -48,6 +48,6 @@ export type ReleaseT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<ArtistCredit
     status: ReleaseStatusT | null;
     statusID: number | null;
 }>>>>>;
-export type ReleaseWithMediumsT = $ReadOnly<_$Spread<ReleaseT, {
+export type ReleaseWithMediumsT = $ReadOnly<$_$Spread<ReleaseT, {
     mediums: $ReadOnlyArray<MediumWithRecordingsT>;
 }>>;

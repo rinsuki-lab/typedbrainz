@@ -4,12 +4,12 @@ import { PartialDateT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
 import { LanguageT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type ActiveEditorPreferencesT = {
     datetime_format: string;
     timezone: string;
 };
-export type ActiveEditorT = _$Spread<EntityRoleT<"editor">, {
+export type ActiveEditorT = $_$Spread<EntityRoleT<"editor">, {
     avatar: string;
     has_confirmed_email_address: boolean;
     name: string;
@@ -20,7 +20,7 @@ export type EditorLanguageT = {
     fluency: FluencyT;
     language: LanguageT;
 };
-export type EditorT = _$Spread<EntityRoleT<"editor">, {
+export type EditorT = $_$Spread<EntityRoleT<"editor">, {
     avatar: string;
     deleted: boolean;
     name: string;
@@ -42,7 +42,7 @@ export type UnsanitizedEditorPreferencesT = {
     subscriptions_email_period: string;
     timezone: string;
 };
-export type UnsanitizedEditorT = $ReadOnly<_$Spread<EntityRoleT<"editor">, {
+export type UnsanitizedEditorT = $ReadOnly<$_$Spread<EntityRoleT<"editor">, {
     age: number | null;
     area: AreaT | null;
     avatar: string;

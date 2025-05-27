@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../../src/type-utils.js";
 import { unwrapNl as unwrapNl } from "../../i18n.js";
 import { maybeGetCatalystContext as maybeGetCatalystContext } from "../../utility/catalyst.js";
 import clean from "../../utility/clean.js";

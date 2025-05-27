@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../../src/type-utils.js";
 import * as Sentry from "@sentry/browser";
 import { MAX_RECENT_ENTITIES as MAX_RECENT_ENTITIES } from "../../constants.js";
 import localizeLanguageName from "../../i18n/localizeLanguageName.js";

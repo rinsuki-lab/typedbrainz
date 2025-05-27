@@ -40,7 +40,7 @@ export function convertObjectType(source: any, flag?: "export"): TypeNode {
         const next = spread.pop()
         if (next == null) break
         node = factory.createTypeReferenceNode(
-            factory.createIdentifier("_$Spread"),
+            factory.createIdentifier("$_$Spread"),
             [
                 next,
                 node,

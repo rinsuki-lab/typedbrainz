@@ -13,7 +13,7 @@ import { LinkAttrTypeT } from "../../../../../declared-types.js"
 import { LinkTypeT } from "../../../../../declared-types.js"
 import { RelatableEntityTypeT } from "../../../../../declared-types.js"
 import { RelatableEntityT } from "../../../../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import * as tree from "weight-balanced-tree";
 import type { ActionT as AutocompleteActionT } from "../../common/components/Autocomplete2/types.js";
 import type { ActionT as DateRangeFieldsetActionT } from "../../edit/components/DateRangeFieldset.js";

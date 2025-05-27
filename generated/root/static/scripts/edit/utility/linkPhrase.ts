@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import commaList, { commaListText as commaListText } from "../../common/i18n/commaList.js";
 import { VarArgsClass as VarArgsClass, VarArgsObject as VarArgsObject } from "../../common/i18n/expand2.js";
 import { expand2reactWithVarArgsInstance as expand2reactWithVarArgsInstance } from "../../common/i18n/expand2react.js";

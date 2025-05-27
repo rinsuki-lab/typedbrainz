@@ -10,8 +10,8 @@ import { DatePeriodRoleT } from "../../declared-types.js"
 import { RelatableEntityRoleT } from "../../declared-types.js"
 import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type ArtistT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"artist">, _$Spread<DatePeriodRoleT, _$Spread<IpiCodesRoleT, _$Spread<IsniCodesRoleT, _$Spread<RatableRoleT, _$Spread<ReviewableRoleT, _$Spread<TypeRoleT<ArtistTypeT>, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type ArtistT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"artist">, $_$Spread<DatePeriodRoleT, $_$Spread<IpiCodesRoleT, $_$Spread<IsniCodesRoleT, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<ArtistTypeT>, {
     area: AreaT | null;
     begin_area: AreaT | null;
     begin_area_id: number | null;

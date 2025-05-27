@@ -13,7 +13,7 @@ import { CollectionT } from "../../declared-types.js"
 import { ArtistCreditFieldT } from "../../declared-types.js"
 import { ArtistCreditT } from "../../declared-types.js"
 import { UnsanitizedEditorT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type CatalystActionT = {
     name: string;
 };

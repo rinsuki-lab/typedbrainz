@@ -1,7 +1,7 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
 import { EntityRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type CDStubT = $ReadOnly<_$Spread<EntityRoleT<"cdstub">, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type CDStubT = $ReadOnly<$_$Spread<EntityRoleT<"cdstub">, {
     artist: string;
     barcode: string;
     comment: string;

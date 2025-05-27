@@ -4,7 +4,7 @@ import { QualityT } from "../../declared-types.js"
 import { EditorT } from "../../declared-types.js"
 import { HistoricEditT } from "../../declared-types.js"
 import { CurrentEditT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type CompT<T> = {
     new: T;
     old: T;
@@ -13,7 +13,7 @@ export type DiffChangeTypeT = "+" | "-" | "c" | "u";
 export type EditExpireActionT = 1 | 2;
 export type EditStatusT = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 9;
 export type EditT = CurrentEditT | HistoricEditT;
-export type EditWithIdT = $ReadOnly<_$Spread<EditT, {
+export type EditWithIdT = $ReadOnly<$_$Spread<EditT, {
     id: number;
 }>>;
 export type EditNoteChangeT = {
@@ -62,6 +62,6 @@ export type GenericEditT = {
     status: EditStatusT;
     votes: $ReadOnlyArray<VoteT>;
 };
-export type GenericEditWithIdT = $ReadOnly<_$Spread<GenericEditT, {
+export type GenericEditWithIdT = $ReadOnly<$_$Spread<GenericEditT, {
     id: number;
 }>>;

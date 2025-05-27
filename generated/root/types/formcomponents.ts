@@ -1,7 +1,7 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
 import { StrOrNum } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type AreaFieldT = CompoundFieldT<{
     gid: FieldT<string | null>;
     id: FieldT<string | null>;
@@ -80,7 +80,7 @@ export type OptionListT = $ReadOnlyArray<{
     text: string;
     value: number;
 }>;
-export type OptionTreeT<T> = _$Spread<EntityRoleT<T>, {
+export type OptionTreeT<T> = $_$Spread<EntityRoleT<T>, {
     child_order: number;
     description: string;
     gid: string;

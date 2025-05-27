@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../../src/type-utils.js";
 export const HIDE_MENU = "WIP convertExpression: AsConstExpression";
 export const HIGHLIGHT_NEXT_ITEM = "WIP convertExpression: AsConstExpression";
 export const HIGHLIGHT_PREVIOUS_ITEM = "WIP convertExpression: AsConstExpression";

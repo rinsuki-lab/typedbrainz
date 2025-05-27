@@ -9,8 +9,8 @@ import { RatableRoleT } from "../../declared-types.js"
 import { RelatableEntityRoleT } from "../../declared-types.js"
 import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type RecordingT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"recording">, _$Spread<RatableRoleT, _$Spread<ReviewableRoleT, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"recording">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, {
     appearsOn: AppearancesT<{
         gid: string;
         name: string;
@@ -24,7 +24,7 @@ export type RecordingT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<CommentRol
     related_works: $ReadOnlyArray<number>;
     video: boolean;
 }>>>>>>;
-export type RecordingWithArtistCreditT = $ReadOnly<_$Spread<RecordingT, {
+export type RecordingWithArtistCreditT = $ReadOnly<$_$Spread<RecordingT, {
     artistCredit: ArtistCreditT;
 }>>;
 export type ReleaseGroupAppearancesT = {

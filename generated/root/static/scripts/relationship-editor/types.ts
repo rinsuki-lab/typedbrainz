@@ -26,7 +26,7 @@ import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
 import { LinkAttrT } from "../../../../declared-types.js"
 import { RelatableEntityT } from "../../../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../src/type-utils.js";
 import * as tree from "weight-balanced-tree";
 import type { OptionItemT as AutocompleteOptionItemT, StateT as AutocompleteStateT } from "../common/components/Autocomplete2/types.js";
 import type { LazyReleaseStateT as LazyReleaseStateT } from "../release/types.js";
@@ -103,11 +103,11 @@ export type RelationshipDialogStateT = {
     sourceEntity: DialogSourceEntityStateT;
     targetEntity: DialogTargetEntityStateT;
 };
-export type DialogBooleanAttributeStateT = $ReadOnly<_$Spread<DialogLinkAttributeStateT, {
+export type DialogBooleanAttributeStateT = $ReadOnly<$_$Spread<DialogLinkAttributeStateT, {
     control: "checkbox";
     enabled: boolean;
 }>>;
-export type DialogMultiselectAttributeStateT = $ReadOnly<_$Spread<DialogLinkAttributeStateT, {
+export type DialogMultiselectAttributeStateT = $ReadOnly<$_$Spread<DialogLinkAttributeStateT, {
     control: "multiselect";
     linkType: LinkTypeT;
     values: $ReadOnlyArray<DialogMultiselectAttributeValueStateT>;
@@ -120,7 +120,7 @@ export type DialogMultiselectAttributeValueStateT = {
     key: number;
     removed: boolean;
 };
-export type DialogTextAttributeStateT = $ReadOnly<_$Spread<DialogLinkAttributeStateT, {
+export type DialogTextAttributeStateT = $ReadOnly<$_$Spread<DialogLinkAttributeStateT, {
     control: "text";
     textValue: string;
 }>>;
@@ -154,7 +154,7 @@ export type DialogLinkTypeStateT = {
     autocomplete: AutocompleteStateT<LinkTypeT>;
     error: React.Node;
 };
-export type DialogSourceEntityStateT = $ReadOnly<_$Spread<DialogEntityCreditStateT, {
+export type DialogSourceEntityStateT = $ReadOnly<$_$Spread<DialogEntityCreditStateT, {
     entityType: RelatableEntityTypeT;
     error: React.Node;
 }>>;
@@ -163,7 +163,7 @@ export type TargetTypeOptionT = {
     value: RelatableEntityTypeT;
 };
 export type TargetTypeOptionsT = $ReadOnlyArray<TargetTypeOptionT>;
-export type DialogTargetEntityStateT = $ReadOnly<_$Spread<DialogEntityCreditStateT, {
+export type DialogTargetEntityStateT = $ReadOnly<$_$Spread<DialogEntityCreditStateT, {
     allowedTypes: TargetTypeOptionsT | null;
     autocomplete: AutocompleteStateT<NonUrlRelatableEntityT> | null;
     error: string;
@@ -204,7 +204,7 @@ export type MultiselectLanguageStateT = {
     staticItems: $ReadOnlyArray<AutocompleteOptionItemT<LanguageT>>;
     values: $ReadOnlyArray<MultiselectLanguageValueStateT>;
 };
-export type ReleaseWithMediumsAndReleaseGroupT = $ReadOnly<_$Spread<ReleaseWithMediumsT, {
+export type ReleaseWithMediumsAndReleaseGroupT = $ReadOnly<$_$Spread<ReleaseWithMediumsT, {
     releaseGroup: ReleaseGroupT;
 }>>;
 export type RecordingMediumsT = Map<number, Array<MediumWithRecordingsT>>;
@@ -225,7 +225,7 @@ export type MediumStateTreeT = tree.ImmutableTree<[
     MediumWithRecordingsT,
     MediumRecordingStateTreeT
 ]> | null;
-export type ReleaseRelationshipEditorStateT = $ReadOnly<_$Spread<$Exact<LazyReleaseStateT>, _$Spread<$Exact<RelationshipEditorStateT>, {
+export type ReleaseRelationshipEditorStateT = $ReadOnly<$_$Spread<$Exact<LazyReleaseStateT>, $_$Spread<$Exact<RelationshipEditorStateT>, {
     editNoteField: FieldT<string>;
     enterEditForm: FormT<{
         make_votable: FieldT<boolean>;

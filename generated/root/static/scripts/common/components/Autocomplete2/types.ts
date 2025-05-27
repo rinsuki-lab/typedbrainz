@@ -4,7 +4,7 @@ import { LinkTypeT } from "../../../../../../declared-types.js"
 import { LinkAttrTypeT } from "../../../../../../declared-types.js"
 import { LanguageT } from "../../../../../../declared-types.js"
 import { EditorT } from "../../../../../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../../src/type-utils.js";
 export type SearchableTypeT = EntityItemT["entityType"];
 export type StateT<T extends EntityItemT> = {
     canChangeType: "WIP convertTypeNode: FunctionTypeAnnotation";

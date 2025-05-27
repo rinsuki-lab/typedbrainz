@@ -3,8 +3,8 @@ import { OptionTreeT } from "../../declared-types.js"
 import { ReleaseT } from "../../declared-types.js"
 import { EventT } from "../../declared-types.js"
 import { PendingEditsRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type ArtworkRoleT = $ReadOnly<_$Spread<PendingEditsRoleT, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type ArtworkRoleT = $ReadOnly<$_$Spread<PendingEditsRoleT, {
     comment: string;
     event: EventT;
     filename: string | null;
@@ -20,10 +20,10 @@ export type ArtworkRoleT = $ReadOnly<_$Spread<PendingEditsRoleT, {
     suffix: string;
     types: $ReadOnlyArray<string>;
 }>>;
-export type ReleaseArtT = $ReadOnly<_$Spread<ArtworkRoleT, {
+export type ReleaseArtT = $ReadOnly<$_$Spread<ArtworkRoleT, {
     release: ReleaseT;
 }>>;
-export type EventArtT = $ReadOnly<_$Spread<ArtworkRoleT, {
+export type EventArtT = $ReadOnly<$_$Spread<ArtworkRoleT, {
     event: EventT;
 }>>;
 export type ArtworkT = EventArtT | ReleaseArtT;

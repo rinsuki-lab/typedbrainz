@@ -6,7 +6,7 @@ import { PlaceT } from "../../declared-types.js"
 import { LabelT } from "../../declared-types.js"
 import { EventT } from "../../declared-types.js"
 import { ArtistT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type CritiqueBrainzUserT = {
     id: string;
     name: string;

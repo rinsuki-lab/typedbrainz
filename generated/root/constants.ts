@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../src/type-utils.js";
 export const ACCESS_SCOPE_PROFILE: 1 = 1;
 export const ACCESS_SCOPE_EMAIL: 2 = 2;
 export const ACCESS_SCOPE_TAG: 4 = 4;

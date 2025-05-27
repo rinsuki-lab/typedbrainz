@@ -12,8 +12,8 @@ import { RatableRoleT } from "../../declared-types.js"
 import { RelatableEntityRoleT } from "../../declared-types.js"
 import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type WorkT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"work">, _$Spread<RatableRoleT, _$Spread<ReviewableRoleT, _$Spread<TypeRoleT<WorkTypeT>, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type WorkT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"work">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<WorkTypeT>, {
     _fromBatchCreateWorksDialog: boolean;
     artists: $ReadOnlyArray<ArtistCreditT>;
     attributes: $ReadOnlyArray<WorkAttributeT>;

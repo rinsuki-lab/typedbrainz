@@ -5,8 +5,8 @@ import { TrackT } from "../../declared-types.js"
 import { LastUpdateRoleT } from "../../declared-types.js"
 import { OptionTreeT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type CDTocT = $ReadOnly<_$Spread<EntityRoleT<"cdtoc">, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type CDTocT = $ReadOnly<$_$Spread<EntityRoleT<"cdtoc">, {
     discid: string;
     freedb_id: string;
     leadout_offset: number;
@@ -22,16 +22,16 @@ export type CDTocT = $ReadOnly<_$Spread<EntityRoleT<"cdtoc">, {
     }>;
     track_offset: $ReadOnlyArray<number>;
 }>>;
-export type MediumCDTocT = $ReadOnly<_$Spread<EntityRoleT<"medium_cdtoc">, {
+export type MediumCDTocT = $ReadOnly<$_$Spread<EntityRoleT<"medium_cdtoc">, {
     cdtoc: CDTocT;
     editsPending: boolean;
     medium: MediumT;
 }>>;
-export type MediumFormatT = _$Spread<OptionTreeT<"medium_format">, {
+export type MediumFormatT = $_$Spread<OptionTreeT<"medium_format">, {
     has_discids: boolean;
     year: number | null | undefined;
 }>;
-export type MediumT = $ReadOnly<_$Spread<EntityRoleT<"medium">, _$Spread<LastUpdateRoleT, {
+export type MediumT = $ReadOnly<$_$Spread<EntityRoleT<"medium">, $_$Spread<LastUpdateRoleT, {
     cdtoc_track_count: number | null;
     cdtoc_track_lengths: $ReadOnlyArray<number | null>;
     cdtoc_tracks: $ReadOnlyArray<TrackT>;
@@ -50,6 +50,6 @@ export type MediumT = $ReadOnly<_$Spread<EntityRoleT<"medium">, _$Spread<LastUpd
     tracks: $ReadOnlyArray<TrackT>;
     tracks_pager: PagerT;
 }>>>;
-export type MediumWithRecordingsT = $ReadOnly<_$Spread<MediumT, {
+export type MediumWithRecordingsT = $ReadOnly<$_$Spread<MediumT, {
     tracks: $ReadOnlyArray<TrackWithRecordingT>;
 }>>;

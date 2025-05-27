@@ -1,6 +1,6 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
 import { DatePeriodFieldT } from "../../../../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import mutate, { CowContext as CowContext } from "mutate-cow";
 import * as React from "react";
 import { isDateNonEmpty as isDateNonEmpty } from "../../common/utility/isDateEmpty.js";

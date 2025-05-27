@@ -11,8 +11,8 @@ import { DatePeriodRoleT } from "../../declared-types.js"
 import { RelatableEntityRoleT } from "../../declared-types.js"
 import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type EventT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"event">, _$Spread<DatePeriodRoleT, _$Spread<RatableRoleT, _$Spread<ReviewableRoleT, _$Spread<TypeRoleT<EventTypeT>, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type EventT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"event">, $_$Spread<DatePeriodRoleT, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<EventTypeT>, {
     areas: $ReadOnlyArray<{
         credit: string;
         entity: AreaT;

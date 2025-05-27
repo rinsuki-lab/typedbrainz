@@ -4,8 +4,8 @@ import { CollectableEntityTypeT } from "../../declared-types.js"
 import { EditorT } from "../../declared-types.js"
 import { TypeRoleT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type CollectionT = $ReadOnly<_$Spread<EntityRoleT<"collection">, _$Spread<TypeRoleT<CollectionTypeT>, {
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type CollectionT = $ReadOnly<$_$Spread<EntityRoleT<"collection">, $_$Spread<TypeRoleT<CollectionTypeT>, {
     collaborators: $ReadOnlyArray<EditorT>;
     description: string;
     description_html: string;
@@ -17,6 +17,6 @@ export type CollectionT = $ReadOnly<_$Spread<EntityRoleT<"collection">, _$Spread
     public: boolean;
     subscribed: boolean;
 }>>>;
-export type CollectionTypeT = _$Spread<OptionTreeT<"collection_type">, {
+export type CollectionTypeT = $_$Spread<OptionTreeT<"collection_type">, {
     item_entity_type: string;
 }>;

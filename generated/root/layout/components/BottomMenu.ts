@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../src/type-utils.js";
 import * as React from "react";
 import { SanitizedCatalystContext as SanitizedCatalystContext } from "../../context.mjs";
 import { VARTIST_GID as VARTIST_GID } from "../../static/scripts/common/constants.js";

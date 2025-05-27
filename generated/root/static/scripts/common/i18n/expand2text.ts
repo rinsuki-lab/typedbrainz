@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import { l as lActual, ln as lnActual, lp as lpActual } from "../i18n.js";
 import { l_admin as lAdminActual, ln_admin as lnAdminActual } from "./admin.js";
 import expand, { NO_MATCH as NO_MATCH, Parser as Parser, VarArgsClass as VarArgsClass, VarArgsObject as VarArgsObject, createCondSubstParser as createCondSubstParser, createTextContentParser as createTextContentParser, parseContinuousString as parseContinuousString, parseStringVarSubst as parseStringVarSubst, state as state, VarArgs as VarArgs } from "./expand2.js";

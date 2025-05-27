@@ -6,7 +6,7 @@ import { PartialDateT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
 import { CompT } from "../../declared-types.js"
 import { TrackWithRecordingT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type TracklistChangesAddT = {
     change_type: "+";
     new_track: TrackWithRecordingT;

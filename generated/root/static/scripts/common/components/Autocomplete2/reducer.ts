@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../../src/type-utils.js";
 import { TITLES as ADD_NEW_ENTITY_TITLES } from "../../../edit/components/AddEntityDialog.js";
 import { unwrapNl as unwrapNl } from "../../i18n.js";
 import { getCatalystContext as getCatalystContext } from "../../utility/catalyst.js";

@@ -4,7 +4,7 @@ import { WS_EDIT_RESPONSE_OK_T } from "../../../../declared-types.js"
 import { QualityT } from "../../../../declared-types.js"
 import { N_l_T } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../src/type-utils.js";
 import ENTITIES from "../../../../entities.mjs";
 export { ENTITIES as ENTITIES };
 export const EMPTY_PARTIAL_DATE: PartialDateT = "WIP convertExpression: CallExpression";

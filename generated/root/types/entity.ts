@@ -17,7 +17,7 @@ import { GenreT } from "../../declared-types.js"
 import { EventT } from "../../declared-types.js"
 import { ArtistT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type EntityWithAliasesT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type EntityWithAliasesTypeT = EntityWithAliasesT["entityType"];
 export type EntityWithSeriesMapT = {
@@ -37,7 +37,7 @@ export type AppearancesT<T> = {
 export type CommentRoleT = {
     comment: string;
 };
-export type RelatableEntityRoleT<T> = _$Spread<EntityRoleT<T>, _$Spread<LastUpdateRoleT, _$Spread<PendingEditsRoleT, {
+export type RelatableEntityRoleT<T> = $_$Spread<EntityRoleT<T>, $_$Spread<LastUpdateRoleT, $_$Spread<PendingEditsRoleT, {
     gid: string;
     name: string;
     paged_relationship_groups: {};

@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../../src/type-utils.js";
 import { bracketedText as bracketedText } from "../../utility/bracketed.js";
 import { HIDE_MENU as HIDE_MENU, SEARCH_AGAIN as SEARCH_AGAIN, SHOW_MORE_RESULTS as SHOW_MORE_RESULTS, TOGGLE_INDEXED_SEARCH as TOGGLE_INDEXED_SEARCH } from "./actions.js";
 import type { ActionItemT as ActionItemT, HeaderItemT as HeaderItemT, SearchableTypeT as SearchableTypeT } from "./types.js";

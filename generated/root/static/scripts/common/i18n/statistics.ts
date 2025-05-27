@@ -1,5 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../src/type-utils.js";
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import * as wrapGettext from "./wrapGettext.js";
 export const l_statistics: "WIP convertTypeNode: FunctionTypeAnnotation" = "WIP convertExpression: CallExpression";
 export const ln_statistics: "WIP convertTypeNode: FunctionTypeAnnotation" = "WIP convertExpression: CallExpression";
