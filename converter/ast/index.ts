@@ -3,6 +3,7 @@ import { convertImportDeclaration } from "./import"
 import assert from "node:assert"
 import { convertTypeAlias } from "./type-alias"
 import { convertVariableDeclaration } from "./var-decl"
+import { convertOpaqueType } from "./opaque-type"
 
 export function convertAST(body: any): readonly Statement[] {
     switch (body.type) {
@@ -16,6 +17,8 @@ export function convertAST(body: any): readonly Statement[] {
             return [convertTypeAlias(body.declaration, "export")]
         case "VariableDeclaration":
             return [convertVariableDeclaration(body.declaration, "export")]
+        case "OpaqueType":
+            return [convertOpaqueType(body.declaration, "export")]
         default:
             return [factory.createExpressionStatement(
                 factory.createStringLiteral("Unknown Export Type: " + body.declaration.type)

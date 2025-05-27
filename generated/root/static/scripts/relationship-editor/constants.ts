@@ -1,6 +1,8 @@
 import { createContext as createContext } from "react";
 import type { RelationshipSourceGroupsContextT as RelationshipSourceGroupsContextT } from "./types.js";
-"Unknown Export Type: OpaqueType";
+export type RelationshipEditStatusT = number & {
+    __OpaqueType__RelationshipEditStatusT: never;
+};
 export const REL_STATUS_NOOP: RelationshipEditStatusT = 0;
 export const REL_STATUS_ADD: RelationshipEditStatusT = 1;
 export const REL_STATUS_EDIT: RelationshipEditStatusT = 2;
