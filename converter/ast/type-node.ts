@@ -1,8 +1,9 @@
 import { factory, SyntaxKind, TypeNode } from "typescript";
 import { convertObjectType } from "./object-type.js";
 import { convertIdentifier } from "./identifier.js";
+import { wipLiteral } from "../wip.js";
 
-function convertGenericTypeAnnotation(source: any): TypeNode{
+function convertGenericTypeAnnotation(source: any): TypeNode {
     switch (source.id.type) {
     case "Identifier":
         return factory.createTypeReferenceNode(
@@ -13,12 +14,12 @@ function convertGenericTypeAnnotation(source: any): TypeNode{
         )
     default:
         return factory.createLiteralTypeNode(
-            factory.createStringLiteral(`Unknown Generic Type Annotaton Type: ${source.id.type}`)
+            wipLiteral("convertGenericTypeAnnotation", source.id.type)
         )
     }
 }
 
-export function convertTypeNode(source: any) {
+export function convertTypeNode(source: any): TypeNode {
     switch (source.type) {
     case "UnionTypeAnnotation":
         return factory.createUnionTypeNode(source.types.map(convertTypeNode))
@@ -43,6 +44,6 @@ export function convertTypeNode(source: any) {
     case "GenericTypeAnnotation":
         return convertGenericTypeAnnotation(source)
     default:
-        return factory.createLiteralTypeNode(factory.createStringLiteral("TODO: Support TypeNode " + source.type))
+        return factory.createLiteralTypeNode(wipLiteral("convertTypeNode", source.type));
     }
 }

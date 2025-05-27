@@ -5,18 +5,18 @@ import { LinkAttrTypeT } from "../../../../../../declared-types.js"
 import { LanguageT } from "../../../../../../declared-types.js"
 import { EditorT } from "../../../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../../../src/type-utils.js";
-export type SearchableTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type SearchableTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type StateT<T extends EntityItemT> = {
-    canChangeType: "TODO: Support TypeNode FunctionTypeAnnotation";
+    canChangeType: "WIP convertTypeNode: FunctionTypeAnnotation";
     containerClass: string;
     disabled: boolean;
-    entityType: "TODO: Support TypeNode IndexedAccessType";
+    entityType: "WIP convertTypeNode: IndexedAccessType";
     error: number;
     highlightedIndex: number;
     htmlName: string;
     id: string;
     indexedSearch: boolean;
-    inputChangeHook: "TODO: Support TypeNode FunctionTypeAnnotation";
+    inputChangeHook: "WIP convertTypeNode: FunctionTypeAnnotation";
     inputClass: string;
     inputRef: {
         current: HTMLInputElement | null;
@@ -40,12 +40,12 @@ export type StateT<T extends EntityItemT> = {
     showLabel: boolean;
     staticItems: $ReadOnlyArray<OptionItemT<T>>;
     statusMessage: string;
-    totalPages: "TODO: Support TypeNode NullableTypeAnnotation";
+    totalPages: "WIP convertTypeNode: NullableTypeAnnotation";
     width: string;
 };
 export type PropsT<T extends EntityItemT> = {
-    children: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
-    dispatch: "TODO: Support TypeNode FunctionTypeAnnotation";
+    children: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier";
+    dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
     state: StateT<T>;
 };
 export type SearchActionT = {
@@ -110,7 +110,7 @@ export type ActionItemT<T> = {
     type: "action";
     action: ActionT<T>;
     id: number | string;
-    name: string | "TODO: Support TypeNode FunctionTypeAnnotation";
+    name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
     level: number;
     separator: boolean;
     disabled: boolean;
@@ -118,7 +118,7 @@ export type ActionItemT<T> = {
 export type OptionItemT<T> = {
     type: "option";
     id: number | string;
-    name: string | "TODO: Support TypeNode FunctionTypeAnnotation";
+    name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
     entity: T;
     level: number;
     separator: boolean;
@@ -127,8 +127,8 @@ export type OptionItemT<T> = {
 export type HeaderItemT = {
     type: "header";
     id: number | string;
-    name: string | "TODO: Support TypeNode FunctionTypeAnnotation";
-    disabled: "TODO: Support TypeNode BooleanLiteralTypeAnnotation";
+    name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+    disabled: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
     separator: boolean;
 };
 export type ItemT<T extends EntityItemT> = ActionItemT<T> | OptionItemT<T> | HeaderItemT;

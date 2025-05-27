@@ -29,7 +29,7 @@ export type MediumCDTocT = $ReadOnly<_$Spread<EntityRoleT<"medium_cdtoc">, {
 }>>;
 export type MediumFormatT = _$Spread<OptionTreeT<"medium_format">, {
     has_discids: boolean;
-    year: "TODO: Support TypeNode NullableTypeAnnotation";
+    year: "WIP convertTypeNode: NullableTypeAnnotation";
 }>;
 export type MediumT = $ReadOnly<_$Spread<EntityRoleT<"medium">, _$Spread<LastUpdateRoleT, {
     cdtoc_track_count: number | null;

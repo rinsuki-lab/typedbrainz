@@ -46,7 +46,7 @@ export type WsJsRelationshipCommonT = {
     begin_date: PartialDateT;
     end_date: PartialDateT;
     ended: boolean;
-    entities: "TODO: Support TypeNode TupleTypeAnnotation";
+    entities: "WIP convertTypeNode: TupleTypeAnnotation";
     entity0_credit: string;
     entity1_credit: string;
 };

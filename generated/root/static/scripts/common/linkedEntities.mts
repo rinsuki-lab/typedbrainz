@@ -52,7 +52,7 @@ export type LinkedEntitiesT = {
 };
 "Unknown Type: VariableDeclaration";
 export default linkedEntities;
-"Unknown Export Type: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
 "Unknown Type: VariableDeclaration";
-"Unknown Export Type: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
 "Unknown Type: ExpressionStatement";

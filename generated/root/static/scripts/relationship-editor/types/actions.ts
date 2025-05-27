@@ -90,7 +90,7 @@ export type DialogTextAttributeActionT = {
     type: "set-text-value";
 };
 export type UpdateRelationshipActionT = {
-    batchSelectionCount: number | "TODO: Support TypeNode VoidTypeAnnotation";
+    batchSelectionCount: number | "WIP convertTypeNode: VoidTypeAnnotation";
     creditsToChangeForSource: CreditChangeOptionT;
     creditsToChangeForTarget: CreditChangeOptionT;
     newRelationshipState: RelationshipStateT;
@@ -124,7 +124,7 @@ export type RelationshipEditorActionT = {
 } | UpdateRelationshipActionT;
 export type UpdateTargetEntityAutocompleteActionT = {
     action: AutocompleteActionT<NonUrlRelatableEntityT>;
-    linkType: "TODO: Support TypeNode NullableTypeAnnotation";
+    linkType: "WIP convertTypeNode: NullableTypeAnnotation";
     source: RelatableEntityT;
     type: "update-autocomplete";
 };
@@ -150,7 +150,7 @@ export type BatchCreateWorksDialogActionT = {
     type: "update-link-type";
 } | WorkTypeSelectActionT;
 export type AcceptBatchCreateWorksDialogActionT = {
-    attributes: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+    attributes: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
     begin_date: PartialDateT | null;
     end_date: PartialDateT | null;
     ended: boolean;
@@ -207,7 +207,7 @@ export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | Relationship
     error: string;
     type: "stop-submission";
 } | {
-    edits: Array<"TODO: Support TypeNode TupleTypeAnnotation"> | Array<"TODO: Support TypeNode TupleTypeAnnotation">;
+    edits: Array<"WIP convertTypeNode: TupleTypeAnnotation"> | Array<"WIP convertTypeNode: TupleTypeAnnotation">;
     responseData: WsJsEditResponseT;
     type: "update-submitted-relationships";
 };

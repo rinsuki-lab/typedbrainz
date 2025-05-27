@@ -23,7 +23,7 @@ import type { ActionT as ActionT, EntityItemT as EntityItemT, ItemT as ItemT, Op
 "Unknown Type: FunctionDeclaration";
 "Unknown Type: TypeAlias";
 "Unknown Type: VariableDeclaration";
-"Unknown Export Type: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";

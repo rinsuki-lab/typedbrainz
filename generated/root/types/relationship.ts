@@ -71,10 +71,10 @@ export type PagedTargetTypeGroupT = {};
 export type RelationshipT = $ReadOnly<_$Spread<DatePeriodRoleT, _$Spread<PendingEditsRoleT, {
     attributes: $ReadOnlyArray<LinkAttrT>;
     backward: boolean;
-    entity0: "TODO: Support TypeNode NullableTypeAnnotation";
+    entity0: "WIP convertTypeNode: NullableTypeAnnotation";
     entity0_credit: string;
     entity0_id: number;
-    entity1: "TODO: Support TypeNode NullableTypeAnnotation";
+    entity1: "WIP convertTypeNode: NullableTypeAnnotation";
     entity1_credit: string;
     entity1_id: number;
     id: number;

@@ -10,7 +10,7 @@ export type ApplicationT = _$Spread<EntityRoleT<"application">, {
     oauth_secret: string;
     oauth_type: string;
 }>;
-export type EditorOAuthTokenT = _$Spread<EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation">, {
+export type EditorOAuthTokenT = _$Spread<EntityRoleT<"WIP convertTypeNode: EmptyTypeAnnotation">, {
     application: ApplicationT;
     editor: EditorT | null;
     granted: string;

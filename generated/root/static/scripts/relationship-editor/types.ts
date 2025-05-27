@@ -34,7 +34,7 @@ export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends R
     _lineage: $ReadOnlyArray<string>;
     _original: RelationshipStateT | null;
     _status: RelationshipEditStatusT;
-    attributes: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+    attributes: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
     begin_date: PartialDateT | null;
     editsPending: boolean;
     end_date: PartialDateT | null;
@@ -49,34 +49,34 @@ export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends R
 };
 export type RelationshipStateT = RelationshipStateForTypesT<RelatableEntityT, RelatableEntityT>;
 export type RelationshipPhraseGroupT = {
-    relationships: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+    relationships: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
     textPhrase: string;
 };
 export type RelationshipLinkTypeGroupT = {
     backward: boolean;
-    phraseGroups: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+    phraseGroups: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
     typeId: number;
 };
 export type RelationshipLinkTypeGroupKeyT = {
     backward: boolean;
     typeId: number;
 };
-export type RelationshipLinkTypeGroupsT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
-export type RelationshipTargetTypeGroupT = "TODO: Support TypeNode TupleTypeAnnotation";
-export type RelationshipTargetTypeGroupsT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
-export type RelationshipSourceGroupT = "TODO: Support TypeNode TupleTypeAnnotation";
-export type RelationshipSourceGroupsT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+export type RelationshipLinkTypeGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type RelationshipTargetTypeGroupT = "WIP convertTypeNode: TupleTypeAnnotation";
+export type RelationshipTargetTypeGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type RelationshipSourceGroupT = "WIP convertTypeNode: TupleTypeAnnotation";
+export type RelationshipSourceGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
-export type NonReleaseRelatableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type NonReleaseRelatableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type RelationshipDialogLocationT = {
-    backward: "TODO: Support TypeNode NullableTypeAnnotation";
-    batchSelection: "TODO: Support TypeNode NullableTypeAnnotation";
-    linkTypeId: "TODO: Support TypeNode NullableTypeAnnotation";
-    relationshipId: "TODO: Support TypeNode NullableTypeAnnotation";
+    backward: "WIP convertTypeNode: NullableTypeAnnotation";
+    batchSelection: "WIP convertTypeNode: NullableTypeAnnotation";
+    linkTypeId: "WIP convertTypeNode: NullableTypeAnnotation";
+    relationshipId: "WIP convertTypeNode: NullableTypeAnnotation";
     source: RelatableEntityT;
-    targetType: "TODO: Support TypeNode NullableTypeAnnotation";
-    textPhrase: "TODO: Support TypeNode NullableTypeAnnotation";
-    track: "TODO: Support TypeNode NullableTypeAnnotation";
+    targetType: "WIP convertTypeNode: NullableTypeAnnotation";
+    textPhrase: "WIP convertTypeNode: NullableTypeAnnotation";
+    track: "WIP convertTypeNode: NullableTypeAnnotation";
 };
 export type RelationshipEditorStateT = {
     dialogLocation: RelationshipDialogLocationT | null;
@@ -120,7 +120,7 @@ export type DialogAttributeT = DialogBooleanAttributeStateT | DialogMultiselectA
 export type DialogAttributesT = $ReadOnlyArray<DialogAttributeT>;
 export type DialogAttributesStateT = {
     attributesList: DialogAttributesT;
-    resultingLinkAttributes: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+    resultingLinkAttributes: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
 };
 export type DialogLinkAttributeStateT = {
     creditedAs: string;
@@ -144,11 +144,11 @@ export type ExternalLinkAttrT = {
 };
 export type DialogLinkTypeStateT = {
     autocomplete: AutocompleteStateT<LinkTypeT>;
-    error: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
+    error: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier";
 };
 export type DialogSourceEntityStateT = $ReadOnly<_$Spread<DialogEntityCreditStateT, {
     entityType: RelatableEntityTypeT;
-    error: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
+    error: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier";
 }>>;
 export type TargetTypeOptionT = {
     text: string;
@@ -205,15 +205,15 @@ export type MediumWorkStateT = {
     targetTypeGroups: RelationshipTargetTypeGroupsT;
     work: WorkT;
 };
-export type MediumWorkStateTreeT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+export type MediumWorkStateTreeT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
 export type MediumRecordingStateT = {
     isSelected: boolean;
     recording: RecordingT;
     relatedWorks: MediumWorkStateTreeT;
     targetTypeGroups: RelationshipTargetTypeGroupsT;
 };
-export type MediumRecordingStateTreeT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
-export type MediumStateTreeT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+export type MediumRecordingStateTreeT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+export type MediumStateTreeT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
 export type ReleaseRelationshipEditorStateT = $ReadOnly<_$Spread<$Exact<LazyReleaseStateT>, _$Spread<$Exact<RelationshipEditorStateT>, {
     editNoteField: FieldT<string>;
     enterEditForm: FormT<{
@@ -222,9 +222,9 @@ export type ReleaseRelationshipEditorStateT = $ReadOnly<_$Spread<$Exact<LazyRele
     entity: ReleaseWithMediumsAndReleaseGroupT;
     mediums: MediumStateTreeT;
     mediumsByRecordingId: RecordingMediumsT;
-    selectedRecordings: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
-    selectedWorks: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
-    submissionError: "TODO: Support TypeNode NullableTypeAnnotation";
+    selectedRecordings: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    selectedWorks: "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
+    submissionError: "WIP convertTypeNode: NullableTypeAnnotation";
     submissionInProgress: boolean;
 }>>>;
 export type RelationshipSourceGroupsContextT = {

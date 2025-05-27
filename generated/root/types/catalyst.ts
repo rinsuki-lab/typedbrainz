@@ -73,10 +73,10 @@ export type CatalystStashT = {
     release_artwork: ReleaseArtT;
     release_artwork_count: number;
     release_cdtoc_count: number;
-    seeded_relationships: "TODO: Support TypeNode NullableTypeAnnotation";
+    seeded_relationships: "WIP convertTypeNode: NullableTypeAnnotation";
     series_ordering_types: {};
     server_languages: $ReadOnlyArray<ServerLanguageT>;
-    source_entity: "TODO: Support TypeNode NullableTypeAnnotation";
+    source_entity: "WIP convertTypeNode: NullableTypeAnnotation";
     subscribed: boolean;
     to_merge: $ReadOnlyArray<MergeableEntityT>;
     top_tags: $ReadOnlyArray<AggregatedTagT>;
@@ -109,10 +109,10 @@ export type SanitizedCatalystContextT = {
         current_iswcs: $ReadOnlyArray<string>;
         current_language: string;
         genre_map: {};
-        seeded_relationships: "TODO: Support TypeNode NullableTypeAnnotation";
+        seeded_relationships: "WIP convertTypeNode: NullableTypeAnnotation";
         series_ordering_types: {};
         server_languages: $ReadOnlyArray<ServerLanguageT>;
-        source_entity: "TODO: Support TypeNode NullableTypeAnnotation";
+        source_entity: "WIP convertTypeNode: NullableTypeAnnotation";
     };
     user: ActiveEditorT | null;
 };

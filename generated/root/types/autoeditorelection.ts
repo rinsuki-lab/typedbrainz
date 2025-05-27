@@ -2,7 +2,7 @@
 import { EditorT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
-export type AutoEditorElectionT = _$Spread<EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation">, {
+export type AutoEditorElectionT = _$Spread<EntityRoleT<"WIP convertTypeNode: EmptyTypeAnnotation">, {
     candidate: EditorT;
     close_time: string;
     current_expiration_time: string;
@@ -20,7 +20,7 @@ export type AutoEditorElectionT = _$Spread<EntityRoleT<"TODO: Support TypeNode E
     votes: $ReadOnlyArray<AutoEditorElectionVoteT>;
     yes_votes: number;
 }>;
-export type AutoEditorElectionVoteT = _$Spread<EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation">, {
+export type AutoEditorElectionVoteT = _$Spread<EntityRoleT<"WIP convertTypeNode: EmptyTypeAnnotation">, {
     vote_name: string;
     vote_time: string;
     voter: EditorT;

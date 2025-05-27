@@ -70,10 +70,10 @@ export type GroupedOptionsT = $ReadOnlyArray<{
     options: SelectOptionsT;
 }>;
 export type MaybeGroupedOptionsT = {
-    grouped: "TODO: Support TypeNode BooleanLiteralTypeAnnotation";
+    grouped: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
     options: GroupedOptionsT;
 } | {
-    grouped: "TODO: Support TypeNode BooleanLiteralTypeAnnotation";
+    grouped: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
     options: SelectOptionsT;
 };
 export type OptionListT = $ReadOnlyArray<{
@@ -103,7 +103,7 @@ export type RepeatableFieldT<F> = {
     type: "repeatable_field";
 };
 export type SelectOptionT = {
-    label: string | "TODO: Support TypeNode FunctionTypeAnnotation";
+    label: string | "WIP convertTypeNode: FunctionTypeAnnotation";
     value: number | string;
 };
 export type SelectOptionsT = $ReadOnlyArray<SelectOptionT>;

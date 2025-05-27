@@ -1,3 +1,4 @@
+import { wipLiteral } from "../wip.js";
 import { convertIdentifier } from "./identifier.js";
 import { convertLiteral } from "./literal.js";
 
@@ -8,6 +9,6 @@ export function convertPropertyName(source: any) {
     case "Literal":
         return convertLiteral(source)
     default:
-        throw new Error(`Unsupported property name type: ${source.type}`);
+        return wipLiteral("convertPropertyName", source.type);
     }
 }

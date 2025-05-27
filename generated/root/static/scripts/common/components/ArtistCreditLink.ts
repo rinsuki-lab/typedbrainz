@@ -7,7 +7,7 @@ import EntityLink, { DeletedLink as DeletedLink } from "./EntityLink.js";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-export const MpIcon = "Unknown Expression Type: TypeCastExpression";
+export const MpIcon = "WIP convertExpression: TypeCastExpression";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: EmptyStatement";
 "Unknown Type: ExpressionStatement";

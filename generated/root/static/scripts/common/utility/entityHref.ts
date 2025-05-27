@@ -5,6 +5,6 @@ import { ENTITIES as ENTITIES } from "../constants.js";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: TypeAlias";
 "Unknown Type: FunctionDeclaration";
-"Unknown Export Type: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
 "Unknown Type: FunctionDeclaration";
 export default entityHref;

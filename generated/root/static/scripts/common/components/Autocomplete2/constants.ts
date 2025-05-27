@@ -6,9 +6,9 @@ import type { ActionItemT as ActionItemT, HeaderItemT as HeaderItemT, Searchable
 export const ERROR_LOOKUP: 1 = 1;
 export const ERROR_LOOKUP_TYPE: 2 = 2;
 export const ERROR_SEARCH: 3 = 3;
-export const CLEAR_RECENT_ITEMS: ActionItemT<"TODO: Support TypeNode EmptyTypeAnnotation"> = "Unknown Expression Type: ObjectExpression";
-export const RECENT_ITEMS_HEADER: HeaderItemT = "Unknown Expression Type: ObjectExpression";
-export const MENU_ITEMS: {} = "Unknown Expression Type: ObjectExpression";
+export const CLEAR_RECENT_ITEMS: ActionItemT<"WIP convertTypeNode: EmptyTypeAnnotation"> = "WIP convertExpression: ObjectExpression";
+export const RECENT_ITEMS_HEADER: HeaderItemT = "WIP convertExpression: ObjectExpression";
+export const MENU_ITEMS: {} = "WIP convertExpression: ObjectExpression";
 export const PAGE_SIZE: number = 25;
-export const SEARCH_PLACEHOLDERS: {} = "Unknown Expression Type: ObjectExpression";
-export const IS_TOP_WINDOW: boolean = "Unknown Expression Type: LogicalExpression";
+export const SEARCH_PLACEHOLDERS: {} = "WIP convertExpression: ObjectExpression";
+export const IS_TOP_WINDOW: boolean = "WIP convertExpression: LogicalExpression";

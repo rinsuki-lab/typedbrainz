@@ -3,10 +3,10 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _
 import { VARTIST_GID as VARTIST_GID } from "./constants.js";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: VariableDeclaration";
-export const hasVariousArtists = "Unknown Expression Type: ArrowFunctionExpression";
-export const hasArtist = "Unknown Expression Type: ArrowFunctionExpression";
-export const isCompleteArtistCredit = "Unknown Expression Type: ArrowFunctionExpression";
-export const reduceArtistCredit = "Unknown Expression Type: ArrowFunctionExpression";
-"Unknown Export Type: FunctionDeclaration";
-"Unknown Export Type: FunctionDeclaration";
-"Unknown Export Type: FunctionDeclaration";
+export const hasVariousArtists = "WIP convertExpression: ArrowFunctionExpression";
+export const hasArtist = "WIP convertExpression: ArrowFunctionExpression";
+export const isCompleteArtistCredit = "WIP convertExpression: ArrowFunctionExpression";
+export const reduceArtistCredit = "WIP convertExpression: ArrowFunctionExpression";
+"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";

@@ -19,7 +19,7 @@ import { ArtistT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
 export type EntityWithAliasesT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type EntityWithAliasesTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type EntityWithAliasesTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type EntityWithSeriesMapT = {
     "artist": ArtistT;
     "event": EventT;
@@ -44,11 +44,11 @@ export type RelatableEntityRoleT<T> = _$Spread<EntityRoleT<T>, _$Spread<LastUpda
     relationships: $ReadOnlyArray<RelationshipT>;
 }>>>;
 export type CollectableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type CollectableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type CollectableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type EditableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | UrlT | WorkT;
-export type EditableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type EditableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type EntityWithArtistCreditsT = RecordingT | ReleaseGroupT | ReleaseT | TrackT;
-export type EntityWithArtistCreditsTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type EntityWithArtistCreditsTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type EntityWithAutoCleanupTypeT = "artist" | "event" | "label" | "place" | "release_group" | "series" | "work";
 export type DatePeriodRoleT = {
     begin_date: PartialDateT | null;
@@ -57,7 +57,7 @@ export type DatePeriodRoleT = {
 };
 export type ManuallyRemovableEntityT = AreaT | GenreT | InstrumentT | RecordingT | ReleaseT;
 export type MergeableEntityT = AreaT | ArtistT | CollectionT | EventT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type MergeableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type MergeableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type PendingEditsRoleT = {
     editsPending: boolean;
 };
@@ -73,9 +73,9 @@ export type MinimalEntityT = {
     gid: string;
 };
 export type PartialDateT = {
-    day: "TODO: Support TypeNode NullableTypeAnnotation";
-    month: "TODO: Support TypeNode NullableTypeAnnotation";
-    year: "TODO: Support TypeNode NullableTypeAnnotation";
+    day: "WIP convertTypeNode: NullableTypeAnnotation";
+    month: "WIP convertTypeNode: NullableTypeAnnotation";
+    year: "WIP convertTypeNode: NullableTypeAnnotation";
 };
 export type PartialDateStringsT = {
     day: string;
@@ -84,13 +84,13 @@ export type PartialDateStringsT = {
 };
 export type NonUrlRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type RelatableEntityT = NonUrlRelatableEntityT | UrlT;
-export type NonUrlRelatableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type NonUrlRelatableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type RelatableEntityTypeT = NonUrlRelatableEntityTypeT | "url";
 export type SubscribableEntityT = SubscribableEntityWithSidebarT | CollectionT | EditorT;
 export type SubscribableEntityWithSidebarT = ArtistT | LabelT | SeriesT;
-export type SubscribableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type SubscribableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type TaggableEntityT = AreaT | ArtistT | EventT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type TaggableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type TaggableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type TypeRoleT<T> = {
     typeID: number | null;
     typeName: string;

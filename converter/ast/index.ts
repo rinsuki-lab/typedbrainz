@@ -7,6 +7,7 @@ import { convertOpaqueType } from "./opaque-type.js"
 import { ConverterContext } from "../context.js"
 import { convertIdentifier } from "./identifier.js"
 import { convertExpression } from "./expr.js"
+import { wipLiteral } from "../wip.js"
 
 export function convertAST(ctx: ConverterContext, body: any): readonly Statement[] {
     switch (body.type) {
@@ -43,7 +44,7 @@ export function convertAST(ctx: ConverterContext, body: any): readonly Statement
             return [convertOpaqueType(body.declaration, "export")]
         default:
             return [factory.createExpressionStatement(
-                factory.createStringLiteral("Unknown Export Type: " + body.declaration.type)
+                wipLiteral("convertAST", body.declaration.type)
             )]
         }
     }

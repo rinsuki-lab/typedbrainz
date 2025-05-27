@@ -14,7 +14,7 @@ import { ArtistT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
 export type AnnotatedEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type AnnotatedEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
+export type AnnotatedEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
 export type AnnotationRoleT = {
     latest_annotation: AnnotationT;
 };

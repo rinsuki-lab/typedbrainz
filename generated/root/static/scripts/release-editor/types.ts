@@ -8,6 +8,6 @@ export type ReleaseEditorTrackT = {
     gid: string;
     id: number;
     name: KnockoutObservable<string>;
-    next: "TODO: Support TypeNode FunctionTypeAnnotation";
-    previous: "TODO: Support TypeNode FunctionTypeAnnotation";
+    next: "WIP convertTypeNode: FunctionTypeAnnotation";
+    previous: "WIP convertTypeNode: FunctionTypeAnnotation";
 };

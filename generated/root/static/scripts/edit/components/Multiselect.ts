@@ -20,25 +20,25 @@ export type MultiselectValueStateT<V> = {
     removed: boolean;
 };
 export type MultiselectValuePropsT<V extends AutocompleteEntityItemT, VS extends MultiselectValueStateT<V>> = {
-    buildExtraChildren: "TODO: Support TypeNode FunctionTypeAnnotation";
-    dispatch: "TODO: Support TypeNode FunctionTypeAnnotation";
+    buildExtraChildren: "WIP convertTypeNode: FunctionTypeAnnotation";
+    dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
     state: $Exact<VS>;
 };
 export type MultiselectStateT<V extends AutocompleteEntityItemT, VS extends MultiselectValueStateT<V>> = {
     max: number | null;
     values: $ReadOnlyArray<$Exact<VS>>;
 };
-export const ATTR_VALUE_LABEL_STYLE = "Unknown Expression Type: ObjectExpression";
-"Unknown Export Type: FunctionDeclaration";
-"Unknown Export Type: FunctionDeclaration";
-"Unknown Export Type: FunctionDeclaration";
+export const ATTR_VALUE_LABEL_STYLE = "WIP convertExpression: ObjectExpression";
+"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: LabeledStatement";
 "Unknown Type: BlockStatement";
-export const MultiselectValue: "TODO: Support TypeNode TypeofTypeAnnotation" = "Unknown Expression Type: CallExpression";
+export const MultiselectValue: "WIP convertTypeNode: TypeofTypeAnnotation" = "WIP convertExpression: CallExpression";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";

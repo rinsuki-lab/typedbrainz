@@ -1,6 +1,7 @@
 import { Expression, factory } from "typescript";
 import { convertLiteral } from "./literal.js";
 import { convertIdentifier } from "./identifier.js";
+import { wipLiteral } from "../wip.js";
 
 export function convertExpression(source: any): Expression {
     switch (source.type) {
@@ -9,6 +10,6 @@ export function convertExpression(source: any): Expression {
     case "Identifier":
         return convertIdentifier(source)
     default:
-        return factory.createStringLiteral(`Unknown Expression Type: ${source.type}`)
+        return wipLiteral("convertExpression", source.type);
     }
 }

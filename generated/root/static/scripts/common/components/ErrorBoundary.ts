@@ -4,4 +4,4 @@ import * as Sentry from "@sentry/browser";
 import * as React from "react";
 "Unknown Type: TypeAlias";
 "Unknown Type: TypeAlias";
-export default "Unknown Expression Type: ClassDeclaration";
+export default "WIP convertExpression: ClassDeclaration";

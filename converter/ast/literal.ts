@@ -1,5 +1,6 @@
 import assert from "node:assert"
 import { factory } from "typescript"
+import { wipLiteral } from "../wip.js"
 
 export function convertLiteral(source: any) {
     assert(source.type === "Literal")
@@ -9,6 +10,6 @@ export function convertLiteral(source: any) {
     case "number":
         return factory.createNumericLiteral(source.value)
     default:
-        return factory.createStringLiteral(`Unknown Literal typeof: ${typeof source.value}`)
+        return wipLiteral("convertLiteral", source.type)
     }
 }
