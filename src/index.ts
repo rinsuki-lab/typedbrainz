@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-import { MaybeReleaseRelationshipEditor, NonReleaseRelationshipEditor, RelationshipEditorBase, ReleaseRelationshipEditor } from "./global.js"
+import type { MaybeReleaseRelationshipEditor, NonReleaseRelationshipEditor, RelationshipEditorBase, ReleaseRelationshipEditor } from "./global.js";
 
 type EveryPropertyIsExists<T> = {
     [K in keyof T]-?: T[K] extends undefined | null ? never : T[K]
