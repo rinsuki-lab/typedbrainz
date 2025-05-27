@@ -5,7 +5,7 @@
         "declaration": true,
         "noResolve": true,
     },
-    "files": [
-        "src/index.ts",
+    "include": [
+        "src/*.ts",
     ]
 }

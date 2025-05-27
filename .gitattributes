@@ -1,2 +1,2 @@
 generated/**/* linguist-generated=true
-src/global.d.ts linguist-generated=true
+lib/global.d.ts linguist-generated=true
