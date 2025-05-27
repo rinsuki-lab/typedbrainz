@@ -1,5 +1,6 @@
-import { RelationshipDialogStateT, RelationshipEditorStateT, ReleaseRelationshipEditorStateT } from "../generated/root/static/scripts/relationship-editor/types.js"
-import { DialogActionT, RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "../generated/root/static/scripts/relationship-editor/types/actions.js"
+import type { RelationshipDialogStateT, RelationshipEditorStateT, ReleaseRelationshipEditorStateT } from "../generated/root/static/scripts/relationship-editor/types.js"
+import type { DialogActionT, RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "../generated/root/static/scripts/relationship-editor/types/actions.js"
+import type * as constants from "../generated/root/static/scripts/common/constants.js"
 
 type EveryPropertyIsExistsOrNot<T> = T | {
     [K in keyof T]?: undefined | null
@@ -25,6 +26,7 @@ export type MaybeReleaseRelationshipEditor = ReleaseRelationshipEditor | NonRele
 
 declare global {
     var MB: undefined | {
+        constants: typeof constants,
         relationshipEditor: MaybeReleaseRelationshipEditor
         /**
          * If you're on a relationship editor page, this should be available.
