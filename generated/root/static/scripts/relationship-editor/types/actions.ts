@@ -121,7 +121,9 @@ export type RelationshipEditorActionT = {
     location: RelationshipDialogLocationT | null;
     type: "update-dialog-location";
 } | {
-    changes: {};
+    changes: {
+        [property: string]: "WIP convertTypeNode: MixedTypeAnnotation";
+    };
     entityType: RelatableEntityTypeT;
     type: "update-entity";
 } | UpdateRelationshipActionT;

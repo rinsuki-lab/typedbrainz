@@ -8,7 +8,11 @@ export const ERROR_LOOKUP_TYPE: 2 = 2;
 export const ERROR_SEARCH: 3 = 3;
 export const CLEAR_RECENT_ITEMS: ActionItemT<"WIP convertTypeNode: EmptyTypeAnnotation"> = "WIP convertExpression: ObjectExpression";
 export const RECENT_ITEMS_HEADER: HeaderItemT = "WIP convertExpression: ObjectExpression";
-export const MENU_ITEMS: {} = "WIP convertExpression: ObjectExpression";
+export const MENU_ITEMS: {
+    [name: string]: ActionItemT<"WIP convertTypeNode: EmptyTypeAnnotation">;
+} = "WIP convertExpression: ObjectExpression";
 export const PAGE_SIZE: number = 25;
-export const SEARCH_PLACEHOLDERS: {} = "WIP convertExpression: ObjectExpression";
+export const SEARCH_PLACEHOLDERS: {
+    [type: SearchableTypeT]: "WIP convertTypeNode: FunctionTypeAnnotation";
+} = "WIP convertExpression: ObjectExpression";
 export const IS_TOP_WINDOW: boolean = "WIP convertExpression: LogicalExpression";

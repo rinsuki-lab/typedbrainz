@@ -48,7 +48,9 @@ export type FormT<F, N extends string = ""> = {
     name: N;
     type: "form";
 };
-export type SubfieldsT = {};
+export type SubfieldsT = {
+    [fieldName: string]: AnyFieldT;
+};
 export type AnyFieldT = {
     errors: $ReadOnlyArray<string>;
     field: SubfieldsT;

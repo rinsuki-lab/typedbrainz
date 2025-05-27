@@ -5,7 +5,9 @@ import { RelatableEntityRoleT } from "../../declared-types.js"
 import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
-export type InstrumentCreditsAndRelTypesT = {};
+export type InstrumentCreditsAndRelTypesT = {
+    [entityGid: string]: $ReadOnlyArray<string>;
+};
 export type InstrumentCreditsAndRelTypesRoleT = {
     instrumentCreditsAndRelTypes?: InstrumentCreditsAndRelTypesT;
 };

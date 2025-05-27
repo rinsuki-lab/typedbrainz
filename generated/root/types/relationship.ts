@@ -3,6 +3,7 @@ import { RelatableEntityT } from "../../declared-types.js"
 import { PendingEditsRoleT } from "../../declared-types.js"
 import { DatePeriodRoleT } from "../../declared-types.js"
 import { RelatableEntityTypeT } from "../../declared-types.js"
+import { StrOrNum } from "../../declared-types.js"
 import { TypeRoleT } from "../../declared-types.js"
 import { OptionTreeT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
@@ -34,7 +35,9 @@ export type LinkTypeAttrTypeT = $ReadOnly<$_$Spread<TypeRoleT<LinkAttrTypeT>, {
     min: number | null;
 }>>;
 export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
-    attributes: {};
+    attributes: {
+        [typeId: StrOrNum]: LinkTypeAttrTypeT;
+    };
     cardinality0: number;
     cardinality1: number;
     children?: $ReadOnlyArray<LinkTypeT>;
@@ -67,7 +70,9 @@ export type PagedLinkTypeGroupT = {
     relationships: $ReadOnlyArray<RelationshipT>;
     total_relationships: number;
 };
-export type PagedTargetTypeGroupT = {};
+export type PagedTargetTypeGroupT = {
+    [linkTypeIdAndSourceColumn: string]: PagedLinkTypeGroupT;
+};
 export type RelationshipT = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<PendingEditsRoleT, {
     attributes: $ReadOnlyArray<LinkAttrT>;
     backward: boolean;

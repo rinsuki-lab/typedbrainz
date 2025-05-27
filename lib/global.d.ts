@@ -7,7 +7,38 @@ export type $ReadOnly<T> = Readonly<T>;
 export type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 export type $Exact<T> = T;
 export type $_$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
+export type AliasT<T> = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<EntityRoleT<"alias">, $_$Spread<PendingEditsRoleT, $_$Spread<TypeRoleT<T>, {
+	locale: string | null;
+	name: string;
+	primary_for_locale: boolean;
+	sort_name: string;
+}>>>>>;
+export type AreaAliasTypeT = OptionTreeT<"area_alias_type">;
+export type AreaAliasT = AliasT<AreaAliasTypeT>;
+export type ArtistAliasTypeT = OptionTreeT<"artist_alias_type">;
+export type ArtistAliasT = AliasT<ArtistAliasTypeT>;
+export type EventAliasTypeT = OptionTreeT<"event_alias_type">;
+export type EventAliasT = AliasT<EventAliasTypeT>;
+export type GenreAliasTypeT = OptionTreeT<"genre_alias_type">;
+export type GenreAliasT = AliasT<GenreAliasTypeT>;
+export type InstrumentAliasTypeT = OptionTreeT<"instrument_alias_type">;
+export type InstrumentAliasT = AliasT<InstrumentAliasTypeT>;
+export type LabelAliasTypeT = OptionTreeT<"label_alias_type">;
+export type LabelAliasT = AliasT<LabelAliasTypeT>;
+export type PlaceAliasTypeT = OptionTreeT<"place_alias_type">;
+export type PlaceAliasT = AliasT<PlaceAliasTypeT>;
+export type RecordingAliasTypeT = OptionTreeT<"recording_alias_type">;
+export type RecordingAliasT = AliasT<RecordingAliasTypeT>;
+export type ReleaseAliasTypeT = OptionTreeT<"release_alias_type">;
+export type ReleaseAliasT = AliasT<ReleaseAliasTypeT>;
+export type ReleaseGroupAliasTypeT = OptionTreeT<"releaseGroup_alias_type">;
+export type ReleaseGroupAliasT = AliasT<ReleaseGroupAliasTypeT>;
+export type SeriesAliasTypeT = OptionTreeT<"series_alias_type">;
+export type SeriesAliasT = AliasT<SeriesAliasTypeT>;
+export type WorkAliasTypeT = OptionTreeT<"work_alias_type">;
+export type WorkAliasT = AliasT<WorkAliasTypeT>;
 export type AnnotatedEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
+export type AnnotatedEntityTypeT = AnnotatedEntityT["entityType"];
 export type AnnotationRoleT = {
 	latest_annotation?: AnnotationT;
 };
@@ -77,6 +108,11 @@ export type ArtworkRoleT = $ReadOnly<$_$Spread<PendingEditsRoleT, {
 export type ReleaseArtT = $ReadOnly<$_$Spread<ArtworkRoleT, {
 	release?: ReleaseT;
 }>>;
+export type EventArtT = $ReadOnly<$_$Spread<ArtworkRoleT, {
+	event?: EventT;
+}>>;
+export type CoverArtTypeT = OptionTreeT<"cover_art_type">;
+export type EventArtTypeT = OptionTreeT<"event_art_type">;
 export type IpiCodesRoleT = {
 	ipi_codes: $ReadOnlyArray<IpiCodeT>;
 };
@@ -97,34 +133,1667 @@ export type IswcT = $_$Spread<EntityRoleT<"iswc">, $_$Spread<PendingEditsRoleT, 
 	iswc: string;
 	work_id: number;
 }>>;
+export type CollectionTypeT = $_$Spread<OptionTreeT<"collection_type">, {
+	item_entity_type: string;
+}>;
 export type ReviewableRoleT = {
 	review_count?: number;
 };
+export type CompT<T> = {
+	new: T;
+	old: T;
+};
+export type EditExpireActionT = 1 | 2;
+export type EditStatusT = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 9;
+export type EditT = CurrentEditT | HistoricEditT;
+export type EditWithIdT = $ReadOnly<$_$Spread<EditT, {
+	id: number;
+}>>;
+export type EditNoteChangeT = {
+	change_editor_id: number;
+	change_time: string;
+	edit_note_id: number;
+	id: number;
+	new_note: string;
+	old_note: string;
+	reason: string;
+	status: "edited" | "deleted";
+};
+export type EditNoteT = {
+	edit_id: number;
+	editor: EditorT | null;
+	editor_id: number;
+	formatted_text: string;
+	id: number;
+	latest_change?: EditNoteChangeT;
+	post_time: string | null;
+};
+export type GenericEditT = {
+	auto_edit: boolean;
+	close_time: string;
+	conditions: {
+		auto_edit: boolean;
+		duration: number;
+		expire_action: EditExpireActionT;
+		votes: number;
+	};
+	created_time: string;
+	data: {
+		[dataProp: string]: "WIP convertTypeNode: AnyTypeAnnotation";
+	};
+	edit_kind: "add" | "edit" | "remove" | "merge" | "other";
+	edit_name: string;
+	edit_notes: $ReadOnlyArray<EditNoteT>;
+	edit_type: number;
+	edit_type_name_context: string;
+	editor_id: number;
+	expires_time: string;
+	historic_type: number | null;
+	id: number | null;
+	is_loaded: boolean;
+	is_open: boolean;
+	preview?: boolean;
+	quality: QualityT;
+	status: EditStatusT;
+	votes: $ReadOnlyArray<VoteT>;
+};
+export type TracklistChangesAddT = {
+	change_type: "+";
+	new_track: TrackWithRecordingT;
+	old_track: null;
+};
+export type TracklistChangesChangeT = {
+	change_type: "c" | "u";
+	new_track: TrackWithRecordingT;
+	old_track: TrackWithRecordingT;
+};
+export type TracklistChangesRemoveT = {
+	change_type: "-";
+	new_track: null;
+	old_track: TrackWithRecordingT;
+};
+export type OldReleaseEventCompT = {
+	barcode: CompT<string | null>;
+	catalog_number: CompT<string | null>;
+	country?: CompT<AreaT>;
+	date: CompT<PartialDateT>;
+	format: CompT<MediumFormatT | null>;
+	label?: CompT<LabelT>;
+	release: ReleaseT | null;
+};
+export type OldReleaseEventT = {
+	barcode: string | null;
+	catalog_number: string | null;
+	country?: AreaT;
+	date: PartialDateT;
+	format: MediumFormatT | null;
+	label?: LabelT;
+	release: ReleaseT | null;
+};
+export type EDIT_ARTIST_CREATE_T = 1;
+export type EDIT_ARTIST_EDIT_T = 2;
+export type EDIT_ARTIST_DELETE_T = 3;
+export type EDIT_ARTIST_MERGE_T = 4;
+export type EDIT_ARTIST_ADD_ANNOTATION_T = 5;
+export type EDIT_ARTIST_ADD_ALIAS_T = 6;
+export type EDIT_ARTIST_DELETE_ALIAS_T = 7;
+export type EDIT_ARTIST_EDIT_ALIAS_T = 8;
+export type EDIT_ARTIST_EDITCREDIT_T = 9;
+export type EDIT_LABEL_CREATE_T = 10;
+export type EDIT_LABEL_EDIT_T = 11;
+export type EDIT_LABEL_DELETE_T = 13;
+export type EDIT_LABEL_MERGE_T = 14;
+export type EDIT_LABEL_ADD_ANNOTATION_T = 15;
+export type EDIT_LABEL_ADD_ALIAS_T = 16;
+export type EDIT_LABEL_DELETE_ALIAS_T = 17;
+export type EDIT_LABEL_EDIT_ALIAS_T = 18;
 export type EDIT_RELEASEGROUP_CREATE_T = 20;
 export type EDIT_RELEASEGROUP_EDIT_T = 21;
+export type EDIT_RELEASEGROUP_SET_COVER_ART_T = 22;
+export type EDIT_RELEASEGROUP_DELETE_T = 23;
+export type EDIT_RELEASEGROUP_MERGE_T = 24;
+export type EDIT_RELEASEGROUP_ADD_ANNOTATION_T = 25;
+export type EDIT_RELEASEGROUP_ADD_ALIAS_T = 26;
+export type EDIT_RELEASEGROUP_DELETE_ALIAS_T = 27;
+export type EDIT_RELEASEGROUP_EDIT_ALIAS_T = 28;
 export type EDIT_RELEASE_CREATE_T = 31;
 export type EDIT_RELEASE_EDIT_T = 32;
+export type EDIT_RELEASE_MOVE_T = 33;
 export type EDIT_RELEASE_ADDRELEASELABEL_T = 34;
 export type EDIT_RELEASE_ADD_ANNOTATION_T = 35;
 export type EDIT_RELEASE_DELETERELEASELABEL_T = 36;
 export type EDIT_RELEASE_EDITRELEASELABEL_T = 37;
+export type EDIT_RELEASE_CHANGE_QUALITY_T = 38;
+export type EDIT_RELEASE_EDIT_BARCODES_T = 39;
+export type EDIT_RELEASE_DELETE_T = 310;
+export type EDIT_RELEASE_ARTIST_T = 312;
 export type EDIT_RELEASE_REORDER_MEDIUMS_T = 313;
+export type EDIT_RELEASE_ADD_COVER_ART_T = 314;
+export type EDIT_RELEASE_REMOVE_COVER_ART_T = 315;
+export type EDIT_RELEASE_EDIT_COVER_ART_T = 316;
+export type EDIT_RELEASE_REORDER_COVER_ART_T = 317;
+export type EDIT_RELEASE_ADD_ALIAS_T = 318;
+export type EDIT_RELEASE_DELETE_ALIAS_T = 319;
+export type EDIT_RELEASE_EDIT_ALIAS_T = 320;
 export type EDIT_WORK_CREATE_T = 41;
+export type EDIT_WORK_EDIT_T = 42;
+export type EDIT_WORK_DELETE_T = 43;
+export type EDIT_WORK_MERGE_T = 44;
+export type EDIT_WORK_ADD_ANNOTATION_T = 45;
+export type EDIT_WORK_ADD_ALIAS_T = 46;
+export type EDIT_WORK_DELETE_ALIAS_T = 47;
+export type EDIT_WORK_EDIT_ALIAS_T = 48;
+export type EDIT_WORK_ADD_ISWCS_T = 49;
+export type EDIT_WORK_REMOVE_ISWC_T = 410;
 export type EDIT_MEDIUM_CREATE_T = 51;
 export type EDIT_MEDIUM_EDIT_T = 52;
 export type EDIT_MEDIUM_DELETE_T = 53;
+export type EDIT_MEDIUM_REMOVE_DISCID_T = 54;
 export type EDIT_MEDIUM_ADD_DISCID_T = 55;
+export type EDIT_MEDIUM_MOVE_DISCID_T = 56;
+export type EDIT_SET_TRACK_LENGTHS_T = 58;
+export type EDIT_PLACE_CREATE_T = 61;
+export type EDIT_PLACE_EDIT_T = 62;
+export type EDIT_PLACE_DELETE_T = 63;
+export type EDIT_PLACE_MERGE_T = 64;
+export type EDIT_PLACE_ADD_ANNOTATION_T = 65;
+export type EDIT_PLACE_ADD_ALIAS_T = 66;
+export type EDIT_PLACE_DELETE_ALIAS_T = 67;
+export type EDIT_PLACE_EDIT_ALIAS_T = 68;
+export type EDIT_RECORDING_CREATE_T = 71;
 export type EDIT_RECORDING_EDIT_T = 72;
+export type EDIT_RECORDING_DELETE_T = 73;
+export type EDIT_RECORDING_MERGE_T = 74;
+export type EDIT_RECORDING_ADD_ANNOTATION_T = 75;
+export type EDIT_RECORDING_ADD_ISRCS_T = 76;
+export type EDIT_RECORDING_REMOVE_ISRC_T = 78;
+export type EDIT_RECORDING_ADD_ALIAS_T = 711;
+export type EDIT_RECORDING_DELETE_ALIAS_T = 712;
+export type EDIT_RECORDING_EDIT_ALIAS_T = 713;
+export type EDIT_AREA_CREATE_T = 81;
+export type EDIT_AREA_EDIT_T = 82;
+export type EDIT_AREA_DELETE_T = 83;
+export type EDIT_AREA_MERGE_T = 84;
+export type EDIT_AREA_ADD_ANNOTATION_T = 85;
+export type EDIT_AREA_ADD_ALIAS_T = 86;
+export type EDIT_AREA_DELETE_ALIAS_T = 87;
+export type EDIT_AREA_EDIT_ALIAS_T = 88;
 export type EDIT_RELATIONSHIP_CREATE_T = 90;
 export type EDIT_RELATIONSHIP_EDIT_T = 91;
 export type EDIT_RELATIONSHIP_DELETE_T = 92;
+export type EDIT_RELATIONSHIP_REMOVE_LINK_TYPE_T = 93;
+export type EDIT_RELATIONSHIP_REMOVE_LINK_ATTRIBUTE_T = 94;
+export type EDIT_RELATIONSHIP_EDIT_LINK_TYPE_T = 95;
+export type EDIT_RELATIONSHIP_ADD_TYPE_T = 96;
+export type EDIT_RELATIONSHIP_ATTRIBUTE_T = 97;
+export type EDIT_RELATIONSHIP_ADD_ATTRIBUTE_T = 98;
 export type EDIT_RELATIONSHIPS_REORDER_T = 99;
+export type EDIT_SERIES_CREATE_T = 140;
+export type EDIT_SERIES_EDIT_T = 141;
+export type EDIT_SERIES_DELETE_T = 142;
+export type EDIT_SERIES_MERGE_T = 143;
+export type EDIT_SERIES_ADD_ANNOTATION_T = 144;
+export type EDIT_SERIES_ADD_ALIAS_T = 145;
+export type EDIT_SERIES_DELETE_ALIAS_T = 146;
+export type EDIT_SERIES_EDIT_ALIAS_T = 147;
+export type EDIT_INSTRUMENT_CREATE_T = 131;
+export type EDIT_INSTRUMENT_EDIT_T = 132;
+export type EDIT_INSTRUMENT_DELETE_T = 133;
+export type EDIT_INSTRUMENT_MERGE_T = 134;
+export type EDIT_INSTRUMENT_ADD_ANNOTATION_T = 135;
+export type EDIT_INSTRUMENT_ADD_ALIAS_T = 136;
+export type EDIT_INSTRUMENT_DELETE_ALIAS_T = 137;
+export type EDIT_INSTRUMENT_EDIT_ALIAS_T = 138;
+export type EDIT_EVENT_CREATE_T = 150;
+export type EDIT_EVENT_EDIT_T = 151;
+export type EDIT_EVENT_DELETE_T = 152;
+export type EDIT_EVENT_MERGE_T = 153;
+export type EDIT_EVENT_ADD_ANNOTATION_T = 154;
+export type EDIT_EVENT_ADD_ALIAS_T = 155;
+export type EDIT_EVENT_DELETE_ALIAS_T = 156;
+export type EDIT_EVENT_EDIT_ALIAS_T = 157;
+export type EDIT_EVENT_ADD_EVENT_ART_T = 158;
+export type EDIT_EVENT_REMOVE_EVENT_ART_T = 159;
+export type EDIT_EVENT_EDIT_EVENT_ART_T = 1510;
+export type EDIT_EVENT_REORDER_EVENT_ART_T = 1511;
+export type EDIT_GENRE_CREATE_T = 160;
+export type EDIT_GENRE_EDIT_T = 161;
+export type EDIT_GENRE_DELETE_T = 162;
+export type EDIT_GENRE_ADD_ANNOTATION_T = 164;
+export type EDIT_GENRE_ADD_ALIAS_T = 165;
+export type EDIT_GENRE_DELETE_ALIAS_T = 166;
+export type EDIT_GENRE_EDIT_ALIAS_T = 167;
+export type EDIT_WIKIDOC_CHANGE_T = 120;
+export type EDIT_URL_EDIT_T = 101;
+export type EDIT_HISTORIC_EDIT_RELEASE_NAME_T = 201;
+export type EDIT_HISTORIC_EDIT_TRACKNAME_T = 204;
+export type EDIT_HISTORIC_EDIT_TRACKNUM_T = 205;
+export type EDIT_HISTORIC_ADD_TRACK_T = 207;
+export type EDIT_HISTORIC_MOVE_RELEASE_T = 208;
+export type EDIT_HISTORIC_SAC_TO_MAC_T = 209;
+export type EDIT_HISTORIC_CHANGE_TRACK_ARTIST_T = 210;
+export type EDIT_HISTORIC_REMOVE_TRACK_T = 211;
+export type EDIT_HISTORIC_REMOVE_RELEASE_T = 212;
+export type EDIT_HISTORIC_MAC_TO_SAC_T = 213;
+export type EDIT_HISTORIC_ADD_RELEASE_T = 216;
+export type EDIT_HISTORIC_ADD_TRACK_KV_T = 218;
+export type EDIT_HISTORIC_REMOVE_DISCID_T = 220;
+export type EDIT_HISTORIC_MOVE_DISCID_T = 221;
+export type EDIT_HISTORIC_MERGE_RELEASE_T = 223;
+export type EDIT_HISTORIC_REMOVE_RELEASES_T = 224;
+export type EDIT_HISTORIC_MERGE_RELEASE_MAC_T = 225;
+export type EDIT_HISTORIC_EDIT_RELEASE_ATTRS_T = 226;
+export type EDIT_HISTORIC_EDIT_RELEASE_EVENTS_OLD_T = 229;
+export type EDIT_HISTORIC_ADD_RELEASE_ANNOTATION_T = 231;
+export type EDIT_HISTORIC_ADD_DISCID_T = 232;
+export type EDIT_HISTORIC_ADD_LINK_T = 233;
+export type EDIT_HISTORIC_EDIT_LINK_T = 234;
+export type EDIT_HISTORIC_REMOVE_LINK_T = 235;
+export type EDIT_HISTORIC_EDIT_RELEASE_LANGUAGE_T = 244;
+export type EDIT_HISTORIC_EDIT_TRACK_LENGTH_T = 245;
+export type EDIT_HISTORIC_ADD_RELEASE_EVENTS_T = 249;
+export type EDIT_HISTORIC_EDIT_RELEASE_EVENTS_T = 250;
+export type EDIT_HISTORIC_REMOVE_RELEASE_EVENTS_T = 251;
+export type EDIT_HISTORIC_CHANGE_ARTIST_QUALITY_T = 252;
+export type EDIT_HISTORIC_SET_TRACK_LENGTHS_FROM_CDTOC_T = 253;
+export type EDIT_HISTORIC_REMOVE_LABEL_ALIAS_T = 262;
+export type EDIT_HISTORIC_CHANGE_RELEASE_QUALITY_T = 263;
+export type EDIT_HISTORIC_CHANGE_RELEASE_GROUP_T = 273;
+export type AddAnnotationEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		[annotatedEntityType: AnnotatedEntityTypeT]: AnnotatedEntityT;
+		changelog: string;
+		entity_type: AnnotatedEntityTypeT;
+		html: string;
+		old_annotation?: string;
+		text: string;
+	};
+	edit_type: EDIT_AREA_ADD_ANNOTATION_T;
+}>>;
+export type AddAreaAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_AREA_ADD_ANNOTATION_T;
+}>>;
+export type AddArtistAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_ARTIST_ADD_ANNOTATION_T;
+}>>;
+export type AddEventAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_EVENT_ADD_ANNOTATION_T;
+}>>;
+export type AddGenreAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_GENRE_ADD_ANNOTATION_T;
+}>>;
+export type AddInstrumentAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_INSTRUMENT_ADD_ANNOTATION_T;
+}>>;
+export type AddLabelAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_LABEL_ADD_ANNOTATION_T;
+}>>;
+export type AddPlaceAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_PLACE_ADD_ANNOTATION_T;
+}>>;
+export type AddRecordingAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_RECORDING_ADD_ANNOTATION_T;
+}>>;
+export type AddReleaseGroupAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_RELEASEGROUP_ADD_ANNOTATION_T;
+}>>;
+export type AddReleaseAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_RELEASE_ADD_ANNOTATION_T;
+}>>;
+export type AddSeriesAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_SERIES_ADD_ANNOTATION_T;
+}>>;
+export type AddWorkAnnotationEditT = $ReadOnly<$_$Spread<AddAnnotationEditGenericT, {
+	edit_type: EDIT_WORK_ADD_ANNOTATION_T;
+}>>;
+export type AddAnnotationEditT = AddAreaAnnotationEditT | AddArtistAnnotationEditT | AddEventAnnotationEditT | AddGenreAnnotationEditT | AddInstrumentAnnotationEditT | AddLabelAnnotationEditT | AddPlaceAnnotationEditT | AddRecordingAnnotationEditT | AddReleaseGroupAnnotationEditT | AddReleaseAnnotationEditT | AddSeriesAnnotationEditT | AddWorkAnnotationEditT;
+export type AddAreaEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: $_$Spread<DatePeriodRoleT, {
+		area: AreaT;
+		comment: string | null;
+		iso_3166_1: $ReadOnlyArray<string>;
+		iso_3166_2: $ReadOnlyArray<string>;
+		iso_3166_3: $ReadOnlyArray<string>;
+		name: string;
+		sort_name: string | null;
+		type: AreaTypeT | null;
+	}>;
+	edit_type: EDIT_AREA_CREATE_T;
+}>>;
+export type AddArtistEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: $_$Spread<CommentRoleT, $_$Spread<DatePeriodRoleT, {
+		area: AreaT | null;
+		artist: ArtistT;
+		begin_area: AreaT | null;
+		end_area: AreaT | null;
+		gender: GenderT | null;
+		ipi_codes: $ReadOnlyArray<string> | null;
+		isni_codes: $ReadOnlyArray<string> | null;
+		name: string;
+		sort_name: string;
+		type: ArtistTypeT | null;
+	}>>;
+	edit_type: EDIT_ARTIST_CREATE_T;
+}>>;
+export type AddCoverArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artwork: ReleaseArtT;
+		position: number;
+		release: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_ADD_COVER_ART_T;
+}>>;
+export type AddDiscIdEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		medium?: MediumT;
+		medium_cdtoc: MediumCDTocT;
+	};
+	edit_type: EDIT_MEDIUM_ADD_DISCID_T;
+}>>;
+export type AddEventArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artwork: EventArtT;
+		event: EventT;
+		position: number;
+	};
+	edit_type: EDIT_EVENT_ADD_EVENT_ART_T;
+}>>;
+export type AddEventEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: $_$Spread<CommentRoleT, $_$Spread<DatePeriodRoleT, {
+		cancelled: boolean;
+		ended: boolean;
+		event: EventT;
+		name: string;
+		setlist: string;
+		time: string | null;
+		type: EventTypeT | null;
+	}>>;
+	edit_type: EDIT_EVENT_CREATE_T;
+}>>;
+export type AddGenreEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: $_$Spread<CommentRoleT, {
+		genre: GenreT;
+		name: string;
+	}>;
+	edit_type: EDIT_GENRE_CREATE_T;
+}>>;
+export type AddInstrumentEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: $_$Spread<DatePeriodRoleT, {
+		comment: string | null;
+		description: string | null;
+		instrument: InstrumentT;
+		name: string;
+		type: InstrumentTypeT | null;
+	}>;
+	edit_type: EDIT_INSTRUMENT_CREATE_T;
+}>>;
+export type AddIsrcsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		additions: $ReadOnlyArray<{
+			isrc: IsrcT;
+			recording: RecordingT;
+		}>;
+		client_version?: string;
+	};
+	edit_type: EDIT_RECORDING_ADD_ISRCS_T;
+}>>;
+export type AddIswcsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		additions: $ReadOnlyArray<{
+			iswc: IswcT;
+			work: WorkT;
+		}>;
+	};
+	edit_type: EDIT_WORK_ADD_ISWCS_T;
+}>>;
+export type AddLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		area: AreaT;
+		begin_date: PartialDateT;
+		comment: string;
+		end_date: PartialDateT;
+		ended: boolean;
+		ipi_codes: $ReadOnlyArray<string> | null;
+		isni_codes: $ReadOnlyArray<string> | null;
+		label: LabelT;
+		label_code: number | null;
+		name: string;
+		sort_name: string;
+		type: LabelTypeT | null;
+	};
+	edit_type: EDIT_LABEL_CREATE_T;
+}>>;
+export type AddMediumEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		format: MediumFormatT | null;
+		name?: string;
+		position: number | string;
+		release?: ReleaseT;
+		tracks?: $ReadOnlyArray<TrackT>;
+	};
+	edit_type: EDIT_MEDIUM_CREATE_T;
+}>>;
+export type AddPlaceEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: $_$Spread<DatePeriodRoleT, {
+		address: string | null;
+		area: AreaT;
+		comment: string | null;
+		coordinates: CoordinatesT | null;
+		name?: string;
+		place: PlaceT;
+		type: PlaceTypeT | null;
+	}>;
+	edit_type: EDIT_PLACE_CREATE_T;
+}>>;
+export type AddRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		relationship: RelationshipT;
+		unknown_attributes: boolean;
+	};
+	edit_type: EDIT_RELATIONSHIP_CREATE_T;
+}>>;
+export type AddRelationshipAttributeEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		child_order: number;
+		creditable: boolean;
+		description: string | null;
+		free_text: boolean;
+		name: string;
+		parent?: LinkAttrTypeT;
+	};
+	edit_type: EDIT_RELATIONSHIP_ADD_ATTRIBUTE_T;
+}>>;
+export type AddRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		attributes: $ReadOnlyArray<$_$Spread<LinkTypeAttrTypeT, {
+			typeName: string;
+		}>>;
+		child_order: number;
+		description: string | null;
+		documentation: string | null;
+		entity0_cardinality?: number;
+		entity0_type: RelatableEntityTypeT;
+		entity1_cardinality?: number;
+		entity1_type: RelatableEntityTypeT;
+		link_phrase: string;
+		long_link_phrase: string;
+		name: string;
+		orderable_direction?: number;
+		relationship_type?: LinkTypeT;
+		reverse_link_phrase: string;
+	};
+	edit_type: EDIT_RELATIONSHIP_ADD_TYPE_T;
+}>>;
+export type AddReleaseEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit: ArtistCreditT;
+		barcode: string | null;
+		comment: string;
+		events?: $ReadOnlyArray<ReleaseEventT>;
+		language: LanguageT | null;
+		name: string;
+		packaging: ReleasePackagingT | null;
+		release: ReleaseT;
+		release_group: ReleaseGroupT;
+		script: ScriptT | null;
+		status: ReleaseStatusT | null;
+	};
+	edit_type: EDIT_RELEASE_CREATE_T;
+}>>;
+export type AddReleaseGroupEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit: ArtistCreditT;
+		comment: string;
+		name: string;
+		release_group: ReleaseGroupT;
+		secondary_types: string;
+		type: ReleaseGroupTypeT | ReleaseGroupHistoricTypeT | null;
+	};
+	edit_type: EDIT_RELEASEGROUP_CREATE_T;
+}>>;
+export type AddReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		catalog_number: string;
+		label?: LabelT;
+		release?: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_ADDRELEASELABEL_T;
+}>>;
+export type AddRemoveAliasEditGenericT<T> = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		[coreEntityType: EntityWithAliasesTypeT]: EntityWithAliasesT;
+		alias: string;
+		begin_date: PartialDateT;
+		end_date: PartialDateT;
+		ended?: boolean;
+		entity_type: EntityWithAliasesTypeT;
+		locale: string | null;
+		primary_for_locale: boolean;
+		sort_name: string | null;
+		type: T | null;
+	};
+}>>;
+export type AddAreaAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<AreaAliasTypeT>, {
+	edit_type: EDIT_AREA_ADD_ALIAS_T;
+}>>;
+export type AddArtistAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<ArtistAliasTypeT>, {
+	edit_type: EDIT_ARTIST_ADD_ALIAS_T;
+}>>;
+export type AddEventAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<EventAliasTypeT>, {
+	edit_type: EDIT_EVENT_ADD_ALIAS_T;
+}>>;
+export type AddGenreAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<GenreAliasTypeT>, {
+	edit_type: EDIT_GENRE_ADD_ALIAS_T;
+}>>;
+export type AddInstrumentAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<InstrumentAliasTypeT>, {
+	edit_type: EDIT_INSTRUMENT_ADD_ALIAS_T;
+}>>;
+export type AddLabelAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<LabelAliasTypeT>, {
+	edit_type: EDIT_LABEL_ADD_ALIAS_T;
+}>>;
+export type AddPlaceAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<PlaceAliasTypeT>, {
+	edit_type: EDIT_PLACE_ADD_ALIAS_T;
+}>>;
+export type AddRecordingAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<RecordingAliasTypeT>, {
+	edit_type: EDIT_RECORDING_ADD_ALIAS_T;
+}>>;
+export type AddReleaseGroupAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<ReleaseGroupAliasTypeT>, {
+	edit_type: EDIT_RELEASEGROUP_ADD_ALIAS_T;
+}>>;
+export type AddReleaseAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<ReleaseAliasTypeT>, {
+	edit_type: EDIT_RELEASE_ADD_ALIAS_T;
+}>>;
+export type AddSeriesAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<SeriesAliasTypeT>, {
+	edit_type: EDIT_SERIES_ADD_ALIAS_T;
+}>>;
+export type AddWorkAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<WorkAliasTypeT>, {
+	edit_type: EDIT_WORK_ADD_ALIAS_T;
+}>>;
+export type RemoveAreaAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<AreaAliasTypeT>, {
+	edit_type: EDIT_AREA_DELETE_ALIAS_T;
+}>>;
+export type RemoveArtistAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<ArtistAliasTypeT>, {
+	edit_type: EDIT_ARTIST_DELETE_ALIAS_T;
+}>>;
+export type RemoveEventAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<EventAliasTypeT>, {
+	edit_type: EDIT_EVENT_DELETE_ALIAS_T;
+}>>;
+export type RemoveGenreAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<GenreAliasTypeT>, {
+	edit_type: EDIT_GENRE_DELETE_ALIAS_T;
+}>>;
+export type RemoveInstrumentAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<InstrumentAliasTypeT>, {
+	edit_type: EDIT_INSTRUMENT_DELETE_ALIAS_T;
+}>>;
+export type RemoveLabelAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<LabelAliasTypeT>, {
+	edit_type: EDIT_LABEL_DELETE_ALIAS_T;
+}>>;
+export type RemovePlaceAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<PlaceAliasTypeT>, {
+	edit_type: EDIT_PLACE_DELETE_ALIAS_T;
+}>>;
+export type RemoveRecordingAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<RecordingAliasTypeT>, {
+	edit_type: EDIT_RECORDING_DELETE_ALIAS_T;
+}>>;
+export type RemoveReleaseGroupAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<ReleaseGroupAliasTypeT>, {
+	edit_type: EDIT_RELEASEGROUP_DELETE_ALIAS_T;
+}>>;
+export type RemoveReleaseAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<ReleaseAliasTypeT>, {
+	edit_type: EDIT_RELEASE_DELETE_ALIAS_T;
+}>>;
+export type RemoveSeriesAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<SeriesAliasTypeT>, {
+	edit_type: EDIT_SERIES_DELETE_ALIAS_T;
+}>>;
+export type RemoveWorkAliasEditT = $ReadOnly<$_$Spread<AddRemoveAliasEditGenericT<WorkAliasTypeT>, {
+	edit_type: EDIT_WORK_DELETE_ALIAS_T;
+}>>;
+export type AddRemoveAliasEditT = AddAreaAliasEditT | AddArtistAliasEditT | AddEventAliasEditT | AddGenreAliasEditT | AddInstrumentAliasEditT | AddLabelAliasEditT | AddPlaceAliasEditT | AddRecordingAliasEditT | AddReleaseGroupAliasEditT | AddReleaseAliasEditT | AddSeriesAliasEditT | AddWorkAliasEditT | RemoveAreaAliasEditT | RemoveArtistAliasEditT | RemoveEventAliasEditT | RemoveGenreAliasEditT | RemoveInstrumentAliasEditT | RemoveLabelAliasEditT | RemovePlaceAliasEditT | RemoveRecordingAliasEditT | RemoveReleaseGroupAliasEditT | RemoveReleaseAliasEditT | RemoveSeriesAliasEditT | RemoveWorkAliasEditT;
+export type AddSeriesEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		comment: string;
+		name: string;
+		ordering_type: SeriesOrderingTypeT | null;
+		series: SeriesT;
+		type: SeriesTypeT | null;
+	};
+	edit_type: EDIT_SERIES_CREATE_T;
+}>>;
+export type AddStandaloneRecordingEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit: ArtistCreditT;
+		comment: string | null;
+		length: number | null;
+		name: string;
+		recording: RecordingT;
+		video: boolean;
+	};
+	edit_type: EDIT_RECORDING_CREATE_T;
+}>>;
+export type AddWorkEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		attributes?: {
+			[attributeName: string]: $ReadOnlyArray<WorkAttributeT>;
+		};
+		comment: string;
+		iswc: string;
+		language?: LanguageT;
+		languages?: $ReadOnlyArray<LanguageT>;
+		name: string;
+		type: WorkTypeT | null;
+		work: WorkT;
+	};
+	edit_type: EDIT_WORK_CREATE_T;
+}>>;
+export type ChangeReleaseQualityEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		quality: CompT<QualityT>;
+		release: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_CHANGE_QUALITY_T;
+}>>;
+export type ChangeWikiDocEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new_version: number | null;
+		old_version: number | null;
+		page: string;
+	};
+	edit_type: EDIT_WIKIDOC_CHANGE_T;
+}>>;
+export type EditAliasEditGenericT<A, T> = $ReadOnly<$_$Spread<GenericEditT, {
+	alias: A | null;
+	display_data: {
+		[coreEntityType: EntityWithAliasesTypeT]: EntityWithAliasesT;
+		alias: CompT<string>;
+		begin_date: CompT<PartialDateT>;
+		end_date: CompT<PartialDateT>;
+		ended: CompT<boolean>;
+		entity_type: EntityWithAliasesTypeT;
+		locale: CompT<string | null>;
+		primary_for_locale: CompT<boolean>;
+		sort_name: CompT<string>;
+		type: CompT<T | null>;
+	};
+}>>;
+export type EditAreaAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<AreaAliasT, AreaAliasTypeT>, {
+	edit_type: EDIT_AREA_EDIT_ALIAS_T;
+}>>;
+export type EditArtistAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<ArtistAliasT, ArtistAliasTypeT>, {
+	edit_type: EDIT_ARTIST_EDIT_ALIAS_T;
+}>>;
+export type EditEventAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<EventAliasT, EventAliasTypeT>, {
+	edit_type: EDIT_EVENT_EDIT_ALIAS_T;
+}>>;
+export type EditGenreAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<GenreAliasT, GenreAliasTypeT>, {
+	edit_type: EDIT_GENRE_EDIT_ALIAS_T;
+}>>;
+export type EditInstrumentAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<InstrumentAliasT, InstrumentAliasTypeT>, {
+	edit_type: EDIT_INSTRUMENT_EDIT_ALIAS_T;
+}>>;
+export type EditLabelAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<LabelAliasT, LabelAliasTypeT>, {
+	edit_type: EDIT_LABEL_EDIT_ALIAS_T;
+}>>;
+export type EditPlaceAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<PlaceAliasT, PlaceAliasTypeT>, {
+	edit_type: EDIT_PLACE_EDIT_ALIAS_T;
+}>>;
+export type EditRecordingAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<RecordingAliasT, RecordingAliasTypeT>, {
+	edit_type: EDIT_RECORDING_EDIT_ALIAS_T;
+}>>;
+export type EditReleaseGroupAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<ReleaseGroupAliasT, ReleaseGroupAliasTypeT>, {
+	edit_type: EDIT_RELEASEGROUP_EDIT_ALIAS_T;
+}>>;
+export type EditReleaseAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<ReleaseAliasT, ReleaseAliasTypeT>, {
+	edit_type: EDIT_RELEASE_EDIT_ALIAS_T;
+}>>;
+export type EditSeriesAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<SeriesAliasT, SeriesAliasTypeT>, {
+	edit_type: EDIT_SERIES_EDIT_ALIAS_T;
+}>>;
+export type EditWorkAliasEditT = $ReadOnly<$_$Spread<EditAliasEditGenericT<WorkAliasT, WorkAliasTypeT>, {
+	edit_type: EDIT_WORK_EDIT_ALIAS_T;
+}>>;
+export type EditAliasEditT = EditAreaAliasEditT | EditArtistAliasEditT | EditEventAliasEditT | EditGenreAliasEditT | EditInstrumentAliasEditT | EditLabelAliasEditT | EditPlaceAliasEditT | EditRecordingAliasEditT | EditReleaseGroupAliasEditT | EditReleaseAliasEditT | EditSeriesAliasEditT | EditWorkAliasEditT;
+export type EditAreaEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		area: AreaT;
+		begin_date?: CompT<PartialDateT>;
+		comment?: CompT<string | null>;
+		end_date?: CompT<PartialDateT>;
+		ended?: CompT<boolean>;
+		iso_3166_1?: CompT<$ReadOnlyArray<string> | null>;
+		iso_3166_2?: CompT<$ReadOnlyArray<string> | null>;
+		iso_3166_3?: CompT<$ReadOnlyArray<string> | null>;
+		name?: CompT<string>;
+		sort_name?: CompT<string>;
+		type?: CompT<AreaTypeT | null>;
+	};
+	edit_type: EDIT_AREA_EDIT_T;
+}>>;
+export type EditArtistEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		area?: CompT<AreaT | null>;
+		artist: ArtistT;
+		begin_area?: CompT<AreaT | null>;
+		begin_date?: CompT<PartialDateT>;
+		comment?: CompT<string | null>;
+		end_area?: CompT<AreaT | null>;
+		end_date?: CompT<PartialDateT>;
+		ended?: CompT<boolean>;
+		gender?: CompT<GenderT | null>;
+		ipi_codes?: CompT<$ReadOnlyArray<string> | null>;
+		isni_codes?: CompT<$ReadOnlyArray<string> | null>;
+		name?: CompT<string>;
+		sort_name?: CompT<string>;
+		type?: CompT<ArtistTypeT | null>;
+	};
+	edit_type: EDIT_ARTIST_EDIT_T;
+}>>;
+export type EditArtistCreditEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit: CompT<ArtistCreditT>;
+	};
+	edit_type: EDIT_ARTIST_EDITCREDIT_T;
+}>>;
+export type EditBarcodesEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		client_version: string | null;
+		submissions: $ReadOnlyArray<{
+			new_barcode: string | null;
+			old_barcode?: string | null;
+			release: ReleaseT;
+		}>;
+	};
+	edit_type: EDIT_RELEASE_EDIT_BARCODES_T;
+}>>;
+export type EditCoverArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artwork: ReleaseArtT;
+		comment: CompT<string | null>;
+		release: ReleaseT;
+		types: CompT<$ReadOnlyArray<CoverArtTypeT>>;
+	};
+	edit_type: EDIT_RELEASE_EDIT_COVER_ART_T;
+}>>;
+export type EditEventArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artwork: EventArtT;
+		comment: CompT<string | null>;
+		event: EventT;
+		types: CompT<$ReadOnlyArray<EventArtTypeT>>;
+	};
+	edit_type: EDIT_EVENT_EDIT_EVENT_ART_T;
+}>>;
+export type EditEventEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		begin_date?: CompT<PartialDateT | null>;
+		cancelled?: CompT<boolean>;
+		comment?: CompT<string | null>;
+		end_date?: CompT<PartialDateT | null>;
+		event: EventT;
+		name?: CompT<string>;
+		setlist?: CompT<string | null>;
+		time?: CompT<string | null>;
+		type?: CompT<EventTypeT | null>;
+	};
+	edit_type: EDIT_EVENT_EDIT_T;
+}>>;
+export type EditGenreEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		comment?: CompT<string | null>;
+		genre: GenreT;
+		name?: CompT<string>;
+	};
+	edit_type: EDIT_GENRE_EDIT_T;
+}>>;
+export type EditInstrumentEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		comment?: CompT<string | null>;
+		description?: CompT<string | null>;
+		instrument: InstrumentT;
+		name?: CompT<string>;
+		type?: CompT<InstrumentTypeT | null>;
+	};
+	edit_type: EDIT_INSTRUMENT_EDIT_T;
+}>>;
+export type EditLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		area?: CompT<AreaT | null>;
+		begin_date?: CompT<PartialDateT>;
+		comment?: CompT<string | null>;
+		end_date?: CompT<PartialDateT>;
+		ended?: CompT<boolean>;
+		ipi_codes?: CompT<$ReadOnlyArray<string> | null>;
+		isni_codes?: CompT<$ReadOnlyArray<string> | null>;
+		label: LabelT;
+		label_code?: CompT<number>;
+		name?: CompT<string>;
+		sort_name?: CompT<string>;
+		type?: CompT<LabelTypeT | null>;
+	};
+	edit_type: EDIT_LABEL_EDIT_T;
+}>>;
+export type EditMediumEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit_changes?: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT>;
+		changed_mbids: boolean;
+		data_track_changes: boolean;
+		format?: CompT<MediumFormatT | null>;
+		medium: MediumT;
+		name?: CompT<string>;
+		position?: CompT<number | string>;
+		recording_changes?: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT>;
+		tracklist_changes?: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT | TracklistChangesRemoveT>;
+	};
+	edit_type: EDIT_MEDIUM_EDIT_T;
+}>>;
+export type EditPlaceEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		address?: CompT<string>;
+		area?: CompT<AreaT | null>;
+		begin_date?: CompT<PartialDateT>;
+		comment?: CompT<string>;
+		coordinates?: CompT<CoordinatesT | null>;
+		end_date?: CompT<PartialDateT>;
+		ended?: CompT<boolean>;
+		name: CompT<string>;
+		place: PlaceT;
+		type?: CompT<PlaceTypeT | null>;
+	};
+	edit_type: EDIT_PLACE_EDIT_T;
+}>>;
+export type EditRecordingEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit?: CompT<ArtistCreditT>;
+		comment?: CompT<string | null>;
+		length?: CompT<number | null>;
+		name?: CompT<string>;
+		recording: RecordingT;
+		video?: CompT<boolean>;
+	};
+}>>;
+export type EditRecordingEditHistoricLengthT = $ReadOnly<$_$Spread<EditRecordingEditGenericT, {
+	edit_type: EDIT_HISTORIC_EDIT_TRACK_LENGTH_T;
+}>>;
+export type EditRecordingEditHistoricNameT = $ReadOnly<$_$Spread<EditRecordingEditGenericT, {
+	edit_type: EDIT_HISTORIC_EDIT_TRACKNAME_T;
+}>>;
+export type EditRecordingEditCurrentT = $ReadOnly<$_$Spread<EditRecordingEditGenericT, {
+	edit_type: EDIT_RECORDING_EDIT_T;
+}>>;
+export type EditRecordingEditT = EditRecordingEditHistoricLengthT | EditRecordingEditHistoricNameT | EditRecordingEditCurrentT;
+export type EditRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: RelationshipT;
+		old: RelationshipT;
+		unknown_attributes: boolean;
+	};
+	edit_type: EDIT_RELATIONSHIP_EDIT_T;
+}>>;
+export type EditRelationshipAttributeEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		attribute_type: LinkAttrTypeT | null;
+		child_order?: CompT<number>;
+		creditable?: CompT<boolean>;
+		description?: CompT<string | null>;
+		free_text?: CompT<boolean>;
+		name?: CompT<string>;
+		original_description: string | null;
+		original_name: string;
+		parent?: CompT<LinkAttrTypeT | null>;
+	};
+	edit_type: EDIT_RELATIONSHIP_ATTRIBUTE_T;
+}>>;
+export type EditRelationshipTypeEditDisplayAttributeT = $_$Spread<LinkTypeAttrTypeT, {
+	typeName: string;
+}>;
+export type EditRelationshipTypeEditDisplayExampleT = {
+	name: string;
+	relationship: RelationshipT;
+};
+export type EditRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		attributes: CompT<$ReadOnlyArray<EditRelationshipTypeEditDisplayAttributeT>>;
+		child_order: CompT<number>;
+		description?: CompT<string | null>;
+		documentation: CompT<string | null>;
+		entity0_cardinality?: CompT<number>;
+		entity1_cardinality?: CompT<number>;
+		examples: CompT<$ReadOnlyArray<EditRelationshipTypeEditDisplayExampleT>>;
+		has_dates: CompT<boolean>;
+		is_deprecated: CompT<boolean>;
+		link_phrase?: CompT<string>;
+		long_link_phrase?: CompT<string>;
+		name: CompT<string>;
+		orderable_direction?: CompT<number>;
+		parent?: CompT<LinkTypeT | null>;
+		relationship_type: LinkTypeT;
+		reverse_link_phrase: CompT<string>;
+	};
+	edit_type: EDIT_RELATIONSHIP_EDIT_LINK_TYPE_T;
+}>>;
+export type EditReleaseEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit?: CompT<ArtistCreditT>;
+		barcode?: CompT<string | null>;
+		comment?: CompT<string | null>;
+		events?: CompT<$ReadOnlyArray<ReleaseEventT>>;
+		language?: CompT<LanguageT | null>;
+		name?: CompT<string>;
+		packaging?: CompT<ReleasePackagingT | null>;
+		release: ReleaseT;
+		release_group?: CompT<ReleaseGroupT>;
+		script?: CompT<ScriptT | null>;
+		status?: CompT<ReleaseStatusT | null>;
+		update_tracklists?: boolean;
+	};
+}>>;
+export type EditReleaseEditHistoricArtistT = $ReadOnly<$_$Spread<EditReleaseEditGenericT, {
+	edit_type: EDIT_RELEASE_ARTIST_T;
+}>>;
+export type EditReleaseEditCurrentT = $ReadOnly<$_$Spread<EditReleaseEditGenericT, {
+	edit_type: EDIT_RELEASE_EDIT_T;
+}>>;
+export type EditReleaseEditT = EditReleaseEditHistoricArtistT | EditReleaseEditCurrentT;
+export type EditReleaseGroupEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit?: CompT<ArtistCreditT>;
+		comment?: CompT<string | null>;
+		name?: CompT<string>;
+		release_group: ReleaseGroupT;
+		secondary_types: CompT<string>;
+		type?: CompT<ReleaseGroupTypeT | ReleaseGroupHistoricTypeT | null>;
+	};
+	edit_type: EDIT_RELEASEGROUP_EDIT_T;
+}>>;
+export type EditReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		barcode: string | null;
+		catalog_number: {
+			new?: string | null;
+			old: string | null;
+		};
+		combined_format?: string;
+		events: $ReadOnlyArray<ReleaseEventT>;
+		label: {
+			new?: LabelT | null;
+			old: LabelT | null;
+		};
+		release: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_EDITRELEASELABEL_T;
+}>>;
+export type EditSeriesEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		comment?: CompT<string>;
+		name?: CompT<string>;
+		ordering_type?: CompT<SeriesOrderingTypeT>;
+		series: SeriesT;
+		type?: CompT<SeriesTypeT>;
+	};
+	edit_type: EDIT_SERIES_EDIT_T;
+}>>;
+export type EditUrlEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		affects: number;
+		description?: CompT<string | null>;
+		isMerge: boolean;
+		uri?: CompT<string>;
+		url: UrlT;
+	};
+	edit_type: EDIT_URL_EDIT_T;
+}>>;
+export type EditWorkEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		attributes?: {
+			[attributeName: string]: CompT<$ReadOnlyArray<string>>;
+		};
+		comment?: CompT<string | null>;
+		iswc?: CompT<string | null>;
+		languages?: CompT<$ReadOnlyArray<LanguageT>>;
+		name?: CompT<string>;
+		type?: CompT<WorkTypeT | null>;
+		work: WorkT;
+	};
+	edit_type: EDIT_WORK_EDIT_T;
+}>>;
+export type MergeAreasEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: AreaT;
+		old: $ReadOnlyArray<AreaT>;
+	};
+	edit_type: EDIT_AREA_MERGE_T;
+}>>;
+export type MergeArtistsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: ArtistT;
+		old: $ReadOnlyArray<ArtistT>;
+		rename: boolean;
+	};
+	edit_type: EDIT_ARTIST_MERGE_T;
+}>>;
+export type MergeEventsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: EventT;
+		old: $ReadOnlyArray<EventT>;
+	};
+	edit_type: EDIT_EVENT_MERGE_T;
+}>>;
+export type MergeInstrumentsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: InstrumentT;
+		old: $ReadOnlyArray<InstrumentT>;
+	};
+	edit_type: EDIT_INSTRUMENT_MERGE_T;
+}>>;
+export type MergeLabelsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: LabelT;
+		old: $ReadOnlyArray<LabelT>;
+	};
+	edit_type: EDIT_LABEL_MERGE_T;
+}>>;
+export type MergePlacesEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: PlaceT;
+		old: $ReadOnlyArray<PlaceT>;
+	};
+	edit_type: EDIT_PLACE_MERGE_T;
+}>>;
+export type MergeRecordingsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		large_spread: boolean;
+		new: RecordingWithArtistCreditT;
+		old: $ReadOnlyArray<RecordingWithArtistCreditT>;
+	};
+	edit_type: EDIT_RECORDING_MERGE_T;
+}>>;
+export type MergeReleaseGroupsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: ReleaseGroupT;
+		old: $ReadOnlyArray<ReleaseGroupT>;
+	};
+	edit_type: EDIT_RELEASEGROUP_MERGE_T;
+}>>;
+export type MergeReleasesEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		cannot_merge_recordings_reason?: {
+			message: string;
+			vars: {
+				var: string;
+			};
+		};
+	};
+}>>;
+export type MergeSeriesEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: SeriesT;
+		old: $ReadOnlyArray<SeriesT>;
+	};
+	edit_type: EDIT_SERIES_MERGE_T;
+}>>;
+export type MergeWorksEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: WorkT;
+		old: $ReadOnlyArray<WorkT>;
+	};
+	edit_type: EDIT_WORK_MERGE_T;
+}>>;
+export type MoveDiscIdEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		medium_cdtoc: MediumCDTocT;
+		new_medium: MediumT;
+		old_medium: MediumT;
+	};
+	edit_type: EDIT_MEDIUM_MOVE_DISCID_T;
+}>>;
+export type RemoveCoverArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artwork: ReleaseArtT;
+		release: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_REMOVE_COVER_ART_T;
+}>>;
+export type RemoveDiscIdEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		cdtoc: CDTocT;
+		medium: MediumT;
+	};
+	edit_type: EDIT_MEDIUM_REMOVE_DISCID_T;
+}>>;
+export type RemoveAreaEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: AreaT;
+		entity_type: "area";
+	};
+	edit_type: EDIT_AREA_DELETE_T;
+}>>;
+export type RemoveArtistEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: ArtistT;
+		entity_type: "artist";
+	};
+	edit_type: EDIT_ARTIST_DELETE_T;
+}>>;
+export type RemoveEventArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artwork: EventArtT;
+		event: EventT;
+	};
+	edit_type: EDIT_EVENT_REMOVE_EVENT_ART_T;
+}>>;
+export type RemoveEventEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: EventT;
+		entity_type: "event";
+	};
+	edit_type: EDIT_EVENT_DELETE_T;
+}>>;
+export type RemoveGenreEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: GenreT;
+		entity_type: "genre";
+	};
+	edit_type: EDIT_GENRE_DELETE_T;
+}>>;
+export type RemoveInstrumentEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: InstrumentT;
+		entity_type: "instrument";
+	};
+	edit_type: EDIT_INSTRUMENT_DELETE_T;
+}>>;
+export type RemoveLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: LabelT;
+		entity_type: "label";
+	};
+	edit_type: EDIT_LABEL_DELETE_T;
+}>>;
+export type RemovePlaceEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: PlaceT;
+		entity_type: "place";
+	};
+	edit_type: EDIT_PLACE_DELETE_T;
+}>>;
+export type RemoveRecordingEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: RecordingT;
+		entity_type: "recording";
+	};
+	edit_type: EDIT_RECORDING_DELETE_T;
+}>>;
+export type RemoveReleaseGroupEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: ReleaseGroupT;
+		entity_type: "release_group";
+	};
+	edit_type: EDIT_RELEASEGROUP_DELETE_T;
+}>>;
+export type RemoveReleaseEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: ReleaseT;
+		entity_type: "release";
+	};
+	edit_type: EDIT_RELEASE_DELETE_T;
+}>>;
+export type RemoveSeriesEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: SeriesT;
+		entity_type: "series";
+	};
+	edit_type: EDIT_SERIES_DELETE_T;
+}>>;
+export type RemoveWorkEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		entity: WorkT;
+		entity_type: "work";
+	};
+	edit_type: EDIT_WORK_DELETE_T;
+}>>;
+export type RemoveEntityEditT = RemoveAreaEditT | RemoveArtistEditT | RemoveEventEditT | RemoveGenreEditT | RemoveInstrumentEditT | RemoveLabelEditT | RemovePlaceEditT | RemoveRecordingEditT | RemoveReleaseGroupEditT | RemoveReleaseEditT | RemoveSeriesEditT | RemoveWorkEditT;
+export type RemoveIsrcEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		isrc: IsrcT;
+	};
+	edit_type: EDIT_RECORDING_REMOVE_ISRC_T;
+}>>;
+export type RemoveIswcEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		iswc: IswcT;
+	};
+	edit_type: EDIT_WORK_REMOVE_ISWC_T;
+}>>;
+export type RemoveMediumEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		medium: MediumT;
+		tracks?: $ReadOnlyArray<TrackT>;
+	};
+	edit_type: EDIT_MEDIUM_DELETE_T;
+}>>;
+export type RemoveRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	data: {
+		edit_version?: number;
+		relationship: {
+			entity0: {
+				gid?: string;
+				id: number;
+				name: string;
+			};
+			entity0_credit?: string;
+			entity1: {
+				gid?: string;
+				id: number;
+				name: string;
+			};
+			entity1_credit?: string;
+			extra_phrase_attributes?: string;
+			id: number;
+			link: {
+				attributes?: $ReadOnlyArray<{
+					credited_as?: string;
+					gid?: string;
+					id?: string | number;
+					name?: string;
+					root_gid?: string;
+					root_id?: string | number;
+					root_name?: string;
+					text_value?: string;
+					type?: {
+						gid: string;
+						id: string | number;
+						name: string;
+						root: {
+							gid: string;
+							id: string | number;
+							name: string;
+						};
+					};
+				}>;
+				begin_date: {
+					day: number | null;
+					month: number | null;
+					year: string | number | null;
+				};
+				end_date: {
+					day: number | null;
+					month: number | null;
+					year: string | number | null;
+				};
+				ended?: string;
+				type: {
+					entity0_type: string;
+					entity1_type: string;
+					id?: string | number;
+					long_link_phrase?: string;
+				};
+			};
+			phrase?: string;
+		};
+	};
+	display_data: {
+		relationship: RelationshipT;
+	};
+	edit_type: EDIT_RELATIONSHIP_DELETE_T;
+}>>;
+export type RemoveRelationshipAttributeEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		description: string | null;
+		name: string;
+	};
+	edit_type: EDIT_RELATIONSHIP_REMOVE_LINK_ATTRIBUTE_T;
+}>>;
+export type RemoveRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		attributes: $ReadOnlyArray<$_$Spread<LinkTypeAttrTypeT, {
+			typeName: string;
+		}>>;
+		description: string | null;
+		entity0_type: RelatableEntityTypeT;
+		entity1_type: RelatableEntityTypeT;
+		link_phrase: string;
+		long_link_phrase: string;
+		name: string;
+		reverse_link_phrase: string;
+	};
+	edit_type: EDIT_RELATIONSHIP_REMOVE_LINK_TYPE_T;
+}>>;
+export type RemoveReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		catalog_number: string;
+		label?: LabelT;
+		release: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_DELETERELEASELABEL_T;
+}>>;
+export type ReorderCoverArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		new: $ReadOnlyArray<ReleaseArtT>;
+		old: $ReadOnlyArray<ReleaseArtT>;
+		release: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_REORDER_COVER_ART_T;
+}>>;
+export type ReorderEventArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		event: EventT;
+		new: $ReadOnlyArray<EventArtT>;
+		old: $ReadOnlyArray<EventArtT>;
+	};
+	edit_type: EDIT_EVENT_REORDER_EVENT_ART_T;
+}>>;
+export type ReorderMediumsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		mediums: $ReadOnlyArray<{
+			new: number;
+			old: "new" | number;
+			title: string;
+		}>;
+		release: ReleaseT;
+	};
+	edit_type: EDIT_RELEASE_REORDER_MEDIUMS_T;
+}>>;
+export type ReorderRelationshipsEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		relationships: $ReadOnlyArray<{
+			new_order: number;
+			old_order: number;
+			relationship: RelationshipT;
+		}>;
+	};
+	edit_type: EDIT_RELATIONSHIPS_REORDER_T;
+}>>;
+export type SetCoverArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artwork: CompT<ReleaseArtT>;
+		isOldArtworkAutomatic: boolean;
+		release_group: ReleaseGroupT;
+	};
+	edit_type: EDIT_RELEASEGROUP_SET_COVER_ART_T;
+}>>;
+export type SetTrackLengthsEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		cdtoc: CDTocT | null;
+		length: CompT<$ReadOnlyArray<number | null>>;
+		medium?: MediumT;
+		releases: $ReadOnlyArray<ReleaseT>;
+	};
+}>>;
+export type SetTrackLengthsEditHistoricT = $ReadOnly<$_$Spread<SetTrackLengthsEditGenericT, {
+	edit_type: EDIT_HISTORIC_SET_TRACK_LENGTHS_FROM_CDTOC_T;
+}>>;
+export type SetTrackLengthsEditStandardT = $ReadOnly<$_$Spread<SetTrackLengthsEditGenericT, {
+	edit_type: EDIT_SET_TRACK_LENGTHS_T;
+}>>;
+export type SetTrackLengthsEditT = SetTrackLengthsEditHistoricT | SetTrackLengthsEditStandardT;
+export type CurrentEditT = AddAnnotationEditT | AddAreaEditT | AddArtistEditT | AddCoverArtEditT | AddDiscIdEditT | AddEventArtEditT | AddEventEditT | AddGenreEditT | AddInstrumentEditT | AddIsrcsEditT | AddIswcsEditT | AddLabelEditT | AddMediumEditT | AddPlaceEditT | AddRelationshipEditT | AddRelationshipAttributeEditT | AddRelationshipTypeEditT | AddReleaseEditT | AddReleaseGroupEditT | AddReleaseLabelEditT | AddRemoveAliasEditT | AddSeriesEditT | AddStandaloneRecordingEditT | AddWorkEditT | ChangeReleaseQualityEditT | ChangeWikiDocEditT | EditAliasEditT | EditAreaEditT | EditArtistEditT | EditArtistCreditEditT | EditBarcodesEditT | EditCoverArtEditT | EditEventArtEditT | EditEventEditT | EditGenreEditT | EditInstrumentEditT | EditLabelEditT | EditMediumEditT | EditPlaceEditT | EditRecordingEditT | EditRelationshipEditT | EditRelationshipAttributeEditT | EditRelationshipTypeEditT | EditReleaseEditT | EditReleaseGroupEditT | EditReleaseLabelEditT | EditSeriesEditT | EditUrlEditT | EditWorkEditT | MergeAreasEditT | MergeArtistsEditT | MergeEventsEditT | MergeInstrumentsEditT | MergeLabelsEditT | MergePlacesEditT | MergeRecordingsEditT | MergeReleaseGroupsEditT | MergeReleasesEditT | MergeSeriesEditT | MergeWorksEditT | MoveDiscIdEditT | RemoveCoverArtEditT | RemoveDiscIdEditT | RemoveEventArtEditT | RemoveEntityEditT | RemoveIsrcEditT | RemoveIswcEditT | RemoveMediumEditT | RemoveRelationshipEditT | RemoveRelationshipAttributeEditT | RemoveRelationshipTypeEditT | RemoveReleaseLabelEditT | ReorderCoverArtEditT | ReorderEventArtEditT | ReorderMediumsEditT | ReorderRelationshipsEditT | SetCoverArtEditT | SetTrackLengthsEditT;
+export type AddDiscIdHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		cdtoc: CDTocT;
+		full_toc: string;
+		releases: $ReadOnlyArray<ReleaseT | null>;
+	};
+	edit_type: EDIT_HISTORIC_ADD_DISCID_T;
+}>>;
+export type AddRelationshipHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		relationships: $ReadOnlyArray<RelationshipT>;
+	};
+	edit_type: EDIT_HISTORIC_ADD_LINK_T;
+}>>;
+export type AddReleaseHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist: ArtistT;
+		language: LanguageT | null;
+		name: string;
+		release_events: $ReadOnlyArray<{
+			barcode: number;
+			catalog_number: string | null;
+			country: AreaT | null;
+			date: PartialDateT | null;
+			format: MediumFormatT | null;
+			label: LabelT | null;
+		}>;
+		releases: $ReadOnlyArray<ReleaseT | null>;
+		script: ScriptT | null;
+		status: ReleaseStatusT | null;
+		tracks: $ReadOnlyArray<{
+			artist: ArtistT;
+			length: number | null;
+			name: string;
+			position: number;
+			recording: RecordingT;
+		}>;
+		type: ReleaseGroupTypeT | null;
+	};
+	edit_type: EDIT_HISTORIC_ADD_RELEASE_T;
+}>>;
+export type AddReleaseAnnotationHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		changelog: string;
+		html: string;
+		releases: $ReadOnlyArray<ReleaseT>;
+		text: string;
+	};
+	edit_type: EDIT_HISTORIC_ADD_RELEASE_ANNOTATION_T;
+}>>;
+export type AddTrackKVHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist?: ArtistT;
+		length: number;
+		name: string;
+		position: number;
+		recording: RecordingT;
+		releases: $ReadOnlyArray<ReleaseT | null>;
+	};
+	edit_type: EDIT_HISTORIC_ADD_TRACK_KV_T;
+}>>;
+export type AddTrackOldHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_name?: string;
+		name: string;
+		position: number;
+		releases: $ReadOnlyArray<ReleaseT | null>;
+	};
+	edit_type: EDIT_HISTORIC_ADD_TRACK_T;
+}>>;
+export type ChangeArtistQualityHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist: ArtistT;
+		quality: CompT<QualityT>;
+	};
+	edit_type: EDIT_HISTORIC_CHANGE_ARTIST_QUALITY_T;
+}>>;
+export type ChangeReleaseArtistHistoricEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist: CompT<ArtistT>;
+		releases: $ReadOnlyArray<ReleaseT>;
+	};
+}>>;
+export type ChangeReleaseArtistHistoricEditMACToSACT = $ReadOnly<$_$Spread<ChangeReleaseArtistHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_MAC_TO_SAC_T;
+}>>;
+export type ChangeReleaseArtistHistoricEditSACToMACT = $ReadOnly<$_$Spread<ChangeReleaseArtistHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_SAC_TO_MAC_T;
+}>>;
+export type ChangeReleaseArtistHistoricEditT = ChangeReleaseArtistHistoricEditMACToSACT | ChangeReleaseArtistHistoricEditSACToMACT;
+export type ChangeReleaseGroupHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		release_group: CompT<ReleaseGroupT>;
+		releases: $ReadOnlyArray<ReleaseT>;
+	};
+	edit_type: EDIT_HISTORIC_CHANGE_RELEASE_GROUP_T;
+}>>;
+export type ChangeReleaseQualityHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		changes: $ReadOnlyArray<{
+			quality: CompT<QualityT>;
+			releases: $ReadOnlyArray<ReleaseT>;
+		}>;
+	};
+	edit_type: EDIT_HISTORIC_CHANGE_RELEASE_QUALITY_T;
+}>>;
+export type EditRelationshipHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		relationship: CompT<$ReadOnlyArray<RelationshipT>>;
+	};
+	edit_type: EDIT_HISTORIC_EDIT_LINK_T;
+}>>;
+export type EditReleaseAttributesHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		changes: $ReadOnlyArray<{
+			releases: $ReadOnlyArray<ReleaseT | null>;
+			status: ReleaseStatusT | null;
+			type: ReleaseGroupTypeT | ReleaseGroupHistoricTypeT | null;
+		}>;
+		status: ReleaseStatusT | null;
+		type: ReleaseGroupTypeT | ReleaseGroupHistoricTypeT | null;
+	};
+	edit_type: EDIT_HISTORIC_EDIT_RELEASE_ATTRS_T;
+}>>;
+export type EditReleaseEventsHistoricEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		additions: $ReadOnlyArray<OldReleaseEventT>;
+		edits: $ReadOnlyArray<OldReleaseEventCompT>;
+		removals: $ReadOnlyArray<OldReleaseEventT>;
+	};
+	edit_type: EDIT_HISTORIC_ADD_RELEASE_EVENTS_T | EDIT_HISTORIC_EDIT_RELEASE_EVENTS_T | EDIT_HISTORIC_EDIT_RELEASE_EVENTS_OLD_T | EDIT_HISTORIC_REMOVE_RELEASE_EVENTS_T;
+}>>;
+export type AddReleaseEventsHistoricEditT = $ReadOnly<$_$Spread<EditReleaseEventsHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_ADD_RELEASE_EVENTS_T;
+}>>;
+export type EditReleaseEventsHistoricEditNewerT = $ReadOnly<$_$Spread<EditReleaseEventsHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_EDIT_RELEASE_EVENTS_T;
+}>>;
+export type EditReleaseEventsHistoricEditOlderT = $ReadOnly<$_$Spread<EditReleaseEventsHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_EDIT_RELEASE_EVENTS_OLD_T;
+}>>;
+export type RemoveReleaseEventsHistoricEditT = $ReadOnly<$_$Spread<EditReleaseEventsHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_REMOVE_RELEASE_EVENTS_T;
+}>>;
+export type EditReleaseEventsHistoricEditT = AddReleaseEventsHistoricEditT | EditReleaseEventsHistoricEditNewerT | EditReleaseEventsHistoricEditOlderT | RemoveReleaseEventsHistoricEditT;
+export type EditReleaseLanguageHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		language: LanguageT | null;
+		old: $ReadOnlyArray<{
+			language: LanguageT | null;
+			releases: $ReadOnlyArray<ReleaseT | null>;
+			script: ScriptT | null;
+		}>;
+		script: ScriptT | null;
+	};
+	edit_type: EDIT_HISTORIC_EDIT_RELEASE_LANGUAGE_T;
+}>>;
+export type EditReleaseNameHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		name: CompT<string>;
+		releases: $ReadOnlyArray<ReleaseT | null>;
+	};
+	edit_type: EDIT_HISTORIC_EDIT_RELEASE_NAME_T;
+}>>;
+export type EditTrackHistoricEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist?: CompT<ArtistT>;
+		position?: CompT<number>;
+		recording: RecordingT;
+	};
+}>>;
+export type EditTrackHistoricEditArtistT = $ReadOnly<$_$Spread<EditTrackHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_CHANGE_TRACK_ARTIST_T;
+}>>;
+export type EditTrackHistoricEditNumberT = $ReadOnly<$_$Spread<EditTrackHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_EDIT_TRACKNUM_T;
+}>>;
+export type EditTrackHistoricEditT = EditTrackHistoricEditArtistT | EditTrackHistoricEditNumberT;
+export type MergeReleasesHistoricEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		merge_attributes: boolean;
+		merge_language: boolean;
+		releases: {
+			new: $ReadOnlyArray<ReleaseT>;
+			old: $ReadOnlyArray<ReleaseT>;
+		};
+	};
+}>>;
+export type MergeReleasesHistoricEditReleaseT = $ReadOnly<$_$Spread<MergeReleasesHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_MERGE_RELEASE_T;
+}>>;
+export type MergeReleasesHistoricEditMACT = $ReadOnly<$_$Spread<MergeReleasesHistoricEditGenericT, {
+	edit_type: EDIT_HISTORIC_MERGE_RELEASE_MAC_T;
+}>>;
+export type MergeReleasesHistoricEditT = MergeReleasesHistoricEditReleaseT | MergeReleasesHistoricEditMACT;
+export type MoveDiscIdHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		cdtoc: CDTocT;
+		new_releases: $ReadOnlyArray<ReleaseT | null>;
+		old_releases: $ReadOnlyArray<ReleaseT | null>;
+	};
+	edit_type: EDIT_HISTORIC_MOVE_DISCID_T;
+}>>;
+export type MoveReleaseHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist: CompT<ArtistT>;
+		move_tracks: boolean;
+		releases: $ReadOnlyArray<ReleaseT>;
+	};
+	edit_type: EDIT_HISTORIC_MOVE_RELEASE_T;
+}>>;
+export type MoveReleaseToReleaseGroupHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		release: ReleaseT;
+		release_group: CompT<ReleaseGroupT>;
+	};
+	edit_type: EDIT_RELEASE_MOVE_T;
+}>>;
+export type RemoveDiscIdHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		cdtoc: {
+			discid: string;
+			entityType: "cdtoc";
+		};
+		releases: $ReadOnlyArray<ReleaseT | null>;
+	};
+	edit_type: EDIT_HISTORIC_REMOVE_DISCID_T;
+}>>;
+export type RemoveLabelAliasHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		alias: string;
+	};
+	edit_type: EDIT_HISTORIC_REMOVE_LABEL_ALIAS_T;
+}>>;
+export type RemoveRelationshipHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		relationships: $ReadOnlyArray<RelationshipT>;
+	};
+	edit_type: EDIT_HISTORIC_REMOVE_LINK_T;
+}>>;
+export type RemoveReleaseHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		artist_credit?: ArtistCreditT;
+		name: string;
+		releases: $ReadOnlyArray<ReleaseT>;
+	};
+	edit_type: EDIT_HISTORIC_REMOVE_RELEASE_T;
+}>>;
+export type RemoveReleasesHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		releases: $ReadOnlyArray<ReleaseT>;
+	};
+	edit_type: EDIT_HISTORIC_REMOVE_RELEASES_T;
+}>>;
+export type RemoveTrackHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
+	display_data: {
+		name: string;
+		recording: RecordingT;
+		releases: $ReadOnlyArray<ReleaseT | null>;
+	};
+	edit_type: EDIT_HISTORIC_REMOVE_TRACK_T;
+}>>;
+export type HistoricEditT = AddDiscIdHistoricEditT | AddRelationshipHistoricEditT | AddReleaseHistoricEditT | AddReleaseAnnotationHistoricEditT | AddTrackKVHistoricEditT | AddTrackOldHistoricEditT | ChangeArtistQualityHistoricEditT | ChangeReleaseArtistHistoricEditT | ChangeReleaseGroupHistoricEditT | ChangeReleaseQualityHistoricEditT | EditRelationshipHistoricEditT | EditReleaseAttributesHistoricEditT | EditReleaseEventsHistoricEditT | EditReleaseLanguageHistoricEditT | EditReleaseNameHistoricEditT | EditTrackHistoricEditT | MergeReleasesHistoricEditT | MoveDiscIdHistoricEditT | MoveReleaseHistoricEditT | MoveReleaseToReleaseGroupHistoricEditT | RemoveDiscIdHistoricEditT | RemoveLabelAliasHistoricEditT | RemoveRelationshipHistoricEditT | RemoveReleaseHistoricEditT | RemoveReleasesHistoricEditT | RemoveTrackHistoricEditT;
 export type EditorT = $_$Spread<EntityRoleT<"editor">, {
 	avatar: string;
 	deleted: boolean;
 	name: string;
 	privileges: number;
 }>;
+export type EntityWithAliasesT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
+export type EntityWithAliasesTypeT = EntityWithAliasesT["entityType"];
 export type AppearancesT<T> = {
 	hits: number;
 	results: $ReadOnlyArray<T>;
@@ -135,7 +1804,9 @@ export type CommentRoleT = {
 export type RelatableEntityRoleT<T> = $_$Spread<EntityRoleT<T>, $_$Spread<LastUpdateRoleT, $_$Spread<PendingEditsRoleT, {
 	gid: string;
 	name: string;
-	paged_relationship_groups?: {};
+	paged_relationship_groups?: {
+		[targetType: RelatableEntityTypeT]: PagedTargetTypeGroupT | void;
+	};
 	relationships?: $ReadOnlyArray<RelationshipT>;
 }>>>;
 export type DatePeriodRoleT = {
@@ -268,6 +1939,27 @@ export type ScriptT = {
 	iso_number: string | null;
 	name: string;
 };
+export type CDTocT = $ReadOnly<$_$Spread<EntityRoleT<"cdtoc">, {
+	discid: string;
+	freedb_id: string;
+	leadout_offset: number;
+	length: number;
+	track_count: number;
+	track_details: $ReadOnlyArray<{
+		end_sectors: number;
+		end_time: number;
+		length_sectors: number;
+		length_time: number;
+		start_sectors: number;
+		start_time: number;
+	}>;
+	track_offset: $ReadOnlyArray<number>;
+}>>;
+export type MediumCDTocT = $ReadOnly<$_$Spread<EntityRoleT<"medium_cdtoc">, {
+	cdtoc: CDTocT;
+	editsPending: boolean;
+	medium?: MediumT;
+}>>;
 export type MediumFormatT = $_$Spread<OptionTreeT<"medium_format">, {
 	has_discids: boolean;
 	year: number | null | undefined;
@@ -334,6 +2026,9 @@ export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentR
 	related_works: $ReadOnlyArray<number>;
 	video: boolean;
 }>>>>>>;
+export type RecordingWithArtistCreditT = $ReadOnly<$_$Spread<RecordingT, {
+	artistCredit: ArtistCreditT;
+}>>;
 export type LinkAttrT = {
 	credited_as?: string;
 	text_value?: string;
@@ -357,8 +2052,14 @@ export type LinkAttrTypeT = $_$Spread<OptionTreeT<"link_attribute_type">, {
 	root_gid: string;
 	root_id: number;
 }>;
+export type LinkTypeAttrTypeT = $ReadOnly<$_$Spread<TypeRoleT<LinkAttrTypeT>, {
+	max: number | null;
+	min: number | null;
+}>>;
 export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
-	attributes: {};
+	attributes: {
+		[typeId: StrOrNum]: LinkTypeAttrTypeT;
+	};
 	cardinality0: number;
 	cardinality1: number;
 	children?: $ReadOnlyArray<LinkTypeT>;
@@ -382,6 +2083,18 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
 	type0: RelatableEntityTypeT;
 	type1: RelatableEntityTypeT;
 }>;
+export type PagedLinkTypeGroupT = {
+	backward: boolean;
+	is_loaded: boolean;
+	limit: number;
+	link_type_id: number;
+	offset: number;
+	relationships: $ReadOnlyArray<RelationshipT>;
+	total_relationships: number;
+};
+export type PagedTargetTypeGroupT = {
+	[linkTypeIdAndSourceColumn: string]: PagedLinkTypeGroupT;
+};
 export type RelationshipT = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<PendingEditsRoleT, {
 	attributes: $ReadOnlyArray<LinkAttrT>;
 	backward: boolean;
@@ -410,6 +2123,7 @@ export type ReleaseLabelT = {
 	label: LabelT | null;
 	label_id: number | null;
 };
+export type ReleasePackagingT = OptionTreeT<"release_packaging">;
 export type ReleaseStatusT = OptionTreeT<"release_status">;
 export type ReleaseT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCreditRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"release">, {
 	barcode: string | null;
@@ -437,6 +2151,7 @@ export type ReleaseT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCred
 export type ReleaseWithMediumsT = $ReadOnly<$_$Spread<ReleaseT, {
 	mediums: $ReadOnlyArray<MediumWithRecordingsT>;
 }>>;
+export type ReleaseGroupSecondaryTypeT = OptionTreeT<"release_group_secondary_type">;
 export type ReleaseGroupT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCreditRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"release_group">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<ReleaseGroupTypeT>, {
 	cover_art?: ReleaseArtT;
 	firstReleaseDate: string | null;
@@ -452,6 +2167,11 @@ export type ReleaseGroupT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<Artis
 export type ReleaseGroupTypeT = $_$Spread<OptionTreeT<"release_group_type">, {
 	historic: false;
 }>;
+export type ReleaseGroupHistoricTypeT = {
+	historic: true;
+	id: number;
+	name: string;
+};
 export type SeriesEntityTypeT = "artist" | "event" | "recording" | "release" | "release_group" | "work";
 export type SeriesT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"series">, $_$Spread<TypeRoleT<SeriesTypeT>, {
 	entity_count?: number;
@@ -459,6 +2179,7 @@ export type SeriesT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRole
 	primaryAlias?: string | null;
 	type?: SeriesTypeT;
 }>>>>>;
+export type SeriesOrderingTypeT = OptionTreeT<"series_ordering_type">;
 export type SeriesTypeT = $ReadOnly<$_$Spread<OptionTreeT<"series_type">, {
 	item_entity_type: SeriesEntityTypeT;
 }>>;
@@ -487,6 +2208,13 @@ export type UrlT = $_$Spread<RelatableEntityRoleT<"url">, {
 	show_license_in_sidebar?: boolean;
 	sidebar_name?: string;
 }>;
+export type VoteOptionT = -2 | -1 | 0 | 1 | 2 | 3 | 4;
+export type VoteT = {
+	editor_id: number;
+	superseded: boolean;
+	vote: VoteOptionT;
+	vote_time: string;
+};
 export type WorkT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"work">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<WorkTypeT>, {
 	_fromBatchCreateWorksDialog?: boolean;
 	artists: $ReadOnlyArray<ArtistCreditT>;
@@ -520,6 +2248,9 @@ export type WorkAttributeT = {
 	value: string;
 	value_id: number | null;
 };
+export type WorkAttributeTypeT = $_$Spread<CommentRoleT, $_$Spread<OptionTreeT<"work_attribute_type">, {
+	free_text: boolean;
+}>>;
 export type WsJsRelationshipEntityT = {
 	entityType: NonUrlRelatableEntityTypeT;
 	gid: string;
@@ -1071,7 +2802,9 @@ export type RelationshipEditorActionT = {
 	location: RelationshipDialogLocationT | null;
 	type: "update-dialog-location";
 } | {
-	changes: {};
+	changes: {
+		[property: string]: "WIP convertTypeNode: MixedTypeAnnotation";
+	};
 	entityType: RelatableEntityTypeT;
 	type: "update-entity";
 } | UpdateRelationshipActionT;
@@ -1184,8 +2917,12 @@ declare const ARTIST_GROUP_TYPES: Set<number>;
 declare const CONTACT_URL = "https://metabrainz.org/contact";
 declare const DARTIST_ID = 2;
 declare const DLABEL_ID = 1;
-declare const FAVICON_CLASSES: {};
-declare const PART_OF_SERIES_LINK_TYPES: {};
+declare const FAVICON_CLASSES: {
+	[host: string]: string;
+};
+declare const PART_OF_SERIES_LINK_TYPES: {
+	[type: RelatableEntityTypeT]: string | null;
+};
 declare const PART_OF_SERIES_LINK_TYPE_GIDS: $ReadOnlyArray<string>;
 declare const PART_OF_SERIES_LINK_TYPE_IDS: $ReadOnlyArray<number>;
 declare const PROBABLY_CLASSICAL_LINK_TYPES = "WIP convertExpression: ArrayExpression";
@@ -1209,7 +2946,9 @@ declare const MAX_RECENT_ENTITIES = 10;
 declare const MIN_NAME_SIMILARITY = 0.75;
 declare const ENTITIES_WITH_RELATIONSHIP_CREDITS = "WIP convertExpression: ObjectExpression";
 declare const QUALITY_NAMES: Map<QualityT, "WIP convertTypeNode: FunctionTypeAnnotation">;
-declare const FLUENCY_NAMES: {};
+declare const FLUENCY_NAMES: {
+	[fluency: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
+};
 declare const LANGUAGE_ENG_ID = 120;
 declare const LANGUAGE_MUL_ID = 284;
 declare const LANGUAGE_ZXX_ID = 486;
@@ -1218,6 +2957,149 @@ declare const DISPLAY_NONE_STYLE = "WIP convertExpression: CallExpression";
 declare const WS_EDIT_RESPONSE_OK: WS_EDIT_RESPONSE_OK_T;
 declare const WS_EDIT_RESPONSE_NO_CHANGES: WS_EDIT_RESPONSE_NO_CHANGES_T;
 declare const BRACKET_PAIRS = "WIP convertExpression: ArrayExpression";
+export type LinkedEntitiesT = {
+	area: {
+		[areaId: number]: AreaT;
+	};
+	area_alias_type: {
+		[typeId: number]: AreaAliasTypeT;
+	};
+	area_type: {
+		[areaTypeId: number]: AreaTypeT;
+	};
+	artist: {
+		[artistId: number]: ArtistT;
+	};
+	artist_alias_type: {
+		[typeId: number]: ArtistAliasTypeT;
+	};
+	artist_type: {
+		[artistId: number]: ArtistTypeT;
+	};
+	collection_type: {
+		[collectionTypeId: number]: CollectionTypeT;
+	};
+	edit: {
+		[editId: number]: EditWithIdT;
+	};
+	editor: {
+		[editorId: number]: EditorT;
+	};
+	event: {
+		[eventId: number]: EventT;
+	};
+	event_alias_type: {
+		[typeId: number]: EventAliasTypeT;
+	};
+	event_type: {
+		[eventTypeId: number]: EventTypeT;
+	};
+	genre: {
+		[genreId: number]: GenreT;
+	};
+	genre_alias_type: {
+		[typeId: number]: GenreAliasTypeT;
+	};
+	instrument: {
+		[instrumentId: number]: InstrumentT;
+	};
+	instrument_alias_type: {
+		[typeId: number]: InstrumentAliasTypeT;
+	};
+	instrument_type: {
+		[instrumentTypeId: number]: InstrumentTypeT;
+	};
+	label: {
+		[labelId: number]: LabelT;
+	};
+	label_alias_type: {
+		[typeId: number]: LabelAliasTypeT;
+	};
+	label_type: {
+		[labelTypeId: number]: LabelTypeT;
+	};
+	language: {
+		[languageId: number]: LanguageT;
+	};
+	link_attribute_type: {
+		[linkAttributeTypeIdOrGid: StrOrNum]: LinkAttrTypeT;
+	};
+	link_type: {
+		[linkTypeIdOrGid: StrOrNum]: LinkTypeT;
+	};
+	link_type_tree: {
+		[entityTypes: string]: Array<LinkTypeT>;
+	};
+	place: {
+		[placeId: number]: PlaceT;
+	};
+	place_alias_type: {
+		[typeId: number]: PlaceAliasTypeT;
+	};
+	place_type: {
+		[placeTypeId: number]: PlaceTypeT;
+	};
+	recording: {
+		[recordingId: number]: RecordingT;
+	};
+	recording_alias_type: {
+		[typeId: number]: RecordingAliasTypeT;
+	};
+	release: {
+		[releaseId: number]: ReleaseT;
+	};
+	release_alias_type: {
+		[typeId: number]: ReleaseAliasTypeT;
+	};
+	release_group: {
+		[releaseGroupId: number]: ReleaseGroupT;
+	};
+	release_group_alias_type: {
+		[typeId: number]: ReleaseGroupAliasTypeT;
+	};
+	release_group_primary_type: {
+		[releaseGroupPrimaryTypeId: number]: ReleaseGroupTypeT;
+	};
+	release_group_secondary_type: {
+		[releaseGroupSecondaryTypeId: number]: ReleaseGroupSecondaryTypeT;
+	};
+	release_packaging: {
+		[releasePackagingId: number]: ReleasePackagingT;
+	};
+	release_status: {
+		[releaseStatusId: number]: ReleaseStatusT;
+	};
+	script: {
+		[scriptId: number]: ScriptT;
+	};
+	series: {
+		[seriesId: number]: SeriesT;
+	};
+	series_alias_type: {
+		[typeId: number]: SeriesAliasTypeT;
+	};
+	series_ordering_type: {
+		[seriesOrderingTypeId: number]: SeriesOrderingTypeT;
+	};
+	series_type: {
+		[seriesTypeId: number]: SeriesTypeT;
+	};
+	url: {
+		[urlId: number]: UrlT;
+	};
+	work: {
+		[workId: number]: WorkT;
+	};
+	work_alias_type: {
+		[typeId: number]: WorkAliasTypeT;
+	};
+	work_attribute_type: {
+		[workAttributeTypeId: number]: WorkAttributeTypeT;
+	};
+	work_type: {
+		[workTypeId: number]: WorkTypeT;
+	};
+};
 export type EveryPropertyIsExistsOrNot<T> = T | {
 	[K in keyof T]?: undefined | null;
 };
@@ -1242,6 +3124,7 @@ declare global {
 		 * If you're on a relationship editor page, this should be available.
 		 */
 		tree?: typeof import("./weight-balanced-tree.js");
+		linkedEntities: LinkedEntitiesT;
 	};
 }
 

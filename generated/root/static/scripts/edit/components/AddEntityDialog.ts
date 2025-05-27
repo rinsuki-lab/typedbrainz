@@ -5,7 +5,9 @@ import { flushSync as flushSync } from "react-dom";
 import { expect as expect } from "../../../../utility/invariant.js";
 import Modal from "../../common/components/Modal.js";
 import { findFirstTabbableElement as findFirstTabbableElement } from "../../common/utility/focusManagement.js";
-export const TITLES: {} = "WIP convertExpression: ObjectExpression";
+export const TITLES: {
+    [entityType: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
+} = "WIP convertExpression: ObjectExpression";
 "Unknown Type: TypeAlias";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";

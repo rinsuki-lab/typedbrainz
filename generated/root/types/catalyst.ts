@@ -4,8 +4,10 @@ import { MergeableEntityTypeT } from "../../declared-types.js"
 import { UserTagT } from "../../declared-types.js"
 import { AggregatedTagT } from "../../declared-types.js"
 import { MergeableEntityT } from "../../declared-types.js"
+import { SeriesOrderingTypeT } from "../../declared-types.js"
 import { SeededRelationshipT } from "../../declared-types.js"
 import { ReleaseArtT } from "../../declared-types.js"
+import { GenreT } from "../../declared-types.js"
 import { EventArtT } from "../../declared-types.js"
 import { RelatableEntityT } from "../../declared-types.js"
 import { CommonsImageT } from "../../declared-types.js"
@@ -30,10 +32,16 @@ export type CatalystContextT = {
     user?: UnsanitizedEditorT;
 };
 export type CatalystRequestContextT = {
-    body_params: {};
-    headers: {};
+    body_params: {
+        [param: string]: string;
+    };
+    headers: {
+        [header: string]: string;
+    };
     method: string;
-    query_params: {};
+    query_params: {
+        [param: string]: string;
+    };
     secure: boolean;
     uri: string;
 };
@@ -49,7 +57,9 @@ export type CatalystStashT = {
     can_delete?: boolean;
     collaborative_collections?: $ReadOnlyArray<CollectionT>;
     commons_image?: CommonsImageT | null;
-    containment?: {};
+    containment?: {
+        [collectionId: number]: 1 | null | undefined;
+    };
     current_action_requires_auth?: boolean;
     current_isrcs?: $ReadOnlyArray<string>;
     current_iswcs?: $ReadOnlyArray<string>;
@@ -58,7 +68,9 @@ export type CatalystStashT = {
     entity?: RelatableEntityT;
     event_artwork?: EventArtT;
     event_artwork_count?: number;
-    genre_map?: {};
+    genre_map?: {
+        [genreName: string]: GenreT;
+    };
     globals_script_nonce?: string;
     hide_merge_helper?: boolean;
     jsonld_data?: {};
@@ -75,7 +87,9 @@ export type CatalystStashT = {
     release_artwork_count?: number;
     release_cdtoc_count?: number;
     seeded_relationships?: $ReadOnlyArray<SeededRelationshipT> | null | undefined;
-    series_ordering_types?: {};
+    series_ordering_types?: {
+        [id: number]: SeriesOrderingTypeT;
+    };
     server_languages?: $ReadOnlyArray<ServerLanguageT>;
     source_entity?: RelatableEntityT | null | undefined;
     subscribed?: boolean;
@@ -99,7 +113,9 @@ export type SanitizedCatalystContextT = {
     relative_uri: string;
     req: {
         method: string;
-        query_params: {};
+        query_params: {
+            [param: string]: string;
+        };
         uri: string;
     };
     session: SanitizedCatalystSessionT | null;
@@ -109,9 +125,13 @@ export type SanitizedCatalystContextT = {
         current_isrcs?: $ReadOnlyArray<string>;
         current_iswcs?: $ReadOnlyArray<string>;
         current_language: string;
-        genre_map?: {};
+        genre_map?: {
+            [genreName: string]: GenreT;
+        };
         seeded_relationships?: $ReadOnlyArray<SeededRelationshipT> | null | undefined;
-        series_ordering_types?: {};
+        series_ordering_types?: {
+            [id: number]: SeriesOrderingTypeT;
+        };
         server_languages?: $ReadOnlyArray<ServerLanguageT>;
         source_entity?: RelatableEntityT | null | undefined;
     };

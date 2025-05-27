@@ -8,6 +8,21 @@ import { convertPropertyName } from "./property-name.js";
 export function convertObjectType(source: any, flag?: "export"): TypeNode {
     let properties: TypeElement[] = []
     const spread: TypeNode[] = []
+    for (const indexer of source.indexers) {
+        assert.equal(indexer.type, "ObjectTypeIndexer")
+        properties.push(factory.createIndexSignature(
+            undefined,
+            [factory.createParameterDeclaration(
+                undefined,
+                undefined,
+                convertIdentifier(indexer.id),
+                undefined,
+                convertTypeNode(indexer.key),
+                undefined,
+            )],
+            convertTypeNode(indexer.value),
+        ))
+    }
     for (const prop of source.properties) {
         switch (prop.type) {
         case "ObjectTypeProperty":

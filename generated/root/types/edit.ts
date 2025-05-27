@@ -45,7 +45,9 @@ export type GenericEditT = {
         votes: number;
     };
     created_time: string;
-    data: {};
+    data: {
+        [dataProp: string]: "WIP convertTypeNode: AnyTypeAnnotation";
+    };
     edit_kind: "add" | "edit" | "remove" | "merge" | "other";
     edit_name: string;
     edit_notes: $ReadOnlyArray<EditNoteT>;

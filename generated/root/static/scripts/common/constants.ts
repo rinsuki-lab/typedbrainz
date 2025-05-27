@@ -2,6 +2,7 @@
 import { WS_EDIT_RESPONSE_NO_CHANGES_T } from "../../../../declared-types.js"
 import { WS_EDIT_RESPONSE_OK_T } from "../../../../declared-types.js"
 import { QualityT } from "../../../../declared-types.js"
+import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import { N_l_T } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../src/type-utils.js";
@@ -35,8 +36,12 @@ export const ARTIST_GROUP_TYPES: Set<number> = "WIP convertExpression: NewExpres
 export const CONTACT_URL = "https://metabrainz.org/contact";
 export const DARTIST_ID = 2;
 export const DLABEL_ID = 1;
-export const FAVICON_CLASSES: {} = "WIP convertExpression: ObjectExpression";
-export const PART_OF_SERIES_LINK_TYPES: {} = "WIP convertExpression: ObjectExpression";
+export const FAVICON_CLASSES: {
+    [host: string]: string;
+} = "WIP convertExpression: ObjectExpression";
+export const PART_OF_SERIES_LINK_TYPES: {
+    [type: RelatableEntityTypeT]: string | null;
+} = "WIP convertExpression: ObjectExpression";
 export const PART_OF_SERIES_LINK_TYPE_GIDS: $ReadOnlyArray<string> = "WIP convertExpression: CallExpression";
 export const PART_OF_SERIES_LINK_TYPE_IDS: $ReadOnlyArray<number> = "WIP convertExpression: ArrayExpression";
 export const PROBABLY_CLASSICAL_LINK_TYPES = "WIP convertExpression: ArrayExpression";
@@ -60,7 +65,9 @@ export const MAX_RECENT_ENTITIES = 10;
 export const MIN_NAME_SIMILARITY = 0.75;
 export const ENTITIES_WITH_RELATIONSHIP_CREDITS = "WIP convertExpression: ObjectExpression";
 export const QUALITY_NAMES: Map<QualityT, "WIP convertTypeNode: FunctionTypeAnnotation"> = "WIP convertExpression: NewExpression";
-export const FLUENCY_NAMES: {} = "WIP convertExpression: ObjectExpression";
+export const FLUENCY_NAMES: {
+    [fluency: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
+} = "WIP convertExpression: ObjectExpression";
 export const LANGUAGE_ENG_ID = 120;
 export const LANGUAGE_MUL_ID = 284;
 export const LANGUAGE_ZXX_ID = 486;

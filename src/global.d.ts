@@ -4,6 +4,7 @@
 import type { RelationshipDialogStateT, RelationshipEditorStateT, ReleaseRelationshipEditorStateT } from "../generated/root/static/scripts/relationship-editor/types.ts"
 import type { DialogActionT, RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "../generated/root/static/scripts/relationship-editor/types/actions.ts"
 import type * as constants from "../generated/root/static/scripts/common/constants.ts"
+import type { LinkedEntitiesT } from "../generated/root/static/scripts/common/linkedEntities.mts"
 
 type EveryPropertyIsExistsOrNot<T> = T | {
     [K in keyof T]?: undefined | null
@@ -35,5 +36,6 @@ declare global {
          * If you're on a relationship editor page, this should be available.
          */
         tree?: typeof import("weight-balanced-tree"),
+        linkedEntities: LinkedEntitiesT,
     }
 }

@@ -31,4 +31,6 @@ export type ReleaseGroupAppearancesT = {
     hits: number;
     results: $ReadOnlyArray<ReleaseGroupT>;
 };
-export type ReleaseGroupAppearancesMapT = {};
+export type ReleaseGroupAppearancesMapT = {
+    [recordingId: number]: ReleaseGroupAppearancesT;
+};

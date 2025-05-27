@@ -6,7 +6,9 @@ import * as React from "react";
 export const NO_MATCH_VALUE: NO_MATCH = "WIP convertExpression: NewExpression";
 "Unknown Type: ExpressionStatement";
 "WIP convertAST: FunctionDeclaration";
-export type VarArgsObject<T> = {};
+export type VarArgsObject<T> = {
+    [arg: string]: T;
+};
 "WIP convertAST: InterfaceDeclaration";
 "Unknown Type: VariableDeclaration";
 "WIP convertAST: ClassDeclaration";

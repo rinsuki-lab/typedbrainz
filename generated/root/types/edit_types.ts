@@ -104,6 +104,7 @@ import { QualityT } from "../../declared-types.js"
 import { CompT } from "../../declared-types.js"
 import { EDIT_WORK_CREATE_T } from "../../declared-types.js"
 import { WorkTypeT } from "../../declared-types.js"
+import { WorkAttributeT } from "../../declared-types.js"
 import { EDIT_RECORDING_CREATE_T } from "../../declared-types.js"
 import { EDIT_SERIES_CREATE_T } from "../../declared-types.js"
 import { SeriesTypeT } from "../../declared-types.js"
@@ -145,6 +146,7 @@ import { EDIT_ARTIST_ADD_ALIAS_T } from "../../declared-types.js"
 import { ArtistAliasTypeT } from "../../declared-types.js"
 import { EDIT_AREA_ADD_ALIAS_T } from "../../declared-types.js"
 import { AreaAliasTypeT } from "../../declared-types.js"
+import { EntityWithAliasesT } from "../../declared-types.js"
 import { EntityWithAliasesTypeT } from "../../declared-types.js"
 import { EDIT_RELEASE_ADDRELEASELABEL_T } from "../../declared-types.js"
 import { EDIT_RELEASEGROUP_CREATE_T } from "../../declared-types.js"
@@ -220,11 +222,13 @@ import { EDIT_GENRE_ADD_ANNOTATION_T } from "../../declared-types.js"
 import { EDIT_EVENT_ADD_ANNOTATION_T } from "../../declared-types.js"
 import { EDIT_ARTIST_ADD_ANNOTATION_T } from "../../declared-types.js"
 import { EDIT_AREA_ADD_ANNOTATION_T } from "../../declared-types.js"
+import { AnnotatedEntityT } from "../../declared-types.js"
 import { AnnotatedEntityTypeT } from "../../declared-types.js"
 import { GenericEditT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type AddAnnotationEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
+        [annotatedEntityType: AnnotatedEntityTypeT]: AnnotatedEntityT;
         changelog: string;
         entity_type: AnnotatedEntityTypeT;
         html: string;
@@ -484,6 +488,7 @@ export type AddReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type AddRemoveAliasEditGenericT<T> = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
+        [coreEntityType: EntityWithAliasesTypeT]: EntityWithAliasesT;
         alias: string;
         begin_date: PartialDateT;
         end_date: PartialDateT;
@@ -591,7 +596,9 @@ export type AddStandaloneRecordingEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type AddWorkEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        attributes?: {};
+        attributes?: {
+            [attributeName: string]: $ReadOnlyArray<WorkAttributeT>;
+        };
         comment: string;
         iswc: string;
         language?: LanguageT;
@@ -620,6 +627,7 @@ export type ChangeWikiDocEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type EditAliasEditGenericT<A, T> = $ReadOnly<$_$Spread<GenericEditT, {
     alias: A | null;
     display_data: {
+        [coreEntityType: EntityWithAliasesTypeT]: EntityWithAliasesT;
         alias: CompT<string>;
         begin_date: CompT<PartialDateT>;
         end_date: CompT<PartialDateT>;
@@ -959,7 +967,9 @@ export type EditUrlEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type EditWorkEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        attributes?: {};
+        attributes?: {
+            [attributeName: string]: CompT<$ReadOnlyArray<string>>;
+        };
         comment?: CompT<string | null>;
         iswc?: CompT<string | null>;
         languages?: CompT<$ReadOnlyArray<LanguageT>>;
@@ -1048,7 +1058,9 @@ export type MergeReleasesEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         cannot_merge_recordings_reason?: {
             message: string;
-            vars: {};
+            vars: {
+                [var: string]: string;
+            };
         };
         changes: $ReadOnlyArray<MergeReleaseEditDisplayChangeT>;
         edit_version: 1 | 2 | 3;
