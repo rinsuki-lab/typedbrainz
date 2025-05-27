@@ -1,5 +1,5 @@
-import { RelationshipDialogStateT, RelationshipEditorStateT, ReleaseRelationshipEditorStateT } from "./generated/root/static/scripts/relationship-editor/types.js"
-import { RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "./generated/root/static/scripts/relationship-editor/types/actions.js"
+import { RelationshipDialogStateT, RelationshipEditorStateT, ReleaseRelationshipEditorStateT } from "../generated/root/static/scripts/relationship-editor/types.js"
+import { RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "../generated/root/static/scripts/relationship-editor/types/actions.js"
 
 type EveryPropertyIsExistsOrNot<T> = T | {
     [K in keyof T]?: undefined | null
