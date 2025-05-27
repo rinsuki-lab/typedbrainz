@@ -33,7 +33,7 @@ export type MergeReleasesFormT = FormT<{
     edit_note: FieldT<string>;
     make_votable: FieldT<boolean>;
     medium_positions: CompoundFieldT<{
-        map: CompoundFieldT<$ReadOnlyArray<MediumFieldT | "WIP convertTypeNode: VoidTypeAnnotation">>;
+        map: CompoundFieldT<$ReadOnlyArray<MediumFieldT | void>>;
     }>;
     merge_rgs: FieldT<boolean>;
     merge_strategy: FieldT<StrOrNum>;

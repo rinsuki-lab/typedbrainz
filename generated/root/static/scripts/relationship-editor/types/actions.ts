@@ -93,7 +93,7 @@ export type DialogTextAttributeActionT = {
     type: "set-text-value";
 };
 export type UpdateRelationshipActionT = {
-    batchSelectionCount: number | "WIP convertTypeNode: VoidTypeAnnotation";
+    batchSelectionCount: number | void;
     creditsToChangeForSource: CreditChangeOptionT;
     creditsToChangeForTarget: CreditChangeOptionT;
     newRelationshipState: RelationshipStateT;

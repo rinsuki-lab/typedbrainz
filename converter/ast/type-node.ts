@@ -42,6 +42,8 @@ export function convertTypeNode(source: any): TypeNode {
         return factory.createKeywordTypeNode(SyntaxKind.BooleanKeyword)
     case "NullLiteralTypeAnnotation":
         return factory.createLiteralTypeNode(factory.createNull())
+    case "VoidTypeAnnotation":
+        return factory.createKeywordTypeNode(SyntaxKind.VoidKeyword)
     case "ObjectTypeAnnotation":
         return convertObjectType(source, "export")
     case "GenericTypeAnnotation":
