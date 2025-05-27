@@ -1,0 +1,37 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+type $ReadOnlyArray<T> = readonly T[];
+type $ReadOnly<T> = Readonly<T>;
+type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
+type $Exact<T> = T; // TODO: implement properly
+import * as Sentry from "@sentry/browser";
+import * as React from "react";
+"Unknown Export Type: ClassDeclaration";
+export const NO_MATCH_VALUE: NO_MATCH = "Unknown Expression Type: NewExpression";
+"Unknown Type: ExpressionStatement";
+"Unknown Export Type: FunctionDeclaration";
+export type VarArgsObject<T> = {};
+"Unknown Export Type: InterfaceDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Export Type: ClassDeclaration";
+export type Parser<T, V> = "TODO: Support TypeNode FunctionTypeAnnotation";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: TypeAlias";
+export const state: State = "Unknown Expression Type: CallExpression";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+export const createTextContentParser = "Unknown Expression Type: ArrowFunctionExpression";
+"Unknown Type: VariableDeclaration";
+export const createVarSubstParser = "Unknown Expression Type: ArrowFunctionExpression";
+export const parseStringVarSubst: Parser<string | NO_MATCH, "TODO: Support TypeNode MixedTypeAnnotation"> = "Unknown Expression Type: CallExpression";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+export const substEnd: RegExp = "Unknown Literal typeof: object";
+export const createCondSubstParser = "Unknown Expression Type: ArrowFunctionExpression";
+"Unknown Type: ExportDefaultDeclaration";

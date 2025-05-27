@@ -1,0 +1,36 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+type $ReadOnlyArray<T> = readonly T[];
+type $ReadOnly<T> = Readonly<T>;
+type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
+type $Exact<T> = T; // TODO: implement properly
+import * as React from "react";
+import { SanitizedCatalystContext as SanitizedCatalystContext } from "../../context.mjs";
+import { VARTIST_GID as VARTIST_GID } from "../../static/scripts/common/constants.js";
+import { capitalize as capitalize } from "../../static/scripts/common/utility/strings.js";
+import { returnToCurrentPage as returnToCurrentPage } from "../../utility/returnUri.js";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: BlockStatement";
+"Unknown Type: ExportDefaultDeclaration";

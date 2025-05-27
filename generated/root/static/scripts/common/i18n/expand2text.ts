@@ -1,0 +1,29 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+type $ReadOnlyArray<T> = readonly T[];
+type $ReadOnly<T> = Readonly<T>;
+type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
+type $Exact<T> = T; // TODO: implement properly
+import { l as lActual, ln as lnActual, lp as lpActual } from "../i18n.js";
+import { l_admin as lAdminActual, ln_admin as lnAdminActual } from "./admin.js";
+import expand, { NO_MATCH as NO_MATCH, Parser as Parser, VarArgsClass as VarArgsClass, VarArgsObject as VarArgsObject, createCondSubstParser as createCondSubstParser, createTextContentParser as createTextContentParser, parseContinuousString as parseContinuousString, parseStringVarSubst as parseStringVarSubst, state as state, VarArgs as VarArgs } from "./expand2.js";
+import { l_statistics as lStatisticsActual, ln_statistics as lnStatisticsActual, lp_statistics as lpStatisticsActual } from "./statistics.js";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: ExportDefaultDeclaration";
+"Unknown Export Type: FunctionDeclaration";
+export const l = "Unknown Expression Type: ArrowFunctionExpression";
+export const l_admin = "Unknown Expression Type: ArrowFunctionExpression";
+export const l_statistics = "Unknown Expression Type: ArrowFunctionExpression";
+export const ln = "Unknown Expression Type: ArrowFunctionExpression";
+export const ln_admin = "Unknown Expression Type: ArrowFunctionExpression";
+export const ln_statistics = "Unknown Expression Type: ArrowFunctionExpression";
+export const lp = "Unknown Expression Type: ArrowFunctionExpression";
+export const lp_statistics = "Unknown Expression Type: ArrowFunctionExpression";

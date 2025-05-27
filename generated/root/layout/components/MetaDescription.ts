@@ -1,0 +1,23 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+type $ReadOnlyArray<T> = readonly T[];
+type $ReadOnly<T> = Readonly<T>;
+type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
+type $Exact<T> = T; // TODO: implement properly
+import { artistBeginLabel as artistBeginLabel, artistEndLabel as artistEndLabel } from "../../artist/utils.js";
+import formatBarcode from "../../static/scripts/common/utility/formatBarcode.js";
+import formatDate from "../../static/scripts/common/utility/formatDate.js";
+import formatTrackLength from "../../static/scripts/common/utility/formatTrackLength.js";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: VariableDeclaration";
+"Unknown Type: FunctionDeclaration";
+"Unknown Type: ExpressionStatement";
+"Unknown Type: ExpressionStatement";

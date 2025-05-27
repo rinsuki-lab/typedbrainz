@@ -5,6 +5,9 @@ import { doGenerateDeclaredTypeReExport } from "./phase/generate-declared-types-
 
 const ctx = new ConverterContext()
 
+ctx.targets = [
+    "upstream/root/static/scripts/relationship-editor/types.js",
+]
 doFindTargets(ctx)
 doActualConvert(ctx)
 doGenerateDeclaredTypeReExport(ctx)
