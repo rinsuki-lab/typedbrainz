@@ -54,6 +54,8 @@ export function convertTypeNode(source: any): TypeNode {
             convertTypeNode(source.objectType),
             convertTypeNode(source.indexType)
         )
+    case "TupleTypeAnnotation":
+        return factory.createTupleTypeNode(source.elementTypes.map(convertTypeNode));
     default:
         return factory.createLiteralTypeNode(wipLiteral("convertTypeNode", source.type));
     }

@@ -10,7 +10,6 @@ import { DatePeriodFieldT } from "../../../../declared-types.js"
 import { LinkAttrTypeT } from "../../../../declared-types.js"
 import { LinkTypeT } from "../../../../declared-types.js"
 import { TrackWithRecordingT } from "../../../../declared-types.js"
-import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import { WorkT } from "../../../../declared-types.js"
 import { UrlT } from "../../../../declared-types.js"
 import { SeriesT } from "../../../../declared-types.js"
@@ -23,6 +22,7 @@ import { GenreT } from "../../../../declared-types.js"
 import { EventT } from "../../../../declared-types.js"
 import { ArtistT } from "../../../../declared-types.js"
 import { AreaT } from "../../../../declared-types.js"
+import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
 import { RelatableEntityT } from "../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../src/type-utils.js";
@@ -63,9 +63,15 @@ export type RelationshipLinkTypeGroupKeyT = {
     typeId: number;
 };
 export type RelationshipLinkTypeGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
-export type RelationshipTargetTypeGroupT = "WIP convertTypeNode: TupleTypeAnnotation";
+export type RelationshipTargetTypeGroupT = [
+    RelatableEntityTypeT,
+    RelationshipLinkTypeGroupsT
+];
 export type RelationshipTargetTypeGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
-export type RelationshipSourceGroupT = "WIP convertTypeNode: TupleTypeAnnotation";
+export type RelationshipSourceGroupT = [
+    RelatableEntityT,
+    RelationshipTargetTypeGroupsT
+];
 export type RelationshipSourceGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
 export type NonReleaseRelatableEntityTypeT = NonReleaseRelatableEntityT["entityType"];

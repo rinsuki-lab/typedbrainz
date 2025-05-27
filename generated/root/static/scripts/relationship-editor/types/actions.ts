@@ -1,5 +1,7 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
 import { WsJsEditResponseT } from "../../../../../declared-types.js"
+import { WsJsEditWorkCreateT } from "../../../../../declared-types.js"
+import { WsJsEditRelationshipT } from "../../../../../declared-types.js"
 import { RecordingT } from "../../../../../declared-types.js"
 import { RelationshipT } from "../../../../../declared-types.js"
 import { WorkT } from "../../../../../declared-types.js"
@@ -207,7 +209,13 @@ export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | Relationship
     error: string;
     type: "stop-submission";
 } | {
-    edits: Array<"WIP convertTypeNode: TupleTypeAnnotation"> | Array<"WIP convertTypeNode: TupleTypeAnnotation">;
+    edits: Array<[
+        Array<RelationshipStateT>,
+        WsJsEditRelationshipT
+    ]> | Array<[
+        Array<RelationshipStateT>,
+        WsJsEditWorkCreateT
+    ]>;
     responseData: WsJsEditResponseT;
     type: "update-submitted-relationships";
 };
