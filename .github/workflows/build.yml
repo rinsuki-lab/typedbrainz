@@ -1,0 +1,47 @@
+name: Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: corepack enable
+      - run: pnpm install
+      - run: pnpm build
+      - name: Check for uncommitted changes
+        id: diff-check
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Changes detected after build"
+            git diff > build-diff.patch
+            exit 1
+          else
+            echo "No changes detected after build"
+          fi
+      - name: Upload build diff
+        uses: actions/upload-artifact@v4
+        if: failure() && steps.diff-check.outcome == 'failure'
+        with:
+          name: build-diff
+          path: build-diff.patch
+      - run: pnpm pack
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: "*.tgz"
