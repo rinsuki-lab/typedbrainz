@@ -1,11 +1,11 @@
-import { RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "../generated/root/static/scripts/relationship-editor/types/actions.js"
-import { MaybeReleaseRelationshipEditor, NonReleaseRelationshipEditor, RelationshipEditorBase, ReleaseRelationshipEditor } from "./global.js"
+// SPDX-License-Identifier: GPLv2-or-later
+// Inherited from MB, because this file depends to MB's code.
 
+import { MaybeReleaseRelationshipEditor, NonReleaseRelationshipEditor, RelationshipEditorBase, ReleaseRelationshipEditor } from "./global.js"
 
 type EveryPropertyIsExists<T> = {
     [K in keyof T]-?: T[K] extends undefined | null ? never : T[K]
 }
-
 
 export function isReleaseRelationshipEditor(relationshipEditor: MaybeReleaseRelationshipEditor): relationshipEditor is RelationshipEditorBase & EveryPropertyIsExists<ReleaseRelationshipEditor> {
     return relationshipEditor.state?.entity.entityType === "release";

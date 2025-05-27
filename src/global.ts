@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPLv2-or-later
+// Inherited from MB, because this file depends to MB's code.
+
 import type { RelationshipDialogStateT, RelationshipEditorStateT, ReleaseRelationshipEditorStateT } from "../generated/root/static/scripts/relationship-editor/types.js"
 import type { DialogActionT, RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "../generated/root/static/scripts/relationship-editor/types/actions.js"
 import type * as constants from "../generated/root/static/scripts/common/constants.js"
