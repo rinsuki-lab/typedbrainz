@@ -4,7 +4,7 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 export type CDStubT = $ReadOnly<$_$Spread<EntityRoleT<"cdstub">, {
     artist: string;
     barcode: string;
-    comment: string;
+    comment?: string;
     date_added: string | null;
     discid: string;
     last_modified: string | null;

@@ -14,7 +14,7 @@ export type WorkAttributeTypeAllowedValueT = $_$Spread<OptionTreeT<"work_attribu
     workAttributeTypeID: number;
 }>;
 export type WorkAttributeTypeAllowedValueTreeT = $_$Spread<WorkAttributeTypeAllowedValueT, {
-    children: $ReadOnlyArray<WorkAttributeTypeAllowedValueTreeT>;
+    children?: $ReadOnlyArray<WorkAttributeTypeAllowedValueTreeT>;
 }>;
 export type WorkAttributeTypeAllowedValueTreeRootT = {
     children: $ReadOnlyArray<WorkAttributeTypeAllowedValueTreeT>;
@@ -23,7 +23,7 @@ export type WorkAttributeTypeT = $_$Spread<CommentRoleT, $_$Spread<OptionTreeT<"
     free_text: boolean;
 }>>;
 export type WorkAttributeTypeTreeT = $_$Spread<WorkAttributeTypeT, {
-    children: $ReadOnlyArray<WorkAttributeTypeTreeT>;
+    children?: $ReadOnlyArray<WorkAttributeTypeTreeT>;
 }>;
 export type WorkAttributeTypeTreeRootT = {
     children: $ReadOnlyArray<WorkAttributeTypeTreeT>;

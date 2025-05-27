@@ -105,7 +105,7 @@ export type AddReleaseAnnotationHistoricEditT = $ReadOnly<$_$Spread<GenericEditT
 }>>;
 export type AddTrackKVHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist: ArtistT;
+        artist?: ArtistT;
         length: number;
         name: string;
         position: number;
@@ -116,7 +116,7 @@ export type AddTrackKVHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type AddTrackOldHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist_name: string;
+        artist_name?: string;
         name: string;
         position: number;
         releases: $ReadOnlyArray<ReleaseT | null>;
@@ -219,8 +219,8 @@ export type EditReleaseNameHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type EditTrackHistoricEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist: CompT<ArtistT>;
-        position: CompT<number>;
+        artist?: CompT<ArtistT>;
+        position?: CompT<number>;
         recording: RecordingT;
     };
 }>>;
@@ -295,7 +295,7 @@ export type RemoveRelationshipHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, 
 }>>;
 export type RemoveReleaseHistoricEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist_credit: ArtistCreditT;
+        artist_credit?: ArtistCreditT;
         name: string;
         releases: $ReadOnlyArray<ReleaseT>;
     };

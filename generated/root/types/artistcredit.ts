@@ -11,9 +11,9 @@ export type ArtistCreditRoleT = {
     artistCredit: ArtistCreditT;
 };
 export type ArtistCreditT = {
-    editsPending: boolean;
-    entityType: "artist_credit";
-    id: number;
+    editsPending?: boolean;
+    entityType?: "artist_credit";
+    id?: number;
     names: $ReadOnlyArray<ArtistCreditNameT>;
 };
 export type IncompleteArtistCreditNameT = {

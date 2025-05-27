@@ -14,7 +14,7 @@ import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type WorkT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"work">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<WorkTypeT>, {
-    _fromBatchCreateWorksDialog: boolean;
+    _fromBatchCreateWorksDialog?: boolean;
     artists: $ReadOnlyArray<ArtistCreditT>;
     attributes: $ReadOnlyArray<WorkAttributeT>;
     authors: $ReadOnlyArray<{
@@ -29,8 +29,8 @@ export type WorkT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT,
         entity: ArtistT;
         roles: $ReadOnlyArray<string>;
     }>;
-    primaryAlias: string | null;
-    related_artists: {
+    primaryAlias?: string | null;
+    related_artists?: {
         artists: AppearancesT<string>;
         authors: AppearancesT<string>;
     };

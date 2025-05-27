@@ -11,16 +11,16 @@ import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"recording">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, {
-    appearsOn: AppearancesT<{
+    appearsOn?: AppearancesT<{
         gid: string;
         name: string;
     }>;
-    artist: string;
-    artistCredit: ArtistCreditT;
-    first_release_date: PartialDateT;
+    artist?: string;
+    artistCredit?: ArtistCreditT;
+    first_release_date?: PartialDateT;
     isrcs: $ReadOnlyArray<IsrcT>;
     length: number;
-    primaryAlias: string | null;
+    primaryAlias?: string | null;
     related_works: $ReadOnlyArray<number>;
     video: boolean;
 }>>>>>>;

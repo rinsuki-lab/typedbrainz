@@ -12,10 +12,10 @@ export type CollectionT = $ReadOnly<$_$Spread<EntityRoleT<"collection">, $_$Spre
     editor: EditorT | null;
     entity_count: number;
     gid: string;
-    item_entity_type: CollectableEntityTypeT;
+    item_entity_type?: CollectableEntityTypeT;
     name: string;
     public: boolean;
-    subscribed: boolean;
+    subscribed?: boolean;
 }>>>;
 export type CollectionTypeT = $_$Spread<OptionTreeT<"collection_type">, {
     item_entity_type: string;

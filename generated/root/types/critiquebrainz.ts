@@ -20,5 +20,5 @@ export type CritiqueBrainzReviewT = {
 };
 export type ReviewableT = ArtistT | EventT | LabelT | PlaceT | RecordingT | ReleaseGroupT | WorkT;
 export type ReviewableRoleT = {
-    review_count: number;
+    review_count?: number;
 };

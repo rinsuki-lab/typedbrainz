@@ -14,7 +14,7 @@ export function convertObjectType(source: any, flag?: "export"): TypeNode {
             properties.push(factory.createPropertySignature(
                 undefined,
                 convertPropertyName(prop.key),
-                undefined,
+                prop.optional ? factory.createToken(SyntaxKind.QuestionToken) : undefined,
                 convertTypeNode(prop.value),
             ));
             break;

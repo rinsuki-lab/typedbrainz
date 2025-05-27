@@ -9,7 +9,7 @@ export type $Exact<T> = T;
 export type $_$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 export type AnnotatedEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type AnnotationRoleT = {
-	latest_annotation: AnnotationT;
+	latest_annotation?: AnnotationT;
 };
 export type AnnotationT = {
 	changelog: string;
@@ -27,7 +27,7 @@ export type AreaT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT,
 	iso_3166_2_codes: $ReadOnlyArray<string>;
 	iso_3166_3_codes: $ReadOnlyArray<string>;
 	primary_code: string;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 }>>>>>>;
 export type AreaTypeT = OptionTreeT<"area_type">;
 export type ArtistT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"artist">, $_$Spread<DatePeriodRoleT, $_$Spread<IpiCodesRoleT, $_$Spread<IsniCodesRoleT, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<ArtistTypeT>, {
@@ -38,7 +38,7 @@ export type ArtistT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRole
 	end_area_id: number | null;
 	gender: GenderT | null;
 	gender_id: number | null;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 	sort_name: string;
 }>>>>>>>>>>;
 export type ArtistTypeT = OptionTreeT<"artist_type">;
@@ -53,14 +53,14 @@ export type ArtistCreditRoleT = {
 	artistCredit: ArtistCreditT;
 };
 export type ArtistCreditT = {
-	editsPending: boolean;
-	entityType: "artist_credit";
-	id: number;
+	editsPending?: boolean;
+	entityType?: "artist_credit";
+	id?: number;
 	names: $ReadOnlyArray<ArtistCreditNameT>;
 };
 export type ArtworkRoleT = $ReadOnly<$_$Spread<PendingEditsRoleT, {
 	comment: string;
-	event: EventT;
+	event?: EventT;
 	filename: string | null;
 	huge_ia_thumbnail: string;
 	huge_thumbnail: string;
@@ -75,7 +75,7 @@ export type ArtworkRoleT = $ReadOnly<$_$Spread<PendingEditsRoleT, {
 	types: $ReadOnlyArray<string>;
 }>>;
 export type ReleaseArtT = $ReadOnly<$_$Spread<ArtworkRoleT, {
-	release: ReleaseT;
+	release?: ReleaseT;
 }>>;
 export type IpiCodesRoleT = {
 	ipi_codes: $ReadOnlyArray<IpiCodeT>;
@@ -98,7 +98,7 @@ export type IswcT = $_$Spread<EntityRoleT<"iswc">, $_$Spread<PendingEditsRoleT, 
 	work_id: number;
 }>>;
 export type ReviewableRoleT = {
-	review_count: number;
+	review_count?: number;
 };
 export type EDIT_RELEASEGROUP_CREATE_T = 20;
 export type EDIT_RELEASEGROUP_EDIT_T = 21;
@@ -135,8 +135,8 @@ export type CommentRoleT = {
 export type RelatableEntityRoleT<T> = $_$Spread<EntityRoleT<T>, $_$Spread<LastUpdateRoleT, $_$Spread<PendingEditsRoleT, {
 	gid: string;
 	name: string;
-	paged_relationship_groups: {};
-	relationships: $ReadOnlyArray<RelationshipT>;
+	paged_relationship_groups?: {};
+	relationships?: $ReadOnlyArray<RelationshipT>;
 }>>>;
 export type DatePeriodRoleT = {
 	begin_date: PartialDateT | null;
@@ -154,9 +154,9 @@ export type LastUpdateRoleT = {
 	last_updated: string | null;
 };
 export type PartialDateT = {
-	day: number | null | undefined;
-	month: number | null | undefined;
-	year: number | null | undefined;
+	day?: number | null | undefined;
+	month?: number | null | undefined;
+	year?: number | null | undefined;
 };
 export type NonUrlRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type RelatableEntityT = NonUrlRelatableEntityT | UrlT;
@@ -164,7 +164,7 @@ export type NonUrlRelatableEntityTypeT = NonUrlRelatableEntityT["entityType"];
 export type RelatableEntityTypeT = NonUrlRelatableEntityTypeT | "url";
 export type TypeRoleT<T> = {
 	typeID: number | null;
-	typeName: string;
+	typeName?: string;
 };
 export type EventT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"event">, $_$Spread<DatePeriodRoleT, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<EventTypeT>, {
 	areas: $ReadOnlyArray<{
@@ -173,7 +173,7 @@ export type EventT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT
 	}>;
 	cancelled: boolean;
 	event_art_presence: "absent" | "present" | "darkened" | null;
-	may_have_event_art: boolean;
+	may_have_event_art?: boolean;
 	performers: $ReadOnlyArray<{
 		credit: string;
 		entity: ArtistT;
@@ -183,14 +183,14 @@ export type EventT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT
 		credit: string;
 		entity: PlaceT;
 	}>;
-	primaryAlias: string | null;
-	related_entities: {
+	primaryAlias?: string | null;
+	related_entities?: {
 		areas: AppearancesT<string>;
 		performers: AppearancesT<string>;
 		places: AppearancesT<string>;
 	};
 	related_series: $ReadOnlyArray<number>;
-	setlist: string;
+	setlist?: string;
 	time: string;
 }>>>>>>>>;
 export type EventTypeT = OptionTreeT<"event_type">;
@@ -200,7 +200,7 @@ export type CompoundFieldT<F> = {
 	has_errors: boolean;
 	html_name: string;
 	id: number;
-	pendingErrors: $ReadOnlyArray<string>;
+	pendingErrors?: $ReadOnlyArray<string>;
 	type: "compound_field";
 };
 export type DatePeriodFieldT = CompoundFieldT<{
@@ -213,7 +213,7 @@ export type FieldT<V> = {
 	has_errors: boolean;
 	html_name: string;
 	id: number;
-	pendingErrors: $ReadOnlyArray<string>;
+	pendingErrors?: $ReadOnlyArray<string>;
 	type: "field";
 	value: V;
 };
@@ -236,18 +236,18 @@ export type PartialDateFieldT = CompoundFieldT<{
 	year: FieldT<StrOrNum | null>;
 }>;
 export type GenreT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"genre">, {
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 }>>>>;
 export type N_l_T = "WIP convertTypeNode: FunctionTypeAnnotation";
 export type InstrumentT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"instrument">, $_$Spread<TypeRoleT<InstrumentTypeT>, {
 	description: string;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 }>>>>>;
 export type InstrumentTypeT = OptionTreeT<"instrument_type">;
 export type LabelT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"label">, $_$Spread<DatePeriodRoleT, $_$Spread<IpiCodesRoleT, $_$Spread<IsniCodesRoleT, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<LabelTypeT>, {
 	area: AreaT | null;
 	label_code: number;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 }>>>>>>>>>>;
 export type LabelTypeT = OptionTreeT<"label_type">;
 export type LanguageT = {
@@ -274,10 +274,10 @@ export type MediumFormatT = $_$Spread<OptionTreeT<"medium_format">, {
 }>;
 export type MediumT = $ReadOnly<$_$Spread<EntityRoleT<"medium">, $_$Spread<LastUpdateRoleT, {
 	cdtoc_track_count: number | null;
-	cdtoc_track_lengths: $ReadOnlyArray<number | null>;
-	cdtoc_tracks: $ReadOnlyArray<TrackT>;
+	cdtoc_track_lengths?: $ReadOnlyArray<number | null>;
+	cdtoc_tracks?: $ReadOnlyArray<TrackT>;
 	cdtocs: $ReadOnlyArray<string>;
-	data_track_lengths: $ReadOnlyArray<number | null>;
+	data_track_lengths?: $ReadOnlyArray<number | null>;
 	editsPending: boolean;
 	format: MediumFormatT | null;
 	format_id: number | null;
@@ -285,14 +285,14 @@ export type MediumT = $ReadOnly<$_$Spread<EntityRoleT<"medium">, $_$Spread<LastU
 	may_have_discids: boolean;
 	name: string;
 	position: number;
-	pregap_length: $ReadOnlyArray<number | null>;
+	pregap_length?: $ReadOnlyArray<number | null>;
 	release_id: number;
 	track_count: number | null;
-	tracks: $ReadOnlyArray<TrackT>;
-	tracks_pager: PagerT;
+	tracks?: $ReadOnlyArray<TrackT>;
+	tracks_pager?: PagerT;
 }>>>;
 export type MediumWithRecordingsT = $ReadOnly<$_$Spread<MediumT, {
-	tracks: $ReadOnlyArray<TrackWithRecordingT>;
+	tracks?: $ReadOnlyArray<TrackWithRecordingT>;
 }>>;
 export type PagerT = {
 	current_page: number;
@@ -312,31 +312,31 @@ export type PlaceT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT
 	address: string;
 	area: AreaT | null;
 	coordinates: CoordinatesT | null;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 }>>>>>>>>;
 export type PlaceTypeT = OptionTreeT<"place_type">;
 export type RatableRoleT = {
-	rating: number;
-	rating_count: number;
-	user_rating: number;
+	rating?: number;
+	rating_count?: number;
+	user_rating?: number;
 };
 export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"recording">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, {
-	appearsOn: AppearancesT<{
+	appearsOn?: AppearancesT<{
 		gid: string;
 		name: string;
 	}>;
-	artist: string;
-	artistCredit: ArtistCreditT;
-	first_release_date: PartialDateT;
+	artist?: string;
+	artistCredit?: ArtistCreditT;
+	first_release_date?: PartialDateT;
 	isrcs: $ReadOnlyArray<IsrcT>;
 	length: number;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 	related_works: $ReadOnlyArray<number>;
 	video: boolean;
 }>>>>>>;
 export type LinkAttrT = {
-	credited_as: string;
-	text_value: string;
+	credited_as?: string;
+	text_value?: string;
 	type: {
 		gid: string;
 	} | LinkAttrTypeT;
@@ -344,16 +344,16 @@ export type LinkAttrT = {
 	typeName: string;
 };
 export type LinkAttrTypeT = $_$Spread<OptionTreeT<"link_attribute_type">, {
-	children: $ReadOnlyArray<LinkAttrTypeT>;
+	children?: $ReadOnlyArray<LinkAttrTypeT>;
 	creditable: boolean;
 	free_text: boolean;
-	instrument_aliases: $ReadOnlyArray<string>;
-	instrument_comment: string;
-	instrument_type_id: number;
-	instrument_type_name: string;
-	l_description: string;
-	l_name: string;
-	level: number;
+	instrument_aliases?: $ReadOnlyArray<string>;
+	instrument_comment?: string;
+	instrument_type_id?: number;
+	instrument_type_name?: string;
+	l_description?: string;
+	l_name?: string;
+	level?: number;
 	root_gid: string;
 	root_id: number;
 }>;
@@ -361,7 +361,7 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
 	attributes: {};
 	cardinality0: number;
 	cardinality1: number;
-	children: $ReadOnlyArray<LinkTypeT>;
+	children?: $ReadOnlyArray<LinkTypeT>;
 	deprecated: boolean;
 	documentation: string | null;
 	examples: $ReadOnlyArray<{
@@ -370,10 +370,10 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
 	}> | null;
 	has_dates: boolean;
 	id: number;
-	l_description: string;
-	l_link_phrase: string;
-	l_name: string;
-	l_reverse_link_phrase: string;
+	l_description?: string;
+	l_link_phrase?: string;
+	l_name?: string;
+	l_reverse_link_phrase?: string;
 	link_phrase: string;
 	long_link_phrase: string;
 	orderable_direction: number;
@@ -385,10 +385,10 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
 export type RelationshipT = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<PendingEditsRoleT, {
 	attributes: $ReadOnlyArray<LinkAttrT>;
 	backward: boolean;
-	entity0: RelatableEntityT | null | undefined;
+	entity0?: RelatableEntityT | null | undefined;
 	entity0_credit: string;
 	entity0_id: number;
-	entity1: RelatableEntityT | null | undefined;
+	entity1?: RelatableEntityT | null | undefined;
 	entity1_credit: string;
 	entity1_id: number;
 	id: number;
@@ -413,22 +413,22 @@ export type ReleaseLabelT = {
 export type ReleaseStatusT = OptionTreeT<"release_status">;
 export type ReleaseT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCreditRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"release">, {
 	barcode: string | null;
-	combined_format_name: string;
-	combined_track_count: string;
+	combined_format_name?: string;
+	combined_track_count?: string;
 	cover_art_presence: "absent" | "present" | "darkened" | null;
-	events: $ReadOnlyArray<ReleaseEventT>;
+	events?: $ReadOnlyArray<ReleaseEventT>;
 	has_no_tracks: boolean;
-	labels: $ReadOnlyArray<ReleaseLabelT>;
+	labels?: $ReadOnlyArray<ReleaseLabelT>;
 	language: LanguageT | null;
 	languageID: number | null;
-	length: number;
-	may_have_cover_art: boolean;
-	may_have_discids: boolean;
-	mediums: $ReadOnlyArray<MediumT>;
+	length?: number;
+	may_have_cover_art?: boolean;
+	may_have_discids?: boolean;
+	mediums?: $ReadOnlyArray<MediumT>;
 	packagingID: number | null;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 	quality: QualityT;
-	releaseGroup: ReleaseGroupT;
+	releaseGroup?: ReleaseGroupT;
 	script: ScriptT | null;
 	scriptID: number | null;
 	status: ReleaseStatusT | null;
@@ -438,13 +438,13 @@ export type ReleaseWithMediumsT = $ReadOnly<$_$Spread<ReleaseT, {
 	mediums: $ReadOnlyArray<MediumWithRecordingsT>;
 }>>;
 export type ReleaseGroupT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCreditRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"release_group">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<ReleaseGroupTypeT>, {
-	cover_art: ReleaseArtT;
+	cover_art?: ReleaseArtT;
 	firstReleaseDate: string | null;
 	hasCoverArt: boolean;
 	l_type_name: string | null;
-	primaryAlias: string | null;
+	primaryAlias?: string | null;
 	release_count: number;
-	release_group: ReleaseGroupT;
+	release_group?: ReleaseGroupT;
 	secondaryTypeIDs: $ReadOnlyArray<number>;
 	typeID: number | null;
 	typeName: string | null;
@@ -454,10 +454,10 @@ export type ReleaseGroupTypeT = $_$Spread<OptionTreeT<"release_group_type">, {
 }>;
 export type SeriesEntityTypeT = "artist" | "event" | "recording" | "release" | "release_group" | "work";
 export type SeriesT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"series">, $_$Spread<TypeRoleT<SeriesTypeT>, {
-	entity_count: number;
+	entity_count?: number;
 	orderingTypeID: number;
-	primaryAlias: string | null;
-	type: SeriesTypeT;
+	primaryAlias?: string | null;
+	type?: SeriesTypeT;
 }>>>>>;
 export type SeriesTypeT = $ReadOnly<$_$Spread<OptionTreeT<"series_type">, {
 	item_entity_type: SeriesEntityTypeT;
@@ -474,7 +474,7 @@ export type TrackT = $ReadOnly<$_$Spread<EntityRoleT<"track">, $_$Spread<LastUpd
 	name: string;
 	number: string;
 	position: number;
-	recording: RecordingT;
+	recording?: RecordingT;
 }>>>;
 export type TrackWithRecordingT = $ReadOnly<$_$Spread<TrackT, {
 	recording: RecordingT;
@@ -483,12 +483,12 @@ export type UrlT = $_$Spread<RelatableEntityRoleT<"url">, {
 	decoded: string;
 	href_url: string;
 	pretty_name: string;
-	show_in_external_links: boolean;
-	show_license_in_sidebar: boolean;
-	sidebar_name: string;
+	show_in_external_links?: boolean;
+	show_license_in_sidebar?: boolean;
+	sidebar_name?: string;
 }>;
 export type WorkT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"work">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<WorkTypeT>, {
-	_fromBatchCreateWorksDialog: boolean;
+	_fromBatchCreateWorksDialog?: boolean;
 	artists: $ReadOnlyArray<ArtistCreditT>;
 	attributes: $ReadOnlyArray<WorkAttributeT>;
 	authors: $ReadOnlyArray<{
@@ -503,8 +503,8 @@ export type WorkT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT,
 		entity: ArtistT;
 		roles: $ReadOnlyArray<string>;
 	}>;
-	primaryAlias: string | null;
-	related_artists: {
+	primaryAlias?: string | null;
+	related_artists?: {
 		artists: AppearancesT<string>;
 		authors: AppearancesT<string>;
 	};
@@ -526,22 +526,22 @@ export type WsJsRelationshipEntityT = {
 	name: string;
 } | {
 	entityType: "url";
-	gid: string;
+	gid?: string;
 	name: string;
 };
 export type WsJsRelationshipAttributeT = {
-	credited_as: string;
-	removed: boolean;
-	text_value: string;
+	credited_as?: string;
+	removed?: boolean;
+	text_value?: string;
 	type: {
 		gid: string;
 	};
 };
 export type WsJsRelationshipCommonT = {
 	attributes: $ReadOnlyArray<WsJsRelationshipAttributeT>;
-	begin_date: PartialDateT;
-	end_date: PartialDateT;
-	ended: boolean;
+	begin_date?: PartialDateT;
+	end_date?: PartialDateT;
+	ended?: boolean;
 	entities: [
 		WsJsRelationshipEntityT,
 		WsJsRelationshipEntityT
@@ -551,7 +551,7 @@ export type WsJsRelationshipCommonT = {
 };
 export type WsJsEditRelationshipCreateT = $ReadOnly<$_$Spread<WsJsRelationshipCommonT, {
 	edit_type: EDIT_RELATIONSHIP_CREATE_T;
-	linkOrder: number;
+	linkOrder?: number;
 	linkTypeID: number;
 }>>;
 export type WsJsEditRelationshipEditT = $ReadOnly<$_$Spread<Partial<WsJsRelationshipCommonT>, {
@@ -623,45 +623,45 @@ export type WsJsEditResponseT = {
 };
 export type SearchableTypeT = EntityItemT["entityType"];
 export type StateT<T extends EntityItemT> = {
-	canChangeType: "WIP convertTypeNode: FunctionTypeAnnotation";
-	containerClass: string;
-	disabled: boolean;
+	canChangeType?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	containerClass?: string;
+	disabled?: boolean;
 	entityType: T["entityType"];
 	error: number;
 	highlightedIndex: number;
-	htmlName: string;
+	htmlName?: string;
 	id: string;
 	indexedSearch: boolean;
-	inputChangeHook: "WIP convertTypeNode: FunctionTypeAnnotation";
-	inputClass: string;
-	inputRef: {
+	inputChangeHook?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	inputClass?: string;
+	inputRef?: {
 		current: HTMLInputElement | null;
 	};
 	inputValue: string;
-	isAddEntityDialogOpen: boolean;
+	isAddEntityDialogOpen?: boolean;
 	isInputFocused: boolean;
-	isLookupPerformed: boolean;
+	isLookupPerformed?: boolean;
 	isOpen: boolean;
 	items: $ReadOnlyArray<ItemT<T>>;
-	label: string;
+	label?: string;
 	page: number;
 	pendingSearch: string | null;
-	placeholder: string;
+	placeholder?: string;
 	recentItems: $ReadOnlyArray<OptionItemT<T>> | null;
 	recentItemsKey: string;
 	required: boolean;
 	results: $ReadOnlyArray<ItemT<T>> | null;
 	selectedItem: OptionItemT<T> | null;
-	showDescriptions: boolean;
-	showLabel: boolean;
-	staticItems: $ReadOnlyArray<OptionItemT<T>>;
+	showDescriptions?: boolean;
+	showLabel?: boolean;
+	staticItems?: $ReadOnlyArray<OptionItemT<T>>;
 	statusMessage: string;
 	totalPages: number | null | undefined;
-	width: string;
+	width?: string;
 };
 export type SearchActionT = {
-	indexed: boolean;
-	searchTerm: string;
+	indexed?: boolean;
+	searchTerm?: string;
 	type: "search-after-timeout";
 };
 export type ActionT<T extends EntityItemT> = SearchActionT | {
@@ -722,25 +722,25 @@ export type ActionItemT<T extends EntityItemT> = {
 	action: ActionT<T>;
 	id: number | string;
 	name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
-	level: number;
-	separator: boolean;
-	disabled: boolean;
+	level?: number;
+	separator?: boolean;
+	disabled?: boolean;
 };
 export type OptionItemT<T> = {
 	type: "option";
 	id: number | string;
 	name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
 	entity: T;
-	level: number;
-	separator: boolean;
-	disabled: boolean;
+	level?: number;
+	separator?: boolean;
+	disabled?: boolean;
 };
 export type HeaderItemT = {
 	type: "header";
 	id: number | string;
 	name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
 	disabled: true;
-	separator: boolean;
+	separator?: boolean;
 };
 export type ItemT<T extends EntityItemT> = ActionItemT<T> | OptionItemT<T> | HeaderItemT;
 export type EntityItemT = EditorT | LanguageT | LinkAttrTypeT | LinkTypeT | NonUrlRelatableEntityT;
@@ -805,14 +805,14 @@ export type RelationshipSourceGroupT = [
 export type RelationshipSourceGroupsT = tree.ImmutableTree<RelationshipSourceGroupT> | null;
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
 export type RelationshipDialogLocationT = {
-	backward: boolean | null | undefined;
-	batchSelection: boolean | null | undefined;
-	linkTypeId: number | null | undefined;
-	relationshipId: number | null | undefined;
+	backward?: boolean | null | undefined;
+	batchSelection?: boolean | null | undefined;
+	linkTypeId?: number | null | undefined;
+	relationshipId?: number | null | undefined;
 	source: RelatableEntityT;
-	targetType: RelatableEntityTypeT | null | undefined;
-	textPhrase: string | null | undefined;
-	track: TrackWithRecordingT | null | undefined;
+	targetType?: RelatableEntityTypeT | null | undefined;
+	textPhrase?: string | null | undefined;
+	track?: TrackWithRecordingT | null | undefined;
 };
 export type RelationshipEditorStateT = {
 	dialogLocation: RelationshipDialogLocationT | null;
@@ -843,8 +843,8 @@ export type DialogMultiselectAttributeStateT = $ReadOnly<$_$Spread<DialogLinkAtt
 export type DialogMultiselectAttributeValueStateT = {
 	autocomplete: StateT<LinkAttrTypeT>;
 	control: "multiselect-value";
-	creditedAs: string;
-	error: string;
+	creditedAs?: string;
+	error?: string;
 	key: number;
 	removed: boolean;
 };
@@ -859,12 +859,12 @@ export type DialogAttributesStateT = {
 	resultingLinkAttributes: tree.ImmutableTree<LinkAttrT> | null;
 };
 export type DialogLinkAttributeStateT = {
-	creditedAs: string;
+	creditedAs?: string;
 	error: string;
 	key: number;
 	max: number | null;
 	min: number | null;
-	textValue: string;
+	textValue?: string;
 	type: LinkAttrTypeT;
 };
 export type DialogDatePeriodStateT = {
@@ -872,8 +872,8 @@ export type DialogDatePeriodStateT = {
 	result: DatePeriodRoleT;
 };
 export type ExternalLinkAttrT = {
-	credited_as: string;
-	text_value: string;
+	credited_as?: string;
+	text_value?: string;
 	type: {
 		gid: string;
 	};
@@ -941,9 +941,9 @@ export type ReleaseRelationshipEditorStateT = $ReadOnly<$_$Spread<$Exact<LazyRel
 type ActionT$1 = {
 	type: "set-date";
 	date: {
-		year: string;
-		month: string;
-		day: string;
+		year?: string;
+		month?: string;
+		day?: string;
 	};
 } | {
 	type: "show-pending-errors";
@@ -1143,7 +1143,7 @@ export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | Relationship
 } | {
 	type: "start-submission";
 } | {
-	error: string;
+	error?: string;
 	type: "stop-submission";
 } | {
 	edits: Array<[

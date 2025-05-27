@@ -7,9 +7,9 @@ import { applyPendingErrors as applyPendingErrors } from "../utility/subfieldErr
 export type ActionT = {
     type: "set-date";
     date: {
-        year: string;
-        month: string;
-        day: string;
+        year?: string;
+        month?: string;
+        day?: string;
     };
 } | {
     type: "show-pending-errors";

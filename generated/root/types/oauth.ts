@@ -6,7 +6,7 @@ export type ApplicationT = $_$Spread<EntityRoleT<"application">, {
     is_server: boolean;
     name: string;
     oauth_id: string;
-    oauth_redirect_uri: string;
+    oauth_redirect_uri?: string;
     oauth_secret: string;
     oauth_type: string;
 }>;

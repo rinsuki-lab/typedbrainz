@@ -25,7 +25,7 @@ export type CDTocT = $ReadOnly<$_$Spread<EntityRoleT<"cdtoc">, {
 export type MediumCDTocT = $ReadOnly<$_$Spread<EntityRoleT<"medium_cdtoc">, {
     cdtoc: CDTocT;
     editsPending: boolean;
-    medium: MediumT;
+    medium?: MediumT;
 }>>;
 export type MediumFormatT = $_$Spread<OptionTreeT<"medium_format">, {
     has_discids: boolean;
@@ -33,10 +33,10 @@ export type MediumFormatT = $_$Spread<OptionTreeT<"medium_format">, {
 }>;
 export type MediumT = $ReadOnly<$_$Spread<EntityRoleT<"medium">, $_$Spread<LastUpdateRoleT, {
     cdtoc_track_count: number | null;
-    cdtoc_track_lengths: $ReadOnlyArray<number | null>;
-    cdtoc_tracks: $ReadOnlyArray<TrackT>;
+    cdtoc_track_lengths?: $ReadOnlyArray<number | null>;
+    cdtoc_tracks?: $ReadOnlyArray<TrackT>;
     cdtocs: $ReadOnlyArray<string>;
-    data_track_lengths: $ReadOnlyArray<number | null>;
+    data_track_lengths?: $ReadOnlyArray<number | null>;
     editsPending: boolean;
     format: MediumFormatT | null;
     format_id: number | null;
@@ -44,12 +44,12 @@ export type MediumT = $ReadOnly<$_$Spread<EntityRoleT<"medium">, $_$Spread<LastU
     may_have_discids: boolean;
     name: string;
     position: number;
-    pregap_length: $ReadOnlyArray<number | null>;
+    pregap_length?: $ReadOnlyArray<number | null>;
     release_id: number;
     track_count: number | null;
-    tracks: $ReadOnlyArray<TrackT>;
-    tracks_pager: PagerT;
+    tracks?: $ReadOnlyArray<TrackT>;
+    tracks_pager?: PagerT;
 }>>>;
 export type MediumWithRecordingsT = $ReadOnly<$_$Spread<MediumT, {
-    tracks: $ReadOnlyArray<TrackWithRecordingT>;
+    tracks?: $ReadOnlyArray<TrackWithRecordingT>;
 }>>;

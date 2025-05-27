@@ -228,7 +228,7 @@ export type AddAnnotationEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
         changelog: string;
         entity_type: AnnotatedEntityTypeT;
         html: string;
-        old_annotation: string;
+        old_annotation?: string;
         text: string;
     };
     edit_type: EDIT_AREA_ADD_ANNOTATION_T;
@@ -308,7 +308,7 @@ export type AddCoverArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type AddDiscIdEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        medium: MediumT;
+        medium?: MediumT;
         medium_cdtoc: MediumCDTocT;
     };
     edit_type: EDIT_MEDIUM_ADD_DISCID_T;
@@ -356,7 +356,7 @@ export type AddIsrcsEditT = $ReadOnly<$_$Spread<GenericEditT, {
             isrc: IsrcT;
             recording: RecordingT;
         }>;
-        client_version: string;
+        client_version?: string;
     };
     edit_type: EDIT_RECORDING_ADD_ISRCS_T;
 }>>;
@@ -389,10 +389,10 @@ export type AddLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type AddMediumEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         format: MediumFormatT | null;
-        name: string;
+        name?: string;
         position: number | string;
-        release: ReleaseT;
-        tracks: $ReadOnlyArray<TrackT>;
+        release?: ReleaseT;
+        tracks?: $ReadOnlyArray<TrackT>;
     };
     edit_type: EDIT_MEDIUM_CREATE_T;
 }>>;
@@ -402,7 +402,7 @@ export type AddPlaceEditT = $ReadOnly<$_$Spread<GenericEditT, {
         area: AreaT;
         comment: string | null;
         coordinates: CoordinatesT | null;
-        name: string;
+        name?: string;
         place: PlaceT;
         type: PlaceTypeT | null;
     }>;
@@ -422,7 +422,7 @@ export type AddRelationshipAttributeEditT = $ReadOnly<$_$Spread<GenericEditT, {
         description: string | null;
         free_text: boolean;
         name: string;
-        parent: LinkAttrTypeT;
+        parent?: LinkAttrTypeT;
     };
     edit_type: EDIT_RELATIONSHIP_ADD_ATTRIBUTE_T;
 }>>;
@@ -434,15 +434,15 @@ export type AddRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
         child_order: number;
         description: string | null;
         documentation: string | null;
-        entity0_cardinality: number;
+        entity0_cardinality?: number;
         entity0_type: RelatableEntityTypeT;
-        entity1_cardinality: number;
+        entity1_cardinality?: number;
         entity1_type: RelatableEntityTypeT;
         link_phrase: string;
         long_link_phrase: string;
         name: string;
-        orderable_direction: number;
-        relationship_type: LinkTypeT;
+        orderable_direction?: number;
+        relationship_type?: LinkTypeT;
         reverse_link_phrase: string;
     };
     edit_type: EDIT_RELATIONSHIP_ADD_TYPE_T;
@@ -452,7 +452,7 @@ export type AddReleaseEditT = $ReadOnly<$_$Spread<GenericEditT, {
         artist_credit: ArtistCreditT;
         barcode: string | null;
         comment: string;
-        events: $ReadOnlyArray<ReleaseEventT>;
+        events?: $ReadOnlyArray<ReleaseEventT>;
         language: LanguageT | null;
         name: string;
         packaging: ReleasePackagingT | null;
@@ -477,8 +477,8 @@ export type AddReleaseGroupEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type AddReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         catalog_number: string;
-        label: LabelT;
-        release: ReleaseT;
+        label?: LabelT;
+        release?: ReleaseT;
     };
     edit_type: EDIT_RELEASE_ADDRELEASELABEL_T;
 }>>;
@@ -487,7 +487,7 @@ export type AddRemoveAliasEditGenericT<T> = $ReadOnly<$_$Spread<GenericEditT, {
         alias: string;
         begin_date: PartialDateT;
         end_date: PartialDateT;
-        ended: boolean;
+        ended?: boolean;
         entity_type: EntityWithAliasesTypeT;
         locale: string | null;
         primary_for_locale: boolean;
@@ -591,11 +591,11 @@ export type AddStandaloneRecordingEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type AddWorkEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        attributes: {};
+        attributes?: {};
         comment: string;
         iswc: string;
-        language: LanguageT;
-        languages: $ReadOnlyArray<LanguageT>;
+        language?: LanguageT;
+        languages?: $ReadOnlyArray<LanguageT>;
         name: string;
         type: WorkTypeT | null;
         work: WorkT;
@@ -671,35 +671,35 @@ export type EditAliasEditT = EditAreaAliasEditT | EditArtistAliasEditT | EditEve
 export type EditAreaEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         area: AreaT;
-        begin_date: CompT<PartialDateT>;
-        comment: CompT<string | null>;
-        end_date: CompT<PartialDateT>;
-        ended: CompT<boolean>;
-        iso_3166_1: CompT<$ReadOnlyArray<string> | null>;
-        iso_3166_2: CompT<$ReadOnlyArray<string> | null>;
-        iso_3166_3: CompT<$ReadOnlyArray<string> | null>;
-        name: CompT<string>;
-        sort_name: CompT<string>;
-        type: CompT<AreaTypeT | null>;
+        begin_date?: CompT<PartialDateT>;
+        comment?: CompT<string | null>;
+        end_date?: CompT<PartialDateT>;
+        ended?: CompT<boolean>;
+        iso_3166_1?: CompT<$ReadOnlyArray<string> | null>;
+        iso_3166_2?: CompT<$ReadOnlyArray<string> | null>;
+        iso_3166_3?: CompT<$ReadOnlyArray<string> | null>;
+        name?: CompT<string>;
+        sort_name?: CompT<string>;
+        type?: CompT<AreaTypeT | null>;
     };
     edit_type: EDIT_AREA_EDIT_T;
 }>>;
 export type EditArtistEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        area: CompT<AreaT | null>;
+        area?: CompT<AreaT | null>;
         artist: ArtistT;
-        begin_area: CompT<AreaT | null>;
-        begin_date: CompT<PartialDateT>;
-        comment: CompT<string | null>;
-        end_area: CompT<AreaT | null>;
-        end_date: CompT<PartialDateT>;
-        ended: CompT<boolean>;
-        gender: CompT<GenderT | null>;
-        ipi_codes: CompT<$ReadOnlyArray<string> | null>;
-        isni_codes: CompT<$ReadOnlyArray<string> | null>;
-        name: CompT<string>;
-        sort_name: CompT<string>;
-        type: CompT<ArtistTypeT | null>;
+        begin_area?: CompT<AreaT | null>;
+        begin_date?: CompT<PartialDateT>;
+        comment?: CompT<string | null>;
+        end_area?: CompT<AreaT | null>;
+        end_date?: CompT<PartialDateT>;
+        ended?: CompT<boolean>;
+        gender?: CompT<GenderT | null>;
+        ipi_codes?: CompT<$ReadOnlyArray<string> | null>;
+        isni_codes?: CompT<$ReadOnlyArray<string> | null>;
+        name?: CompT<string>;
+        sort_name?: CompT<string>;
+        type?: CompT<ArtistTypeT | null>;
     };
     edit_type: EDIT_ARTIST_EDIT_T;
 }>>;
@@ -714,7 +714,7 @@ export type EditBarcodesEditT = $ReadOnly<$_$Spread<GenericEditT, {
         client_version: string | null;
         submissions: $ReadOnlyArray<{
             new_barcode: string | null;
-            old_barcode: string | null;
+            old_barcode?: string | null;
             release: ReleaseT;
         }>;
     };
@@ -740,90 +740,90 @@ export type EditEventArtEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type EditEventEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        begin_date: CompT<PartialDateT | null>;
-        cancelled: CompT<boolean>;
-        comment: CompT<string | null>;
-        end_date: CompT<PartialDateT | null>;
+        begin_date?: CompT<PartialDateT | null>;
+        cancelled?: CompT<boolean>;
+        comment?: CompT<string | null>;
+        end_date?: CompT<PartialDateT | null>;
         event: EventT;
-        name: CompT<string>;
-        setlist: CompT<string | null>;
-        time: CompT<string | null>;
-        type: CompT<EventTypeT | null>;
+        name?: CompT<string>;
+        setlist?: CompT<string | null>;
+        time?: CompT<string | null>;
+        type?: CompT<EventTypeT | null>;
     };
     edit_type: EDIT_EVENT_EDIT_T;
 }>>;
 export type EditGenreEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        comment: CompT<string | null>;
+        comment?: CompT<string | null>;
         genre: GenreT;
-        name: CompT<string>;
+        name?: CompT<string>;
     };
     edit_type: EDIT_GENRE_EDIT_T;
 }>>;
 export type EditInstrumentEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        comment: CompT<string | null>;
-        description: CompT<string | null>;
+        comment?: CompT<string | null>;
+        description?: CompT<string | null>;
         instrument: InstrumentT;
-        name: CompT<string>;
-        type: CompT<InstrumentTypeT | null>;
+        name?: CompT<string>;
+        type?: CompT<InstrumentTypeT | null>;
     };
     edit_type: EDIT_INSTRUMENT_EDIT_T;
 }>>;
 export type EditLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        area: CompT<AreaT | null>;
-        begin_date: CompT<PartialDateT>;
-        comment: CompT<string | null>;
-        end_date: CompT<PartialDateT>;
-        ended: CompT<boolean>;
-        ipi_codes: CompT<$ReadOnlyArray<string> | null>;
-        isni_codes: CompT<$ReadOnlyArray<string> | null>;
+        area?: CompT<AreaT | null>;
+        begin_date?: CompT<PartialDateT>;
+        comment?: CompT<string | null>;
+        end_date?: CompT<PartialDateT>;
+        ended?: CompT<boolean>;
+        ipi_codes?: CompT<$ReadOnlyArray<string> | null>;
+        isni_codes?: CompT<$ReadOnlyArray<string> | null>;
         label: LabelT;
-        label_code: CompT<number>;
-        name: CompT<string>;
-        sort_name: CompT<string>;
-        type: CompT<LabelTypeT | null>;
+        label_code?: CompT<number>;
+        name?: CompT<string>;
+        sort_name?: CompT<string>;
+        type?: CompT<LabelTypeT | null>;
     };
     edit_type: EDIT_LABEL_EDIT_T;
 }>>;
 export type EditMediumEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist_credit_changes: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT>;
+        artist_credit_changes?: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT>;
         changed_mbids: boolean;
         data_track_changes: boolean;
-        format: CompT<MediumFormatT | null>;
+        format?: CompT<MediumFormatT | null>;
         medium: MediumT;
-        name: CompT<string>;
-        position: CompT<number | string>;
-        recording_changes: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT>;
-        tracklist_changes: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT | TracklistChangesRemoveT>;
+        name?: CompT<string>;
+        position?: CompT<number | string>;
+        recording_changes?: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT>;
+        tracklist_changes?: $ReadOnlyArray<TracklistChangesAddT | TracklistChangesChangeT | TracklistChangesRemoveT>;
     };
     edit_type: EDIT_MEDIUM_EDIT_T;
 }>>;
 export type EditPlaceEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        address: CompT<string>;
-        area: CompT<AreaT | null>;
-        begin_date: CompT<PartialDateT>;
-        comment: CompT<string>;
-        coordinates: CompT<CoordinatesT | null>;
-        end_date: CompT<PartialDateT>;
-        ended: CompT<boolean>;
+        address?: CompT<string>;
+        area?: CompT<AreaT | null>;
+        begin_date?: CompT<PartialDateT>;
+        comment?: CompT<string>;
+        coordinates?: CompT<CoordinatesT | null>;
+        end_date?: CompT<PartialDateT>;
+        ended?: CompT<boolean>;
         name: CompT<string>;
         place: PlaceT;
-        type: CompT<PlaceTypeT | null>;
+        type?: CompT<PlaceTypeT | null>;
     };
     edit_type: EDIT_PLACE_EDIT_T;
 }>>;
 export type EditRecordingEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist_credit: CompT<ArtistCreditT>;
-        comment: CompT<string | null>;
-        length: CompT<number | null>;
-        name: CompT<string>;
+        artist_credit?: CompT<ArtistCreditT>;
+        comment?: CompT<string | null>;
+        length?: CompT<number | null>;
+        name?: CompT<string>;
         recording: RecordingT;
-        video: CompT<boolean>;
+        video?: CompT<boolean>;
     };
 }>>;
 export type EditRecordingEditHistoricLengthT = $ReadOnly<$_$Spread<EditRecordingEditGenericT, {
@@ -847,14 +847,14 @@ export type EditRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type EditRelationshipAttributeEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         attribute_type: LinkAttrTypeT | null;
-        child_order: CompT<number>;
-        creditable: CompT<boolean>;
-        description: CompT<string | null>;
-        free_text: CompT<boolean>;
-        name: CompT<string>;
+        child_order?: CompT<number>;
+        creditable?: CompT<boolean>;
+        description?: CompT<string | null>;
+        free_text?: CompT<boolean>;
+        name?: CompT<string>;
         original_description: string | null;
         original_name: string;
-        parent: CompT<LinkAttrTypeT | null>;
+        parent?: CompT<LinkAttrTypeT | null>;
     };
     edit_type: EDIT_RELATIONSHIP_ATTRIBUTE_T;
 }>>;
@@ -869,18 +869,18 @@ export type EditRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         attributes: CompT<$ReadOnlyArray<EditRelationshipTypeEditDisplayAttributeT>>;
         child_order: CompT<number>;
-        description: CompT<string | null>;
+        description?: CompT<string | null>;
         documentation: CompT<string | null>;
-        entity0_cardinality: CompT<number>;
-        entity1_cardinality: CompT<number>;
+        entity0_cardinality?: CompT<number>;
+        entity1_cardinality?: CompT<number>;
         examples: CompT<$ReadOnlyArray<EditRelationshipTypeEditDisplayExampleT>>;
         has_dates: CompT<boolean>;
         is_deprecated: CompT<boolean>;
-        link_phrase: CompT<string>;
-        long_link_phrase: CompT<string>;
+        link_phrase?: CompT<string>;
+        long_link_phrase?: CompT<string>;
         name: CompT<string>;
-        orderable_direction: CompT<number>;
-        parent: CompT<LinkTypeT | null>;
+        orderable_direction?: CompT<number>;
+        parent?: CompT<LinkTypeT | null>;
         relationship_type: LinkTypeT;
         reverse_link_phrase: CompT<string>;
     };
@@ -888,18 +888,18 @@ export type EditRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type EditReleaseEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist_credit: CompT<ArtistCreditT>;
-        barcode: CompT<string | null>;
-        comment: CompT<string | null>;
-        events: CompT<$ReadOnlyArray<ReleaseEventT>>;
-        language: CompT<LanguageT | null>;
-        name: CompT<string>;
-        packaging: CompT<ReleasePackagingT | null>;
+        artist_credit?: CompT<ArtistCreditT>;
+        barcode?: CompT<string | null>;
+        comment?: CompT<string | null>;
+        events?: CompT<$ReadOnlyArray<ReleaseEventT>>;
+        language?: CompT<LanguageT | null>;
+        name?: CompT<string>;
+        packaging?: CompT<ReleasePackagingT | null>;
         release: ReleaseT;
-        release_group: CompT<ReleaseGroupT>;
-        script: CompT<ScriptT | null>;
-        status: CompT<ReleaseStatusT | null>;
-        update_tracklists: boolean;
+        release_group?: CompT<ReleaseGroupT>;
+        script?: CompT<ScriptT | null>;
+        status?: CompT<ReleaseStatusT | null>;
+        update_tracklists?: boolean;
     };
 }>>;
 export type EditReleaseEditHistoricArtistT = $ReadOnly<$_$Spread<EditReleaseEditGenericT, {
@@ -911,12 +911,12 @@ export type EditReleaseEditCurrentT = $ReadOnly<$_$Spread<EditReleaseEditGeneric
 export type EditReleaseEditT = EditReleaseEditHistoricArtistT | EditReleaseEditCurrentT;
 export type EditReleaseGroupEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        artist_credit: CompT<ArtistCreditT>;
-        comment: CompT<string | null>;
-        name: CompT<string>;
+        artist_credit?: CompT<ArtistCreditT>;
+        comment?: CompT<string | null>;
+        name?: CompT<string>;
         release_group: ReleaseGroupT;
         secondary_types: CompT<string>;
-        type: CompT<ReleaseGroupTypeT | ReleaseGroupHistoricTypeT | null>;
+        type?: CompT<ReleaseGroupTypeT | ReleaseGroupHistoricTypeT | null>;
     };
     edit_type: EDIT_RELEASEGROUP_EDIT_T;
 }>>;
@@ -924,13 +924,13 @@ export type EditReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         barcode: string | null;
         catalog_number: {
-            new: string | null;
+            new?: string | null;
             old: string | null;
         };
-        combined_format: string;
+        combined_format?: string;
         events: $ReadOnlyArray<ReleaseEventT>;
         label: {
-            new: LabelT | null;
+            new?: LabelT | null;
             old: LabelT | null;
         };
         release: ReleaseT;
@@ -939,32 +939,32 @@ export type EditReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type EditSeriesEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        comment: CompT<string>;
-        name: CompT<string>;
-        ordering_type: CompT<SeriesOrderingTypeT>;
+        comment?: CompT<string>;
+        name?: CompT<string>;
+        ordering_type?: CompT<SeriesOrderingTypeT>;
         series: SeriesT;
-        type: CompT<SeriesTypeT>;
+        type?: CompT<SeriesTypeT>;
     };
     edit_type: EDIT_SERIES_EDIT_T;
 }>>;
 export type EditUrlEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         affects: number;
-        description: CompT<string | null>;
+        description?: CompT<string | null>;
         isMerge: boolean;
-        uri: CompT<string>;
+        uri?: CompT<string>;
         url: UrlT;
     };
     edit_type: EDIT_URL_EDIT_T;
 }>>;
 export type EditWorkEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        attributes: {};
-        comment: CompT<string | null>;
-        iswc: CompT<string | null>;
-        languages: CompT<$ReadOnlyArray<LanguageT>>;
-        name: CompT<string>;
-        type: CompT<WorkTypeT | null>;
+        attributes?: {};
+        comment?: CompT<string | null>;
+        iswc?: CompT<string | null>;
+        languages?: CompT<$ReadOnlyArray<LanguageT>>;
+        name?: CompT<string>;
+        type?: CompT<WorkTypeT | null>;
         work: WorkT;
     };
     edit_type: EDIT_WORK_EDIT_T;
@@ -1046,17 +1046,17 @@ export type MergeReleaseEditDisplayRecordingMergeT = {
 };
 export type MergeReleasesEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
-        cannot_merge_recordings_reason: {
+        cannot_merge_recordings_reason?: {
             message: string;
             vars: {};
         };
         changes: $ReadOnlyArray<MergeReleaseEditDisplayChangeT>;
         edit_version: 1 | 2 | 3;
-        empty_releases: $ReadOnlyArray<ReleaseT>;
+        empty_releases?: $ReadOnlyArray<ReleaseT>;
         merge_strategy: "append" | "merge";
         new: ReleaseT;
         old: $ReadOnlyArray<ReleaseT>;
-        recording_merges: $ReadOnlyArray<MergeReleaseEditDisplayRecordingMergeT>;
+        recording_merges?: $ReadOnlyArray<MergeReleaseEditDisplayRecordingMergeT>;
     };
     edit_type: EDIT_RELEASE_MERGE_T;
 }>>;
@@ -1203,39 +1203,39 @@ export type RemoveIswcEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type RemoveMediumEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         medium: MediumT;
-        tracks: $ReadOnlyArray<TrackT>;
+        tracks?: $ReadOnlyArray<TrackT>;
     };
     edit_type: EDIT_MEDIUM_DELETE_T;
 }>>;
 export type RemoveRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
     data: {
-        edit_version: number;
+        edit_version?: number;
         relationship: {
             entity0: {
-                gid: string;
+                gid?: string;
                 id: number;
                 name: string;
             };
-            entity0_credit: string;
+            entity0_credit?: string;
             entity1: {
-                gid: string;
+                gid?: string;
                 id: number;
                 name: string;
             };
-            entity1_credit: string;
-            extra_phrase_attributes: string;
+            entity1_credit?: string;
+            extra_phrase_attributes?: string;
             id: number;
             link: {
-                attributes: $ReadOnlyArray<{
-                    credited_as: string;
-                    gid: string;
-                    id: string | number;
-                    name: string;
-                    root_gid: string;
-                    root_id: string | number;
-                    root_name: string;
-                    text_value: string;
-                    type: {
+                attributes?: $ReadOnlyArray<{
+                    credited_as?: string;
+                    gid?: string;
+                    id?: string | number;
+                    name?: string;
+                    root_gid?: string;
+                    root_id?: string | number;
+                    root_name?: string;
+                    text_value?: string;
+                    type?: {
                         gid: string;
                         id: string | number;
                         name: string;
@@ -1256,15 +1256,15 @@ export type RemoveRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
                     month: number | null;
                     year: string | number | null;
                 };
-                ended: string;
+                ended?: string;
                 type: {
                     entity0_type: string;
                     entity1_type: string;
-                    id: string | number;
-                    long_link_phrase: string;
+                    id?: string | number;
+                    long_link_phrase?: string;
                 };
             };
-            phrase: string;
+            phrase?: string;
         };
     };
     display_data: {
@@ -1297,7 +1297,7 @@ export type RemoveRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type RemoveReleaseLabelEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         catalog_number: string;
-        label: LabelT;
+        label?: LabelT;
         release: ReleaseT;
     };
     edit_type: EDIT_RELEASE_DELETERELEASELABEL_T;
@@ -1351,7 +1351,7 @@ export type SetTrackLengthsEditGenericT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         cdtoc: CDTocT | null;
         length: CompT<$ReadOnlyArray<number | null>>;
-        medium: MediumT;
+        medium?: MediumT;
         releases: $ReadOnlyArray<ReleaseT>;
     };
 }>>;

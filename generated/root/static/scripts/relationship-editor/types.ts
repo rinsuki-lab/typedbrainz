@@ -77,14 +77,14 @@ export type RelationshipSourceGroupsT = tree.ImmutableTree<RelationshipSourceGro
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
 export type NonReleaseRelatableEntityTypeT = NonReleaseRelatableEntityT["entityType"];
 export type RelationshipDialogLocationT = {
-    backward: boolean | null | undefined;
-    batchSelection: boolean | null | undefined;
-    linkTypeId: number | null | undefined;
-    relationshipId: number | null | undefined;
+    backward?: boolean | null | undefined;
+    batchSelection?: boolean | null | undefined;
+    linkTypeId?: number | null | undefined;
+    relationshipId?: number | null | undefined;
     source: RelatableEntityT;
-    targetType: RelatableEntityTypeT | null | undefined;
-    textPhrase: string | null | undefined;
-    track: TrackWithRecordingT | null | undefined;
+    targetType?: RelatableEntityTypeT | null | undefined;
+    textPhrase?: string | null | undefined;
+    track?: TrackWithRecordingT | null | undefined;
 };
 export type RelationshipEditorStateT = {
     dialogLocation: RelationshipDialogLocationT | null;
@@ -115,8 +115,8 @@ export type DialogMultiselectAttributeStateT = $ReadOnly<$_$Spread<DialogLinkAtt
 export type DialogMultiselectAttributeValueStateT = {
     autocomplete: AutocompleteStateT<LinkAttrTypeT>;
     control: "multiselect-value";
-    creditedAs: string;
-    error: string;
+    creditedAs?: string;
+    error?: string;
     key: number;
     removed: boolean;
 };
@@ -131,12 +131,12 @@ export type DialogAttributesStateT = {
     resultingLinkAttributes: tree.ImmutableTree<LinkAttrT> | null;
 };
 export type DialogLinkAttributeStateT = {
-    creditedAs: string;
+    creditedAs?: string;
     error: string;
     key: number;
     max: number | null;
     min: number | null;
-    textValue: string;
+    textValue?: string;
     type: LinkAttrTypeT;
 };
 export type DialogDatePeriodStateT = {
@@ -144,8 +144,8 @@ export type DialogDatePeriodStateT = {
     result: DatePeriodRoleT;
 };
 export type ExternalLinkAttrT = {
-    credited_as: string;
-    text_value: string;
+    credited_as?: string;
+    text_value?: string;
     type: {
         gid: string;
     };
@@ -177,8 +177,8 @@ export type DialogEntityCreditStateT = {
     releaseHasUnloadedTracks: boolean;
 };
 export type LinkAttributeShapeT = {
-    credited_as: string;
-    text_value: string;
+    credited_as?: string;
+    text_value?: string;
     type: LinkAttrTypeT | null;
 };
 export type LinkAttributesByRootIdT = Map<number, Array<LinkAttributeShapeT>>;

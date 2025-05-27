@@ -7,8 +7,8 @@ import { TypeRoleT } from "../../declared-types.js"
 import { OptionTreeT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type LinkAttrT = {
-    credited_as: string;
-    text_value: string;
+    credited_as?: string;
+    text_value?: string;
     type: {
         gid: string;
     } | LinkAttrTypeT;
@@ -16,16 +16,16 @@ export type LinkAttrT = {
     typeName: string;
 };
 export type LinkAttrTypeT = $_$Spread<OptionTreeT<"link_attribute_type">, {
-    children: $ReadOnlyArray<LinkAttrTypeT>;
+    children?: $ReadOnlyArray<LinkAttrTypeT>;
     creditable: boolean;
     free_text: boolean;
-    instrument_aliases: $ReadOnlyArray<string>;
-    instrument_comment: string;
-    instrument_type_id: number;
-    instrument_type_name: string;
-    l_description: string;
-    l_name: string;
-    level: number;
+    instrument_aliases?: $ReadOnlyArray<string>;
+    instrument_comment?: string;
+    instrument_type_id?: number;
+    instrument_type_name?: string;
+    l_description?: string;
+    l_name?: string;
+    level?: number;
     root_gid: string;
     root_id: number;
 }>;
@@ -37,7 +37,7 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
     attributes: {};
     cardinality0: number;
     cardinality1: number;
-    children: $ReadOnlyArray<LinkTypeT>;
+    children?: $ReadOnlyArray<LinkTypeT>;
     deprecated: boolean;
     documentation: string | null;
     examples: $ReadOnlyArray<{
@@ -46,10 +46,10 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
     }> | null;
     has_dates: boolean;
     id: number;
-    l_description: string;
-    l_link_phrase: string;
-    l_name: string;
-    l_reverse_link_phrase: string;
+    l_description?: string;
+    l_link_phrase?: string;
+    l_name?: string;
+    l_reverse_link_phrase?: string;
     link_phrase: string;
     long_link_phrase: string;
     orderable_direction: number;
@@ -71,10 +71,10 @@ export type PagedTargetTypeGroupT = {};
 export type RelationshipT = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<PendingEditsRoleT, {
     attributes: $ReadOnlyArray<LinkAttrT>;
     backward: boolean;
-    entity0: RelatableEntityT | null | undefined;
+    entity0?: RelatableEntityT | null | undefined;
     entity0_credit: string;
     entity0_id: number;
-    entity1: RelatableEntityT | null | undefined;
+    entity1?: RelatableEntityT | null | undefined;
     entity1_credit: string;
     entity1_id: number;
     id: number;

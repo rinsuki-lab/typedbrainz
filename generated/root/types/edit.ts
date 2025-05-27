@@ -32,7 +32,7 @@ export type EditNoteT = {
     editor_id: number;
     formatted_text: string;
     id: number;
-    latest_change: EditNoteChangeT;
+    latest_change?: EditNoteChangeT;
     post_time: string | null;
 };
 export type GenericEditT = {
@@ -57,7 +57,7 @@ export type GenericEditT = {
     id: number | null;
     is_loaded: boolean;
     is_open: boolean;
-    preview: boolean;
+    preview?: boolean;
     quality: QualityT;
     status: EditStatusT;
     votes: $ReadOnlyArray<VoteT>;

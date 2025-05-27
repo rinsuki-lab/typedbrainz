@@ -13,6 +13,6 @@ export type AreaT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT,
     iso_3166_2_codes: $ReadOnlyArray<string>;
     iso_3166_3_codes: $ReadOnlyArray<string>;
     primary_code: string;
-    primaryAlias: string | null;
+    primaryAlias?: string | null;
 }>>>>>>;
 export type AreaTypeT = OptionTreeT<"area_type">;

@@ -44,6 +44,6 @@ import type { EntityItemT as EntityItemT, ItemT as ItemT } from "./types.js";
 "Unknown Type: FunctionDeclaration";
 "Unknown Type: FunctionDeclaration";
 export type FormatOptionsT = {
-    showDescriptions: boolean;
+    showDescriptions?: boolean;
 };
 export default "WIP convertExpression: FunctionDeclaration";

@@ -14,6 +14,6 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 export type LabelT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"label">, $_$Spread<DatePeriodRoleT, $_$Spread<IpiCodesRoleT, $_$Spread<IsniCodesRoleT, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<LabelTypeT>, {
     area: AreaT | null;
     label_code: number;
-    primaryAlias: string | null;
+    primaryAlias?: string | null;
 }>>>>>>>>>>;
 export type LabelTypeT = OptionTreeT<"label_type">;

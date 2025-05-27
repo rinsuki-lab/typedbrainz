@@ -6,7 +6,7 @@ import { PendingEditsRoleT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type ArtworkRoleT = $ReadOnly<$_$Spread<PendingEditsRoleT, {
     comment: string;
-    event: EventT;
+    event?: EventT;
     filename: string | null;
     huge_ia_thumbnail: string;
     huge_thumbnail: string;
@@ -21,10 +21,10 @@ export type ArtworkRoleT = $ReadOnly<$_$Spread<PendingEditsRoleT, {
     types: $ReadOnlyArray<string>;
 }>>;
 export type ReleaseArtT = $ReadOnly<$_$Spread<ArtworkRoleT, {
-    release: ReleaseT;
+    release?: ReleaseT;
 }>>;
 export type EventArtT = $ReadOnly<$_$Spread<ArtworkRoleT, {
-    event: EventT;
+    event?: EventT;
 }>>;
 export type ArtworkT = EventArtT | ReleaseArtT;
 export type CommonsImageT = {

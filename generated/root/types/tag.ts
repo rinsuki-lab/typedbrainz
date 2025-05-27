@@ -7,7 +7,7 @@ export type AggregatedTagT = {
 };
 export type TagT = {
     entityType: "tag";
-    genre: GenreT;
+    genre?: GenreT;
     id: number | null;
     name: string;
 };

@@ -2,11 +2,11 @@
 import { StrOrNum } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type AnchorProps = {
-    className: string;
+    className?: string;
     href: string;
-    rel: "noopener noreferrer";
-    target: "_blank";
-    title: string;
+    rel?: "noopener noreferrer";
+    target?: "_blank";
+    title?: string;
 };
 export type VarSubstScalarArg = StrOrNum | React.MixedElement;
 export type VarSubstArg = VarSubstScalarArg | $ReadOnlyArray<VarSubstScalarArg>;

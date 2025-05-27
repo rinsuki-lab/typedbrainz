@@ -40,8 +40,8 @@ export type CommentRoleT = {
 export type RelatableEntityRoleT<T> = $_$Spread<EntityRoleT<T>, $_$Spread<LastUpdateRoleT, $_$Spread<PendingEditsRoleT, {
     gid: string;
     name: string;
-    paged_relationship_groups: {};
-    relationships: $ReadOnlyArray<RelationshipT>;
+    paged_relationship_groups?: {};
+    relationships?: $ReadOnlyArray<RelationshipT>;
 }>>>;
 export type CollectableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type CollectableEntityTypeT = CollectableEntityT["entityType"];
@@ -73,14 +73,14 @@ export type MinimalEntityT = {
     gid: string;
 };
 export type PartialDateT = {
-    day: number | null | undefined;
-    month: number | null | undefined;
-    year: number | null | undefined;
+    day?: number | null | undefined;
+    month?: number | null | undefined;
+    year?: number | null | undefined;
 };
 export type PartialDateStringsT = {
-    day: string;
-    month: string;
-    year: string;
+    day?: string;
+    month?: string;
+    year?: string;
 };
 export type NonUrlRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type RelatableEntityT = NonUrlRelatableEntityT | UrlT;
@@ -93,7 +93,7 @@ export type TaggableEntityT = AreaT | ArtistT | EventT | InstrumentT | LabelT | 
 export type TaggableEntityTypeT = TaggableEntityT["entityType"];
 export type TypeRoleT<T> = {
     typeID: number | null;
-    typeName: string;
+    typeName?: string;
 };
 export type WikipediaExtractT = {
     content: string;

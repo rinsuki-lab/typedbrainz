@@ -30,22 +30,22 @@ export type WsJsRelationshipEntityT = {
     name: string;
 } | {
     entityType: "url";
-    gid: string;
+    gid?: string;
     name: string;
 };
 export type WsJsRelationshipAttributeT = {
-    credited_as: string;
-    removed: boolean;
-    text_value: string;
+    credited_as?: string;
+    removed?: boolean;
+    text_value?: string;
     type: {
         gid: string;
     };
 };
 export type WsJsRelationshipCommonT = {
     attributes: $ReadOnlyArray<WsJsRelationshipAttributeT>;
-    begin_date: PartialDateT;
-    end_date: PartialDateT;
-    ended: boolean;
+    begin_date?: PartialDateT;
+    end_date?: PartialDateT;
+    ended?: boolean;
     entities: [
         WsJsRelationshipEntityT,
         WsJsRelationshipEntityT
@@ -55,7 +55,7 @@ export type WsJsRelationshipCommonT = {
 };
 export type WsJsEditRelationshipCreateT = $ReadOnly<$_$Spread<WsJsRelationshipCommonT, {
     edit_type: EDIT_RELATIONSHIP_CREATE_T;
-    linkOrder: number;
+    linkOrder?: number;
     linkTypeID: number;
 }>>;
 export type WsJsEditRelationshipEditT = $ReadOnly<$_$Spread<Partial<WsJsRelationshipCommonT>, {

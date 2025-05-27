@@ -17,6 +17,6 @@ export type PlaceT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT
     address: string;
     area: AreaT | null;
     coordinates: CoordinatesT | null;
-    primaryAlias: string | null;
+    primaryAlias?: string | null;
 }>>>>>>>>;
 export type PlaceTypeT = OptionTreeT<"place_type">;

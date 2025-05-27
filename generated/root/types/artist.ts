@@ -19,7 +19,7 @@ export type ArtistT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRole
     end_area_id: number | null;
     gender: GenderT | null;
     gender_id: number | null;
-    primaryAlias: string | null;
+    primaryAlias?: string | null;
     sort_name: string;
 }>>>>>>>>>>;
 export type ArtistTypeT = OptionTreeT<"artist_type">;

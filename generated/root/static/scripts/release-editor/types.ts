@@ -5,8 +5,8 @@ import type { Observable as KnockoutObservable } from "knockout";
 export type ReleaseEditorTrackT = {
     artistCredit: KnockoutObservable<ArtistCreditT>;
     entityType: "track";
-    gid: string;
-    id: number;
+    gid?: string;
+    id?: number;
     name: KnockoutObservable<string>;
     next: "WIP convertTypeNode: FunctionTypeAnnotation";
     previous: "WIP convertTypeNode: FunctionTypeAnnotation";

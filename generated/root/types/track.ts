@@ -17,7 +17,7 @@ export type TrackT = $ReadOnly<$_$Spread<EntityRoleT<"track">, $_$Spread<LastUpd
     name: string;
     number: string;
     position: number;
-    recording: RecordingT;
+    recording?: RecordingT;
 }>>>;
 export type TrackWithRecordingT = $ReadOnly<$_$Spread<TrackT, {
     recording: RecordingT;

@@ -207,7 +207,7 @@ export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | Relationship
 } | {
     type: "start-submission";
 } | {
-    error: string;
+    error?: string;
     type: "stop-submission";
 } | {
     edits: Array<[

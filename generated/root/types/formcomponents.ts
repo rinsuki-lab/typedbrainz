@@ -25,7 +25,7 @@ export type CompoundFieldT<F> = {
     has_errors: boolean;
     html_name: string;
     id: number;
-    pendingErrors: $ReadOnlyArray<string>;
+    pendingErrors?: $ReadOnlyArray<string>;
     type: "compound_field";
 };
 export type DatePeriodFieldT = CompoundFieldT<{
@@ -38,7 +38,7 @@ export type FieldT<V> = {
     has_errors: boolean;
     html_name: string;
     id: number;
-    pendingErrors: $ReadOnlyArray<string>;
+    pendingErrors?: $ReadOnlyArray<string>;
     type: "field";
     value: V;
 };
@@ -52,16 +52,16 @@ export type SubfieldsT = {};
 export type AnyFieldT = {
     errors: $ReadOnlyArray<string>;
     field: SubfieldsT;
-    pendingErrors: $ReadOnlyArray<string>;
+    pendingErrors?: $ReadOnlyArray<string>;
     type: "compound_field";
 } | {
     errors: $ReadOnlyArray<string>;
     field: $ReadOnlyArray<AnyFieldT>;
-    pendingErrors: $ReadOnlyArray<string>;
+    pendingErrors?: $ReadOnlyArray<string>;
     type: "repeatable_field";
 } | {
     errors: $ReadOnlyArray<string>;
-    pendingErrors: $ReadOnlyArray<string>;
+    pendingErrors?: $ReadOnlyArray<string>;
     type: "field";
 };
 export type FormOrAnyFieldT = FormT<SubfieldsT> | AnyFieldT;
@@ -99,7 +99,7 @@ export type RepeatableFieldT<F> = {
     html_name: string;
     id: number;
     last_index: number;
-    pendingErrors: $ReadOnlyArray<string>;
+    pendingErrors?: $ReadOnlyArray<string>;
     type: "repeatable_field";
 };
 export type SelectOptionT = {

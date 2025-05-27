@@ -25,18 +25,18 @@ export type TracklistChangesRemoveT = {
 export type OldReleaseEventCompT = {
     barcode: CompT<string | null>;
     catalog_number: CompT<string | null>;
-    country: CompT<AreaT>;
+    country?: CompT<AreaT>;
     date: CompT<PartialDateT>;
     format: CompT<MediumFormatT | null>;
-    label: CompT<LabelT>;
+    label?: CompT<LabelT>;
     release: ReleaseT | null;
 };
 export type OldReleaseEventT = {
     barcode: string | null;
     catalog_number: string | null;
-    country: AreaT;
+    country?: AreaT;
     date: PartialDateT;
     format: MediumFormatT | null;
-    label: LabelT;
+    label?: LabelT;
     release: ReleaseT | null;
 };

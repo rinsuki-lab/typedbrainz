@@ -7,10 +7,10 @@ import { AnnotationRoleT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type InstrumentCreditsAndRelTypesT = {};
 export type InstrumentCreditsAndRelTypesRoleT = {
-    instrumentCreditsAndRelTypes: InstrumentCreditsAndRelTypesT;
+    instrumentCreditsAndRelTypes?: InstrumentCreditsAndRelTypesT;
 };
 export type InstrumentT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"instrument">, $_$Spread<TypeRoleT<InstrumentTypeT>, {
     description: string;
-    primaryAlias: string | null;
+    primaryAlias?: string | null;
 }>>>>>;
 export type InstrumentTypeT = OptionTreeT<"instrument_type">;

@@ -19,7 +19,7 @@ export type EventT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT
     }>;
     cancelled: boolean;
     event_art_presence: "absent" | "present" | "darkened" | null;
-    may_have_event_art: boolean;
+    may_have_event_art?: boolean;
     performers: $ReadOnlyArray<{
         credit: string;
         entity: ArtistT;
@@ -29,14 +29,14 @@ export type EventT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT
         credit: string;
         entity: PlaceT;
     }>;
-    primaryAlias: string | null;
-    related_entities: {
+    primaryAlias?: string | null;
+    related_entities?: {
         areas: AppearancesT<string>;
         performers: AppearancesT<string>;
         places: AppearancesT<string>;
     };
     related_series: $ReadOnlyArray<number>;
-    setlist: string;
+    setlist?: string;
     time: string;
 }>>>>>>>>;
 export type EventTypeT = OptionTreeT<"event_type">;

@@ -16,7 +16,7 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 export type AnnotatedEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type AnnotatedEntityTypeT = AnnotatedEntityT["entityType"];
 export type AnnotationRoleT = {
-    latest_annotation: AnnotationT;
+    latest_annotation?: AnnotationT;
 };
 export type AnnotationT = {
     changelog: string;

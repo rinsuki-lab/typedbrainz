@@ -11,13 +11,13 @@ import { OptionTreeT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
 export type ReleaseGroupSecondaryTypeT = OptionTreeT<"release_group_secondary_type">;
 export type ReleaseGroupT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<ArtistCreditRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"release_group">, $_$Spread<RatableRoleT, $_$Spread<ReviewableRoleT, $_$Spread<TypeRoleT<ReleaseGroupTypeT>, {
-    cover_art: ReleaseArtT;
+    cover_art?: ReleaseArtT;
     firstReleaseDate: string | null;
     hasCoverArt: boolean;
     l_type_name: string | null;
-    primaryAlias: string | null;
+    primaryAlias?: string | null;
     release_count: number;
-    release_group: ReleaseGroupT;
+    release_group?: ReleaseGroupT;
     secondaryTypeIDs: $ReadOnlyArray<number>;
     typeID: number | null;
     typeName: string | null;
