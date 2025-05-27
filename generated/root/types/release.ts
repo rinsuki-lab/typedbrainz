@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { MediumWithRecordingsT } from "../../declared-types.js"
 import { ScriptT } from "../../declared-types.js"
 import { ReleaseGroupT } from "../../declared-types.js"
@@ -30,7 +31,7 @@ export type ReleaseLabelT = {
 };
 export type ReleasePackagingT = OptionTreeT<"release_packaging">;
 export type ReleaseStatusT = OptionTreeT<"release_status">;
-export type ReleaseT = $ReadOnly<AnnotationRoleT & ArtistCreditRoleT & CommentRoleT & RelatableEntityRoleT<"release"> & {
+export type ReleaseT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<ArtistCreditRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"release">, {
     barcode: string | null;
     combined_format_name: string;
     combined_track_count: string;
@@ -52,7 +53,7 @@ export type ReleaseT = $ReadOnly<AnnotationRoleT & ArtistCreditRoleT & CommentRo
     scriptID: number | null;
     status: ReleaseStatusT | null;
     statusID: number | null;
-}>;
-export type ReleaseWithMediumsT = $ReadOnly<ReleaseT & {
+}>>>>>;
+export type ReleaseWithMediumsT = $ReadOnly<_$Spread<ReleaseT, {
     mediums: $ReadOnlyArray<MediumWithRecordingsT>;
-}>;
+}>>;

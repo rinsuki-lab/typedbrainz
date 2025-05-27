@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { OptionTreeT } from "../../declared-types.js"
 import { AppearancesT } from "../../declared-types.js"
 import { PlaceT } from "../../declared-types.js"
@@ -17,7 +18,7 @@ import { DatePeriodRoleT } from "../../declared-types.js"
 import { RelatableEntityRoleT } from "../../declared-types.js"
 import { CommentRoleT } from "../../declared-types.js"
 import { AnnotationRoleT } from "../../declared-types.js"
-export type EventT = $ReadOnly<AnnotationRoleT & CommentRoleT & RelatableEntityRoleT<"event"> & DatePeriodRoleT & RatableRoleT & ReviewableRoleT & TypeRoleT<EventTypeT> & {
+export type EventT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<CommentRoleT, _$Spread<RelatableEntityRoleT<"event">, _$Spread<DatePeriodRoleT, _$Spread<RatableRoleT, _$Spread<ReviewableRoleT, _$Spread<TypeRoleT<EventTypeT>, {
     areas: $ReadOnlyArray<{
         credit: string;
         entity: AreaT;
@@ -43,5 +44,5 @@ export type EventT = $ReadOnly<AnnotationRoleT & CommentRoleT & RelatableEntityR
     related_series: $ReadOnlyArray<number>;
     setlist: string;
     time: string;
-}>;
+}>>>>>>>>;
 export type EventTypeT = OptionTreeT<"event_type">;

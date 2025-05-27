@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { VoteT } from "../../declared-types.js"
 import { QualityT } from "../../declared-types.js"
 import { EditorT } from "../../declared-types.js"
@@ -18,9 +19,9 @@ export type DiffChangeTypeT = "+" | "-" | "c" | "u";
 export type EditExpireActionT = 1 | 2;
 export type EditStatusT = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 9;
 export type EditT = CurrentEditT | HistoricEditT;
-export type EditWithIdT = $ReadOnly<EditT & {
+export type EditWithIdT = $ReadOnly<_$Spread<EditT, {
     id: number;
-}>;
+}>>;
 export type EditNoteChangeT = {
     change_editor_id: number;
     change_time: string;
@@ -67,6 +68,6 @@ export type GenericEditT = {
     status: EditStatusT;
     votes: $ReadOnlyArray<VoteT>;
 };
-export type GenericEditWithIdT = $ReadOnly<GenericEditT & {
+export type GenericEditWithIdT = $ReadOnly<_$Spread<GenericEditT, {
     id: number;
-}>;
+}>>;

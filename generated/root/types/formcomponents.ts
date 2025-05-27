@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { StrOrNum } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
 export type AreaFieldT = CompoundFieldT<{
@@ -54,44 +55,44 @@ export type FormT<F, N extends string = ""> = {
     type: "form";
 };
 export type SubfieldsT = {};
-export type AnyFieldT = ({
+export type AnyFieldT = {
     errors: $ReadOnlyArray<string>;
     field: SubfieldsT;
     pendingErrors: $ReadOnlyArray<string>;
     type: "compound_field";
-}) | ({
+} | {
     errors: $ReadOnlyArray<string>;
     field: $ReadOnlyArray<AnyFieldT>;
     pendingErrors: $ReadOnlyArray<string>;
     type: "repeatable_field";
-}) | ({
+} | {
     errors: $ReadOnlyArray<string>;
     pendingErrors: $ReadOnlyArray<string>;
     type: "field";
-});
+};
 export type FormOrAnyFieldT = FormT<SubfieldsT> | AnyFieldT;
 export type GroupedOptionsT = $ReadOnlyArray<{
     optgroup: string;
     options: SelectOptionsT;
 }>;
-export type MaybeGroupedOptionsT = ({
+export type MaybeGroupedOptionsT = {
     grouped: "TODO: Support TypeNode BooleanLiteralTypeAnnotation";
     options: GroupedOptionsT;
-}) | ({
+} | {
     grouped: "TODO: Support TypeNode BooleanLiteralTypeAnnotation";
     options: SelectOptionsT;
-});
+};
 export type OptionListT = $ReadOnlyArray<{
     text: string;
     value: number;
 }>;
-export type OptionTreeT<T> = EntityRoleT<T> & {
+export type OptionTreeT<T> = _$Spread<EntityRoleT<T>, {
     child_order: number;
     description: string;
     gid: string;
     name: string;
     parent_id: number | null;
-};
+}>;
 export type PartialDateFieldT = CompoundFieldT<{
     day: FieldT<StrOrNum | null>;
     month: FieldT<StrOrNum | null>;

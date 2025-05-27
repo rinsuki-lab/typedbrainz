@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import Tabs from "../components/Tabs.js";
 import Layout from "../layout/index.js";
 import { unwrapNl as unwrapNl } from "../static/scripts/common/i18n.js";

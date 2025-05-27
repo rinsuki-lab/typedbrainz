@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import commaList, { commaListText as commaListText } from "../../common/i18n/commaList.js";
 import { VarArgsClass as VarArgsClass, VarArgsObject as VarArgsObject } from "../../common/i18n/expand2.js";
 import { expand2reactWithVarArgsInstance as expand2reactWithVarArgsInstance } from "../../common/i18n/expand2react.js";

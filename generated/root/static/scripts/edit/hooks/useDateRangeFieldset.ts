@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import * as React from "react";
 import type { ActionT as ActionT } from "../components/DateRangeFieldset.js";
 import type { ActionT as FormRowPartialDateActionT } from "../components/FormRowPartialDate.js";

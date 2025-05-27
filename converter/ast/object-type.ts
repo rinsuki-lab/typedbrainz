@@ -4,9 +4,9 @@ import assert from "node:assert";
 import { convertTypeNode } from "./type-node.js";
 import { convertPropertyName } from "./property-name.js";
 
-export function convertObjectType(source: any, flag?: "export") {
+export function convertObjectType(source: any, flag?: "export"): TypeNode {
+    let properties: TypeElement[] = []
     const spread: TypeNode[] = []
-    const properties: TypeElement[] = []
     for (const prop of source.properties) {
         switch (prop.type) {
         case "ObjectTypeProperty":
@@ -18,12 +18,35 @@ export function convertObjectType(source: any, flag?: "export") {
             ));
             break;
         case "ObjectTypeSpreadProperty":
+            if (properties.length) {
+                spread.push(factory.createTypeLiteralNode(properties));
+                properties = [];
+            }
             spread.push(convertTypeNode(prop.argument));
             break;
         }
     }
-    return factory.createIntersectionTypeNode([
-        ...spread,
-        factory.createTypeLiteralNode(properties),
-    ])
+    
+    if (properties.length) {
+        spread.push(factory.createTypeLiteralNode(properties));
+    }
+
+    let node = spread.pop()
+    if (node == null) {
+        node = factory.createTypeLiteralNode([]);
+    }
+
+    while (spread.length) {
+        const next = spread.pop()
+        if (next == null) break
+        node = factory.createTypeReferenceNode(
+            factory.createIdentifier("_$Spread"),
+            [
+                next,
+                node,
+            ]
+        )
+    }
+
+    return node
 }

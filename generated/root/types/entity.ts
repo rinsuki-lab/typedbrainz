@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { EditorT } from "../../declared-types.js"
 import { CollectionT } from "../../declared-types.js"
 import { TrackT } from "../../declared-types.js"
@@ -42,12 +43,12 @@ export type AppearancesT<T> = {
 export type CommentRoleT = {
     comment: string;
 };
-export type RelatableEntityRoleT<T> = EntityRoleT<T> & LastUpdateRoleT & PendingEditsRoleT & {
+export type RelatableEntityRoleT<T> = _$Spread<EntityRoleT<T>, _$Spread<LastUpdateRoleT, _$Spread<PendingEditsRoleT, {
     gid: string;
     name: string;
     paged_relationship_groups: {};
     relationships: $ReadOnlyArray<RelationshipT>;
-};
+}>>>;
 export type CollectableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type CollectableEntityTypeT = "TODO: Support TypeNode IndexedAccessType";
 export type EditableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | UrlT | WorkT;

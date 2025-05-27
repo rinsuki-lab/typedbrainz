@@ -5,20 +5,21 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { PartialDateFieldT } from "../../../../../declared-types.js"
 import type { CowContext as CowContext } from "mutate-cow";
 import { isDateValid as isDateValid, isYearFourDigits as isYearFourDigits } from "../utility/dates.js";
 import { applyPendingErrors as applyPendingErrors } from "../utility/subfieldErrors.js";
-export type ActionT = ({
+export type ActionT = {
     type: "set-date";
     date: {
         year: string;
         month: string;
         day: string;
     };
-}) | ({
+} | {
     type: "show-pending-errors";
-});
+};
 "Unknown Type: TypeAlias";
 export type StateT = PartialDateFieldT;
 "Unknown Type: FunctionDeclaration";

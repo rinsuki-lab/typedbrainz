@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { GenderT } from "../../declared-types.js"
 import { PartialDateT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
@@ -14,23 +15,23 @@ export type ActiveEditorPreferencesT = {
     datetime_format: string;
     timezone: string;
 };
-export type ActiveEditorT = EntityRoleT<"editor"> & {
+export type ActiveEditorT = _$Spread<EntityRoleT<"editor">, {
     avatar: string;
     has_confirmed_email_address: boolean;
     name: string;
     preferences: ActiveEditorPreferencesT;
     privileges: number;
-};
+}>;
 export type EditorLanguageT = {
     fluency: FluencyT;
     language: LanguageT;
 };
-export type EditorT = EntityRoleT<"editor"> & {
+export type EditorT = _$Spread<EntityRoleT<"editor">, {
     avatar: string;
     deleted: boolean;
     name: string;
     privileges: number;
-};
+}>;
 export type FluencyT = "basic" | "intermediate" | "advanced" | "native";
 export type UnsanitizedEditorPreferencesT = {
     datetime_format: string;
@@ -47,7 +48,7 @@ export type UnsanitizedEditorPreferencesT = {
     subscriptions_email_period: string;
     timezone: string;
 };
-export type UnsanitizedEditorT = $ReadOnly<EntityRoleT<"editor"> & {
+export type UnsanitizedEditorT = $ReadOnly<_$Spread<EntityRoleT<"editor">, {
     age: number | null;
     area: AreaT | null;
     avatar: string;
@@ -67,4 +68,4 @@ export type UnsanitizedEditorT = $ReadOnly<EntityRoleT<"editor"> & {
     privileges: number;
     registration_date: string;
     website: string | null;
-}>;
+}>>;

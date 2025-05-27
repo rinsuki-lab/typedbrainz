@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import * as React from "react";
 import { SanitizedCatalystContext as SanitizedCatalystContext } from "../../context.mjs";
 import { VARTIST_GID as VARTIST_GID } from "../../static/scripts/common/constants.js";

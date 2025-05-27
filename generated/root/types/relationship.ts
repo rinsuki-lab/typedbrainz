@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { RelatableEntityT } from "../../declared-types.js"
 import { PendingEditsRoleT } from "../../declared-types.js"
 import { DatePeriodRoleT } from "../../declared-types.js"
@@ -14,13 +15,13 @@ import { OptionTreeT } from "../../declared-types.js"
 export type LinkAttrT = {
     credited_as: string;
     text_value: string;
-    type: ({
+    type: {
         gid: string;
-    }) | LinkAttrTypeT;
+    } | LinkAttrTypeT;
     typeID: number;
     typeName: string;
 };
-export type LinkAttrTypeT = OptionTreeT<"link_attribute_type"> & {
+export type LinkAttrTypeT = _$Spread<OptionTreeT<"link_attribute_type">, {
     children: $ReadOnlyArray<LinkAttrTypeT>;
     creditable: boolean;
     free_text: boolean;
@@ -33,12 +34,12 @@ export type LinkAttrTypeT = OptionTreeT<"link_attribute_type"> & {
     level: number;
     root_gid: string;
     root_id: number;
-};
-export type LinkTypeAttrTypeT = $ReadOnly<TypeRoleT<LinkAttrTypeT> & {
+}>;
+export type LinkTypeAttrTypeT = $ReadOnly<_$Spread<TypeRoleT<LinkAttrTypeT>, {
     max: number | null;
     min: number | null;
-}>;
-export type LinkTypeT = OptionTreeT<"link_type"> & {
+}>>;
+export type LinkTypeT = _$Spread<OptionTreeT<"link_type">, {
     attributes: {};
     cardinality0: number;
     cardinality1: number;
@@ -62,7 +63,7 @@ export type LinkTypeT = OptionTreeT<"link_type"> & {
     root_id: number | null;
     type0: RelatableEntityTypeT;
     type1: RelatableEntityTypeT;
-};
+}>;
 export type PagedLinkTypeGroupT = {
     backward: boolean;
     is_loaded: boolean;
@@ -73,7 +74,7 @@ export type PagedLinkTypeGroupT = {
     total_relationships: number;
 };
 export type PagedTargetTypeGroupT = {};
-export type RelationshipT = $ReadOnly<DatePeriodRoleT & PendingEditsRoleT & {
+export type RelationshipT = $ReadOnly<_$Spread<DatePeriodRoleT, _$Spread<PendingEditsRoleT, {
     attributes: $ReadOnlyArray<LinkAttrT>;
     backward: boolean;
     entity0: "TODO: Support TypeNode NullableTypeAnnotation";
@@ -90,10 +91,10 @@ export type RelationshipT = $ReadOnly<DatePeriodRoleT & PendingEditsRoleT & {
     target: RelatableEntityT;
     target_type: RelatableEntityTypeT;
     verbosePhrase: string;
-}>;
-export type SeededRelationshipT = $ReadOnly<RelationshipT & {
+}>>>;
+export type SeededRelationshipT = $ReadOnly<_$Spread<RelationshipT, {
     entity0_id: number | null;
     entity1_id: number | null;
     id: null;
     linkTypeID: number | null;
-}>;
+}>>;

@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { DatePeriodFieldT } from "../../../../../declared-types.js"
 import mutate, { CowContext as CowContext } from "mutate-cow";
 import * as React from "react";
@@ -16,18 +17,18 @@ import { applyAllPendingErrors as applyAllPendingErrors } from "../utility/subfi
 import FieldErrors from "./FieldErrors.js";
 import FormRowCheckbox from "./FormRowCheckbox.js";
 import FormRowPartialDate, { ActionT as FormRowPartialDateActionT, runReducer as runFormRowPartialDateReducer } from "./FormRowPartialDate.js";
-export type ActionT = ({
+export type ActionT = {
     type: "update-begin-date";
     action: FormRowPartialDateActionT;
-}) | ({
+} | {
     type: "update-end-date";
     action: FormRowPartialDateActionT;
-}) | ({
+} | {
     type: "set-ended";
     enabled: boolean;
-}) | ({
+} | {
     type: "copy-date";
-});
+};
 export type StateT = DatePeriodFieldT;
 "Unknown Export Type: FunctionDeclaration";
 "Unknown Type: FunctionDeclaration";

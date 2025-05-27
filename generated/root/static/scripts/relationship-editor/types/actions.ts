@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { WsJsEditResponseT } from "../../../../../declared-types.js"
 import { RecordingT } from "../../../../../declared-types.js"
 import { RelationshipT } from "../../../../../declared-types.js"
@@ -23,59 +24,59 @@ import type { MultiselectActionT as MultiselectActionT } from "../../edit/compon
 import type { WorkTypeSelectActionT as WorkTypeSelectActionT } from "../../release/components/WorkTypeSelect.js";
 import type { LazyReleaseActionT as LazyReleaseActionT } from "../../release/types.js";
 import type { CreditChangeOptionT as CreditChangeOptionT, ExternalLinkAttrT as ExternalLinkAttrT, MediumRecordingStateTreeT as MediumRecordingStateTreeT, MediumWorkStateT as MediumWorkStateT, RelationshipDialogLocationT as RelationshipDialogLocationT, RelationshipPhraseGroupT as RelationshipPhraseGroupT, RelationshipStateT as RelationshipStateT } from "../types.js";
-export type DialogEntityCreditActionT = ({
+export type DialogEntityCreditActionT = {
     creditedAs: string;
     type: "set-credit";
-}) | ({
+} | {
     type: "set-credits-to-change";
     value: CreditChangeOptionT;
-});
+};
 export type DialogLinkOrderActionT = {
     newLinkOrder: number;
     type: "update-link-order";
 };
-export type DialogActionT = ({
+export type DialogActionT = {
     type: "change-direction";
-}) | ({
+} | {
     attributes: $ReadOnlyArray<ExternalLinkAttrT>;
     type: "set-attributes";
-}) | ({
+} | {
     type: "toggle-help";
-}) | ({
+} | {
     action: DialogEntityCreditActionT;
     type: "update-source-entity";
-}) | ({
+} | {
     action: DialogTargetEntityActionT;
     source: RelatableEntityT;
     type: "update-target-entity";
-}) | ({
+} | {
     source: RelatableEntityT;
     targetType: RelatableEntityTypeT;
     type: "update-target-type";
-}) | DialogLinkOrderActionT | ({
+} | DialogLinkOrderActionT | {
     action: DialogLinkTypeActionT;
     source: RelatableEntityT;
     type: "update-link-type";
-}) | ({
+} | {
     action: DialogAttributeActionT;
     type: "update-attribute";
-}) | ({
+} | {
     action: DateRangeFieldsetActionT;
     type: "update-date-period";
-});
-export type DialogAttributeActionT = ({
+};
+export type DialogAttributeActionT = {
     action: DialogBooleanAttributeActionT;
     rootKey: number;
     type: "update-boolean-attribute";
-}) | ({
+} | {
     action: DialogMultiselectAttributeActionT;
     rootKey: number;
     type: "update-multiselect-attribute";
-}) | ({
+} | {
     action: DialogTextAttributeActionT;
     rootKey: number;
     type: "update-text-attribute";
-});
+};
 export type DialogBooleanAttributeActionT = {
     enabled: boolean;
     type: "toggle";
@@ -85,11 +86,11 @@ export type DialogLinkTypeActionT = {
     source: RelatableEntityT;
     type: "update-autocomplete";
 };
-export type DialogMultiselectAttributeActionT = MultiselectActionT<LinkAttrTypeT> | ({
+export type DialogMultiselectAttributeActionT = MultiselectActionT<LinkAttrTypeT> | {
     creditedAs: string;
     type: "set-value-credit";
     valueKey: number;
-});
+};
 export type DialogTextAttributeActionT = {
     textValue: string;
     type: "set-text-value";
@@ -103,57 +104,57 @@ export type UpdateRelationshipActionT = {
     sourceEntity: RelatableEntityT;
     type: "update-relationship-state";
 };
-export type RelationshipEditorActionT = ({
+export type RelationshipEditorActionT = {
     relationship: RelationshipStateT;
     type: "remove-relationship";
-}) | ({
+} | {
     relationship: RelationshipStateT;
     source: RelatableEntityT;
     type: "move-relationship-down";
-}) | ({
+} | {
     relationship: RelationshipStateT;
     source: RelatableEntityT;
     type: "move-relationship-up";
-}) | ({
+} | {
     hasOrdering: boolean;
     linkPhraseGroup: RelationshipPhraseGroupT;
     source: RelatableEntityT;
     type: "toggle-ordering";
-}) | ({
+} | {
     location: RelationshipDialogLocationT | null;
     type: "update-dialog-location";
-}) | ({
+} | {
     changes: {};
     entityType: RelatableEntityTypeT;
     type: "update-entity";
-}) | UpdateRelationshipActionT;
+} | UpdateRelationshipActionT;
 export type UpdateTargetEntityAutocompleteActionT = {
     action: AutocompleteActionT<NonUrlRelatableEntityT>;
     linkType: "TODO: Support TypeNode NullableTypeAnnotation";
     source: RelatableEntityT;
     type: "update-autocomplete";
 };
-export type DialogTargetEntityActionT = UpdateTargetEntityAutocompleteActionT | ({
+export type DialogTargetEntityActionT = UpdateTargetEntityAutocompleteActionT | {
     action: DialogEntityCreditActionT;
     type: "update-credit";
-}) | ({
+} | {
     text: string;
     type: "update-url-text";
-});
-export type BatchCreateWorksDialogActionT = ({
+};
+export type BatchCreateWorksDialogActionT = {
     action: DialogAttributeActionT;
     type: "update-attribute";
-}) | ({
+} | {
     action: DateRangeFieldsetActionT;
     type: "update-date-period";
-}) | ({
+} | {
     action: MultiselectActionT<LanguageT>;
     type: "update-languages";
-}) | ({
+} | {
     action: DialogLinkTypeActionT;
     source: RelatableEntityT;
     type: "update-link-type";
-}) | WorkTypeSelectActionT;
+} | WorkTypeSelectActionT;
 export type AcceptBatchCreateWorksDialogActionT = {
     attributes: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
     begin_date: PartialDateT | null;
@@ -164,55 +165,55 @@ export type AcceptBatchCreateWorksDialogActionT = {
     type: "accept-batch-create-works-dialog";
     workType: number | null;
 };
-export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | RelationshipEditorActionT | AcceptBatchCreateWorksDialogActionT | ({
+export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | RelationshipEditorActionT | AcceptBatchCreateWorksDialogActionT | {
     languages: $ReadOnlyArray<LanguageT>;
     name: string;
     type: "accept-edit-work-dialog";
     work: WorkT;
     workType: number | null;
-}) | ({
+} | {
     relationships: $ReadOnlyArray<RelationshipT>;
     type: "load-work-relationships";
     work: WorkT;
-}) | ({
+} | {
     recording: RecordingT;
     type: "remove-work";
     workState: MediumWorkStateT;
-}) | ({
+} | {
     isSelected: boolean;
     type: "toggle-select-all-recordings";
-}) | ({
+} | {
     isSelected: boolean;
     type: "toggle-select-all-works";
-}) | ({
+} | {
     isSelected: boolean;
     recording: RecordingT;
     type: "toggle-select-recording";
-}) | ({
+} | {
     isSelected: boolean;
     type: "toggle-select-work";
     work: WorkT;
-}) | ({
+} | {
     isSelected: boolean;
     recordingStates: MediumRecordingStateTreeT | null;
     type: "toggle-select-medium-recordings";
-}) | ({
+} | {
     isSelected: boolean;
     recordingStates: MediumRecordingStateTreeT | null;
     type: "toggle-select-medium-works";
-}) | ({
+} | {
     editNote: string;
     type: "update-edit-note";
-}) | ({
+} | {
     checked: boolean;
     type: "update-make-votable";
-}) | ({
+} | {
     type: "start-submission";
-}) | ({
+} | {
     error: string;
     type: "stop-submission";
-}) | ({
+} | {
     edits: Array<"TODO: Support TypeNode TupleTypeAnnotation"> | Array<"TODO: Support TypeNode TupleTypeAnnotation">;
     responseData: WsJsEditResponseT;
     type: "update-submitted-relationships";
-});
+};

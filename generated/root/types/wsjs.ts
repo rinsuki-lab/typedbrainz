@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { EDIT_RELEASEGROUP_EDIT_T } from "../../declared-types.js"
 import { EDIT_RELEASE_REORDER_MEDIUMS_T } from "../../declared-types.js"
 import { EDIT_RELEASE_EDITRELEASELABEL_T } from "../../declared-types.js"
@@ -29,15 +30,15 @@ import { EDIT_RELATIONSHIP_EDIT_T } from "../../declared-types.js"
 import { EDIT_RELATIONSHIP_CREATE_T } from "../../declared-types.js"
 import { PartialDateT } from "../../declared-types.js"
 import { NonUrlRelatableEntityTypeT } from "../../declared-types.js"
-export type WsJsRelationshipEntityT = ({
+export type WsJsRelationshipEntityT = {
     entityType: NonUrlRelatableEntityTypeT;
     gid: string;
     name: string;
-}) | ({
+} | {
     entityType: "url";
     gid: string;
     name: string;
-});
+};
 export type WsJsRelationshipAttributeT = {
     credited_as: string;
     removed: boolean;
@@ -55,16 +56,16 @@ export type WsJsRelationshipCommonT = {
     entity0_credit: string;
     entity1_credit: string;
 };
-export type WsJsEditRelationshipCreateT = $ReadOnly<WsJsRelationshipCommonT & {
+export type WsJsEditRelationshipCreateT = $ReadOnly<_$Spread<WsJsRelationshipCommonT, {
     edit_type: EDIT_RELATIONSHIP_CREATE_T;
     linkOrder: number;
     linkTypeID: number;
-}>;
-export type WsJsEditRelationshipEditT = $ReadOnly<Partial<WsJsRelationshipCommonT> & {
+}>>;
+export type WsJsEditRelationshipEditT = $ReadOnly<_$Spread<Partial<WsJsRelationshipCommonT>, {
     edit_type: EDIT_RELATIONSHIP_EDIT_T;
     id: number;
     linkTypeID: number;
-}>;
+}>>;
 export type WsJsEditRelationshipDeleteT = $ReadOnly<{
     edit_type: EDIT_RELATIONSHIP_DELETE_T;
     id: number;
@@ -89,30 +90,30 @@ export type WsJsEditWorkCreateT = {
 export type WS_EDIT_RESPONSE_OK_T = 1;
 export type WS_EDIT_RESPONSE_NO_CHANGES_T = 2;
 export type WsJsEditResponseT = {
-    edits: $ReadOnlyArray<({
+    edits: $ReadOnlyArray<{
         edit_type: EDIT_RELATIONSHIP_CREATE_T;
         relationship_id: number | null;
         response: WS_EDIT_RESPONSE_OK_T;
-    }) | ({
+    } | {
         edit_type: EDIT_RELEASE_CREATE_T;
         entity: ReleaseT;
         response: WS_EDIT_RESPONSE_OK_T;
-    }) | ({
+    } | {
         edit_type: EDIT_RELEASEGROUP_CREATE_T;
         entity: ReleaseGroupT;
         response: WS_EDIT_RESPONSE_OK_T;
-    }) | ({
+    } | {
         edit_type: EDIT_MEDIUM_CREATE_T;
         entity: {
             id: number;
             position: number;
         };
         response: WS_EDIT_RESPONSE_OK_T;
-    }) | ({
+    } | {
         edit_type: EDIT_WORK_CREATE_T;
         entity: WorkT;
         response: WS_EDIT_RESPONSE_OK_T;
-    }) | ({
+    } | {
         edit_type: EDIT_RELEASE_ADDRELEASELABEL_T;
         entity: {
             catalogNumber: string | null;
@@ -120,10 +121,10 @@ export type WsJsEditResponseT = {
             labelID: number | null;
         };
         response: WS_EDIT_RESPONSE_OK_T;
-    }) | ({
+    } | {
         edit_type: EDIT_MEDIUM_ADD_DISCID_T | EDIT_MEDIUM_DELETE_T | EDIT_MEDIUM_EDIT_T | EDIT_RECORDING_EDIT_T | EDIT_RELATIONSHIP_DELETE_T | EDIT_RELATIONSHIP_EDIT_T | EDIT_RELATIONSHIPS_REORDER_T | EDIT_RELEASE_ADD_ANNOTATION_T | EDIT_RELEASE_DELETERELEASELABEL_T | EDIT_RELEASE_EDIT_T | EDIT_RELEASE_EDITRELEASELABEL_T | EDIT_RELEASE_REORDER_MEDIUMS_T | EDIT_RELEASEGROUP_EDIT_T;
         response: WS_EDIT_RESPONSE_OK_T;
-    }) | ({
+    } | {
         response: WS_EDIT_RESPONSE_NO_CHANGES_T;
-    })>;
+    }>;
 };

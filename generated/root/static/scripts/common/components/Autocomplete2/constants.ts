@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { bracketedText as bracketedText } from "../../utility/bracketed.js";
 import { HIDE_MENU as HIDE_MENU, SEARCH_AGAIN as SEARCH_AGAIN, SHOW_MORE_RESULTS as SHOW_MORE_RESULTS, TOGGLE_INDEXED_SEARCH as TOGGLE_INDEXED_SEARCH } from "./actions.js";
 import type { ActionItemT as ActionItemT, HeaderItemT as HeaderItemT, SearchableTypeT as SearchableTypeT } from "./types.js";

@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import SearchIcon from "../../static/scripts/common/components/SearchIcon.js";
 import { GOOGLE_CUSTOM_SEARCH as GOOGLE_CUSTOM_SEARCH } from "../../static/scripts/common/DBDefs.mjs";
 import { compare as compare } from "../../static/scripts/common/i18n.js";

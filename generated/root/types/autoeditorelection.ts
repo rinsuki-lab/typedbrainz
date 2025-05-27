@@ -5,9 +5,10 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { EditorT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
-export type AutoEditorElectionT = EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation"> & {
+export type AutoEditorElectionT = _$Spread<EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation">, {
     candidate: EditorT;
     close_time: string;
     current_expiration_time: string;
@@ -24,9 +25,9 @@ export type AutoEditorElectionT = EntityRoleT<"TODO: Support TypeNode EmptyTypeA
     status_name_short: string;
     votes: $ReadOnlyArray<AutoEditorElectionVoteT>;
     yes_votes: number;
-};
-export type AutoEditorElectionVoteT = EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation"> & {
+}>;
+export type AutoEditorElectionVoteT = _$Spread<EntityRoleT<"TODO: Support TypeNode EmptyTypeAnnotation">, {
     vote_name: string;
     vote_time: string;
     voter: EditorT;
-};
+}>;

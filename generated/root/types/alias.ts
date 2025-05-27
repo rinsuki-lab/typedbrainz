@@ -5,17 +5,18 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { OptionTreeT } from "../../declared-types.js"
 import { TypeRoleT } from "../../declared-types.js"
 import { PendingEditsRoleT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
 import { DatePeriodRoleT } from "../../declared-types.js"
-export type AliasT<T> = $ReadOnly<DatePeriodRoleT & EntityRoleT<"alias"> & PendingEditsRoleT & TypeRoleT<T> & {
+export type AliasT<T> = $ReadOnly<_$Spread<DatePeriodRoleT, _$Spread<EntityRoleT<"alias">, _$Spread<PendingEditsRoleT, _$Spread<TypeRoleT<T>, {
     locale: string | null;
     name: string;
     primary_for_locale: boolean;
     sort_name: string;
-}>;
+}>>>>>;
 export type AreaAliasTypeT = OptionTreeT<"area_alias_type">;
 export type AreaAliasT = AliasT<AreaAliasTypeT>;
 export type ArtistAliasTypeT = OptionTreeT<"artist_alias_type">;

@@ -5,20 +5,21 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import * as React from "react";
 import Autocomplete2 from "../../common/components/Autocomplete2.js";
 import { default as autocompleteReducer } from "../../common/components/Autocomplete2/reducer.js";
 import type { ActionT as AutocompleteActionT, EntityItemT as AutocompleteEntityItemT, StateT as AutocompleteStateT } from "../../common/components/Autocomplete2/types.js";
-export type MultiselectActionT<V extends AutocompleteEntityItemT> = ({
+export type MultiselectActionT<V extends AutocompleteEntityItemT> = {
     type: "add-value";
-}) | ({
+} | {
     type: "remove-value";
     valueKey: number;
-}) | ({
+} | {
     action: AutocompleteActionT<V>;
     type: "update-value-autocomplete";
     valueKey: number;
-});
+};
 export type MultiselectValueStateT<V> = {
     autocomplete: AutocompleteStateT<V>;
     key: number;

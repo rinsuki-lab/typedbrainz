@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { WS_EDIT_RESPONSE_NO_CHANGES_T } from "../../../../declared-types.js"
 import { WS_EDIT_RESPONSE_OK_T } from "../../../../declared-types.js"
 import { QualityT } from "../../../../declared-types.js"

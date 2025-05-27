@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { FormT } from "../../../../declared-types.js"
 import { FieldT } from "../../../../declared-types.js"
 import { MediumWithRecordingsT } from "../../../../declared-types.js"
@@ -100,15 +101,15 @@ export type RelationshipDialogStateT = {
     sourceEntity: DialogSourceEntityStateT;
     targetEntity: DialogTargetEntityStateT;
 };
-export type DialogBooleanAttributeStateT = $ReadOnly<DialogLinkAttributeStateT & {
+export type DialogBooleanAttributeStateT = $ReadOnly<_$Spread<DialogLinkAttributeStateT, {
     control: "checkbox";
     enabled: boolean;
-}>;
-export type DialogMultiselectAttributeStateT = $ReadOnly<DialogLinkAttributeStateT & {
+}>>;
+export type DialogMultiselectAttributeStateT = $ReadOnly<_$Spread<DialogLinkAttributeStateT, {
     control: "multiselect";
     linkType: LinkTypeT;
     values: $ReadOnlyArray<DialogMultiselectAttributeValueStateT>;
-}>;
+}>>;
 export type DialogMultiselectAttributeValueStateT = {
     autocomplete: AutocompleteStateT<LinkAttrTypeT>;
     control: "multiselect-value";
@@ -117,10 +118,10 @@ export type DialogMultiselectAttributeValueStateT = {
     key: number;
     removed: boolean;
 };
-export type DialogTextAttributeStateT = $ReadOnly<DialogLinkAttributeStateT & {
+export type DialogTextAttributeStateT = $ReadOnly<_$Spread<DialogLinkAttributeStateT, {
     control: "text";
     textValue: string;
-}>;
+}>>;
 export type DialogAttributeT = DialogBooleanAttributeStateT | DialogMultiselectAttributeStateT | DialogTextAttributeStateT;
 export type DialogAttributesT = $ReadOnlyArray<DialogAttributeT>;
 export type DialogAttributesStateT = {
@@ -151,23 +152,23 @@ export type DialogLinkTypeStateT = {
     autocomplete: AutocompleteStateT<LinkTypeT>;
     error: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
 };
-export type DialogSourceEntityStateT = $ReadOnly<DialogEntityCreditStateT & {
+export type DialogSourceEntityStateT = $ReadOnly<_$Spread<DialogEntityCreditStateT, {
     entityType: RelatableEntityTypeT;
     error: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
-}>;
+}>>;
 export type TargetTypeOptionT = {
     text: string;
     value: RelatableEntityTypeT;
 };
 export type TargetTypeOptionsT = $ReadOnlyArray<TargetTypeOptionT>;
-export type DialogTargetEntityStateT = $ReadOnly<DialogEntityCreditStateT & {
+export type DialogTargetEntityStateT = $ReadOnly<_$Spread<DialogEntityCreditStateT, {
     allowedTypes: TargetTypeOptionsT | null;
     autocomplete: AutocompleteStateT<NonUrlRelatableEntityT> | null;
     error: string;
     relationshipId: number;
     target: RelatableEntityT;
     targetType: RelatableEntityTypeT;
-}>;
+}>>;
 export type DialogEntityCreditStateT = {
     creditedAs: string;
     creditsToChange: CreditChangeOptionT;
@@ -201,9 +202,9 @@ export type MultiselectLanguageStateT = {
     staticItems: $ReadOnlyArray<AutocompleteOptionItemT<LanguageT>>;
     values: $ReadOnlyArray<MultiselectLanguageValueStateT>;
 };
-export type ReleaseWithMediumsAndReleaseGroupT = $ReadOnly<ReleaseWithMediumsT & {
+export type ReleaseWithMediumsAndReleaseGroupT = $ReadOnly<_$Spread<ReleaseWithMediumsT, {
     releaseGroup: ReleaseGroupT;
-}>;
+}>>;
 export type RecordingMediumsT = Map<number, Array<MediumWithRecordingsT>>;
 export type MediumWorkStateT = {
     isSelected: boolean;
@@ -219,7 +220,7 @@ export type MediumRecordingStateT = {
 };
 export type MediumRecordingStateTreeT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
 export type MediumStateTreeT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
-export type ReleaseRelationshipEditorStateT = $ReadOnly<$Exact<LazyReleaseStateT> & $Exact<RelationshipEditorStateT> & {
+export type ReleaseRelationshipEditorStateT = $ReadOnly<_$Spread<$Exact<LazyReleaseStateT>, _$Spread<$Exact<RelationshipEditorStateT>, {
     editNoteField: FieldT<string>;
     enterEditForm: FormT<{
         make_votable: FieldT<boolean>;
@@ -231,7 +232,7 @@ export type ReleaseRelationshipEditorStateT = $ReadOnly<$Exact<LazyReleaseStateT
     selectedWorks: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
     submissionError: "TODO: Support TypeNode NullableTypeAnnotation";
     submissionInProgress: boolean;
-}>;
+}>>>;
 export type RelationshipSourceGroupsContextT = {
     existing: RelationshipSourceGroupsT;
     pending: RelationshipSourceGroupsT;

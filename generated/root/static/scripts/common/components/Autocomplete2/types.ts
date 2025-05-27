@@ -5,6 +5,7 @@ type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 type $Keys<T> = keyof T;
 type $Values<T> = T[keyof T];
+type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { NonUrlRelatableEntityT } from "../../../../../../declared-types.js"
 import { LinkTypeT } from "../../../../../../declared-types.js"
 import { LinkAttrTypeT } from "../../../../../../declared-types.js"
@@ -58,59 +59,59 @@ export type SearchActionT = {
     searchTerm: string;
     type: "search-after-timeout";
 };
-export type ActionT<T extends EntityItemT> = SearchActionT | ({
+export type ActionT<T extends EntityItemT> = SearchActionT | {
     type: "change-entity-type";
     entityType: SearchableTypeT;
-}) | ({
+} | {
     type: "clear-recent-items";
-}) | ({
+} | {
     type: "highlight-index";
     index: number;
-}) | ({
+} | {
     type: "highlight-next-item";
-}) | ({
+} | {
     type: "highlight-previous-item";
-}) | ({
+} | {
     type: "reset-menu";
-}) | ({
+} | {
     type: "select-item";
     item: ItemT<T>;
-}) | ({
+} | {
     type: "set-input-focus";
     isFocused: boolean;
-}) | ({
+} | {
     type: "set-menu-visibility";
     value: boolean;
-}) | ({
+} | {
     type: "show-ws-results";
     entities: $ReadOnlyArray<T>;
     page: number;
     totalPages: number;
-}) | ({
+} | {
     type: "show-lookup-error";
-}) | ({
+} | {
     type: "show-lookup-type-error";
-}) | ({
+} | {
     type: "show-more-results";
-}) | ({
+} | {
     type: "set-recent-items";
     items: $ReadOnlyArray<OptionItemT<T>>;
-}) | ({
+} | {
     type: "show-search-error";
-}) | ({
+} | {
     type: "stop-search";
-}) | ({
+} | {
     type: "toggle-add-entity-dialog";
     isOpen: boolean;
-}) | ({
+} | {
     type: "toggle-indexed-search";
-}) | ({
+} | {
     type: "toggle-descriptions";
     showDescriptions: boolean;
-}) | ({
+} | {
     type: "type-value";
     value: string;
-});
+};
 export type ActionItemT<T> = {
     type: "action";
     action: ActionT<T>;
