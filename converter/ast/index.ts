@@ -4,8 +4,9 @@ import { convertImportDeclaration } from "./import.js"
 import { convertTypeAlias } from "./type-alias.js"
 import { convertVariableDeclaration } from "./var-decl.js"
 import { convertOpaqueType } from "./opaque-type.js"
+import { ConverterContext } from "../context.js"
 
-export function convertAST(body: any): readonly Statement[] {
+export function convertAST(ctx: ConverterContext, body: any): readonly Statement[] {
     switch (body.type) {
     case "ImportDeclaration": {
         return [convertImportDeclaration(body)]
@@ -24,6 +25,10 @@ export function convertAST(body: any): readonly Statement[] {
                 factory.createStringLiteral("Unknown Export Type: " + body.declaration.type)
             )]
         }
+    }
+    case "DeclareTypeAlias": {
+        ctx.addDeclaredTypeName(body.id.name)
+        return [convertTypeAlias(body, "export")]
     }
     default:
         // console.log(JSON.stringify(body, null, 4))

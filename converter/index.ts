@@ -4,12 +4,14 @@ const { parse } = flow
 import assert from "node:assert"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join } from "node:path"
-import ts, { ImportClause, isImportDeclaration, isStringLiteral, SyntaxKind } from "typescript"
+import ts, { factory, ImportClause, isImportDeclaration, isStringLiteral, SyntaxKind } from "typescript"
 import { convertImportDeclaration } from "./ast/import.js"
 import { convertAST } from "./ast/index.js"
+import { ConverterContext } from "./context.js"
 
 const targets = [
-    "upstream/root/static/scripts/relationship-editor/types.js"
+    "upstream/root/static/scripts/relationship-editor/types.js",
+    "upstream/root/types/url.js",
 ]
 
 const alreadyParsedTargets = new Set()
@@ -22,6 +24,7 @@ function appended(source: ts.SourceFile, statements: readonly ts.Statement[]): t
 }
 
 const compatibilityFile = readFileSync(import.meta.dirname + "/compatibility.d.ts", "utf-8")
+const ctx = new ConverterContext()
 
 while (true) {
     const target = targets.pop()
@@ -29,9 +32,10 @@ while (true) {
     if (alreadyParsedTargets.has(target)) continue
     alreadyParsedTargets.add(target)
     const ast = parse(readFileSync(target, "utf-8"))
+    ctx.currentFilePath = target
     console.log(ast)
     let dest = ts.createSourceFile("", compatibilityFile, ts.ScriptTarget.ESNext)
-    const statements = (ast.body as any[]).flatMap(convertAST)
+    const statements = (ast.body as any[]).flatMap(ast => convertAST(ctx, ast))
     dest = appended(dest, statements.filter(x => x != null))
     for (const s of dest.statements) {
         if (isImportDeclaration(s)) {
@@ -47,3 +51,29 @@ while (true) {
     mkdirSync(dirname(target.replace("upstream", "generated")), { recursive: true })
     writeFileSync(target.replace("upstream", "generated").replace(/\.js$/, ".ts"), desttext)
 }
+
+// generate declared types export file
+let declaredTypesFile = ts.createSourceFile(
+    "", "",
+    ts.ScriptTarget.ESNext, false, ts.ScriptKind.TS
+)
+
+const declaredTypesStatements: ts.Statement[] = Array.from(ctx.typeNameToDeclaredFilePath.entries().map(([typeName, filePath]) => {
+    return factory.createExportDeclaration(
+        undefined,
+        true,
+        factory.createNamedExports([
+            factory.createExportSpecifier(
+                false,
+                undefined,
+                typeName,
+            )
+        ]),
+        factory.createStringLiteral(filePath.replace("upstream", ".")),
+    )
+}))
+
+declaredTypesFile = appended(declaredTypesFile, declaredTypesStatements);
+const printer = ts.createPrinter();
+const declaredTypesText = printer.printFile(declaredTypesFile);
+writeFileSync("generated/declared-types.ts", declaredTypesText);
