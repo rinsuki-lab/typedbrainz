@@ -6,7 +6,7 @@ import { N_l_T } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../src/type-utils.js";
 import ENTITIES from "../../../../entities.mjs";
-
+// export { ENTITIES as ENTITIES }; // TODO: remove comment out
 export const EMPTY_PARTIAL_DATE: PartialDateT = "WIP convertExpression: CallExpression";
 export const ENTITY_NAMES: {
     area: N_l_T;
