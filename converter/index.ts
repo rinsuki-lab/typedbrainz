@@ -21,6 +21,8 @@ function appended(source: ts.SourceFile, statements: readonly ts.Statement[]): t
     ], source.isDeclarationFile, source.referencedFiles, source.typeReferenceDirectives, source.hasNoDefaultLib)
 }
 
+const compatibilityFile = readFileSync(import.meta.dirname + "/compatibility.d.ts", "utf-8")
+
 while (true) {
     const target = targets.pop()
     if (target == null) break
@@ -28,7 +30,7 @@ while (true) {
     alreadyParsedTargets.add(target)
     const ast = parse(readFileSync(target, "utf-8"))
     console.log(ast)
-    let dest = ts.createSourceFile("", "", ts.ScriptTarget.ESNext)
+    let dest = ts.createSourceFile("", compatibilityFile, ts.ScriptTarget.ESNext)
     const statements = (ast.body as any[]).flatMap(convertAST)
     dest = appended(dest, statements.filter(x => x != null))
     for (const s of dest.statements) {
