@@ -1,5 +1,5 @@
 export type SearchableTypeT = "TODO: Support TypeNode IndexedAccessType";
-export type StateT = {
+export type StateT<T extends EntityItemT> = {
     canChangeType: "TODO: Support TypeNode FunctionTypeAnnotation";
     containerClass: string;
     disabled: boolean;
@@ -36,7 +36,7 @@ export type StateT = {
     totalPages: "TODO: Support TypeNode NullableTypeAnnotation";
     width: string;
 };
-export type PropsT = {
+export type PropsT<T extends EntityItemT> = {
     children: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
     dispatch: "TODO: Support TypeNode FunctionTypeAnnotation";
     state: StateT;
@@ -46,7 +46,7 @@ export type SearchActionT = {
     searchTerm: string;
     type: "search-after-timeout";
 };
-export type ActionT = SearchActionT | {
+export type ActionT<T extends EntityItemT> = SearchActionT | {
     type: "change-entity-type";
     entityType: SearchableTypeT;
 } | {
@@ -99,7 +99,7 @@ export type ActionT = SearchActionT | {
     type: "type-value";
     value: string;
 };
-export type ActionItemT = {
+export type ActionItemT<T> = {
     type: "action";
     action: ActionT;
     id: number | string;
@@ -108,7 +108,7 @@ export type ActionItemT = {
     separator: boolean;
     disabled: boolean;
 };
-export type OptionItemT = {
+export type OptionItemT<T> = {
     type: "option";
     id: number | string;
     name: string | "TODO: Support TypeNode FunctionTypeAnnotation";
@@ -124,5 +124,5 @@ export type HeaderItemT = {
     disabled: "TODO: Support TypeNode BooleanLiteralTypeAnnotation";
     separator: boolean;
 };
-export type ItemT = ActionItemT | OptionItemT | HeaderItemT;
+export type ItemT<T extends EntityItemT> = ActionItemT | OptionItemT | HeaderItemT;
 export type EntityItemT = EditorT | LanguageT | LinkAttrTypeT | LinkTypeT | NonUrlRelatableEntityT;

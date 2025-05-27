@@ -3,7 +3,7 @@ import type { OptionItemT as AutocompleteOptionItemT, StateT as AutocompleteStat
 import type { LazyReleaseStateT as LazyReleaseStateT } from "../release/types.js";
 import type { RelationshipEditStatusT as RelationshipEditStatusT } from "./constants.js";
 export type CreditChangeOptionT = "" | "all" | "same-entity-types" | "same-relationship-type";
-export type RelationshipStateForTypesT = {
+export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends RelatableEntityT> = {
     _lineage: $ReadOnlyArray;
     _original: RelationshipStateT | null;
     _status: RelationshipEditStatusT;
