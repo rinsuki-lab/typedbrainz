@@ -15,13 +15,6 @@ patchedDependencies:
 importers:
 
   .:
-    dependencies:
-      flow-parser:
-        specifier: ^0.272.1
-        version: 0.272.1
-      glob:
-        specifier: ^11.0.2
-        version: 11.0.2
     devDependencies:
       '@types/node':
         specifier: ^22.15.21
@@ -32,6 +25,12 @@ importers:
       dts-bundle-generator:
         specifier: ^9.5.1
         version: 9.5.1(patch_hash=old4sgrui7gmwluz5h7ex3bkam)
+      flow-parser:
+        specifier: ^0.272.1
+        version: 0.272.1
+      glob:
+        specifier: ^11.0.2
+        version: 11.0.2
       tsimp:
         specifier: ^2.0.12
         version: 2.0.12(typescript@5.8.3)

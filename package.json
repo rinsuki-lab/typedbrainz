@@ -20,13 +20,11 @@
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.6",
     "dts-bundle-generator": "^9.5.1",
+    "flow-parser": "^0.272.1",
+    "glob": "^11.0.2",
     "tsimp": "^2.0.12",
     "typescript": "^5.8.3",
     "weight-balanced-tree": "^0.6.1"
-  },
-  "dependencies": {
-    "flow-parser": "^0.272.1",
-    "glob": "^11.0.2"
   },
   "pnpm": {
     "patchedDependencies": {
