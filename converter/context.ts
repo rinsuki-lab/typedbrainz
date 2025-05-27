@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 export class ConverterContext {
     targets: string[] = [];
     alreadyParsedTargets = new Set<string>();

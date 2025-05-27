@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { Expression, factory } from "typescript";
 import { convertLiteral } from "./literal.js";
 import { convertIdentifier } from "./identifier.js";

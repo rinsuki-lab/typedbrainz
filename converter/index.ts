@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { ConverterContext } from "./context.js"
 import { doActualConvert } from "./phase/actual-convert.js"
 import { doFindMissingDeclaredTypes } from "./phase/find-missing-declared-types.js"

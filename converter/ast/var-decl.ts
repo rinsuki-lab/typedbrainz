@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import assert from "node:assert";
 import { factory, NodeFlags, SyntaxKind } from "typescript";
 import { convertIdentifier } from "./identifier.js";

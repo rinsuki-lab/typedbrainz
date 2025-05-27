@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { readFileSync } from "node:fs";
 import { ConverterContext } from "../context.js";
 import {globSync} from "glob"

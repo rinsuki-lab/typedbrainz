@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { createProgram, getPreEmitDiagnostics, parseJsonConfigFileContent, readConfigFile, sys } from "typescript";

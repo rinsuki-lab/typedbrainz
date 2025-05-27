@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
 import type {
     $ReadOnlyArray,

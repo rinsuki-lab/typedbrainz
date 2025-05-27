@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { createPrinter, createSourceFile, factory, ScriptKind, ScriptTarget, Statement } from "typescript";
 import { ConverterContext } from "../context.js";
 import { appended } from "../utils.js";

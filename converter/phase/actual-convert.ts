@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 // @ts-expect-error
 import flow from "flow-parser"
 const { parse } = flow

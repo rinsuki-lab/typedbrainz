@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { wipLiteral } from "../wip.js";
 import { convertIdentifier } from "./identifier.js";
 import { convertLiteral } from "./literal.js";

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { factory, SyntaxKind, TypeNode } from "typescript";
 import { convertObjectType } from "./object-type.js";
 import { convertIdentifier, convertMayQualifiedTypeIdentifier } from "./identifier.js";

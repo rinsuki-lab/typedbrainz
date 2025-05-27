@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import { factory } from "typescript";
 
 export function wipLiteral(location: string, type: string) {
