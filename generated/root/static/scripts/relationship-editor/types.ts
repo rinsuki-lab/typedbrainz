@@ -4,7 +4,7 @@ import type { LazyReleaseStateT as LazyReleaseStateT } from "../release/types.js
 import type { RelationshipEditStatusT as RelationshipEditStatusT } from "./constants.js";
 export type CreditChangeOptionT = "" | "all" | "same-entity-types" | "same-relationship-type";
 export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends RelatableEntityT> = {
-    _lineage: $ReadOnlyArray;
+    _lineage: $ReadOnlyArray<string>;
     _original: RelationshipStateT | null;
     _status: RelationshipEditStatusT;
     attributes: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
@@ -20,7 +20,7 @@ export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends R
     linkOrder: number;
     linkTypeID: number | null;
 };
-export type RelationshipStateT = RelationshipStateForTypesT;
+export type RelationshipStateT = RelationshipStateForTypesT<RelatableEntityT, RelatableEntityT>;
 export type RelationshipPhraseGroupT = {
     relationships: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
     textPhrase: string;
@@ -68,19 +68,29 @@ export type RelationshipDialogStateT = {
     sourceEntity: DialogSourceEntityStateT;
     targetEntity: DialogTargetEntityStateT;
 };
-export type DialogBooleanAttributeStateT = $ReadOnly;
-export type DialogMultiselectAttributeStateT = $ReadOnly;
+export type DialogBooleanAttributeStateT = $ReadOnly<DialogLinkAttributeStateT & {
+    control: "checkbox";
+    enabled: boolean;
+}>;
+export type DialogMultiselectAttributeStateT = $ReadOnly<DialogLinkAttributeStateT & {
+    control: "multiselect";
+    linkType: LinkTypeT;
+    values: $ReadOnlyArray<DialogMultiselectAttributeValueStateT>;
+}>;
 export type DialogMultiselectAttributeValueStateT = {
-    autocomplete: AutocompleteStateT;
+    autocomplete: AutocompleteStateT<LinkAttrTypeT>;
     control: "multiselect-value";
     creditedAs: string;
     error: string;
     key: number;
     removed: boolean;
 };
-export type DialogTextAttributeStateT = $ReadOnly;
+export type DialogTextAttributeStateT = $ReadOnly<DialogLinkAttributeStateT & {
+    control: "text";
+    textValue: string;
+}>;
 export type DialogAttributeT = DialogBooleanAttributeStateT | DialogMultiselectAttributeStateT | DialogTextAttributeStateT;
-export type DialogAttributesT = $ReadOnlyArray;
+export type DialogAttributesT = $ReadOnlyArray<DialogAttributeT>;
 export type DialogAttributesStateT = {
     attributesList: DialogAttributesT;
     resultingLinkAttributes: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
@@ -106,16 +116,26 @@ export type ExternalLinkAttrT = {
     };
 };
 export type DialogLinkTypeStateT = {
-    autocomplete: AutocompleteStateT;
+    autocomplete: AutocompleteStateT<LinkTypeT>;
     error: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
 };
-export type DialogSourceEntityStateT = $ReadOnly;
+export type DialogSourceEntityStateT = $ReadOnly<DialogEntityCreditStateT & {
+    entityType: RelatableEntityTypeT;
+    error: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier";
+}>;
 export type TargetTypeOptionT = {
     text: string;
     value: RelatableEntityTypeT;
 };
-export type TargetTypeOptionsT = $ReadOnlyArray;
-export type DialogTargetEntityStateT = $ReadOnly;
+export type TargetTypeOptionsT = $ReadOnlyArray<TargetTypeOptionT>;
+export type DialogTargetEntityStateT = $ReadOnly<DialogEntityCreditStateT & {
+    allowedTypes: TargetTypeOptionsT | null;
+    autocomplete: AutocompleteStateT<NonUrlRelatableEntityT> | null;
+    error: string;
+    relationshipId: number;
+    target: RelatableEntityT;
+    targetType: RelatableEntityTypeT;
+}>;
 export type DialogEntityCreditStateT = {
     creditedAs: string;
     creditsToChange: CreditChangeOptionT;
@@ -126,7 +146,7 @@ export type LinkAttributeShapeT = {
     text_value: string;
     type: LinkAttrTypeT | null;
 };
-export type LinkAttributesByRootIdT = Map;
+export type LinkAttributesByRootIdT = Map<number, Array<LinkAttributeShapeT>>;
 export type BatchCreateWorksDialogStateT = {
     attributes: DialogAttributesStateT;
     datePeriod: DialogDatePeriodStateT;
@@ -140,17 +160,19 @@ export type EditWorkDialogStateT = {
     workType: number | null;
 };
 export type MultiselectLanguageValueStateT = {
-    autocomplete: AutocompleteStateT;
+    autocomplete: AutocompleteStateT<LanguageT>;
     key: number;
     removed: boolean;
 };
 export type MultiselectLanguageStateT = {
     max: number | null;
-    staticItems: $ReadOnlyArray;
-    values: $ReadOnlyArray;
+    staticItems: $ReadOnlyArray<AutocompleteOptionItemT<LanguageT>>;
+    values: $ReadOnlyArray<MultiselectLanguageValueStateT>;
 };
-export type ReleaseWithMediumsAndReleaseGroupT = $ReadOnly;
-export type RecordingMediumsT = Map;
+export type ReleaseWithMediumsAndReleaseGroupT = $ReadOnly<ReleaseWithMediumsT & {
+    releaseGroup: ReleaseGroupT;
+}>;
+export type RecordingMediumsT = Map<number, Array<MediumWithRecordingsT>>;
 export type MediumWorkStateT = {
     isSelected: boolean;
     targetTypeGroups: RelationshipTargetTypeGroupsT;
@@ -165,7 +187,19 @@ export type MediumRecordingStateT = {
 };
 export type MediumRecordingStateTreeT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
 export type MediumStateTreeT = "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
-export type ReleaseRelationshipEditorStateT = $ReadOnly;
+export type ReleaseRelationshipEditorStateT = $ReadOnly<$Exact<LazyReleaseStateT> & $Exact<RelationshipEditorStateT> & {
+    editNoteField: FieldT<string>;
+    enterEditForm: FormT<{
+        make_votable: FieldT<boolean>;
+    }>;
+    entity: ReleaseWithMediumsAndReleaseGroupT;
+    mediums: MediumStateTreeT;
+    mediumsByRecordingId: RecordingMediumsT;
+    selectedRecordings: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+    selectedWorks: "Unknown Generic Type Annotaton Type: QualifiedTypeIdentifier" | null;
+    submissionError: "TODO: Support TypeNode NullableTypeAnnotation";
+    submissionInProgress: boolean;
+}>;
 export type RelationshipSourceGroupsContextT = {
     existing: RelationshipSourceGroupsT;
     pending: RelationshipSourceGroupsT;

@@ -1,22 +1,24 @@
 export type CreditsModeT = "bottom" | "inline";
-export type LazyReleaseActionT = {
+export type LazyReleaseActionT = ({
     medium: MediumWithRecordingsT;
     type: "toggle-medium";
-} | {
+}) | ({
     expanded: boolean;
-    mediums: $ReadOnlyArray;
+    mediums: $ReadOnlyArray<MediumWithRecordingsT>;
     type: "toggle-all-mediums";
-} | {
+}) | ({
     medium: MediumWithRecordingsT;
-    tracks: $ReadOnlyArray;
+    tracks: $ReadOnlyArray<TrackWithRecordingT>;
     type: "load-tracks";
-};
-export type ActionT = {
+});
+export type ActionT = ({
     type: "toggle-credits-mode";
-} | LazyReleaseActionT;
-export type LoadedTracksMapT = $ReadOnlyMap;
+}) | LazyReleaseActionT;
+export type LoadedTracksMapT = $ReadOnlyMap<number, $ReadOnlyArray<TrackWithRecordingT>>;
 export type LazyReleaseStateT = {
-    expandedMediums: $ReadOnlyMap;
+    expandedMediums: $ReadOnlyMap<number, boolean>;
     loadedTracks: LoadedTracksMapT;
 };
-export type StateT = $ReadOnly;
+export type StateT = $ReadOnly<$Exact<LazyReleaseStateT> & {
+    creditsMode: CreditsModeT;
+}>;

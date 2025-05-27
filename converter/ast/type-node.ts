@@ -1,12 +1,15 @@
-import { factory, SyntaxKind } from "typescript";
+import { factory, SyntaxKind, TypeNode } from "typescript";
 import { convertObjectType } from "./object-type";
 import { convertIdentifier } from "./identifier";
 
-function convertGenericTypeAnnotation(source: any){
+function convertGenericTypeAnnotation(source: any): TypeNode{
     switch (source.id.type) {
     case "Identifier":
         return factory.createTypeReferenceNode(
-            convertIdentifier(source.id)
+            convertIdentifier(source.id),
+            source.typeParameters == null ? undefined : (source.typeParameters.params as any[]).map(tp => {
+                return convertTypeNode(tp);
+            })
         )
     default:
         return factory.createLiteralTypeNode(
