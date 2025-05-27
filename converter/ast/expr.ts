@@ -1,5 +1,5 @@
 import { factory } from "typescript";
-import { convertLiteral } from "./literal";
+import { convertLiteral } from "./literal.js";
 
 export function convertExpression(source: any) {
     switch (source.type) {

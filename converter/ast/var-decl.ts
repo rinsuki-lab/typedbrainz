@@ -1,8 +1,8 @@
 import assert from "node:assert";
 import { factory, NodeFlags, SyntaxKind } from "typescript";
-import { convertIdentifier } from "./identifier";
-import { convertExpression } from "./expr";
-import { convertTypeNode } from "./type-node";
+import { convertIdentifier } from "./identifier.js";
+import { convertExpression } from "./expr.js";
+import { convertTypeNode } from "./type-node.js";
 
 export function convertVariableDeclaration(source: any, flag?: "export") {
     return factory.createVariableStatement(

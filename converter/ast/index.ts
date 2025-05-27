@@ -1,9 +1,9 @@
-import { factory, Statement } from "typescript"
-import { convertImportDeclaration } from "./import"
 import assert from "node:assert"
-import { convertTypeAlias } from "./type-alias"
-import { convertVariableDeclaration } from "./var-decl"
-import { convertOpaqueType } from "./opaque-type"
+import { factory, Statement } from "typescript"
+import { convertImportDeclaration } from "./import.js"
+import { convertTypeAlias } from "./type-alias.js"
+import { convertVariableDeclaration } from "./var-decl.js"
+import { convertOpaqueType } from "./opaque-type.js"
 
 export function convertAST(body: any): readonly Statement[] {
     switch (body.type) {

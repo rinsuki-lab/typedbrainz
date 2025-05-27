@@ -1,7 +1,7 @@
 import { factory, SyntaxKind } from "typescript";
-import { convertIdentifier } from "./identifier";
+import { convertIdentifier } from "./identifier.js";
 import assert from "node:assert";
-import { convertTypeNode } from "./type-node";
+import { convertTypeNode } from "./type-node.js";
 
 export function convertTypeAlias(source: any, flag?: "export") {
     return factory.createTypeAliasDeclaration(

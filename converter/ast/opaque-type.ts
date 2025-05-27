@@ -1,6 +1,6 @@
 import { factory, SyntaxKind } from "typescript";
-import { convertIdentifier } from "./identifier";
-import { convertTypeNode } from "./type-node";
+import { convertIdentifier } from "./identifier.js";
+import { convertTypeNode } from "./type-node.js";
 
 export function convertOpaqueType(source: any, flag?: "export") {
     return factory.createTypeAliasDeclaration(

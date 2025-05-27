@@ -1,6 +1,6 @@
 import { factory, SyntaxKind, TypeNode } from "typescript";
-import { convertObjectType } from "./object-type";
-import { convertIdentifier } from "./identifier";
+import { convertObjectType } from "./object-type.js";
+import { convertIdentifier } from "./identifier.js";
 
 function convertGenericTypeAnnotation(source: any): TypeNode{
     switch (source.id.type) {

@@ -5,8 +5,8 @@ import assert from "node:assert"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import ts, { ImportClause, isImportDeclaration, isStringLiteral, SyntaxKind } from "typescript"
-import { convertImportDeclaration } from "./ast/import"
-import { convertAST } from "./ast/index"
+import { convertImportDeclaration } from "./ast/import.js"
+import { convertAST } from "./ast/index.js"
 
 const targets = [
     "upstream/root/static/scripts/relationship-editor/types.js"

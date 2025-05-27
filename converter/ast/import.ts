@@ -1,7 +1,7 @@
 import assert from "node:assert"
 import { factory, ImportClause} from "typescript"
-import { convertIdentifier } from "./identifier"
-import { convertLiteral } from "./literal"
+import { convertIdentifier } from "./identifier.js"
+import { convertLiteral } from "./literal.js"
 
 export function convertImportDeclaration(body: any) {
     const specifiers = body.specifiers as any[]
