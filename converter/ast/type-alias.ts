@@ -13,7 +13,7 @@ export function convertTypeAlias(source: any, flag?: "export") {
                 undefined,
                 tp.name,
                 tp.bound == null ? undefined : convertTypeNode(tp.bound.typeAnnotation),
-                undefined, // TODO: default type
+                tp.default == null ? undefined : convertTypeNode(tp.default), // TODO: default type
             );
         }), // TODO: type parameters
         convertTypeNode(source.right)

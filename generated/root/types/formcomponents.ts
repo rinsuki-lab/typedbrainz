@@ -45,7 +45,7 @@ export type FieldT<V> = {
     type: "field";
     value: V;
 };
-export type FormT<F, N extends string> = {
+export type FormT<F, N extends string = ""> = {
     field: F;
     has_errors: boolean;
     name: N;
