@@ -23,10 +23,10 @@ export type ReleaseGroupT = $ReadOnly<_$Spread<AnnotationRoleT, _$Spread<ArtistC
     typeName: string | null;
 }>>>>>>>>;
 export type ReleaseGroupTypeT = _$Spread<OptionTreeT<"release_group_type">, {
-    historic: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
+    historic: false;
 }>;
 export type ReleaseGroupHistoricTypeT = {
-    historic: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
+    historic: true;
     id: number;
     name: string;
 };

@@ -31,6 +31,8 @@ export function convertTypeNode(source: any): TypeNode {
         } else {
             return factory.createLiteralTypeNode(factory.createNumericLiteral(source.value))
         }
+    case "BooleanLiteralTypeAnnotation":
+        return factory.createLiteralTypeNode(source.value ? factory.createTrue() : factory.createFalse())
     case "NumberTypeAnnotation":
         return factory.createKeywordTypeNode(SyntaxKind.NumberKeyword)
     case "StringTypeAnnotation":

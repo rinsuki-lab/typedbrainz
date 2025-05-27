@@ -128,7 +128,7 @@ export type HeaderItemT = {
     type: "header";
     id: number | string;
     name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
-    disabled: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
+    disabled: true;
     separator: boolean;
 };
 export type ItemT<T extends EntityItemT> = ActionItemT<T> | OptionItemT<T> | HeaderItemT;

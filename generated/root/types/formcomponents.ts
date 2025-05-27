@@ -70,10 +70,10 @@ export type GroupedOptionsT = $ReadOnlyArray<{
     options: SelectOptionsT;
 }>;
 export type MaybeGroupedOptionsT = {
-    grouped: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
+    grouped: true;
     options: GroupedOptionsT;
 } | {
-    grouped: "WIP convertTypeNode: BooleanLiteralTypeAnnotation";
+    grouped: false;
     options: SelectOptionsT;
 };
 export type OptionListT = $ReadOnlyArray<{
