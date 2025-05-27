@@ -152,11 +152,11 @@ export type ExternalLinkAttrT = {
 };
 export type DialogLinkTypeStateT = {
     autocomplete: AutocompleteStateT<LinkTypeT>;
-    error: React.Node;
+    error: React.ReactNode;
 };
 export type DialogSourceEntityStateT = $ReadOnly<$_$Spread<DialogEntityCreditStateT, {
     entityType: RelatableEntityTypeT;
-    error: React.Node;
+    error: React.ReactNode;
 }>>;
 export type TargetTypeOptionT = {
     text: string;

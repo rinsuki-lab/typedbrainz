@@ -44,7 +44,7 @@ export type StateT<T extends EntityItemT> = {
     width: string;
 };
 export type PropsT<T extends EntityItemT> = {
-    children: React.Node;
+    children: React.ReactNode;
     dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
     state: StateT<T>;
 };
@@ -106,7 +106,7 @@ export type ActionT<T extends EntityItemT> = SearchActionT | {
     type: "type-value";
     value: string;
 };
-export type ActionItemT<T> = {
+export type ActionItemT<T extends EntityItemT> = {
     type: "action";
     action: ActionT<T>;
     id: number | string;

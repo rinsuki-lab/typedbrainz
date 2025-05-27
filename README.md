@@ -4,5 +4,5 @@ very WIP, but I wanted to automatically generate TypeScript typing files from Mu
 
 ## LICENSE
 
-* `converter/**`: MIT License
+* `converter/**`: see `SPDX-License-Identifier`
 * `generated/**`: same as upstream `musicbrainz-server`

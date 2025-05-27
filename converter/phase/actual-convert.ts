@@ -9,6 +9,7 @@ import { convertAST } from "../ast/index.js"
 import { appended } from "../utils.js"
 import assert from "node:assert"
 import { dirname, join, relative } from "node:path"
+import { applyPatches } from "../gpl/patches.js"
 
 export function doActualConvert(ctx: ConverterContext) {
     const originalTypeUtilsPath = "../src/type-utils.js"
@@ -50,7 +51,7 @@ export function doActualConvert(ctx: ConverterContext) {
             }
         }
         const printer = createPrinter()
-        const desttext = printer.printFile(dest)
+        const desttext = applyPatches(printer.printFile(dest))
         mkdirSync(dirname(target.replace("upstream", "generated")), { recursive: true })
         writeFileSync(target.replace("upstream", "generated").replace(/(\.m?)js$/, "$1ts"), desttext)
     }
