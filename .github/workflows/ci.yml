@@ -59,6 +59,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: package
+      - uses: actions/checkout@v4
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
