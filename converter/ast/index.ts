@@ -1,9 +1,9 @@
-import { factory } from "typescript"
+import { factory, Statement } from "typescript"
 import { convertImportDeclaration } from "./import"
 import assert from "node:assert"
 import { convertTypeAlias } from "./type-alias"
 
-export function convertAST(body: any) {
+export function convertAST(body: any): readonly Statement[] {
     switch (body.type) {
     case "ImportDeclaration": {
         return [convertImportDeclaration(body)]
@@ -12,9 +12,12 @@ export function convertAST(body: any) {
         assert(body.specifiers.length === 0)
         switch (body.declaration.type) {
         case "TypeAlias":
-            return convertTypeAlias(body.declaration, "export")
+            return [convertTypeAlias(body.declaration, "export")]
+        default:
+            return [factory.createExpressionStatement(
+                factory.createStringLiteral("Unknown Export Type: " + body.declaration.type)
+            )]
         }
-        break
     }
     default:
         // console.log(JSON.stringify(body, null, 4))
