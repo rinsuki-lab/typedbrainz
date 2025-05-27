@@ -3,8 +3,9 @@ import { parse } from "flow-parser"
 import assert from "node:assert"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join } from "node:path"
-import ts, { ImportClause } from "typescript"
+import ts, { ImportClause, isImportDeclaration, isStringLiteral, SyntaxKind } from "typescript"
 import { convertImportDeclaration } from "./ast/import"
+import { convertAST } from "./ast/index"
 
 const targets = [
     "upstream/root/static/scripts/relationship-editor/types.js"
@@ -19,9 +20,6 @@ function appended(source: ts.SourceFile, statements: readonly ts.Statement[]): t
     ], source.isDeclarationFile, source.referencedFiles, source.typeReferenceDirectives, source.hasNoDefaultLib)
 }
 
-
-
-
 while (true) {
     const target = targets.pop()
     if (target == null) break
@@ -30,26 +28,17 @@ while (true) {
     const ast = parse(readFileSync(target, "utf-8"))
     console.log(ast)
     let dest = ts.createSourceFile("", "", ts.ScriptTarget.ESNext)
-    for (const body of ast.body) {
-        switch (body.type) {
-        case "ImportDeclaration": {
-            dest = appended(dest, [convertImportDeclaration(body)])
-            if (body.source.value.startsWith(".")) {
-                targets.push(join(dirname(target), body.source.value))
+    const statements = (ast.body as any[]).flatMap(convertAST)
+    dest = appended(dest, statements.filter(x => x != null))
+    for (const s of dest.statements) {
+        if (isImportDeclaration(s)) {
+            const module = s.moduleSpecifier
+            assert(isStringLiteral(module))
+            if (module.text.startsWith(".")) {
+                targets.push(join(dirname(target), module.text))
             }
-            break
-        }
-        case "ExportNamedDeclaration": {
-            break
-        }
-        default:
-            // console.log(JSON.stringify(body, null, 4))
-            dest = appended(dest, [ts.factory.createExpressionStatement(
-                ts.factory.createStringLiteral("Unknown Type: " + body.type)
-            )])
         }
     }
-
     const printer = ts.createPrinter()
     const desttext = printer.printFile(dest)
     mkdirSync(dirname(target.replace("upstream", "generated")), { recursive: true })
