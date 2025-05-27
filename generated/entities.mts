@@ -7,4 +7,4 @@ import deepFreeze from "deep-freeze-strict";
 "Unknown Type: TypeAlias";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: ExpressionStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default "Unknown Expression Type: TypeCastExpression";

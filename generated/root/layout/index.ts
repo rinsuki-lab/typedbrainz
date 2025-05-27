@@ -40,4 +40,4 @@ import MergeHelper from "./components/MergeHelper.js";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default Layout;

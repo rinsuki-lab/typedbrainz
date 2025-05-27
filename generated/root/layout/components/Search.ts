@@ -17,4 +17,4 @@ import { compare as compare } from "../../static/scripts/common/i18n.js";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default Search;

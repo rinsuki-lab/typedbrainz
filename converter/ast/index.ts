@@ -6,11 +6,15 @@ import { convertVariableDeclaration } from "./var-decl.js"
 import { convertOpaqueType } from "./opaque-type.js"
 import { ConverterContext } from "../context.js"
 import { convertIdentifier } from "./identifier.js"
+import { convertExpression } from "./expr.js"
 
 export function convertAST(ctx: ConverterContext, body: any): readonly Statement[] {
     switch (body.type) {
     case "ImportDeclaration": {
         return [convertImportDeclaration(body)]
+    }
+    case "ExportDefaultDeclaration": {
+        return [factory.createExportAssignment(undefined, undefined, convertExpression(body.declaration))]
     }
     case "ExportNamedDeclaration": {
         if (body.declaration == null) {

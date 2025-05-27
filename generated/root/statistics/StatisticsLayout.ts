@@ -14,4 +14,4 @@ import statisticsLessUrl from "../static/styles/statistics.less";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default StatisticsLayout;

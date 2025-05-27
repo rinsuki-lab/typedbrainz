@@ -7,4 +7,4 @@ import headerLogoSvgUrl from "../../static/images/layout/header-logo.svg";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default HeaderLogo;

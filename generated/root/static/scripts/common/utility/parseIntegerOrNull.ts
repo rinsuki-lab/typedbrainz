@@ -4,4 +4,4 @@ type $ReadOnly<T> = Readonly<T>;
 type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 type $Exact<T> = T; // TODO: implement properly
 import parseInteger from "./parseInteger.js";
-"Unknown Type: ExportDefaultDeclaration";
+export default "Unknown Expression Type: FunctionDeclaration";

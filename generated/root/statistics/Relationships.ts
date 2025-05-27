@@ -20,4 +20,4 @@ export type RelationshipTypeT = {
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default Relationships;

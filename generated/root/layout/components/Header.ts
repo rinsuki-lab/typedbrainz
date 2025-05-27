@@ -10,4 +10,4 @@ import TopMenu from "./TopMenu.js";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default Header;

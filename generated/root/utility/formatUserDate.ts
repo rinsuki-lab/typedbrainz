@@ -23,4 +23,4 @@ import parseIsoDate from "./parseIsoDate.js";
 "Unknown Type: TypeAlias";
 "Unknown Type: TypeAlias";
 "Unknown Export Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default "Unknown Expression Type: FunctionDeclaration";

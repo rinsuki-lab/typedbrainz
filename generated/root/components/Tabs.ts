@@ -6,4 +6,4 @@ type $Exact<T> = T; // TODO: implement properly
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default Tabs;

@@ -8,4 +8,4 @@ import EntityLink from "./EntityLink.js";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default AreaWithContainmentLink;

@@ -10,4 +10,4 @@ import { ENTITIES as ENTITIES } from "../constants.js";
 "Unknown Type: FunctionDeclaration";
 "Unknown Export Type: FunctionDeclaration";
 "Unknown Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default entityHref;

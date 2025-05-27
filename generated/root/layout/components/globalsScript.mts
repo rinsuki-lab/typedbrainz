@@ -10,4 +10,4 @@ import sanitizedContext from "../../utility/sanitizedContext.mjs";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: VariableDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default "Unknown Expression Type: TypeCastExpression";

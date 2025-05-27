@@ -7,4 +7,4 @@ import path from "path";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: IfStatement";
 "Unknown Type: VariableDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default MB_SERVER_ROOT;

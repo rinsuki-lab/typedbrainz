@@ -6,4 +6,4 @@ type $Exact<T> = T; // TODO: implement properly
 import ko from "knockout";
 import { fixedWidthInteger as fixedWidthInteger } from "./strings.js";
 "Unknown Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default formatDate;

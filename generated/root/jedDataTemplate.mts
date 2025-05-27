@@ -7,4 +7,4 @@ import deepFreezeStrict from "deep-freeze-strict";
 import type { JedOptions as JedOptions } from "jed";
 "Unknown Type: TypeAlias";
 "Unknown Type: VariableDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default jedData;

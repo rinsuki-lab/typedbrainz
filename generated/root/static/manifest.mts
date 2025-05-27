@@ -10,4 +10,4 @@ import { MB_SERVER_ROOT as MB_SERVER_ROOT, STATIC_RESOURCES_LOCATION as STATIC_R
 "Unknown Type: FunctionDeclaration";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default manifest;

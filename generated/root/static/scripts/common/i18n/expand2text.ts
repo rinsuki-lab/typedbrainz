@@ -17,7 +17,7 @@ import { l_statistics as lStatisticsActual, ln_statistics as lnStatisticsActual,
 "Unknown Type: VariableDeclaration";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default "Unknown Expression Type: FunctionDeclaration";
 "Unknown Export Type: FunctionDeclaration";
 export const l = "Unknown Expression Type: ArrowFunctionExpression";
 export const l_admin = "Unknown Expression Type: ArrowFunctionExpression";

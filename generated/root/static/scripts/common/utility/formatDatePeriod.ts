@@ -6,4 +6,4 @@ type $Exact<T> = T; // TODO: implement properly
 import ko from "knockout";
 import formatDate from "./formatDate.js";
 "Unknown Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default formatDatePeriod;

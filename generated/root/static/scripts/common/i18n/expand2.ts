@@ -34,4 +34,4 @@ export const parseStringVarSubst: Parser<string | NO_MATCH, "TODO: Support TypeN
 "Unknown Type: VariableDeclaration";
 export const substEnd: RegExp = "Unknown Literal typeof: object";
 export const createCondSubstParser = "Unknown Expression Type: ArrowFunctionExpression";
-"Unknown Type: ExportDefaultDeclaration";
+export default "Unknown Expression Type: FunctionDeclaration";

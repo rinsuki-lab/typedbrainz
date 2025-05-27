@@ -6,5 +6,5 @@ type $Exact<T> = T; // TODO: implement properly
 "Unknown Type: FunctionDeclaration";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: VariableDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default commaOnlyList;
 export { commaOnlyListText as commaOnlyListText };

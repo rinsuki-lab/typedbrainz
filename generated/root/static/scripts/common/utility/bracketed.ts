@@ -7,5 +7,5 @@ import expand2react from "../i18n/expand2react.js";
 import expand2text from "../i18n/expand2text.js";
 "Unknown Type: TypeAlias";
 "Unknown Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default "Unknown Expression Type: FunctionDeclaration";
 "Unknown Export Type: FunctionDeclaration";

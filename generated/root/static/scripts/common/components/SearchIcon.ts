@@ -7,4 +7,4 @@ import searchIconUrl from "../../../images/icons/search.svg";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default SearchIcon;

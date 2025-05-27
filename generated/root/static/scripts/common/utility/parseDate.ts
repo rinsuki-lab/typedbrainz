@@ -6,4 +6,4 @@ type $Exact<T> = T; // TODO: implement properly
 import parseIntegerOrNull from "./parseIntegerOrNull.js";
 "Unknown Type: VariableDeclaration";
 "Unknown Type: FunctionDeclaration";
-"Unknown Type: ExportDefaultDeclaration";
+export default parseDate;

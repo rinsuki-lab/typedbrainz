@@ -16,4 +16,4 @@ export const MpIcon = "Unknown Expression Type: TypeCastExpression";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default ArtistCreditLink;

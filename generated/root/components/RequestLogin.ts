@@ -9,4 +9,4 @@ import returnUri from "../utility/returnUri.js";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: ExpressionStatement";
 "Unknown Type: BlockStatement";
-"Unknown Type: ExportDefaultDeclaration";
+export default RequestLogin;
