@@ -11,6 +11,9 @@ importers:
       flow-parser:
         specifier: ^0.272.1
         version: 0.272.1
+      glob:
+        specifier: ^11.0.2
+        version: 11.0.2
     devDependencies:
       '@types/node':
         specifier: ^22.15.21
