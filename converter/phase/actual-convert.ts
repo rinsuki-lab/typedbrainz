@@ -10,21 +10,13 @@ import assert from "node:assert"
 import { dirname, join } from "node:path"
 
 export function doActualConvert(ctx: ConverterContext) {
-    const targets = [
-        "upstream/root/static/scripts/relationship-editor/types.js",
-        "upstream/root/types/url.js",
-    ]
-
-    const alreadyParsedTargets = new Set()
-
     const compatibilityFile = readFileSync(import.meta.dirname + "/../compatibility.d.ts", "utf-8")
 
-
     while (true) {
-        const target = targets.pop()
+        const target = ctx.targets.pop()
         if (target == null) break
-        if (alreadyParsedTargets.has(target)) continue
-        alreadyParsedTargets.add(target)
+        if (ctx.alreadyParsedTargets.has(target)) continue
+        ctx.alreadyParsedTargets.add(target)
         const ast = parse(readFileSync(target, "utf-8"))
         ctx.currentFilePath = target
         console.log(ast)
@@ -36,7 +28,7 @@ export function doActualConvert(ctx: ConverterContext) {
                 const module = s.moduleSpecifier
                 assert(isStringLiteral(module))
                 if (module.text.startsWith(".")) {
-                    targets.push(join(dirname(target), module.text))
+                    ctx.targets.push(join(dirname(target), module.text))
                 }
             }
         }

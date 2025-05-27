@@ -1,4 +1,6 @@
 export class ConverterContext {
+    targets: string[] = [];
+    alreadyParsedTargets = new Set<string>();
     currentFilePath: string | null = null;
     typeNameToDeclaredFilePath = new Map<string, string>();
 
