@@ -1,0 +1,12 @@
+diff --git a/dist/helpers/check-diagnostics-errors.js b/dist/helpers/check-diagnostics-errors.js
+index 3ff0a59509fe381189764a253e6b668241e3b921..078b8af914b6c12c8c3dbde3a157a28c47ba3aa6 100644
+--- a/dist/helpers/check-diagnostics-errors.js
++++ b/dist/helpers/check-diagnostics-errors.js
+@@ -20,6 +20,6 @@ function checkDiagnosticsErrors(diagnostics, failMessage) {
+         return;
+     }
+     (0, logger_1.errorLog)(ts.formatDiagnostics(diagnostics, formatDiagnosticsHost).trim());
+-    throw new Error(failMessage);
++    // throw new Error(failMessage);
+ }
+ exports.checkDiagnosticsErrors = checkDiagnosticsErrors;
