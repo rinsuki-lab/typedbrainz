@@ -7,14 +7,18 @@ import { createPrinter, createSourceFile, isImportDeclaration, isStringLiteral, 
 import { convertAST } from "../ast/index.js"
 import { appended } from "../utils.js"
 import assert from "node:assert"
-import { dirname, join } from "node:path"
+import { dirname, join, relative } from "node:path"
 
 export function doActualConvert(ctx: ConverterContext) {
+    const originalTypeUtilsPath = "../src/type-utils.js"
+    const originalTypeUtilsRealPath = join(process.cwd() + "/converter", originalTypeUtilsPath)
     const compatibilityFile = readFileSync(import.meta.dirname + "/../compatibility.d.ts", "utf-8")
+    assert(compatibilityFile.includes(originalTypeUtilsPath))
 
     while (true) {
         const target = ctx.targets.pop()
         if (target == null) break
+        if (target.endsWith("src/type-utils.js")) continue
         if (ctx.alreadyParsedTargets.has(target)) continue
         ctx.alreadyParsedTargets.add(target)
         if (!target.endsWith(".js") && !target.endsWith(".mjs")) {
@@ -26,7 +30,10 @@ export function doActualConvert(ctx: ConverterContext) {
         ctx.currentFilePath = target
         // console.log(ast)
         // console.log("Converting", target)
-        let dest = createSourceFile("", compatibilityFile, ScriptTarget.ESNext)
+        let dest = createSourceFile("", compatibilityFile.replace(originalTypeUtilsPath, relative(
+            dirname(join(process.cwd(), target)),
+            originalTypeUtilsRealPath,
+        )), ScriptTarget.ESNext)
         const statements = (ast.body as any[]).flatMap(ast => {
             // console.log(src.slice(...ast.range))
             return convertAST(ctx, ast)

@@ -1,11 +1,4 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-type $ReadOnlyArray<T> = readonly T[];
-type $ReadOnly<T> = Readonly<T>;
-type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
-type $Exact<T> = T; // TODO: implement properly
-type $Keys<T> = keyof T;
-type $Values<T> = T[keyof T];
-type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { EDIT_SET_TRACK_LENGTHS_T } from "../../declared-types.js"
 import { EDIT_HISTORIC_SET_TRACK_LENGTHS_FROM_CDTOC_T } from "../../declared-types.js"
 import { EDIT_RELEASEGROUP_SET_COVER_ART_T } from "../../declared-types.js"
@@ -229,6 +222,7 @@ import { EDIT_ARTIST_ADD_ANNOTATION_T } from "../../declared-types.js"
 import { EDIT_AREA_ADD_ANNOTATION_T } from "../../declared-types.js"
 import { AnnotatedEntityTypeT } from "../../declared-types.js"
 import { GenericEditT } from "../../declared-types.js"
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
 export type AddAnnotationEditGenericT = $ReadOnly<_$Spread<GenericEditT, {
     display_data: {
         changelog: string;

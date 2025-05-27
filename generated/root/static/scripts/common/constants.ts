@@ -1,16 +1,10 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-type $ReadOnlyArray<T> = readonly T[];
-type $ReadOnly<T> = Readonly<T>;
-type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
-type $Exact<T> = T; // TODO: implement properly
-type $Keys<T> = keyof T;
-type $Values<T> = T[keyof T];
-type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { WS_EDIT_RESPONSE_NO_CHANGES_T } from "../../../../declared-types.js"
 import { WS_EDIT_RESPONSE_OK_T } from "../../../../declared-types.js"
 import { QualityT } from "../../../../declared-types.js"
 import { N_l_T } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../src/type-utils.js";
 import ENTITIES from "../../../../entities.mjs";
 export { ENTITIES as ENTITIES };
 export const EMPTY_PARTIAL_DATE: PartialDateT = "Unknown Expression Type: CallExpression";

@@ -1,11 +1,4 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-type $ReadOnlyArray<T> = readonly T[];
-type $ReadOnly<T> = Readonly<T>;
-type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
-type $Exact<T> = T; // TODO: implement properly
-type $Keys<T> = keyof T;
-type $Values<T> = T[keyof T];
-type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { FormT } from "../../../../declared-types.js"
 import { FieldT } from "../../../../declared-types.js"
 import { MediumWithRecordingsT } from "../../../../declared-types.js"
@@ -31,6 +24,7 @@ import { ArtistT } from "../../../../declared-types.js"
 import { AreaT } from "../../../../declared-types.js"
 import { PartialDateT } from "../../../../declared-types.js"
 import { RelatableEntityT } from "../../../../declared-types.js"
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../../../src/type-utils.js";
 import * as tree from "weight-balanced-tree";
 import type { OptionItemT as AutocompleteOptionItemT, StateT as AutocompleteStateT } from "../common/components/Autocomplete2/types.js";
 import type { LazyReleaseStateT as LazyReleaseStateT } from "../release/types.js";

@@ -1,16 +1,10 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-type $ReadOnlyArray<T> = readonly T[];
-type $ReadOnly<T> = Readonly<T>;
-type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
-type $Exact<T> = T; // TODO: implement properly
-type $Keys<T> = keyof T;
-type $Values<T> = T[keyof T];
-type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 import { StrOrNum } from "../../declared-types.js"
 import { RepeatableFieldT } from "../../declared-types.js"
 import { CompoundFieldT } from "../../declared-types.js"
 import { FieldT } from "../../declared-types.js"
 import { FormT } from "../../declared-types.js"
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
 export type ConfirmFormT = FormT<{
     cancel: FieldT<string>;
     edit_note: FieldT<string>;

@@ -1,11 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
-type $ReadOnlyArray<T> = readonly T[];
-type $ReadOnly<T> = Readonly<T>;
-type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
-type $Exact<T> = T; // TODO: implement properly
-type $Keys<T> = keyof T;
-type $Values<T> = T[keyof T];
-type _$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../src/type-utils.js";
 export const ACCESS_SCOPE_PROFILE: 1 = 1;
 export const ACCESS_SCOPE_EMAIL: 2 = 2;
 export const ACCESS_SCOPE_TAG: 4 = 4;
