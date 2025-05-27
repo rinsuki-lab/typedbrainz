@@ -1,5 +1,4 @@
-// SPDX-License-Identifier: GPLv2-or-later
-// Inherited from MB, because this file depends to MB's code.
+// SPDX-License-Identifier: MIT
 
 import { MaybeReleaseRelationshipEditor, NonReleaseRelationshipEditor, RelationshipEditorBase, ReleaseRelationshipEditor } from "./global.js"
 
