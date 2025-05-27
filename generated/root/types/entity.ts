@@ -19,7 +19,7 @@ import { ArtistT } from "../../declared-types.js"
 import { AreaT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, _$Spread } from "../../../src/type-utils.js";
 export type EntityWithAliasesT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type EntityWithAliasesTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type EntityWithAliasesTypeT = EntityWithAliasesT["entityType"];
 export type EntityWithSeriesMapT = {
     "artist": ArtistT;
     "event": EventT;
@@ -44,11 +44,11 @@ export type RelatableEntityRoleT<T> = _$Spread<EntityRoleT<T>, _$Spread<LastUpda
     relationships: $ReadOnlyArray<RelationshipT>;
 }>>>;
 export type CollectableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type CollectableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type CollectableEntityTypeT = CollectableEntityT["entityType"];
 export type EditableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | UrlT | WorkT;
-export type EditableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type EditableEntityTypeT = EditableEntityT["entityType"];
 export type EntityWithArtistCreditsT = RecordingT | ReleaseGroupT | ReleaseT | TrackT;
-export type EntityWithArtistCreditsTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type EntityWithArtistCreditsTypeT = EntityWithArtistCreditsT["entityType"];
 export type EntityWithAutoCleanupTypeT = "artist" | "event" | "label" | "place" | "release_group" | "series" | "work";
 export type DatePeriodRoleT = {
     begin_date: PartialDateT | null;
@@ -57,7 +57,7 @@ export type DatePeriodRoleT = {
 };
 export type ManuallyRemovableEntityT = AreaT | GenreT | InstrumentT | RecordingT | ReleaseT;
 export type MergeableEntityT = AreaT | ArtistT | CollectionT | EventT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type MergeableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type MergeableEntityTypeT = MergeableEntityT["entityType"];
 export type PendingEditsRoleT = {
     editsPending: boolean;
 };
@@ -84,13 +84,13 @@ export type PartialDateStringsT = {
 };
 export type NonUrlRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
 export type RelatableEntityT = NonUrlRelatableEntityT | UrlT;
-export type NonUrlRelatableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type NonUrlRelatableEntityTypeT = NonUrlRelatableEntityT["entityType"];
 export type RelatableEntityTypeT = NonUrlRelatableEntityTypeT | "url";
 export type SubscribableEntityT = SubscribableEntityWithSidebarT | CollectionT | EditorT;
 export type SubscribableEntityWithSidebarT = ArtistT | LabelT | SeriesT;
-export type SubscribableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type SubscribableEntityTypeT = SubscribableEntityT["entityType"];
 export type TaggableEntityT = AreaT | ArtistT | EventT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
-export type TaggableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type TaggableEntityTypeT = TaggableEntityT["entityType"];
 export type TypeRoleT<T> = {
     typeID: number | null;
     typeName: string;

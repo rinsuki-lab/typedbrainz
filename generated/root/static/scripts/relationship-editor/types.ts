@@ -68,7 +68,7 @@ export type RelationshipTargetTypeGroupsT = "WIP convertGenericTypeAnnotation: Q
 export type RelationshipSourceGroupT = "WIP convertTypeNode: TupleTypeAnnotation";
 export type RelationshipSourceGroupsT = "WIP convertGenericTypeAnnotation: QualifiedTypeIdentifier" | null;
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
-export type NonReleaseRelatableEntityTypeT = "WIP convertTypeNode: IndexedAccessType";
+export type NonReleaseRelatableEntityTypeT = NonReleaseRelatableEntityT["entityType"];
 export type RelationshipDialogLocationT = {
     backward: boolean | null | undefined;
     batchSelection: boolean | null | undefined;

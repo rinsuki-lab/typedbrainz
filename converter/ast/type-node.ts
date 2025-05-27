@@ -49,6 +49,11 @@ export function convertTypeNode(source: any): TypeNode {
             factory.createLiteralTypeNode(factory.createNull()),
             factory.createKeywordTypeNode(SyntaxKind.UndefinedKeyword),
         ]);
+    case "IndexedAccessType":
+        return factory.createIndexedAccessTypeNode(
+            convertTypeNode(source.objectType),
+            convertTypeNode(source.indexType)
+        )
     default:
         return factory.createLiteralTypeNode(wipLiteral("convertTypeNode", source.type));
     }
