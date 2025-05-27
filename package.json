@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf generated lib && tsimp ./converter/index.ts && dts-bundle-generator ./src/global.d.ts -o ./lib/global.d.ts --no-check --inline-declare-global && tsc -p tsconfig.build.json"
+    "build": "bash ./build.sh"
   },
   "files": [
     "lib/*.js",
