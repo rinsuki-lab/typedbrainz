@@ -5,6 +5,8 @@ import type { RelationshipDialogStateT, RelationshipEditorStateT, ReleaseRelatio
 import type { DialogActionT, RelationshipEditorActionT, ReleaseRelationshipEditorActionT } from "../generated/root/static/scripts/relationship-editor/types/actions.ts"
 import type * as constants from "../generated/root/static/scripts/common/constants.ts"
 import type { LinkedEntitiesT } from "../generated/root/static/scripts/common/linkedEntities.mts"
+import type { RelationshipT } from "../generated/declared-types.ts"
+import type { SeededRelationshipT } from "../generated/declared-types.ts"
 
 type EveryPropertyIsExistsOrNot<T> = T | {
     [K in keyof T]?: undefined | null
@@ -13,7 +15,9 @@ type EveryPropertyIsExistsOrNot<T> = T | {
 export type RelationshipEditorBase = EveryPropertyIsExistsOrNot<{
     relationshipDialogDispatch: (action: DialogActionT) => void,
     relationshipDialogState: RelationshipDialogStateT,
-}>
+}> & {
+    getRelationshipStateId: (relationship: RelationshipT | SeededRelationshipT | null) => number
+}
 
 export type ReleaseRelationshipEditor = RelationshipEditorBase & EveryPropertyIsExistsOrNot<{
     state: ReleaseRelationshipEditorStateT

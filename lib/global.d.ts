@@ -2099,6 +2099,12 @@ export type RelationshipT = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<Pendi
 	target_type: RelatableEntityTypeT;
 	verbosePhrase: string;
 }>>>;
+export type SeededRelationshipT = $ReadOnly<$_$Spread<RelationshipT, {
+	entity0_id: number | null;
+	entity1_id: number | null;
+	id: null;
+	linkTypeID: number | null;
+}>>;
 export type QualityT = -1 | 0 | 1 | 2;
 export type ReleaseEventT = {
 	country: AreaT | null;
@@ -3092,7 +3098,9 @@ export type EveryPropertyIsExistsOrNot<T> = T | {
 export type RelationshipEditorBase = EveryPropertyIsExistsOrNot<{
 	relationshipDialogDispatch: (action: DialogActionT) => void;
 	relationshipDialogState: RelationshipDialogStateT;
-}>;
+}> & {
+	getRelationshipStateId: (relationship: RelationshipT | SeededRelationshipT | null) => number;
+};
 export type ReleaseRelationshipEditor = RelationshipEditorBase & EveryPropertyIsExistsOrNot<{
 	state: ReleaseRelationshipEditorStateT;
 	dispatch: (action: ReleaseRelationshipEditorActionT) => void;
