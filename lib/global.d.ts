@@ -1804,9 +1804,7 @@ export type CommentRoleT = {
 export type RelatableEntityRoleT<T> = $_$Spread<EntityRoleT<T>, $_$Spread<LastUpdateRoleT, $_$Spread<PendingEditsRoleT, {
 	gid: string;
 	name: string;
-	paged_relationship_groups?: {
-		[targetType: RelatableEntityTypeT]: PagedTargetTypeGroupT | void;
-	};
+	paged_relationship_groups?: unknown;
 	relationships?: $ReadOnlyArray<RelationshipT>;
 }>>>;
 export type DatePeriodRoleT = {
@@ -2083,18 +2081,6 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
 	type0: RelatableEntityTypeT;
 	type1: RelatableEntityTypeT;
 }>;
-export type PagedLinkTypeGroupT = {
-	backward: boolean;
-	is_loaded: boolean;
-	limit: number;
-	link_type_id: number;
-	offset: number;
-	relationships: $ReadOnlyArray<RelationshipT>;
-	total_relationships: number;
-};
-export type PagedTargetTypeGroupT = {
-	[linkTypeIdAndSourceColumn: string]: PagedLinkTypeGroupT;
-};
 export type RelationshipT = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<PendingEditsRoleT, {
 	attributes: $ReadOnlyArray<LinkAttrT>;
 	backward: boolean;

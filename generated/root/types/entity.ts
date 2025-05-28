@@ -4,7 +4,6 @@ import { CollectionT } from "../../declared-types.js"
 import { TrackT } from "../../declared-types.js"
 import { UrlT } from "../../declared-types.js"
 import { RelationshipT } from "../../declared-types.js"
-import { PagedTargetTypeGroupT } from "../../declared-types.js"
 import { RecordingWithArtistCreditT } from "../../declared-types.js"
 import { WorkT } from "../../declared-types.js"
 import { SeriesT } from "../../declared-types.js"
@@ -41,9 +40,7 @@ export type CommentRoleT = {
 export type RelatableEntityRoleT<T> = $_$Spread<EntityRoleT<T>, $_$Spread<LastUpdateRoleT, $_$Spread<PendingEditsRoleT, {
     gid: string;
     name: string;
-    paged_relationship_groups?: {
-        [targetType: RelatableEntityTypeT]: PagedTargetTypeGroupT | void;
-    };
+    paged_relationship_groups?: unknown;
     relationships?: $ReadOnlyArray<RelationshipT>;
 }>>>;
 export type CollectableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | ReleaseT | SeriesT | WorkT;
