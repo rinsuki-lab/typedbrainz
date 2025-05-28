@@ -3,14 +3,14 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import doOrLogError from "./doOrLogError.js";
 export var hasLocalStorage: boolean = "WIP convertLiteral: Literal";
 export var hasSessionStorage: boolean = "WIP convertLiteral: Literal";
-"Unknown Type: TryStatement";
-"Unknown Type: VariableDeclaration";
-"WIP convertAST: FunctionDeclaration";
-"Unknown Type: VariableDeclaration";
-"Unknown Type: VariableDeclaration";
+"WIP convertAST: TryStatement";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST: VariableDeclaration";
 export const sessionStorageWrapper: {
     get: "WIP convertTypeNode: FunctionTypeAnnotation";
     remove: "WIP convertTypeNode: FunctionTypeAnnotation";
     set: "WIP convertTypeNode: FunctionTypeAnnotation";
 } = "WIP convertExpression: ConditionalExpression";
-"Unknown Type: IfStatement";
+"WIP convertAST: IfStatement";

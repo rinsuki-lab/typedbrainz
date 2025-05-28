@@ -3,6 +3,6 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import isNodeJS from "detect-node";
 import _cookies from "./_cookies.js";
 import parseCookie from "./parseCookie.mjs";
-"Unknown Type: VariableDeclaration";
-"Unknown Type: FunctionDeclaration";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST: FunctionDeclaration";
 export default getCookie;

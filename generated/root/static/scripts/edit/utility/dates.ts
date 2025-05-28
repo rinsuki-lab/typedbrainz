@@ -2,7 +2,7 @@
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import getDaysInMonth from "../../../../utility/getDaysInMonth.js";
 import parseInteger from "../../common/utility/parseInteger.js";
-"Unknown Type: TypeAlias";
-"WIP convertAST: FunctionDeclaration";
-"WIP convertAST: FunctionDeclaration";
-"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: TypeAlias";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

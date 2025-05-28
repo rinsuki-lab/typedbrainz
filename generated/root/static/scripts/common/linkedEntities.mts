@@ -191,9 +191,9 @@ export type LinkedEntitiesT = {
         [workTypeId: number]: WorkTypeT;
     };
 };
-"Unknown Type: VariableDeclaration";
+"WIP convertAST: VariableDeclaration";
 export default linkedEntities;
-"WIP convertAST: FunctionDeclaration";
-"Unknown Type: VariableDeclaration";
-"WIP convertAST: FunctionDeclaration";
-"Unknown Type: ExpressionStatement";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST: ExpressionStatement";

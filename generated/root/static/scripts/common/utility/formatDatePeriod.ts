@@ -2,5 +2,5 @@
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import ko from "knockout";
 import formatDate from "./formatDate.js";
-"Unknown Type: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
 export default formatDatePeriod;

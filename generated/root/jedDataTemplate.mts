@@ -2,6 +2,6 @@
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../src/type-utils.js";
 import deepFreezeStrict from "deep-freeze-strict";
 import type { JedOptions as JedOptions } from "jed";
-"Unknown Type: TypeAlias";
-"Unknown Type: VariableDeclaration";
+"WIP convertAST: TypeAlias";
+"WIP convertAST: VariableDeclaration";
 export default jedData;

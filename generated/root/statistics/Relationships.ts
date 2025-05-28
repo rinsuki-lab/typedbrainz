@@ -13,11 +13,11 @@ export type RelationshipTypeT = {
         [entityTypes: string]: Array<LinkTypeT>;
     };
 };
-"Unknown Type: FunctionDeclaration";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: BlockStatement";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: BlockStatement";
+"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: BlockStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: BlockStatement";
 export default Relationships;

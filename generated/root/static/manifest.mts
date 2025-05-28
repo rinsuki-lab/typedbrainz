@@ -3,8 +3,8 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import fs from "fs";
 import path from "path";
 import { MB_SERVER_ROOT as MB_SERVER_ROOT, STATIC_RESOURCES_LOCATION as STATIC_RESOURCES_LOCATION } from "./scripts/common/DBDefs.mjs";
-"Unknown Type: VariableDeclaration";
-"Unknown Type: FunctionDeclaration";
-"Unknown Type: VariableDeclaration";
-"Unknown Type: FunctionDeclaration";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST: FunctionDeclaration";
 export default manifest;

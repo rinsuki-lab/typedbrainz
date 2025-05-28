@@ -14,12 +14,12 @@ export type ActionT = {
 } | {
     type: "show-pending-errors";
 };
-"Unknown Type: TypeAlias";
+"WIP convertAST: TypeAlias";
 export type StateT = PartialDateFieldT;
-"Unknown Type: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
-"Unknown Type: TypeAlias";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: BlockStatement";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST: TypeAlias";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: BlockStatement";
 export default PartialDateInput;

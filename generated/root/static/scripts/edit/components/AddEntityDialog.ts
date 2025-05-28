@@ -8,8 +8,8 @@ import { findFirstTabbableElement as findFirstTabbableElement } from "../../comm
 export const TITLES: {
     [entityType: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
 } = "WIP convertExpression: ObjectExpression";
-"Unknown Type: TypeAlias";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: BlockStatement";
+"WIP convertAST: TypeAlias";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: BlockStatement";
 export default AddEntityDialog;

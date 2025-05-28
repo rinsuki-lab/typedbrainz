@@ -45,7 +45,7 @@ export function convertAST(ctx: ConverterContext, body: any): readonly Statement
             return [convertOpaqueType(body.declaration, "export")]
         default:
             return [factory.createExpressionStatement(
-                wipLiteral("convertAST", body.declaration.type)
+                wipLiteral("convertAST_ExportNamedDeclaration", body.declaration.type)
             )]
         }
     }
@@ -56,7 +56,7 @@ export function convertAST(ctx: ConverterContext, body: any): readonly Statement
     default:
         // console.log(JSON.stringify(body, null, 4))
         return [factory.createExpressionStatement(
-            factory.createStringLiteral("Unknown Type: " + body.type)
+            wipLiteral("convertAST", body.type)
         )]
     }
 }

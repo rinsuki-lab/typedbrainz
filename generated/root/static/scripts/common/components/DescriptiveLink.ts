@@ -5,7 +5,7 @@ import type { ReleaseEditorTrackT as ReleaseEditorTrackT } from "../../release-e
 import AreaWithContainmentLink from "./AreaWithContainmentLink.js";
 import ArtistCreditLink from "./ArtistCreditLink.js";
 import EntityLink from "./EntityLink.js";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: ExpressionStatement";
-"Unknown Type: BlockStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: BlockStatement";
 export default DescriptiveLink;
