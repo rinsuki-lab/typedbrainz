@@ -5,6 +5,7 @@ import { VARTIST_GID as VARTIST_GID } from "./constants.js";
 "WIP convertAST: VariableDeclaration";
 export const hasVariousArtists = "WIP convertExpression: ArrowFunctionExpression";
 export const hasArtist = "WIP convertExpression: ArrowFunctionExpression";
+export const nonEmptyArtistCredit = "WIP convertExpression: ArrowFunctionExpression";
 export const isCompleteArtistCredit = "WIP convertExpression: ArrowFunctionExpression";
 export const reduceArtistCredit = "WIP convertExpression: ArrowFunctionExpression";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

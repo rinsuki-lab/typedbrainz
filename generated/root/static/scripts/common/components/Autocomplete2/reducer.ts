@@ -13,12 +13,3 @@ import type { ActionT as ActionT, EntityItemT as EntityItemT, ItemT as ItemT, Se
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
-"WIP convertAST: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
-"WIP convertAST: FunctionDeclaration";
-"WIP convertAST: FunctionDeclaration";
-"WIP convertAST: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
-export default "WIP convertExpression: FunctionDeclaration";

@@ -46,6 +46,7 @@ export type WsJsRelationshipCommonT = {
     begin_date?: PartialDateT;
     end_date?: PartialDateT;
     ended?: boolean;
+    enteredFrom?: WsJsRelationshipEntityT;
     entities: [
         WsJsRelationshipEntityT,
         WsJsRelationshipEntityT
@@ -65,12 +66,14 @@ export type WsJsEditRelationshipEditT = $ReadOnly<$_$Spread<Partial<WsJsRelation
 }>>;
 export type WsJsEditRelationshipDeleteT = $ReadOnly<{
     edit_type: EDIT_RELATIONSHIP_DELETE_T;
+    enteredFrom?: WsJsRelationshipEntityT;
     id: number;
     linkTypeID: number;
 }>;
 export type WsJsEditRelationshipT = WsJsEditRelationshipCreateT | WsJsEditRelationshipEditT | WsJsEditRelationshipDeleteT | WsJsEditRelationshipsReorderT;
 export type WsJsEditRelationshipsReorderT = {
     edit_type: EDIT_RELATIONSHIPS_REORDER_T;
+    enteredFrom?: WsJsRelationshipEntityT;
     linkTypeID: number;
     relationship_order: $ReadOnlyArray<{
         link_order: number;

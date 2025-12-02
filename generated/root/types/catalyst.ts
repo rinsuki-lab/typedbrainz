@@ -72,11 +72,14 @@ export type CatalystStashT = {
         [genreName: string]: GenreT;
     };
     globals_script_nonce?: string;
+    has_content_security_policy?: boolean;
     hide_merge_helper?: boolean;
     jsonld_data?: {};
     last_replication_date?: string;
+    legacy_browser?: boolean;
     makes_no_changes?: boolean;
     more_tags?: boolean;
+    mtcaptcha_script_nonce?: string;
     new_edit_notes?: boolean;
     new_edit_notes_mtime?: number | null;
     number_of_collections?: number;
@@ -128,6 +131,7 @@ export type SanitizedCatalystContextT = {
         genre_map?: {
             [genreName: string]: GenreT;
         };
+        mtcaptcha_script_nonce?: string;
         seeded_relationships?: $ReadOnlyArray<SeededRelationshipT> | null | undefined;
         series_ordering_types?: {
             [id: number]: SeriesOrderingTypeT;

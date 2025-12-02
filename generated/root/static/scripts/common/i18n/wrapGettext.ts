@@ -4,7 +4,7 @@ import isNodeJS from "detect-node";
 import Jed from "jed";
 import jedDataTemplate from "../../../../jedDataTemplate.mjs";
 import * as serverGettext from "../../../../server/gettext.mjs";
-import cleanMsgid from "./cleanMsgid.js";
+import cleanMsgid from "./cleanMsgid.mjs";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: IfStatement";
 "WIP convertAST: FunctionDeclaration";

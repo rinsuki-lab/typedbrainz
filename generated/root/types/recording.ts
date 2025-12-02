@@ -16,7 +16,7 @@ export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentR
         name: string;
     }>;
     artist?: string;
-    artistCredit?: ArtistCreditT;
+    artistCredit: ArtistCreditT;
     first_release_date?: PartialDateT;
     isrcs: $ReadOnlyArray<IsrcT>;
     length: number;
@@ -24,9 +24,6 @@ export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentR
     related_works: $ReadOnlyArray<number>;
     video: boolean;
 }>>>>>>;
-export type RecordingWithArtistCreditT = $ReadOnly<$_$Spread<RecordingT, {
-    artistCredit: ArtistCreditT;
-}>>;
 export type ReleaseGroupAppearancesT = {
     hits: number;
     results: $ReadOnlyArray<ReleaseGroupT>;

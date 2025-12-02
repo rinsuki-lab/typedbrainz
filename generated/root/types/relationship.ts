@@ -55,12 +55,13 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
     l_reverse_link_phrase?: string;
     link_phrase: string;
     long_link_phrase: string;
-    orderable_direction: number;
+    orderable_direction: OrderableDirectionT;
     reverse_link_phrase: string;
     root_id: number | null;
     type0: RelatableEntityTypeT;
     type1: RelatableEntityTypeT;
 }>;
+export type OrderableDirectionT = 0 | 1 | 2;
 export type PagedLinkTypeGroupT = {
     backward: boolean;
     is_loaded: boolean;

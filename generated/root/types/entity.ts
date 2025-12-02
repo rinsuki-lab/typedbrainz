@@ -4,7 +4,6 @@ import { CollectionT } from "../../declared-types.js"
 import { TrackT } from "../../declared-types.js"
 import { UrlT } from "../../declared-types.js"
 import { RelationshipT } from "../../declared-types.js"
-import { RecordingWithArtistCreditT } from "../../declared-types.js"
 import { WorkT } from "../../declared-types.js"
 import { SeriesT } from "../../declared-types.js"
 import { ReleaseT } from "../../declared-types.js"
@@ -23,7 +22,7 @@ export type EntityWithAliasesTypeT = EntityWithAliasesT["entityType"];
 export type EntityWithSeriesMapT = {
     "artist": ArtistT;
     "event": EventT;
-    "recording": RecordingWithArtistCreditT;
+    "recording": RecordingT;
     "release": ReleaseT;
     "release_group": ReleaseGroupT;
     "work": WorkT;

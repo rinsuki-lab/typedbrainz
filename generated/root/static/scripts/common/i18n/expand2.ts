@@ -23,7 +23,8 @@ type State = {
     running: boolean;
     source: string;
 };
-export const state: State = "WIP convertExpression: CallExpression";
+export const state: State = "WIP convertExpression: ObjectExpression";
+"WIP convertAST: ExpressionStatement";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

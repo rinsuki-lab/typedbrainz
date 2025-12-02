@@ -5,6 +5,19 @@ import { AreaT } from "../../declared-types.js"
 import { LanguageT } from "../../declared-types.js"
 import { EntityRoleT } from "../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
+export type AccountLayoutUserT = {
+    avatar: string;
+    deleted: boolean;
+    entityType: "editor";
+    id: number;
+    name: string;
+    preferences: {
+        public_ratings: boolean;
+        public_subscriptions: boolean;
+        public_tags: boolean;
+    };
+    privileges: number;
+};
 export type ActiveEditorPreferencesT = {
     datetime_format: string;
     timezone: string;
@@ -29,6 +42,7 @@ export type EditorT = $_$Spread<EntityRoleT<"editor">, {
 export type FluencyT = "basic" | "intermediate" | "advanced" | "native";
 export type UnsanitizedEditorPreferencesT = {
     datetime_format: string;
+    email_language: string;
     email_on_abstain: boolean;
     email_on_no_vote: boolean;
     email_on_notes: boolean;
@@ -61,5 +75,6 @@ export type UnsanitizedEditorT = $ReadOnly<$_$Spread<EntityRoleT<"editor">, {
     preferences: UnsanitizedEditorPreferencesT;
     privileges: number;
     registration_date: string;
+    unused?: boolean;
     website: string | null;
 }>>;

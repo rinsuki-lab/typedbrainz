@@ -34,4 +34,3 @@ import isolateText from "../utility/isolateText.js";
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST: BlockStatement";
-export default EntityLink;

@@ -36,7 +36,6 @@ import { EDIT_RELEASE_MERGE_T } from "../../declared-types.js"
 import { StrOrNum } from "../../declared-types.js"
 import { EDIT_RELEASEGROUP_MERGE_T } from "../../declared-types.js"
 import { EDIT_RECORDING_MERGE_T } from "../../declared-types.js"
-import { RecordingWithArtistCreditT } from "../../declared-types.js"
 import { EDIT_PLACE_MERGE_T } from "../../declared-types.js"
 import { EDIT_LABEL_MERGE_T } from "../../declared-types.js"
 import { EDIT_INSTRUMENT_MERGE_T } from "../../declared-types.js"
@@ -162,12 +161,14 @@ import { ReleaseEventT } from "../../declared-types.js"
 import { ArtistCreditT } from "../../declared-types.js"
 import { EDIT_RELATIONSHIP_ADD_TYPE_T } from "../../declared-types.js"
 import { LinkTypeT } from "../../declared-types.js"
+import { OrderableDirectionT } from "../../declared-types.js"
 import { RelatableEntityTypeT } from "../../declared-types.js"
 import { LinkTypeAttrTypeT } from "../../declared-types.js"
 import { EDIT_RELATIONSHIP_ADD_ATTRIBUTE_T } from "../../declared-types.js"
 import { LinkAttrTypeT } from "../../declared-types.js"
 import { EDIT_RELATIONSHIP_CREATE_T } from "../../declared-types.js"
 import { RelationshipT } from "../../declared-types.js"
+import { NonUrlRelatableEntityT } from "../../declared-types.js"
 import { EDIT_PLACE_CREATE_T } from "../../declared-types.js"
 import { PlaceTypeT } from "../../declared-types.js"
 import { PlaceT } from "../../declared-types.js"
@@ -414,6 +415,7 @@ export type AddPlaceEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type AddRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
+        entered_from?: NonUrlRelatableEntityT;
         relationship: RelationshipT;
         unknown_attributes: boolean;
     };
@@ -445,7 +447,7 @@ export type AddRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
         link_phrase: string;
         long_link_phrase: string;
         name: string;
-        orderable_direction?: number;
+        orderable_direction?: OrderableDirectionT;
         relationship_type?: LinkTypeT;
         reverse_link_phrase: string;
     };
@@ -846,6 +848,7 @@ export type EditRecordingEditCurrentT = $ReadOnly<$_$Spread<EditRecordingEditGen
 export type EditRecordingEditT = EditRecordingEditHistoricLengthT | EditRecordingEditHistoricNameT | EditRecordingEditCurrentT;
 export type EditRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
+        entered_from?: NonUrlRelatableEntityT;
         new: RelationshipT;
         old: RelationshipT;
         unknown_attributes: boolean;
@@ -887,7 +890,7 @@ export type EditRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
         link_phrase?: CompT<string>;
         long_link_phrase?: CompT<string>;
         name: CompT<string>;
-        orderable_direction?: CompT<number>;
+        orderable_direction?: CompT<OrderableDirectionT>;
         parent?: CompT<LinkTypeT | null>;
         relationship_type: LinkTypeT;
         reverse_link_phrase: CompT<string>;
@@ -1025,8 +1028,8 @@ export type MergePlacesEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type MergeRecordingsEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
         large_spread: boolean;
-        new: RecordingWithArtistCreditT;
-        old: $ReadOnlyArray<RecordingWithArtistCreditT>;
+        new: RecordingT;
+        old: $ReadOnlyArray<RecordingT>;
     };
     edit_type: EDIT_RECORDING_MERGE_T;
 }>>;
@@ -1280,6 +1283,7 @@ export type RemoveRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
         };
     };
     display_data: {
+        entered_from?: NonUrlRelatableEntityT;
         relationship: RelationshipT;
     };
     edit_type: EDIT_RELATIONSHIP_DELETE_T;
@@ -1343,6 +1347,7 @@ export type ReorderMediumsEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type ReorderRelationshipsEditT = $ReadOnly<$_$Spread<GenericEditT, {
     display_data: {
+        entered_from?: NonUrlRelatableEntityT;
         relationships: $ReadOnlyArray<{
             new_order: number;
             old_order: number;

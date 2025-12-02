@@ -2,6 +2,7 @@
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import ko from "knockout";
 import type { ReleaseEditorTrackT as ReleaseEditorTrackT } from "../../release-editor/types.js";
+import { nonEmptyArtistCredit as nonEmptyArtistCredit } from "../immutable-entities.js";
 import AreaWithContainmentLink from "./AreaWithContainmentLink.js";
 import ArtistCreditLink from "./ArtistCreditLink.js";
 import EntityLink from "./EntityLink.js";

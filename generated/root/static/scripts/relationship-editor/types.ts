@@ -51,29 +51,29 @@ export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends R
 };
 export type RelationshipStateT = RelationshipStateForTypesT<RelatableEntityT, RelatableEntityT>;
 export type RelationshipPhraseGroupT = {
-    relationships: tree.ImmutableTree<RelationshipStateT> | null;
+    relationships: tree.ImmutableTree<RelationshipStateT>;
     textPhrase: string;
 };
 export type RelationshipLinkTypeGroupT = {
     backward: boolean;
-    phraseGroups: tree.ImmutableTree<RelationshipPhraseGroupT> | null;
+    phraseGroups: tree.ImmutableTree<RelationshipPhraseGroupT>;
     typeId: number;
 };
 export type RelationshipLinkTypeGroupKeyT = {
     backward: boolean;
     typeId: number;
 };
-export type RelationshipLinkTypeGroupsT = tree.ImmutableTree<RelationshipLinkTypeGroupT> | null;
+export type RelationshipLinkTypeGroupsT = tree.ImmutableTree<RelationshipLinkTypeGroupT>;
 export type RelationshipTargetTypeGroupT = [
     RelatableEntityTypeT,
     RelationshipLinkTypeGroupsT
 ];
-export type RelationshipTargetTypeGroupsT = tree.ImmutableTree<RelationshipTargetTypeGroupT> | null;
+export type RelationshipTargetTypeGroupsT = tree.ImmutableTree<RelationshipTargetTypeGroupT>;
 export type RelationshipSourceGroupT = [
     RelatableEntityT,
     RelationshipTargetTypeGroupsT
 ];
-export type RelationshipSourceGroupsT = tree.ImmutableTree<RelationshipSourceGroupT> | null;
+export type RelationshipSourceGroupsT = tree.ImmutableTree<RelationshipSourceGroupT>;
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
 export type NonReleaseRelatableEntityTypeT = NonReleaseRelatableEntityT["entityType"];
 export type RelationshipDialogLocationT = {
@@ -128,7 +128,7 @@ export type DialogAttributeT = DialogBooleanAttributeStateT | DialogMultiselectA
 export type DialogAttributesT = $ReadOnlyArray<DialogAttributeT>;
 export type DialogAttributesStateT = {
     attributesList: DialogAttributesT;
-    resultingLinkAttributes: tree.ImmutableTree<LinkAttrT> | null;
+    resultingLinkAttributes: tree.ImmutableTree<LinkAttrT>;
 };
 export type DialogLinkAttributeStateT = {
     creditedAs?: string;
@@ -213,18 +213,18 @@ export type MediumWorkStateT = {
     targetTypeGroups: RelationshipTargetTypeGroupsT;
     work: WorkT;
 };
-export type MediumWorkStateTreeT = tree.ImmutableTree<MediumWorkStateT> | null;
+export type MediumWorkStateTreeT = tree.ImmutableTree<MediumWorkStateT>;
 export type MediumRecordingStateT = {
     isSelected: boolean;
     recording: RecordingT;
     relatedWorks: MediumWorkStateTreeT;
     targetTypeGroups: RelationshipTargetTypeGroupsT;
 };
-export type MediumRecordingStateTreeT = tree.ImmutableTree<MediumRecordingStateT> | null;
+export type MediumRecordingStateTreeT = tree.ImmutableTree<MediumRecordingStateT>;
 export type MediumStateTreeT = tree.ImmutableTree<[
     MediumWithRecordingsT,
     MediumRecordingStateTreeT
-]> | null;
+]>;
 export type ReleaseRelationshipEditorStateT = $ReadOnly<$_$Spread<$Exact<LazyReleaseStateT>, $_$Spread<$Exact<RelationshipEditorStateT>, {
     editNoteField: FieldT<string>;
     enterEditForm: FormT<{
@@ -233,8 +233,8 @@ export type ReleaseRelationshipEditorStateT = $ReadOnly<$_$Spread<$Exact<LazyRel
     entity: ReleaseWithMediumsAndReleaseGroupT;
     mediums: MediumStateTreeT;
     mediumsByRecordingId: RecordingMediumsT;
-    selectedRecordings: tree.ImmutableTree<RecordingT> | null;
-    selectedWorks: tree.ImmutableTree<WorkT> | null;
+    selectedRecordings: tree.ImmutableTree<RecordingT>;
+    selectedWorks: tree.ImmutableTree<WorkT>;
     submissionError: string | null | undefined;
     submissionInProgress: boolean;
 }>>>;

@@ -155,7 +155,7 @@ export type BatchCreateWorksDialogActionT = {
     type: "update-link-type";
 } | WorkTypeSelectActionT;
 export type AcceptBatchCreateWorksDialogActionT = {
-    attributes: tree.ImmutableTree<LinkAttrT> | null;
+    attributes: tree.ImmutableTree<LinkAttrT>;
     begin_date: PartialDateT | null;
     end_date: PartialDateT | null;
     ended: boolean;
@@ -194,11 +194,11 @@ export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | Relationship
     work: WorkT;
 } | {
     isSelected: boolean;
-    recordingStates: MediumRecordingStateTreeT | null;
+    recordingStates: MediumRecordingStateTreeT;
     type: "toggle-select-medium-recordings";
 } | {
     isSelected: boolean;
-    recordingStates: MediumRecordingStateTreeT | null;
+    recordingStates: MediumRecordingStateTreeT;
     type: "toggle-select-medium-works";
 } | {
     editNote: string;

@@ -18,3 +18,13 @@ import formatTrackLength from "../../static/scripts/common/utility/formatTrackLe
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: EmptyStatement";
+"WIP convertAST: IfStatement";
+"WIP convertAST: ReturnStatement";
+"WIP convertAST: ExpressionStatement";

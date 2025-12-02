@@ -587,6 +587,7 @@ export type AddPlaceEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type AddRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
 	display_data: {
+		entered_from?: NonUrlRelatableEntityT;
 		relationship: RelationshipT;
 		unknown_attributes: boolean;
 	};
@@ -618,7 +619,7 @@ export type AddRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
 		link_phrase: string;
 		long_link_phrase: string;
 		name: string;
-		orderable_direction?: number;
+		orderable_direction?: OrderableDirectionT;
 		relationship_type?: LinkTypeT;
 		reverse_link_phrase: string;
 	};
@@ -1019,6 +1020,7 @@ export type EditRecordingEditCurrentT = $ReadOnly<$_$Spread<EditRecordingEditGen
 export type EditRecordingEditT = EditRecordingEditHistoricLengthT | EditRecordingEditHistoricNameT | EditRecordingEditCurrentT;
 export type EditRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
 	display_data: {
+		entered_from?: NonUrlRelatableEntityT;
 		new: RelationshipT;
 		old: RelationshipT;
 		unknown_attributes: boolean;
@@ -1060,7 +1062,7 @@ export type EditRelationshipTypeEditT = $ReadOnly<$_$Spread<GenericEditT, {
 		link_phrase?: CompT<string>;
 		long_link_phrase?: CompT<string>;
 		name: CompT<string>;
-		orderable_direction?: CompT<number>;
+		orderable_direction?: CompT<OrderableDirectionT>;
 		parent?: CompT<LinkTypeT | null>;
 		relationship_type: LinkTypeT;
 		reverse_link_phrase: CompT<string>;
@@ -1198,8 +1200,8 @@ export type MergePlacesEditT = $ReadOnly<$_$Spread<GenericEditT, {
 export type MergeRecordingsEditT = $ReadOnly<$_$Spread<GenericEditT, {
 	display_data: {
 		large_spread: boolean;
-		new: RecordingWithArtistCreditT;
-		old: $ReadOnlyArray<RecordingWithArtistCreditT>;
+		new: RecordingT;
+		old: $ReadOnlyArray<RecordingT>;
 	};
 	edit_type: EDIT_RECORDING_MERGE_T;
 }>>;
@@ -1428,6 +1430,7 @@ export type RemoveRelationshipEditT = $ReadOnly<$_$Spread<GenericEditT, {
 		};
 	};
 	display_data: {
+		entered_from?: NonUrlRelatableEntityT;
 		relationship: RelationshipT;
 	};
 	edit_type: EDIT_RELATIONSHIP_DELETE_T;
@@ -1491,6 +1494,7 @@ export type ReorderMediumsEditT = $ReadOnly<$_$Spread<GenericEditT, {
 }>>;
 export type ReorderRelationshipsEditT = $ReadOnly<$_$Spread<GenericEditT, {
 	display_data: {
+		entered_from?: NonUrlRelatableEntityT;
 		relationships: $ReadOnlyArray<{
 			new_order: number;
 			old_order: number;
@@ -2016,7 +2020,7 @@ export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentR
 		name: string;
 	}>;
 	artist?: string;
-	artistCredit?: ArtistCreditT;
+	artistCredit: ArtistCreditT;
 	first_release_date?: PartialDateT;
 	isrcs: $ReadOnlyArray<IsrcT>;
 	length: number;
@@ -2024,9 +2028,6 @@ export type RecordingT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentR
 	related_works: $ReadOnlyArray<number>;
 	video: boolean;
 }>>>>>>;
-export type RecordingWithArtistCreditT = $ReadOnly<$_$Spread<RecordingT, {
-	artistCredit: ArtistCreditT;
-}>>;
 export type LinkAttrT = {
 	credited_as?: string;
 	text_value?: string;
@@ -2075,12 +2076,13 @@ export type LinkTypeT = $_$Spread<OptionTreeT<"link_type">, {
 	l_reverse_link_phrase?: string;
 	link_phrase: string;
 	long_link_phrase: string;
-	orderable_direction: number;
+	orderable_direction: OrderableDirectionT;
 	reverse_link_phrase: string;
 	root_id: number | null;
 	type0: RelatableEntityTypeT;
 	type1: RelatableEntityTypeT;
 }>;
+export type OrderableDirectionT = 0 | 1 | 2;
 export type RelationshipT = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<PendingEditsRoleT, {
 	attributes: $ReadOnlyArray<LinkAttrT>;
 	backward: boolean;
@@ -2265,6 +2267,7 @@ export type WsJsRelationshipCommonT = {
 	begin_date?: PartialDateT;
 	end_date?: PartialDateT;
 	ended?: boolean;
+	enteredFrom?: WsJsRelationshipEntityT;
 	entities: [
 		WsJsRelationshipEntityT,
 		WsJsRelationshipEntityT
@@ -2284,12 +2287,14 @@ export type WsJsEditRelationshipEditT = $ReadOnly<$_$Spread<Partial<WsJsRelation
 }>>;
 export type WsJsEditRelationshipDeleteT = $ReadOnly<{
 	edit_type: EDIT_RELATIONSHIP_DELETE_T;
+	enteredFrom?: WsJsRelationshipEntityT;
 	id: number;
 	linkTypeID: number;
 }>;
 export type WsJsEditRelationshipT = WsJsEditRelationshipCreateT | WsJsEditRelationshipEditT | WsJsEditRelationshipDeleteT | WsJsEditRelationshipsReorderT;
 export type WsJsEditRelationshipsReorderT = {
 	edit_type: EDIT_RELATIONSHIPS_REORDER_T;
+	enteredFrom?: WsJsRelationshipEntityT;
 	linkTypeID: number;
 	relationship_order: $ReadOnlyArray<{
 		link_order: number;
@@ -2484,9 +2489,11 @@ export type LazyReleaseStateT = {
 	expandedMediums: $ReadOnlyMap<number, boolean>;
 	loadedTracks: LoadedTracksMapT;
 };
-export type RelationshipEditStatusT = number & {
-	__OpaqueType__RelationshipEditStatusT: never;
-};
+export type REL_STATUS_NOOP_T = 0;
+export type REL_STATUS_ADD_T = 1;
+export type REL_STATUS_EDIT_T = 2;
+export type REL_STATUS_REMOVE_T = 3;
+export type RelationshipEditStatusT = REL_STATUS_NOOP_T | REL_STATUS_ADD_T | REL_STATUS_EDIT_T | REL_STATUS_REMOVE_T;
 export type CreditChangeOptionT = "" | "all" | "same-entity-types" | "same-relationship-type";
 export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends RelatableEntityT> = {
 	_lineage: $ReadOnlyArray<string>;
@@ -2507,25 +2514,25 @@ export type RelationshipStateForTypesT<T0 extends RelatableEntityT, T1 extends R
 };
 export type RelationshipStateT = RelationshipStateForTypesT<RelatableEntityT, RelatableEntityT>;
 export type RelationshipPhraseGroupT = {
-	relationships: tree.ImmutableTree<RelationshipStateT> | null;
+	relationships: tree.ImmutableTree<RelationshipStateT>;
 	textPhrase: string;
 };
 export type RelationshipLinkTypeGroupT = {
 	backward: boolean;
-	phraseGroups: tree.ImmutableTree<RelationshipPhraseGroupT> | null;
+	phraseGroups: tree.ImmutableTree<RelationshipPhraseGroupT>;
 	typeId: number;
 };
-export type RelationshipLinkTypeGroupsT = tree.ImmutableTree<RelationshipLinkTypeGroupT> | null;
+export type RelationshipLinkTypeGroupsT = tree.ImmutableTree<RelationshipLinkTypeGroupT>;
 export type RelationshipTargetTypeGroupT = [
 	RelatableEntityTypeT,
 	RelationshipLinkTypeGroupsT
 ];
-export type RelationshipTargetTypeGroupsT = tree.ImmutableTree<RelationshipTargetTypeGroupT> | null;
+export type RelationshipTargetTypeGroupsT = tree.ImmutableTree<RelationshipTargetTypeGroupT>;
 export type RelationshipSourceGroupT = [
 	RelatableEntityT,
 	RelationshipTargetTypeGroupsT
 ];
-export type RelationshipSourceGroupsT = tree.ImmutableTree<RelationshipSourceGroupT> | null;
+export type RelationshipSourceGroupsT = tree.ImmutableTree<RelationshipSourceGroupT>;
 export type NonReleaseRelatableEntityT = AreaT | ArtistT | EventT | GenreT | InstrumentT | LabelT | PlaceT | RecordingT | ReleaseGroupT | SeriesT | UrlT | WorkT;
 export type RelationshipDialogLocationT = {
 	backward?: boolean | null | undefined;
@@ -2579,7 +2586,7 @@ export type DialogAttributeT = DialogBooleanAttributeStateT | DialogMultiselectA
 export type DialogAttributesT = $ReadOnlyArray<DialogAttributeT>;
 export type DialogAttributesStateT = {
 	attributesList: DialogAttributesT;
-	resultingLinkAttributes: tree.ImmutableTree<LinkAttrT> | null;
+	resultingLinkAttributes: tree.ImmutableTree<LinkAttrT>;
 };
 export type DialogLinkAttributeStateT = {
 	creditedAs?: string;
@@ -2636,18 +2643,18 @@ export type MediumWorkStateT = {
 	targetTypeGroups: RelationshipTargetTypeGroupsT;
 	work: WorkT;
 };
-export type MediumWorkStateTreeT = tree.ImmutableTree<MediumWorkStateT> | null;
+export type MediumWorkStateTreeT = tree.ImmutableTree<MediumWorkStateT>;
 export type MediumRecordingStateT = {
 	isSelected: boolean;
 	recording: RecordingT;
 	relatedWorks: MediumWorkStateTreeT;
 	targetTypeGroups: RelationshipTargetTypeGroupsT;
 };
-export type MediumRecordingStateTreeT = tree.ImmutableTree<MediumRecordingStateT> | null;
+export type MediumRecordingStateTreeT = tree.ImmutableTree<MediumRecordingStateT>;
 export type MediumStateTreeT = tree.ImmutableTree<[
 	MediumWithRecordingsT,
 	MediumRecordingStateTreeT
-]> | null;
+]>;
 export type ReleaseRelationshipEditorStateT = $ReadOnly<$_$Spread<$Exact<LazyReleaseStateT>, $_$Spread<$Exact<RelationshipEditorStateT>, {
 	editNoteField: FieldT<string>;
 	enterEditForm: FormT<{
@@ -2656,8 +2663,8 @@ export type ReleaseRelationshipEditorStateT = $ReadOnly<$_$Spread<$Exact<LazyRel
 	entity: ReleaseWithMediumsAndReleaseGroupT;
 	mediums: MediumStateTreeT;
 	mediumsByRecordingId: RecordingMediumsT;
-	selectedRecordings: tree.ImmutableTree<RecordingT> | null;
-	selectedWorks: tree.ImmutableTree<WorkT> | null;
+	selectedRecordings: tree.ImmutableTree<RecordingT>;
+	selectedWorks: tree.ImmutableTree<WorkT>;
 	submissionError: string | null | undefined;
 	submissionInProgress: boolean;
 }>>>;
@@ -2814,7 +2821,7 @@ export type DialogTargetEntityActionT = UpdateTargetEntityAutocompleteActionT | 
 	type: "update-url-text";
 };
 export type AcceptBatchCreateWorksDialogActionT = {
-	attributes: tree.ImmutableTree<LinkAttrT> | null;
+	attributes: tree.ImmutableTree<LinkAttrT>;
 	begin_date: PartialDateT | null;
 	end_date: PartialDateT | null;
 	ended: boolean;
@@ -2853,11 +2860,11 @@ export type ReleaseRelationshipEditorActionT = LazyReleaseActionT | Relationship
 	work: WorkT;
 } | {
 	isSelected: boolean;
-	recordingStates: MediumRecordingStateTreeT | null;
+	recordingStates: MediumRecordingStateTreeT;
 	type: "toggle-select-medium-recordings";
 } | {
 	isSelected: boolean;
-	recordingStates: MediumRecordingStateTreeT | null;
+	recordingStates: MediumRecordingStateTreeT;
 	type: "toggle-select-medium-works";
 } | {
 	editNote: string;
@@ -2929,6 +2936,20 @@ declare const MBID_REGEXP: RegExp;
 declare const VARTIST_GID = "89ad4ac3-39f7-470e-963a-56509c546377";
 declare const VARTIST_ID = 1;
 declare const VARTIST_NAME = "Various Artists";
+declare const ANON_ARTIST_GID = "f731ccc4-e22a-43af-a747-64213329e088";
+declare const ANON_ARTIST_ID = 15071;
+declare const DATA_ARTIST_GID = "33cf029c-63b0-41a0-9855-be2a3665fb3b";
+declare const DATA_ARTIST_ID = 41744;
+declare const DIALOGUE_ARTIST_GID = "314e1c25-dde7-4e4d-b2f4-0a7b9f7c56dc";
+declare const DIALOGUE_ARTIST_ID = 92121;
+declare const NO_ARTIST_GID = "eec63d3c-3b81-4ad4-b1e4-7c147d4d2b61";
+declare const NO_ARTIST_ID = 105725;
+declare const TRAD_ARTIST_GID = "9be7f096-97ec-4615-8957-8d40b5dcbc41";
+declare const TRAD_ARTIST_ID = 762646;
+declare const UNKNOWN_ARTIST_GID = "125ec42a-7229-4250-afc5-e057484327fe";
+declare const UNKNOWN_ARTIST_ID = 97546;
+declare const SPECIAL_ARTIST_GIDS: $ReadOnlyArray<string>;
+declare const SPECIAL_ARTIST_IDS: $ReadOnlyArray<number>;
 declare const NOLABEL_GID = "157afde4-4bf5-4039-8ad2-5a15acc85176";
 declare const NOLABEL_ID = 3267;
 declare const VIDEO_ATTRIBUTE_ID = 582;
@@ -3123,7 +3144,7 @@ declare global {
 }
 
 declare namespace constants {
-	export { AREA_TYPE_COUNTRY, ARTIST_GROUP_TYPES, ARTIST_TYPE_CHOIR, ARTIST_TYPE_GROUP, ARTIST_TYPE_ORCHESTRA, ARTIST_TYPE_PERSON, BRACKET_PAIRS, CONTACT_URL, COUNTRY_JA_AREA_ID, DARTIST_ID, DISPLAY_NONE_STYLE, DLABEL_ID, EMPTY_PARTIAL_DATE, ENTITIES_WITH_RELATIONSHIP_CREDITS, ENTITY_NAMES, FAVICON_CLASSES, FLUENCY_NAMES, INSTRUMENT_ROOT_ID, LANGUAGE_ENG_ID, LANGUAGE_MUL_ID, LANGUAGE_ZXX_ID, MAX_LENGTH_DIFFERENCE, MAX_RECENT_ENTITIES, MBID_REGEXP, MIN_NAME_SIMILARITY, NOLABEL_GID, NOLABEL_ID, PART_OF_SERIES_LINK_TYPES, PART_OF_SERIES_LINK_TYPE_GIDS, PART_OF_SERIES_LINK_TYPE_IDS, PROBABLY_CLASSICAL_LINK_TYPES, QUALITY_NAMES, RECORDING_OF_LINK_TYPE_GID, RECORDING_OF_LINK_TYPE_ID, RT_MIRROR, SERIES_ORDERING_ATTRIBUTE, SERIES_ORDERING_TYPE_AUTOMATIC, SERIES_ORDERING_TYPE_MANUAL, TASK_ATTRIBUTE_ID, TIME_ATTRIBUTE, VARTIST_GID, VARTIST_ID, VARTIST_NAME, VIDEO_ATTRIBUTE_GID, VIDEO_ATTRIBUTE_ID, VOCAL_ROOT_ID, WS_EDIT_RESPONSE_NO_CHANGES, WS_EDIT_RESPONSE_OK };
+	export { ANON_ARTIST_GID, ANON_ARTIST_ID, AREA_TYPE_COUNTRY, ARTIST_GROUP_TYPES, ARTIST_TYPE_CHOIR, ARTIST_TYPE_GROUP, ARTIST_TYPE_ORCHESTRA, ARTIST_TYPE_PERSON, BRACKET_PAIRS, CONTACT_URL, COUNTRY_JA_AREA_ID, DARTIST_ID, DATA_ARTIST_GID, DATA_ARTIST_ID, DIALOGUE_ARTIST_GID, DIALOGUE_ARTIST_ID, DISPLAY_NONE_STYLE, DLABEL_ID, EMPTY_PARTIAL_DATE, ENTITIES_WITH_RELATIONSHIP_CREDITS, ENTITY_NAMES, FAVICON_CLASSES, FLUENCY_NAMES, INSTRUMENT_ROOT_ID, LANGUAGE_ENG_ID, LANGUAGE_MUL_ID, LANGUAGE_ZXX_ID, MAX_LENGTH_DIFFERENCE, MAX_RECENT_ENTITIES, MBID_REGEXP, MIN_NAME_SIMILARITY, NOLABEL_GID, NOLABEL_ID, NO_ARTIST_GID, NO_ARTIST_ID, PART_OF_SERIES_LINK_TYPES, PART_OF_SERIES_LINK_TYPE_GIDS, PART_OF_SERIES_LINK_TYPE_IDS, PROBABLY_CLASSICAL_LINK_TYPES, QUALITY_NAMES, RECORDING_OF_LINK_TYPE_GID, RECORDING_OF_LINK_TYPE_ID, RT_MIRROR, SERIES_ORDERING_ATTRIBUTE, SERIES_ORDERING_TYPE_AUTOMATIC, SERIES_ORDERING_TYPE_MANUAL, SPECIAL_ARTIST_GIDS, SPECIAL_ARTIST_IDS, TASK_ATTRIBUTE_ID, TIME_ATTRIBUTE, TRAD_ARTIST_GID, TRAD_ARTIST_ID, UNKNOWN_ARTIST_GID, UNKNOWN_ARTIST_ID, VARTIST_GID, VARTIST_ID, VARTIST_NAME, VIDEO_ATTRIBUTE_GID, VIDEO_ATTRIBUTE_ID, VOCAL_ROOT_ID, WS_EDIT_RESPONSE_NO_CHANGES, WS_EDIT_RESPONSE_OK };
 }
 
 export {};

@@ -22,10 +22,8 @@ type WsJsEntitiesDataT<T extends EntityItemT> = {
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
+"WIP convertAST: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
-"WIP convertAST: VariableDeclaration";
-"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

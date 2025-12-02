@@ -192,6 +192,7 @@ export type LinkedEntitiesT = {
     };
 };
 "WIP convertAST: VariableDeclaration";
+"WIP convertAST: ExpressionStatement";
 export default linkedEntities;
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST: VariableDeclaration";
