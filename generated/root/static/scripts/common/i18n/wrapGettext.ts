@@ -8,7 +8,7 @@ import cleanMsgid from "./cleanMsgid.js";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: IfStatement";
 "WIP convertAST: FunctionDeclaration";
-"WIP convertAST: TypeAlias";
+type GettextDomainT = "attributes" | "countries" | "history" | "instrument_descriptions" | "instruments" | "languages" | "mb_server" | "relationships" | "scripts" | "statistics";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

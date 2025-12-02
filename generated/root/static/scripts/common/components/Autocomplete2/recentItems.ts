@@ -9,8 +9,14 @@ import isGuid from "../../utility/isGuid.js";
 import { localStorage as localStorage } from "../../utility/storage.js";
 import { formatLinkTypePhrases as formatLinkTypePhrases } from "./formatters.js";
 import type { EntityItemT as EntityItemT, OptionItemT as OptionItemT } from "./types.js";
-"WIP convertAST: TypeAlias";
-"WIP convertAST: TypeAlias";
+type RecentEntitiesT = {
+    [entityTypeKey: string]: "WIP convertTypeNode: MixedTypeAnnotation";
+};
+type WsJsEntitiesDataT<T extends EntityItemT> = {
+    results: {
+        [id: string]: T | null | undefined;
+    };
+};
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";

@@ -17,7 +17,21 @@ import parseIsoDate from "./parseIsoDate.js";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: TryStatement";
 "WIP convertAST: FunctionDeclaration";
-"WIP convertAST: TypeAlias";
-"WIP convertAST: TypeAlias";
+type FormatUserDateOptions = {
+    dateOnly?: boolean;
+    format?: string;
+    timezone?: string;
+};
+type FormatUserDateContext = {
+    stash: {
+        current_language: string;
+    };
+    user?: {
+        preferences: {
+            datetime_format: string;
+            timezone: string;
+        };
+    } | null;
+};
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 export default "WIP convertExpression: FunctionDeclaration";

@@ -21,7 +21,30 @@ import type { ActionT as ActionT, EntityItemT as EntityItemT, ItemT as ItemT, Op
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
-"WIP convertAST: TypeAlias";
+type InitialStateT<T extends EntityItemT> = {
+    canChangeType?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    containerClass?: string;
+    disabled?: boolean;
+    entityType: T["entityType"];
+    extractSearchTerms?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    htmlName?: string;
+    id: string;
+    inputChangeHook?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    inputClass?: string;
+    inputRef?: {
+        current: HTMLInputElement | null;
+    };
+    inputValue?: string;
+    isLookupPerformed?: boolean;
+    label?: string;
+    placeholder?: string;
+    recentItemsKey?: string;
+    required?: boolean;
+    selectedItem?: OptionItemT<T> | null;
+    showLabel?: boolean;
+    staticItems?: $ReadOnlyArray<OptionItemT<T>>;
+    width?: string;
+};
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST: ExpressionStatement";

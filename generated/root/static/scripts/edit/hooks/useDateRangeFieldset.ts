@@ -3,5 +3,16 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import * as React from "react";
 import type { ActionT as ActionT } from "../components/DateRangeFieldset.js";
 import type { ActionT as FormRowPartialDateActionT } from "../components/FormRowPartialDate.js";
-"WIP convertAST: TypeAlias";
+type DateRangeFieldsetHooksT = {
+    beginDateDispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
+    beginYearInputRef: {
+        current: HTMLInputElement | null;
+    };
+    endDateDispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
+    endYearInputRef: {
+        current: HTMLInputElement | null;
+    };
+    handleDateCopy: "WIP convertTypeNode: FunctionTypeAnnotation";
+    handleEndedChange: "WIP convertTypeNode: FunctionTypeAnnotation";
+};
 export default "WIP convertExpression: FunctionDeclaration";

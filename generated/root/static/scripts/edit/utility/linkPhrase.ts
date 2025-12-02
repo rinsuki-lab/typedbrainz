@@ -1,4 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+import { LinkAttrT } from "../../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import commaList, { commaListText as commaListText } from "../../common/i18n/commaList.js";
 import { VarArgsClass as VarArgsClass, VarArgsObject as VarArgsObject } from "../../common/i18n/expand2.js";
@@ -11,8 +12,10 @@ import displayLinkAttribute, { displayLinkAttributeText as displayLinkAttributeT
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: VariableDeclaration";
-"WIP convertAST: TypeAlias";
-"WIP convertAST: TypeAlias";
+type LinkAttrs = Array<LinkAttrT> | LinkAttrT;
+type LinkAttrsByRootName = {
+    [attributeName: string]: LinkAttrs;
+};
 export type LinkPhraseProp = "link_phrase" | "long_link_phrase" | "reverse_link_phrase";
 "WIP convertAST: ClassDeclaration";
 export type LinkPhraseI18n<T> = {

@@ -8,7 +8,9 @@ import { findFirstTabbableElement as findFirstTabbableElement } from "../../comm
 export const TITLES: {
     [entityType: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
 } = "WIP convertExpression: ObjectExpression";
-"WIP convertAST: TypeAlias";
+type InstanceT = {
+    close: "WIP convertTypeNode: FunctionTypeAnnotation";
+};
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST: BlockStatement";

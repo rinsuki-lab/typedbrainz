@@ -6,7 +6,12 @@ import FormLabel from "./FormLabel.js";
 import FormRow from "./FormRow.js";
 import PartialDateInput, { ActionT as PartialDateInputActionT, runReducer as runPartialDateInputReducer } from "./PartialDateInput.js";
 export type ActionT = PartialDateInputActionT;
-"WIP convertAST: TypeAlias";
+type ControlledPropsT = $ReadOnly<{
+    dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
+    uncontrolled?: false;
+}> | $ReadOnly<{
+    uncontrolled: true;
+}>;
 export type StateT = PartialDateFieldT;
 export const runReducer = runPartialDateInputReducer;
 "WIP convertAST: ExpressionStatement";

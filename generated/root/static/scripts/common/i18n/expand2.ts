@@ -1,4 +1,5 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+import { Expand2ReactOutput } from "../../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import * as Sentry from "@sentry/browser";
 import * as React from "react";
@@ -14,7 +15,14 @@ export type VarArgsObject<T> = {
 "WIP convertAST_ExportNamedDeclaration: ClassDeclaration";
 export type Parser<T, V> = "WIP convertTypeNode: FunctionTypeAnnotation";
 "WIP convertAST: VariableDeclaration";
-"WIP convertAST: TypeAlias";
+type State = {
+    match: string;
+    position: number;
+    remainder: string;
+    replacement: Expand2ReactOutput | NO_MATCH;
+    running: boolean;
+    source: string;
+};
 export const state: State = "WIP convertExpression: CallExpression";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";

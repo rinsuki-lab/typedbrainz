@@ -53,6 +53,9 @@ export function convertAST(ctx: ConverterContext, body: any): readonly Statement
         ctx.addDeclaredTypeName(body.id.name)
         return [convertTypeAlias(body, "export")]
     }
+    case "TypeAlias": {
+        return [convertTypeAlias(body)]
+    }
     default:
         // console.log(JSON.stringify(body, null, 4))
         return [factory.createExpressionStatement(
