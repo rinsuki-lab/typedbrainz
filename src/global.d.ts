@@ -8,6 +8,8 @@ import type { LinkedEntitiesT } from "../generated/root/static/scripts/common/li
 import type { RelationshipT } from "../generated/declared-types.ts"
 import type { SeededRelationshipT } from "../generated/declared-types.ts"
 
+export type * from "../generated/root/types/artistcredit.ts"
+
 type EveryPropertyIsExistsOrNot<T> = T | {
     [K in keyof T]?: undefined | null
 }

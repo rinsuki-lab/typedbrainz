@@ -89,6 +89,14 @@ export type ArtistCreditT = {
 	id?: number;
 	names: $ReadOnlyArray<ArtistCreditNameT>;
 };
+export type IncompleteArtistCreditNameT = {
+	artist: ArtistT | null;
+	joinPhrase: string;
+	name: string;
+};
+export type IncompleteArtistCreditT = {
+	names: $ReadOnlyArray<IncompleteArtistCreditNameT>;
+};
 export type ArtworkRoleT = $ReadOnly<$_$Spread<PendingEditsRoleT, {
 	comment: string;
 	event?: EventT;
