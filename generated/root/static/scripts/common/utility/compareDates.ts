@@ -1,0 +1,7 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
+import { EMPTY_PARTIAL_DATE as EMPTY_PARTIAL_DATE } from "../constants.js";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST: FunctionDeclaration";
+export default "WIP convertExpression: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

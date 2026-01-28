@@ -1,0 +1,22 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
+import * as tree from "weight-balanced-tree";
+import { compare as compare } from "../../common/i18n.js";
+import { compareStrings as compareStrings } from "../../common/utility/compare.mjs";
+import type { RelationshipLinkTypeGroupKeyT as RelationshipLinkTypeGroupKeyT, RelationshipLinkTypeGroupsT as RelationshipLinkTypeGroupsT, RelationshipLinkTypeGroupT as RelationshipLinkTypeGroupT, RelationshipPhraseGroupT as RelationshipPhraseGroupT, RelationshipSourceGroupsT as RelationshipSourceGroupsT, RelationshipStateT as RelationshipStateT, RelationshipTargetTypeGroupsT as RelationshipTargetTypeGroupsT, RelationshipTargetTypeGroupT as RelationshipTargetTypeGroupT } from "../types.js";
+import { compareSourceWithSourceGroup as compareSourceWithSourceGroup } from "./comparators.js";
+import { getRelationshipsComparator as getRelationshipsComparator } from "./compareRelationships.js";
+import getLinkPhrase from "./getLinkPhrase.js";
+import isRelationshipBackward from "./isRelationshipBackward.js";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

@@ -9,6 +9,7 @@ import type { RelationshipT } from "../generated/declared-types.ts"
 import type { SeededRelationshipT } from "../generated/declared-types.ts"
 
 export type * from "../generated/root/types/artistcredit.ts"
+export type * from "../generated/root/static/scripts/edit/externalLinks.ts"
 
 type EveryPropertyIsExistsOrNot<T> = T | {
     [K in keyof T]?: undefined | null

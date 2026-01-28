@@ -6,6 +6,7 @@ export type $ReadOnlyArray<T> = readonly T[];
 export type $ReadOnly<T> = Readonly<T>;
 export type $ReadOnlyMap<K, V> = ReadonlyMap<K, V>;
 export type $Exact<T> = T;
+export type $Values<T> = T[keyof T];
 export type $_$Spread<T1, T2> = T2 & Omit<T1, keyof T2>;
 export type AliasT<T> = $ReadOnly<$_$Spread<DatePeriodRoleT, $_$Spread<EntityRoleT<"alias">, $_$Spread<PendingEditsRoleT, $_$Spread<TypeRoleT<T>, {
 	locale: string | null;
@@ -3121,6 +3122,39 @@ export type LinkedEntitiesT = {
 		[workTypeId: number]: WorkTypeT;
 	};
 };
+export type ErrorTarget = $Values<"WIP convertTypeNode: TypeofTypeAnnotation">;
+export type ErrorT = {
+	blockMerge?: boolean;
+	message: React.ReactNode;
+	target: ErrorTarget;
+};
+export type LinkStateT = $ReadOnly<$_$Spread<DatePeriodRoleT, {
+	deleted: boolean;
+	editsPending: boolean;
+	entity0: RelatableEntityT | {
+		entityType: RelatableEntityTypeT;
+		id?: void;
+		isNewEntity?: true;
+		name?: string;
+		orderingTypeID?: number;
+		relationships?: void;
+	} | null;
+	entity0_credit: string;
+	entity1: RelatableEntityT | null;
+	entity1_credit: string;
+	pendingTypes: $ReadOnlyArray<number> | null;
+	rawUrl: string;
+	relationship: StrOrNum | null;
+	submitted: boolean;
+	type: number | null;
+	url: string;
+	video: boolean;
+}>>;
+export type LinkRelationshipT = $ReadOnly<$_$Spread<LinkStateT, {
+	error: ErrorT | null;
+	index: number;
+	urlIndex: number;
+}>>;
 export type EveryPropertyIsExistsOrNot<T> = T | {
 	[K in keyof T]?: undefined | null;
 };

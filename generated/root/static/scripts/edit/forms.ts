@@ -1,0 +1,21 @@
+// THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../src/type-utils.js";
+import $ from "jquery";
+import ko from "knockout";
+import { compare as compare } from "../common/i18n.js";
+import MB from "../common/MB.js";
+import { last as last } from "../common/utility/arrays.js";
+import debounce from "../common/utility/debounce.js";
+import { stripAttributes as stripAttributes } from "./utility/linkPhrase.js";
+"WIP convertAST: FunctionDeclaration";
+"WIP convertAST: VariableDeclaration";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+"WIP convertAST: ExpressionStatement";
+export const buildOptionsTree = "WIP convertExpression: MemberExpression";
+export const linkTypeOptions = "WIP convertExpression: MemberExpression";
+export const setDisabledOption = "WIP convertExpression: MemberExpression";
+"WIP convertAST: ExpressionStatement";
+export const initializeTooShortYearChecks = "WIP convertExpression: MemberExpression";
