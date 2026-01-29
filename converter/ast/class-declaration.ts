@@ -52,7 +52,7 @@ export function convertClassDeclaration(ctx: ConverterContext, source: any, flag
                             undefined, // TODO?
                             undefined, // TODO?
                             param.name,
-                            undefined, // TODO?
+                            param.optional ? factory.createToken(SyntaxKind.QuestionToken) : undefined, // TODO?
                             param.typeAnnotation == null ? undefined : convertTypeNode(param.typeAnnotation.typeAnnotation)
                         )
                     }),

@@ -3225,7 +3225,7 @@ export declare class _ExternalLinksEditor extends React.Component<LinksEditorPro
 	constructor(props: LinksEditorProps);
 	copyEditDataToReleaseEditor(): any;
 	componentDidUpdate(): any;
-	setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback: "WIP convertTypeNode: FunctionTypeAnnotation"): any;
+	setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: "WIP convertTypeNode: FunctionTypeAnnotation"): any;
 	cleanupUrl(url: string): string;
 	handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string): any;
 	handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean): any;
@@ -3244,7 +3244,7 @@ export declare class _ExternalLinksEditor extends React.Component<LinksEditorPro
 		oldLinks: LinkMapT;
 	};
 	getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation"): any;
-	validateLink(link: LinkRelationshipT | LinkStateT, checker: Checker): ErrorT | null;
+	validateLink(link: LinkRelationshipT | LinkStateT, checker?: Checker): ErrorT | null;
 }
 export type EveryPropertyIsExistsOrNot<T> = T | {
 	[K in keyof T]?: undefined | null;

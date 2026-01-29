@@ -119,7 +119,7 @@ export class _ExternalLinksEditor extends React.Component<LinksEditorProps, Link
     constructor(props: LinksEditorProps);
     copyEditDataToReleaseEditor();
     componentDidUpdate();
-    setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback: "WIP convertTypeNode: FunctionTypeAnnotation");
+    setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: "WIP convertTypeNode: FunctionTypeAnnotation");
     cleanupUrl(url: string): string;
     handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string);
     handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean);
@@ -138,5 +138,5 @@ export class _ExternalLinksEditor extends React.Component<LinksEditorProps, Link
         oldLinks: LinkMapT;
     };
     getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation");
-    validateLink(link: LinkRelationshipT | LinkStateT, checker: URLCleanup.Checker): ErrorT | null;
+    validateLink(link: LinkRelationshipT | LinkStateT, checker?: URLCleanup.Checker): ErrorT | null;
 }
