@@ -3122,11 +3122,46 @@ export type LinkedEntitiesT = {
 		[workTypeId: number]: WorkTypeT;
 	};
 };
+export type EntityTypes = string | $ReadOnlyArray<string>;
+export type EntityTypesMap = {
+	[entityType: RelatableEntityTypeT]: EntityTypes;
+};
+export type RelationshipTypeT = string | $ReadOnlyArray<string>;
+export type ValidationResult = {
+	error?: React.ReactNode;
+	result: boolean;
+	target?: $Values<"WIP convertTypeNode: TypeofTypeAnnotation">;
+};
+export type CleanupEntry = {
+	clean?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	hostname: string | $ReadOnlyArray<string>;
+	match: $ReadOnlyArray<RegExp>;
+	restrict?: $ReadOnlyArray<EntityTypesMap>;
+	select?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	validate?: "WIP convertTypeNode: FunctionTypeAnnotation";
+};
+declare class Checker {
+	url: string;
+	entityType: RelatableEntityTypeT;
+	cleanup: CleanupEntry | null | undefined;
+	constructor(url: string, entityType: RelatableEntityTypeT);
+	guessType(): RelationshipTypeT | false;
+	getPossibleTypes(): Array<RelationshipTypeT> | false;
+	checkRelationship(id: string): ValidationResult;
+	checkRelationships(selectedTypes: $ReadOnlyArray<string>, allowedTypes: $ReadOnlyArray<RelationshipTypeT> | false): ValidationResult;
+	filterApplicableTypes(): Array<RelationshipTypeT>;
+}
 export type ErrorTarget = $Values<"WIP convertTypeNode: TypeofTypeAnnotation">;
 export type ErrorT = {
 	blockMerge?: boolean;
 	message: React.ReactNode;
 	target: ErrorTarget;
+};
+export type LinkTypeOptionT = {
+	data: LinkTypeT;
+	disabled?: boolean;
+	text: string;
+	value: number;
 };
 export type LinkStateT = $ReadOnly<$_$Spread<DatePeriodRoleT, {
 	deleted: boolean;
@@ -3150,11 +3185,67 @@ export type LinkStateT = $ReadOnly<$_$Spread<DatePeriodRoleT, {
 	url: string;
 	video: boolean;
 }>>;
+export type LinkMapT = Map<string, LinkStateT>;
 export type LinkRelationshipT = $ReadOnly<$_$Spread<LinkStateT, {
 	error: ErrorT | null;
 	index: number;
 	urlIndex: number;
 }>>;
+export type LinksEditorProps = {
+	errorObservable?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	isNewEntity: boolean;
+	sourceData: RelatableEntityT | {
+		entityType: RelatableEntityTypeT;
+		id?: void;
+		isNewEntity?: true;
+		name?: string;
+		orderingTypeID?: number;
+		relationships?: void;
+	};
+};
+export type LinksEditorState = {
+	links: $ReadOnlyArray<LinkStateT>;
+};
+export declare class _ExternalLinksEditor extends React.Component<LinksEditorProps, LinksEditorState> {
+	creditableEntityProp: "entity0_credit" | "entity1_credit" | null;
+	tableRef: {
+		current: HTMLTableElement | null;
+	};
+	generalLinkTypes: $ReadOnlyArray<LinkTypeOptionT>;
+	oldLinks: LinkMapT;
+	errorObservable: "WIP convertTypeNode: FunctionTypeAnnotation";
+	initialLinks: $ReadOnlyArray<LinkStateT>;
+	sourceType: RelatableEntityTypeT;
+	typeOptions: $ReadOnlyArray<LinkTypeOptionT>;
+	submittedLinksWrapper: {
+		get: "WIP convertTypeNode: FunctionTypeAnnotation";
+		remove: "WIP convertTypeNode: FunctionTypeAnnotation";
+		set: "WIP convertTypeNode: FunctionTypeAnnotation";
+	};
+	constructor(props: LinksEditorProps);
+	copyEditDataToReleaseEditor(): any;
+	componentDidUpdate(): any;
+	setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback: "WIP convertTypeNode: FunctionTypeAnnotation"): any;
+	cleanupUrl(url: string): string;
+	handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string): any;
+	handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean): any;
+	submitPendingTypes(link: LinkStateT, index: number): any;
+	handleLinkSubmit(index: number, urlIndex: number, event: SyntheticEvent<HTMLInputElement>, canMerge: boolean): any;
+	handleTypeChange(index: number, event: SyntheticEvent<HTMLSelectElement>): any;
+	handleTypeBlur(index: number, event: SyntheticFocusEvent<HTMLSelectElement>, isDuplicate: boolean, urlIndex: number, canMerge: boolean): any;
+	handleVideoChange(index: number, event: SyntheticEvent<HTMLInputElement>): any;
+	removeLink(index: number): any;
+	removeLinks(indexes: $ReadOnlyArray<number>, urlIndex: number): any;
+	addRelationship(url: string, urlIndex: number): any;
+	getOldLinksHash(): LinkMapT;
+	getEditData(): {
+		allLinks: LinkMapT;
+		newLinks: LinkMapT;
+		oldLinks: LinkMapT;
+	};
+	getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation"): any;
+	validateLink(link: LinkRelationshipT | LinkStateT, checker: Checker): ErrorT | null;
+}
 export type EveryPropertyIsExistsOrNot<T> = T | {
 	[K in keyof T]?: undefined | null;
 };

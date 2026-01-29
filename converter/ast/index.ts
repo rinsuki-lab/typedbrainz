@@ -9,11 +9,15 @@ import { ConverterContext } from "../context.js"
 import { convertIdentifier } from "./identifier.js"
 import { convertExpression } from "./expr.js"
 import { wipLiteral } from "../wip.js"
+import { convertClassDeclaration } from "./class-declaration.js"
 
 export function convertAST(ctx: ConverterContext, body: any): readonly Statement[] {
     switch (body.type) {
     case "ImportDeclaration": {
         return [convertImportDeclaration(body)]
+    }
+    case "ClassDeclaration": {
+        return [convertClassDeclaration(ctx, body)]
     }
     case "ExportDefaultDeclaration": {
         return [factory.createExportAssignment(undefined, undefined, convertExpression(body.declaration))]
@@ -43,6 +47,8 @@ export function convertAST(ctx: ConverterContext, body: any): readonly Statement
             return [convertVariableDeclaration(body.declaration, "export")]
         case "OpaqueType":
             return [convertOpaqueType(body.declaration, "export")]
+        case "ClassDeclaration":
+            return [convertClassDeclaration(ctx, body.declaration, "export")]
         default:
             return [factory.createExpressionStatement(
                 wipLiteral("convertAST_ExportNamedDeclaration", body.declaration.type)

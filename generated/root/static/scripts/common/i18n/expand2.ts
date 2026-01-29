@@ -3,7 +3,8 @@ import { Expand2ReactOutput } from "../../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../src/type-utils.js";
 import * as Sentry from "@sentry/browser";
 import * as React from "react";
-"WIP convertAST_ExportNamedDeclaration: ClassDeclaration";
+export class NO_MATCH {
+}
 export const NO_MATCH_VALUE: NO_MATCH = "WIP convertExpression: NewExpression";
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
@@ -12,7 +13,13 @@ export type VarArgsObject<T> = {
 };
 "WIP convertAST_ExportNamedDeclaration: InterfaceDeclaration";
 "WIP convertAST: VariableDeclaration";
-"WIP convertAST_ExportNamedDeclaration: ClassDeclaration";
+export class VarArgs<T> implements VarArgsClass<T> {
+    data: VarArgsObject<T>;
+    constructor(data: VarArgsObject<T>);
+    get(name: string): T;
+    getKey(name: string): string;
+    has(name: string): boolean;
+}
 export type Parser<T, V> = "WIP convertTypeNode: FunctionTypeAnnotation";
 "WIP convertAST: VariableDeclaration";
 type State = {

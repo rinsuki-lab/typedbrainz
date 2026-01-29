@@ -52,6 +52,16 @@ export const CLEANUP_ENTRIES_BY_HOSTNAME: {
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: ClassDeclaration";
+export class Checker {
+    url: string;
+    entityType: RelatableEntityTypeT;
+    cleanup: CleanupEntry | null | undefined;
+    constructor(url: string, entityType: RelatableEntityTypeT);
+    guessType(): RelationshipTypeT | false;
+    getPossibleTypes(): Array<RelationshipTypeT> | false;
+    checkRelationship(id: string, ): ValidationResult;
+    checkRelationships(selectedTypes: $ReadOnlyArray<string>, allowedTypes: $ReadOnlyArray<RelationshipTypeT> | false): ValidationResult;
+    filterApplicableTypes(): Array<RelationshipTypeT>;
+}
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

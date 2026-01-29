@@ -17,7 +17,18 @@ type LinkAttrsByRootName = {
     [attributeName: string]: LinkAttrs;
 };
 export type LinkPhraseProp = "link_phrase" | "long_link_phrase" | "reverse_link_phrase";
-"WIP convertAST: ClassDeclaration";
+class PhraseVarArgs<T> implements VarArgsClass<T> {
+    data: VarArgsObject<LinkAttrs>;
+    i18n: LinkPhraseI18n<T>;
+    entity0: T;
+    entity1: T;
+    usedPhraseAttributes: Array<string>;
+    #nextKey: number;
+    constructor(args: VarArgsObject<LinkAttrs> | null | undefined, i18n: LinkPhraseI18n<T>, entity0: T | null | undefined, entity1: T | null | undefined);
+    get(name: string): T;
+    getKey(name: string): string;
+    has(name: string): boolean;
+}
 export type LinkPhraseI18n<T> = {
     commaList: "WIP convertTypeNode: FunctionTypeAnnotation";
     defaultValue: T;

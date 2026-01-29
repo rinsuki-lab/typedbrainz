@@ -10,6 +10,11 @@ export function convertExpression(source: any): Expression {
         return convertLiteral(source)
     case "Identifier":
         return convertIdentifier(source)
+    case "MemberExpression":
+        return factory.createPropertyAccessExpression(
+            convertExpression(source.object),
+            convertIdentifier(source.property)
+        )
     default:
         return wipLiteral("convertExpression", source.type);
     }

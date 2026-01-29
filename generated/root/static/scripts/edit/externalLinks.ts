@@ -100,4 +100,43 @@ type LinksEditorState = {
     links: $ReadOnlyArray<LinkStateT>;
 };
 "WIP convertAST: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: ClassDeclaration";
+export class _ExternalLinksEditor extends React.Component<LinksEditorProps, LinksEditorState> {
+    creditableEntityProp: "entity0_credit" | "entity1_credit" | null;
+    tableRef: {
+        current: HTMLTableElement | null;
+    };
+    generalLinkTypes: $ReadOnlyArray<LinkTypeOptionT>;
+    oldLinks: LinkMapT;
+    errorObservable: "WIP convertTypeNode: FunctionTypeAnnotation";
+    initialLinks: $ReadOnlyArray<LinkStateT>;
+    sourceType: RelatableEntityTypeT;
+    typeOptions: $ReadOnlyArray<LinkTypeOptionT>;
+    submittedLinksWrapper: {
+        get: "WIP convertTypeNode: FunctionTypeAnnotation";
+        remove: "WIP convertTypeNode: FunctionTypeAnnotation";
+        set: "WIP convertTypeNode: FunctionTypeAnnotation";
+    };
+    constructor(props: LinksEditorProps);
+    copyEditDataToReleaseEditor();
+    componentDidUpdate();
+    setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback: "WIP convertTypeNode: FunctionTypeAnnotation");
+    cleanupUrl(url: string): string;
+    handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string);
+    handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean);
+    submitPendingTypes(link: LinkStateT, index: number);
+    handleLinkSubmit(index: number, urlIndex: number, event: SyntheticEvent<HTMLInputElement>, canMerge: boolean);
+    handleTypeChange(index: number, event: SyntheticEvent<HTMLSelectElement>);
+    handleTypeBlur(index: number, event: SyntheticFocusEvent<HTMLSelectElement>, isDuplicate: boolean, urlIndex: number, canMerge: boolean);
+    handleVideoChange(index: number, event: SyntheticEvent<HTMLInputElement>);
+    removeLink(index: number);
+    removeLinks(indexes: $ReadOnlyArray<number>, urlIndex: number);
+    addRelationship(url: string, urlIndex: number);
+    getOldLinksHash(): LinkMapT;
+    getEditData(): {
+        allLinks: LinkMapT;
+        newLinks: LinkMapT;
+        oldLinks: LinkMapT;
+    };
+    getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation");
+    validateLink(link: LinkRelationshipT | LinkStateT, checker: URLCleanup.Checker): ErrorT | null;
+}
