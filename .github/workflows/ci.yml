@@ -72,6 +72,6 @@ jobs:
             --title "$TAG" --generate-notes --draft
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
           registry-url: https://registry.npmjs.org
       - run: npm publish --provenance *.tgz
