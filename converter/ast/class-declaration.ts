@@ -56,7 +56,7 @@ export function convertClassDeclaration(ctx: ConverterContext, source: any, flag
                             param.typeAnnotation == null ? undefined : convertTypeNode(param.typeAnnotation.typeAnnotation)
                         )
                     }),
-                    node.value.returnType == null ? undefined : convertTypeNode(node.value.returnType.typeAnnotation),
+                    node.value.returnType == null ? /* HACK: if we don't have both return type or body, TS would assume returning any, which may causes some problems in users program */ factory.createKeywordTypeNode(SyntaxKind.UnknownKeyword) : convertTypeNode(node.value.returnType.typeAnnotation),
                     undefined/* factory.createBlock(node.value.body.body.flatMap(b => convertAST(ctx, b)))*/,
                 )
             default:

@@ -24,7 +24,7 @@ class PhraseVarArgs<T> implements VarArgsClass<T> {
     entity1: T;
     usedPhraseAttributes: Array<string>;
     #nextKey: number;
-    constructor(args: VarArgsObject<LinkAttrs> | null | undefined, i18n: LinkPhraseI18n<T>, entity0: T | null | undefined, entity1: T | null | undefined);
+    constructor(args: VarArgsObject<LinkAttrs> | null | undefined, i18n: LinkPhraseI18n<T>, entity0: T | null | undefined, entity1: T | null | undefined): unknown;
     get(name: string): T;
     getKey(name: string): string;
     has(name: string): boolean;

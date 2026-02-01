@@ -15,7 +15,7 @@ export type VarArgsObject<T> = {
 "WIP convertAST: VariableDeclaration";
 export class VarArgs<T> implements VarArgsClass<T> {
     data: VarArgsObject<T>;
-    constructor(data: VarArgsObject<T>);
+    constructor(data: VarArgsObject<T>): unknown;
     get(name: string): T;
     getKey(name: string): string;
     has(name: string): boolean;

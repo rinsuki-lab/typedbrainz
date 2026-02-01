@@ -56,7 +56,7 @@ export class Checker {
     url: string;
     entityType: RelatableEntityTypeT;
     cleanup: CleanupEntry | null | undefined;
-    constructor(url: string, entityType: RelatableEntityTypeT);
+    constructor(url: string, entityType: RelatableEntityTypeT): unknown;
     guessType(): RelationshipTypeT | false;
     getPossibleTypes(): Array<RelationshipTypeT> | false;
     checkRelationship(id: string, ): ValidationResult;

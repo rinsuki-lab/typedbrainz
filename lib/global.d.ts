@@ -3223,27 +3223,27 @@ export declare class _ExternalLinksEditor extends React.Component<LinksEditorPro
 		set: "WIP convertTypeNode: FunctionTypeAnnotation";
 	};
 	constructor(props: LinksEditorProps);
-	copyEditDataToReleaseEditor(): any;
-	componentDidUpdate(): any;
-	setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: "WIP convertTypeNode: FunctionTypeAnnotation"): any;
+	copyEditDataToReleaseEditor(): unknown;
+	componentDidUpdate(): unknown;
+	setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: "WIP convertTypeNode: FunctionTypeAnnotation"): unknown;
 	cleanupUrl(url: string): string;
-	handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string): any;
-	handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean): any;
-	submitPendingTypes(link: LinkStateT, index: number): any;
-	handleLinkSubmit(index: number, urlIndex: number, event: SyntheticEvent<HTMLInputElement>, canMerge: boolean): any;
-	handleTypeChange(index: number, event: SyntheticEvent<HTMLSelectElement>): any;
-	handleTypeBlur(index: number, event: SyntheticFocusEvent<HTMLSelectElement>, isDuplicate: boolean, urlIndex: number, canMerge: boolean): any;
-	handleVideoChange(index: number, event: SyntheticEvent<HTMLInputElement>): any;
-	removeLink(index: number): any;
-	removeLinks(indexes: $ReadOnlyArray<number>, urlIndex: number): any;
-	addRelationship(url: string, urlIndex: number): any;
+	handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string): unknown;
+	handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean): unknown;
+	submitPendingTypes(link: LinkStateT, index: number): unknown;
+	handleLinkSubmit(index: number, urlIndex: number, event: SyntheticEvent<HTMLInputElement>, canMerge: boolean): unknown;
+	handleTypeChange(index: number, event: SyntheticEvent<HTMLSelectElement>): unknown;
+	handleTypeBlur(index: number, event: SyntheticFocusEvent<HTMLSelectElement>, isDuplicate: boolean, urlIndex: number, canMerge: boolean): unknown;
+	handleVideoChange(index: number, event: SyntheticEvent<HTMLInputElement>): unknown;
+	removeLink(index: number): unknown;
+	removeLinks(indexes: $ReadOnlyArray<number>, urlIndex: number): unknown;
+	addRelationship(url: string, urlIndex: number): unknown;
 	getOldLinksHash(): LinkMapT;
 	getEditData(): {
 		allLinks: LinkMapT;
 		newLinks: LinkMapT;
 		oldLinks: LinkMapT;
 	};
-	getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation"): any;
+	getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation"): unknown;
 	validateLink(link: LinkRelationshipT | LinkStateT, checker?: Checker): ErrorT | null;
 }
 export type EveryPropertyIsExistsOrNot<T> = T | {
