@@ -70,6 +70,8 @@ export function convertTypeNode(source: any): TypeNode {
             source.params.map(convertFunctionTypeParam),
             convertTypeNode(source.returnType)
         )
+    case "MixedTypeAnnotation":
+        return factory.createKeywordTypeNode(SyntaxKind.UnknownKeyword);
     default:
         return factory.createLiteralTypeNode(wipLiteral("convertTypeNode", source.type));
     }

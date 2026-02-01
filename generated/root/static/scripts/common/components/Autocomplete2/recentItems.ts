@@ -10,7 +10,7 @@ import { localStorage as localStorage } from "../../utility/storage.js";
 import { formatLinkTypePhrases as formatLinkTypePhrases } from "./formatters.js";
 import type { EntityItemT as EntityItemT, OptionItemT as OptionItemT } from "./types.js";
 type RecentEntitiesT = {
-    [entityTypeKey: string]: "WIP convertTypeNode: MixedTypeAnnotation";
+    [entityTypeKey: string]: unknown;
 };
 type WsJsEntitiesDataT<T extends EntityItemT> = {
     results: {

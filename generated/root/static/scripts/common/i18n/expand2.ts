@@ -44,7 +44,7 @@ export const state: State = "WIP convertExpression: ObjectExpression";
 export const createTextContentParser = "WIP convertExpression: ArrowFunctionExpression";
 "WIP convertAST: VariableDeclaration";
 export const createVarSubstParser = "WIP convertExpression: ArrowFunctionExpression";
-export const parseStringVarSubst: Parser<string | NO_MATCH, "WIP convertTypeNode: MixedTypeAnnotation"> = "WIP convertExpression: CallExpression";
+export const parseStringVarSubst: Parser<string | NO_MATCH, unknown> = "WIP convertExpression: CallExpression";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: VariableDeclaration";
 export const substEnd: RegExp = "WIP convertLiteral: Literal";

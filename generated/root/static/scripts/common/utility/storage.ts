@@ -11,6 +11,6 @@ export var hasSessionStorage: boolean = "WIP convertLiteral: Literal";
 export const sessionStorageWrapper: {
     get: (key: string) => string | null | undefined;
     remove: (key: string) => void;
-    set: (key: string, value: "WIP convertTypeNode: MixedTypeAnnotation") => void;
+    set: (key: string, value: unknown) => void;
 } = "WIP convertExpression: ConditionalExpression";
 "WIP convertAST: IfStatement";
