@@ -20,7 +20,7 @@ export class VarArgs<T> implements VarArgsClass<T> {
     getKey(name: string): string;
     has(name: string): boolean;
 }
-export type Parser<T, V> = "WIP convertTypeNode: FunctionTypeAnnotation";
+export type Parser<T, V> = (_arg0: VarArgsClass<V>) => T;
 "WIP convertAST: VariableDeclaration";
 type State = {
     match: string;

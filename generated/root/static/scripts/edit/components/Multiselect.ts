@@ -20,8 +20,8 @@ export type MultiselectValueStateT<V> = {
     removed: boolean;
 };
 export type MultiselectValuePropsT<V extends AutocompleteEntityItemT, VS extends MultiselectValueStateT<V>> = {
-    buildExtraChildren?: "WIP convertTypeNode: FunctionTypeAnnotation";
-    dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
+    buildExtraChildren?: (_arg0: $Exact<VS>) => React.ReactNode;
+    dispatch: (_arg0: MultiselectActionT<V>) => void;
     state: $Exact<VS>;
 };
 export type MultiselectStateT<V extends AutocompleteEntityItemT, VS extends MultiselectValueStateT<V>> = {

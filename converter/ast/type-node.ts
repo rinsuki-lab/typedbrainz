@@ -3,6 +3,7 @@ import { factory, SyntaxKind, TypeNode } from "typescript";
 import { convertObjectType } from "./object-type.js";
 import { convertIdentifier, convertMayQualifiedTypeIdentifier } from "./identifier.js";
 import { wipLiteral } from "../wip.js";
+import { convertFunctionTypeParam } from "./function-type-param.js";
 
 function convertGenericTypeAnnotation(source: any): TypeNode {
     switch (source.id.type) {
@@ -22,6 +23,7 @@ function convertGenericTypeAnnotation(source: any): TypeNode {
 }
 
 export function convertTypeNode(source: any): TypeNode {
+    if (source.type === "TypeAnnotation") return convertTypeNode(source.typeAnnotation);
     switch (source.type) {
     case "UnionTypeAnnotation":
         return factory.createUnionTypeNode(source.types.map(convertTypeNode))
@@ -62,6 +64,12 @@ export function convertTypeNode(source: any): TypeNode {
         )
     case "TupleTypeAnnotation":
         return factory.createTupleTypeNode(source.elementTypes.map(convertTypeNode));
+    case "FunctionTypeAnnotation":
+        return factory.createFunctionTypeNode(
+            undefined, // TODO
+            source.params.map(convertFunctionTypeParam),
+            convertTypeNode(source.returnType)
+        )
     default:
         return factory.createLiteralTypeNode(wipLiteral("convertTypeNode", source.type));
     }

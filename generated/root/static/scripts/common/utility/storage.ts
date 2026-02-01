@@ -9,8 +9,8 @@ export var hasSessionStorage: boolean = "WIP convertLiteral: Literal";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: VariableDeclaration";
 export const sessionStorageWrapper: {
-    get: "WIP convertTypeNode: FunctionTypeAnnotation";
-    remove: "WIP convertTypeNode: FunctionTypeAnnotation";
-    set: "WIP convertTypeNode: FunctionTypeAnnotation";
+    get: (key: string) => string | null | undefined;
+    remove: (key: string) => void;
+    set: (key: string, value: "WIP convertTypeNode: MixedTypeAnnotation") => void;
 } = "WIP convertExpression: ConditionalExpression";
 "WIP convertAST: IfStatement";

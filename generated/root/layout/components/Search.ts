@@ -3,7 +3,7 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import SearchIcon from "../../static/scripts/common/components/SearchIcon.js";
 import { GOOGLE_CUSTOM_SEARCH as GOOGLE_CUSTOM_SEARCH } from "../../static/scripts/common/DBDefs.mjs";
 import { compare as compare } from "../../static/scripts/common/i18n.js";
-type SearchOptionValueT = "WIP convertTypeNode: FunctionTypeAnnotation" | null;
+type SearchOptionValueT = (() => string) | null;
 type SearchOptionGroupT = {
     [optionName: string]: SearchOptionValueT;
 };

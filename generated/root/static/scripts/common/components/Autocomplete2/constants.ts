@@ -13,6 +13,6 @@ export const MENU_ITEMS: {
 } = "WIP convertExpression: ObjectExpression";
 export const PAGE_SIZE: number = 25;
 export const SEARCH_PLACEHOLDERS: {
-    [type: SearchableTypeT]: "WIP convertTypeNode: FunctionTypeAnnotation";
+    [type: SearchableTypeT]: () => string;
 } = "WIP convertExpression: ObjectExpression";
 export const IS_TOP_WINDOW: boolean = "WIP convertExpression: LogicalExpression";

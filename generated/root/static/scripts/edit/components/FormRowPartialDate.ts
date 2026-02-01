@@ -7,7 +7,7 @@ import FormRow from "./FormRow.js";
 import PartialDateInput, { ActionT as PartialDateInputActionT, runReducer as runPartialDateInputReducer } from "./PartialDateInput.js";
 export type ActionT = PartialDateInputActionT;
 type ControlledPropsT = $ReadOnly<{
-    dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
+    dispatch: (_arg0: PartialDateInputActionT) => void;
     uncontrolled?: false;
 }> | $ReadOnly<{
     uncontrolled: true;

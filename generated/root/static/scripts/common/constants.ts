@@ -78,9 +78,9 @@ export const MAX_LENGTH_DIFFERENCE = 10500;
 export const MAX_RECENT_ENTITIES = 10;
 export const MIN_NAME_SIMILARITY = 0.75;
 export const ENTITIES_WITH_RELATIONSHIP_CREDITS = "WIP convertExpression: ObjectExpression";
-export const QUALITY_NAMES: Map<QualityT, "WIP convertTypeNode: FunctionTypeAnnotation"> = "WIP convertExpression: NewExpression";
+export const QUALITY_NAMES: Map<QualityT, () => string> = "WIP convertExpression: NewExpression";
 export const FLUENCY_NAMES: {
-    [fluency: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
+    [fluency: string]: () => string;
 } = "WIP convertExpression: ObjectExpression";
 export const LANGUAGE_ENG_ID = 120;
 export const LANGUAGE_MUL_ID = 284;

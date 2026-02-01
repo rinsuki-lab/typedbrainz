@@ -22,14 +22,14 @@ import type { ActionT as ActionT, EntityItemT as EntityItemT, ItemT as ItemT, Op
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: FunctionDeclaration";
 type InitialStateT<T extends EntityItemT> = {
-    canChangeType?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    canChangeType?: (_arg0: string) => boolean;
     containerClass?: string;
     disabled?: boolean;
     entityType: T["entityType"];
-    extractSearchTerms?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    extractSearchTerms?: (_arg0: OptionItemT<T>) => Array<string>;
     htmlName?: string;
     id: string;
-    inputChangeHook?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    inputChangeHook?: (inputValue: string, state: StateT<T>, selectItem: (_arg0: OptionItemT<T>) => boolean) => boolean;
     inputClass?: string;
     inputRef?: {
         current: HTMLInputElement | null;

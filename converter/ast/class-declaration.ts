@@ -3,9 +3,9 @@ import { convertIdentifier, convertMayPrivateIdentifier, convertMayQualifiedType
 import { wipLiteral } from "../wip.js";
 import { convertTypeNode } from "./type-node.js";
 import { convertExpression } from "./expr.js";
-import { convertAST } from "./index.js";
 import { ConverterContext } from "../context.js";
 import { convertTypeParameter } from "./type-parameter.js";
+import { convertFunctionTypeParam } from "./function-type-param.js";
 
 function convertSuperclass(token: HeritageClause["token"], superClass: any, superTypeParameters: any) {
     console.log("!!!", superClass, superTypeParameters)
@@ -41,21 +41,14 @@ export function convertClassDeclaration(ctx: ConverterContext, source: any, flag
                 )
             }
             case "MethodDefinition":
+                console.log(node.value.params)
                 return factory.createMethodDeclaration(
                     undefined,
                     undefined,
                     convertIdentifier(node.key),
                     undefined,
                     undefined,
-                    node.value.params.map(param => {
-                        return factory.createParameterDeclaration(
-                            undefined, // TODO?
-                            undefined, // TODO?
-                            param.name,
-                            param.optional ? factory.createToken(SyntaxKind.QuestionToken) : undefined, // TODO?
-                            param.typeAnnotation == null ? undefined : convertTypeNode(param.typeAnnotation.typeAnnotation)
-                        )
-                    }),
+                    node.value.params.map(convertFunctionTypeParam),
                     node.value.returnType == null ? /* HACK: if we don't have both return type or body, TS would assume returning any, which may causes some problems in users program */ factory.createKeywordTypeNode(SyntaxKind.UnknownKeyword) : convertTypeNode(node.value.returnType.typeAnnotation),
                     undefined/* factory.createBlock(node.value.body.body.flatMap(b => convertAST(ctx, b)))*/,
                 )

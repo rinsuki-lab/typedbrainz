@@ -3,7 +3,7 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import FieldErrors from "./FieldErrors.js";
 import FormLabel from "./FormLabel.js";
 import FormRow from "./FormRow.js";
-type InputOnChange = "WIP convertTypeNode: FunctionTypeAnnotation";
+type InputOnChange = (_arg0: SyntheticInputEvent<HTMLInputElement>) => void;
 type InputProps = {
     autoComplete?: string;
     className?: string;

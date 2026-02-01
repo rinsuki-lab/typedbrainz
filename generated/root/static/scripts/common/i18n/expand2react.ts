@@ -25,7 +25,7 @@ type Output = Expand2ReactOutput;
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: FunctionDeclaration";
 export const hooks: {
-    reactTextContentHook: "WIP convertTypeNode: FunctionTypeAnnotation" | null;
+    reactTextContentHook: ((_arg0: Expand2ReactOutput) => Expand2ReactOutput) | null;
 } = "WIP convertExpression: ObjectExpression";
 "WIP convertAST: FunctionDeclaration";
 "WIP convertAST: VariableDeclaration";

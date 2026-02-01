@@ -8,6 +8,6 @@ export type ReleaseEditorTrackT = {
     gid?: string;
     id?: number;
     name: KnockoutObservable<string>;
-    next: "WIP convertTypeNode: FunctionTypeAnnotation";
-    previous: "WIP convertTypeNode: FunctionTypeAnnotation";
+    next: () => ReleaseEditorTrackT | null;
+    previous: () => ReleaseEditorTrackT | null;
 };

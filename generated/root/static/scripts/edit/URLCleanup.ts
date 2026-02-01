@@ -30,12 +30,12 @@ type ValidationResult = {
     target?: $Values<"WIP convertTypeNode: TypeofTypeAnnotation">;
 };
 type CleanupEntry = {
-    clean?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    clean?: (url: string) => string;
     hostname: string | $ReadOnlyArray<string>;
     match: $ReadOnlyArray<RegExp>;
     restrict?: $ReadOnlyArray<EntityTypesMap>;
-    select?: "WIP convertTypeNode: FunctionTypeAnnotation";
-    validate?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    select?: (url: string, sourceType: RelatableEntityTypeT) => RelationshipTypeT | false;
+    validate?: (url: string, id: string) => ValidationResult;
 };
 type CleanupEntries = {
     [type: string]: CleanupEntry;
@@ -59,9 +59,9 @@ export class Checker {
     constructor(url: string, entityType: RelatableEntityTypeT): unknown;
     guessType(): RelationshipTypeT | false;
     getPossibleTypes(): Array<RelationshipTypeT> | false;
-    checkRelationship(id: string, ): ValidationResult;
+    checkRelationship(id: string, entityType: RelatableEntityTypeT = "WIP convertExpression: ThisExpression".entityType): ValidationResult;
     checkRelationships(selectedTypes: $ReadOnlyArray<string>, allowedTypes: $ReadOnlyArray<RelationshipTypeT> | false): ValidationResult;
-    filterApplicableTypes(): Array<RelationshipTypeT>;
+    filterApplicableTypes(sourceType: RelatableEntityTypeT = "WIP convertExpression: ThisExpression".entityType): Array<RelationshipTypeT>;
 }
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

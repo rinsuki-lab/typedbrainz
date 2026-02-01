@@ -6,10 +6,10 @@ import { expect as expect } from "../../../../utility/invariant.js";
 import Modal from "../../common/components/Modal.js";
 import { findFirstTabbableElement as findFirstTabbableElement } from "../../common/utility/focusManagement.js";
 export const TITLES: {
-    [entityType: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
+    [entityType: string]: () => string;
 } = "WIP convertExpression: ObjectExpression";
 type InstanceT = {
-    close: "WIP convertTypeNode: FunctionTypeAnnotation";
+    close: () => void;
 };
 "WIP convertAST: ExpressionStatement";
 "WIP convertAST: ExpressionStatement";

@@ -105,7 +105,7 @@ export type RepeatableFieldT<F> = {
     type: "repeatable_field";
 };
 export type SelectOptionT = {
-    label: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+    label: string | (() => string);
     value: number | string;
 };
 export type SelectOptionsT = $ReadOnlyArray<SelectOptionT>;

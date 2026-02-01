@@ -7,7 +7,7 @@ import { EditorT } from "../../../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../../../src/type-utils.js";
 export type SearchableTypeT = EntityItemT["entityType"];
 export type StateT<T extends EntityItemT> = {
-    canChangeType?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    canChangeType?: (_arg0: string) => boolean;
     containerClass?: string;
     disabled?: boolean;
     entityType: T["entityType"];
@@ -16,7 +16,7 @@ export type StateT<T extends EntityItemT> = {
     htmlName?: string;
     id: string;
     indexedSearch: boolean;
-    inputChangeHook?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    inputChangeHook?: (inputValue: string, state: StateT<T>, selectItem: (_arg0: OptionItemT<T>) => boolean) => boolean;
     inputClass?: string;
     inputRef?: {
         current: HTMLInputElement | null;
@@ -45,7 +45,7 @@ export type StateT<T extends EntityItemT> = {
 };
 export type PropsT<T extends EntityItemT> = {
     children?: React.ReactNode;
-    dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
+    dispatch: (_arg0: ActionT<T>) => void;
     state: StateT<T>;
 };
 export type SearchActionT = {
@@ -110,7 +110,7 @@ export type ActionItemT<T extends EntityItemT> = {
     type: "action";
     action: ActionT<T>;
     id: number | string;
-    name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+    name: string | (() => string);
     level?: number;
     separator?: boolean;
     disabled?: boolean;
@@ -118,7 +118,7 @@ export type ActionItemT<T extends EntityItemT> = {
 export type OptionItemT<T> = {
     type: "option";
     id: number | string;
-    name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+    name: string | (() => string);
     entity: T;
     level?: number;
     separator?: boolean;
@@ -127,7 +127,7 @@ export type OptionItemT<T> = {
 export type HeaderItemT = {
     type: "header";
     id: number | string;
-    name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+    name: string | (() => string);
     disabled: true;
     separator?: boolean;
 };

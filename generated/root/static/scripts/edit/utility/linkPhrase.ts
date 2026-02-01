@@ -30,10 +30,10 @@ class PhraseVarArgs<T> implements VarArgsClass<T> {
     has(name: string): boolean;
 }
 export type LinkPhraseI18n<T> = {
-    commaList: "WIP convertTypeNode: FunctionTypeAnnotation";
+    commaList: (_arg0: $ReadOnlyArray<T>) => T;
     defaultValue: T;
-    displayLinkAttribute: "WIP convertTypeNode: FunctionTypeAnnotation";
-    expand: "WIP convertTypeNode: FunctionTypeAnnotation";
+    displayLinkAttribute: (_arg0: LinkAttrT) => T;
+    expand: (_arg0: string, _arg1: VarArgsClass<T>) => T;
 };
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: VariableDeclaration";

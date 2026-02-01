@@ -8,7 +8,7 @@ export const ACCESS_SCOPE_COLLECTION: 16 = 16;
 export const ACCESS_SCOPE_SUBMIT_ISRC: 64 = 64;
 export const ACCESS_SCOPE_SUBMIT_BARCODE: 128 = 128;
 export const ACCESS_SCOPE_PERMISSIONS: {
-    [scope: number]: "WIP convertTypeNode: FunctionTypeAnnotation";
+    [scope: number]: () => string;
 } = "WIP convertExpression: ObjectExpression";
 export const CONTACT_URL = "https://metabrainz.org/contact";
 export const DONATE_URL = "https://metabrainz.org/donate";

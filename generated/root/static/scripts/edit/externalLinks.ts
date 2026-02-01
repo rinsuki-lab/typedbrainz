@@ -85,7 +85,7 @@ export type LinkRelationshipT = $ReadOnly<$_$Spread<LinkStateT, {
     urlIndex: number;
 }>>;
 type LinksEditorProps = {
-    errorObservable?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    errorObservable?: (_arg0: boolean) => void;
     isNewEntity: boolean;
     sourceData: RelatableEntityT | {
         entityType: RelatableEntityTypeT;
@@ -107,19 +107,19 @@ export class _ExternalLinksEditor extends React.Component<LinksEditorProps, Link
     };
     generalLinkTypes: $ReadOnlyArray<LinkTypeOptionT>;
     oldLinks: LinkMapT;
-    errorObservable: "WIP convertTypeNode: FunctionTypeAnnotation";
+    errorObservable: (_arg0: boolean) => void;
     initialLinks: $ReadOnlyArray<LinkStateT>;
     sourceType: RelatableEntityTypeT;
     typeOptions: $ReadOnlyArray<LinkTypeOptionT>;
     submittedLinksWrapper: {
-        get: "WIP convertTypeNode: FunctionTypeAnnotation";
-        remove: "WIP convertTypeNode: FunctionTypeAnnotation";
-        set: "WIP convertTypeNode: FunctionTypeAnnotation";
+        get: () => Array<LinkStateT> | null | undefined;
+        remove: () => void;
+        set: (links: $ReadOnlyArray<LinkStateT>) => void;
     };
     constructor(props: LinksEditorProps): unknown;
     copyEditDataToReleaseEditor(): unknown;
     componentDidUpdate(): unknown;
-    setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: "WIP convertTypeNode: FunctionTypeAnnotation"): unknown;
+    setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: () => void): unknown;
     cleanupUrl(url: string): string;
     handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string): unknown;
     handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean): unknown;
@@ -137,6 +137,6 @@ export class _ExternalLinksEditor extends React.Component<LinksEditorProps, Link
         newLinks: LinkMapT;
         oldLinks: LinkMapT;
     };
-    getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation"): unknown;
+    getFormData(startingPrefix: string, startingIndex: number, pushInput: (_arg0: string, _arg1: string, _arg2: string) => void): unknown;
     validateLink(link: LinkRelationshipT | LinkStateT, checker?: URLCleanup.Checker): ErrorT | null;
 }

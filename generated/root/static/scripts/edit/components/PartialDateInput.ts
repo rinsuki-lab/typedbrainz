@@ -16,7 +16,7 @@ export type ActionT = {
     type: "show-pending-errors";
 };
 type ControlledPropsT = $ReadOnly<{
-    dispatch: "WIP convertTypeNode: FunctionTypeAnnotation";
+    dispatch: (_arg0: ActionT) => void;
     uncontrolled?: false;
 }> | $ReadOnly<{
     dispatch?: void;
@@ -27,8 +27,8 @@ export type StateT = PartialDateFieldT;
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 type DatePartPropsT = {
     defaultValue?: StrOrNum | null;
-    onBlur?: "WIP convertTypeNode: FunctionTypeAnnotation";
-    onChange?: "WIP convertTypeNode: FunctionTypeAnnotation";
+    onBlur?: () => void;
+    onChange?: (_arg0: SyntheticEvent<HTMLInputElement>) => void;
     value?: StrOrNum;
 };
 "WIP convertAST: ExpressionStatement";

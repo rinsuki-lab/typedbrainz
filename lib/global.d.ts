@@ -1920,7 +1920,7 @@ export type PartialDateFieldT = CompoundFieldT<{
 export type GenreT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"genre">, {
 	primaryAlias?: string | null;
 }>>>>;
-export type N_l_T = "WIP convertTypeNode: FunctionTypeAnnotation";
+export type N_l_T = () => string;
 export type InstrumentT = $ReadOnly<$_$Spread<AnnotationRoleT, $_$Spread<CommentRoleT, $_$Spread<RelatableEntityRoleT<"instrument">, $_$Spread<TypeRoleT<InstrumentTypeT>, {
 	description: string;
 	primaryAlias?: string | null;
@@ -2360,7 +2360,7 @@ export type WsJsEditResponseT = {
 };
 export type SearchableTypeT = EntityItemT["entityType"];
 export type StateT<T extends EntityItemT> = {
-	canChangeType?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	canChangeType?: (_arg0: string) => boolean;
 	containerClass?: string;
 	disabled?: boolean;
 	entityType: T["entityType"];
@@ -2369,7 +2369,7 @@ export type StateT<T extends EntityItemT> = {
 	htmlName?: string;
 	id: string;
 	indexedSearch: boolean;
-	inputChangeHook?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	inputChangeHook?: (inputValue: string, state: StateT<T>, selectItem: (_arg0: OptionItemT<T>) => boolean) => boolean;
 	inputClass?: string;
 	inputRef?: {
 		current: HTMLInputElement | null;
@@ -2458,7 +2458,7 @@ export type ActionItemT<T extends EntityItemT> = {
 	type: "action";
 	action: ActionT<T>;
 	id: number | string;
-	name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+	name: string | (() => string);
 	level?: number;
 	separator?: boolean;
 	disabled?: boolean;
@@ -2466,7 +2466,7 @@ export type ActionItemT<T extends EntityItemT> = {
 export type OptionItemT<T> = {
 	type: "option";
 	id: number | string;
-	name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+	name: string | (() => string);
 	entity: T;
 	level?: number;
 	separator?: boolean;
@@ -2475,7 +2475,7 @@ export type OptionItemT<T> = {
 export type HeaderItemT = {
 	type: "header";
 	id: number | string;
-	name: string | "WIP convertTypeNode: FunctionTypeAnnotation";
+	name: string | (() => string);
 	disabled: true;
 	separator?: boolean;
 };
@@ -2967,9 +2967,9 @@ declare const MAX_LENGTH_DIFFERENCE = 10500;
 declare const MAX_RECENT_ENTITIES = 10;
 declare const MIN_NAME_SIMILARITY = 0.75;
 declare const ENTITIES_WITH_RELATIONSHIP_CREDITS = "WIP convertExpression: ObjectExpression";
-declare const QUALITY_NAMES: Map<QualityT, "WIP convertTypeNode: FunctionTypeAnnotation">;
+declare const QUALITY_NAMES: Map<QualityT, () => string>;
 declare const FLUENCY_NAMES: {
-	[fluency: string]: "WIP convertTypeNode: FunctionTypeAnnotation";
+	[fluency: string]: () => string;
 };
 declare const LANGUAGE_ENG_ID = 120;
 declare const LANGUAGE_MUL_ID = 284;
@@ -3133,12 +3133,12 @@ export type ValidationResult = {
 	target?: $Values<"WIP convertTypeNode: TypeofTypeAnnotation">;
 };
 export type CleanupEntry = {
-	clean?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	clean?: (url: string) => string;
 	hostname: string | $ReadOnlyArray<string>;
 	match: $ReadOnlyArray<RegExp>;
 	restrict?: $ReadOnlyArray<EntityTypesMap>;
-	select?: "WIP convertTypeNode: FunctionTypeAnnotation";
-	validate?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	select?: (url: string, sourceType: RelatableEntityTypeT) => RelationshipTypeT | false;
+	validate?: (url: string, id: string) => ValidationResult;
 };
 declare class Checker {
 	url: string;
@@ -3147,9 +3147,9 @@ declare class Checker {
 	constructor(url: string, entityType: RelatableEntityTypeT);
 	guessType(): RelationshipTypeT | false;
 	getPossibleTypes(): Array<RelationshipTypeT> | false;
-	checkRelationship(id: string): ValidationResult;
+	checkRelationship(id: string, entityType?: RelatableEntityTypeT): ValidationResult;
 	checkRelationships(selectedTypes: $ReadOnlyArray<string>, allowedTypes: $ReadOnlyArray<RelationshipTypeT> | false): ValidationResult;
-	filterApplicableTypes(): Array<RelationshipTypeT>;
+	filterApplicableTypes(sourceType?: RelatableEntityTypeT): Array<RelationshipTypeT>;
 }
 export type ErrorTarget = $Values<"WIP convertTypeNode: TypeofTypeAnnotation">;
 export type ErrorT = {
@@ -3192,7 +3192,7 @@ export type LinkRelationshipT = $ReadOnly<$_$Spread<LinkStateT, {
 	urlIndex: number;
 }>>;
 export type LinksEditorProps = {
-	errorObservable?: "WIP convertTypeNode: FunctionTypeAnnotation";
+	errorObservable?: (_arg0: boolean) => void;
 	isNewEntity: boolean;
 	sourceData: RelatableEntityT | {
 		entityType: RelatableEntityTypeT;
@@ -3213,19 +3213,19 @@ export declare class _ExternalLinksEditor extends React.Component<LinksEditorPro
 	};
 	generalLinkTypes: $ReadOnlyArray<LinkTypeOptionT>;
 	oldLinks: LinkMapT;
-	errorObservable: "WIP convertTypeNode: FunctionTypeAnnotation";
+	errorObservable: (_arg0: boolean) => void;
 	initialLinks: $ReadOnlyArray<LinkStateT>;
 	sourceType: RelatableEntityTypeT;
 	typeOptions: $ReadOnlyArray<LinkTypeOptionT>;
 	submittedLinksWrapper: {
-		get: "WIP convertTypeNode: FunctionTypeAnnotation";
-		remove: "WIP convertTypeNode: FunctionTypeAnnotation";
-		set: "WIP convertTypeNode: FunctionTypeAnnotation";
+		get: () => Array<LinkStateT> | null | undefined;
+		remove: () => void;
+		set: (links: $ReadOnlyArray<LinkStateT>) => void;
 	};
 	constructor(props: LinksEditorProps);
 	copyEditDataToReleaseEditor(): unknown;
 	componentDidUpdate(): unknown;
-	setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: "WIP convertTypeNode: FunctionTypeAnnotation"): unknown;
+	setLinkState(index: number, state: $ReadOnly<Partial<LinkStateT>>, callback?: () => void): unknown;
 	cleanupUrl(url: string): string;
 	handleUrlChange(linkIndexes: $ReadOnlyArray<number>, urlIndex: number, rawUrl: string): unknown;
 	handleUrlBlur(index: number, isDuplicate: boolean, event: SyntheticFocusEvent<HTMLInputElement>, urlIndex: number, canMerge: boolean): unknown;
@@ -3243,7 +3243,7 @@ export declare class _ExternalLinksEditor extends React.Component<LinksEditorPro
 		newLinks: LinkMapT;
 		oldLinks: LinkMapT;
 	};
-	getFormData(startingPrefix: string, startingIndex: number, pushInput: "WIP convertTypeNode: FunctionTypeAnnotation"): unknown;
+	getFormData(startingPrefix: string, startingIndex: number, pushInput: (_arg0: string, _arg1: string, _arg2: string) => void): unknown;
 	validateLink(link: LinkRelationshipT | LinkStateT, checker?: Checker): ErrorT | null;
 }
 export type EveryPropertyIsExistsOrNot<T> = T | {

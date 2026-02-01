@@ -3,7 +3,7 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import FieldErrors from "./FieldErrors.js";
 import FormRow from "./FormRow.js";
 type ControlledPropsT = $ReadOnly<{
-    onChange: "WIP convertTypeNode: FunctionTypeAnnotation";
+    onChange: (event: SyntheticEvent<HTMLInputElement>) => void;
     uncontrolled?: false;
 }> | $ReadOnly<{
     onChange?: void;
