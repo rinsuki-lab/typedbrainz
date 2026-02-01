@@ -2933,7 +2933,7 @@ declare const PART_OF_SERIES_LINK_TYPES: {
 };
 declare const PART_OF_SERIES_LINK_TYPE_GIDS: $ReadOnlyArray<string>;
 declare const PART_OF_SERIES_LINK_TYPE_IDS: $ReadOnlyArray<number>;
-declare const PROBABLY_CLASSICAL_LINK_TYPES = "WIP convertExpression: ArrayExpression";
+declare const PROBABLY_CLASSICAL_LINK_TYPES: number[];
 declare const RECORDING_OF_LINK_TYPE_ID: number;
 declare const RECORDING_OF_LINK_TYPE_GID: string;
 declare const RT_MIRROR = 2;
@@ -2978,7 +2978,7 @@ declare const COUNTRY_JA_AREA_ID = 107;
 declare const DISPLAY_NONE_STYLE = "WIP convertExpression: CallExpression";
 declare const WS_EDIT_RESPONSE_OK: WS_EDIT_RESPONSE_OK_T;
 declare const WS_EDIT_RESPONSE_NO_CHANGES: WS_EDIT_RESPONSE_NO_CHANGES_T;
-declare const BRACKET_PAIRS = "WIP convertExpression: ArrayExpression";
+declare const BRACKET_PAIRS: string[][];
 export type LinkedEntitiesT = {
 	area: {
 		[areaId: number]: AreaT;

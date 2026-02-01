@@ -15,6 +15,10 @@ export function convertExpression(source: any): Expression {
             convertExpression(source.object),
             convertIdentifier(source.property)
         )
+    case "ArrayExpression":
+        return factory.createArrayLiteralExpression(
+            source.elements.map(e => convertExpression(e))
+        )
     default:
         return wipLiteral("convertExpression", source.type);
     }
