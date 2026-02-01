@@ -36,13 +36,15 @@ export type MaybeReleaseRelationshipEditor = ReleaseRelationshipEditor | NonRele
 
 
 declare global {
-    var MB: undefined | {
-        constants: typeof constants,
-        relationshipEditor: MaybeReleaseRelationshipEditor
-        /**
-         * If you're on a relationship editor page, this should be available.
-         */
-        tree?: typeof import("weight-balanced-tree"),
-        linkedEntities: LinkedEntitiesT,
+    interface Window {
+        MB?: undefined | {
+            constants: typeof constants,
+            relationshipEditor: MaybeReleaseRelationshipEditor
+            /**
+             * If you're on a relationship editor page, this should be available.
+             */
+            tree?: typeof import("weight-balanced-tree"),
+            linkedEntities: LinkedEntitiesT,
+        }
     }
 }

@@ -3265,15 +3265,17 @@ export type NonReleaseRelationshipEditor = RelationshipEditorBase & EveryPropert
 }>;
 export type MaybeReleaseRelationshipEditor = ReleaseRelationshipEditor | NonReleaseRelationshipEditor;
 declare global {
-	var MB: undefined | {
-		constants: typeof constants;
-		relationshipEditor: MaybeReleaseRelationshipEditor;
-		/**
-		 * If you're on a relationship editor page, this should be available.
-		 */
-		tree?: typeof import("./weight-balanced-tree.js");
-		linkedEntities: LinkedEntitiesT;
-	};
+	interface Window {
+		MB?: undefined | {
+			constants: typeof constants;
+			relationshipEditor: MaybeReleaseRelationshipEditor;
+			/**
+			 * If you're on a relationship editor page, this should be available.
+			 */
+			tree?: typeof import("./weight-balanced-tree.js");
+			linkedEntities: LinkedEntitiesT;
+		};
+	}
 }
 
 declare namespace constants {
