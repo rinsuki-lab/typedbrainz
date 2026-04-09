@@ -8,6 +8,7 @@ import AddEntityDialog from "../../edit/components/AddEntityDialog.js";
 import { MBID_REGEXP as MBID_REGEXP } from "../constants.js";
 import useOutsideClickEffect from "../hooks/useOutsideClickEffect.js";
 import { unwrapNl as unwrapNl } from "../i18n.js";
+import { arraysEqual as arraysEqual } from "../utility/arrays.js";
 import clean from "../utility/clean.js";
 import getCookie from "../utility/getCookie.js";
 import isBlank from "../utility/isBlank.js";

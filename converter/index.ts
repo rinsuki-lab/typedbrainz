@@ -10,7 +10,7 @@ const ctx = new ConverterContext()
 ctx.targets = [
     "upstream/root/static/scripts/relationship-editor/types.js",
     "upstream/root/static/scripts/relationship-editor/types/actions.js",
-    "upstream/root/static/scripts/edit/externalLinks.js",
+    "upstream/root/static/scripts/external-links-editor/types.js",
 ]
 doFindTargets(ctx)
 doActualConvert(ctx)

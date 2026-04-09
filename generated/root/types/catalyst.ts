@@ -1,10 +1,12 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
+import { RelatableEntityTypeT } from "../../declared-types.js"
 import { ActiveEditorT } from "../../declared-types.js"
 import { MergeableEntityTypeT } from "../../declared-types.js"
 import { UserTagT } from "../../declared-types.js"
 import { AggregatedTagT } from "../../declared-types.js"
 import { MergeableEntityT } from "../../declared-types.js"
 import { SeriesOrderingTypeT } from "../../declared-types.js"
+import { ReleaseEditorSeedT } from "../../declared-types.js"
 import { SeededRelationshipT } from "../../declared-types.js"
 import { ReleaseArtT } from "../../declared-types.js"
 import { GenreT } from "../../declared-types.js"
@@ -90,11 +92,12 @@ export type CatalystStashT = {
     release_artwork_count?: number;
     release_cdtoc_count?: number;
     seeded_relationships?: $ReadOnlyArray<SeededRelationshipT> | null | undefined;
+    seeded_release_data?: ReleaseEditorSeedT;
     series_ordering_types?: {
         [id: number]: SeriesOrderingTypeT;
     };
     server_languages?: $ReadOnlyArray<ServerLanguageT>;
-    source_entity?: RelatableEntityT | null | undefined;
+    source_entity?: SourceEntityDataT | null | undefined;
     subscribed?: boolean;
     to_merge?: $ReadOnlyArray<MergeableEntityT>;
     top_tags?: $ReadOnlyArray<AggregatedTagT>;
@@ -133,11 +136,12 @@ export type SanitizedCatalystContextT = {
         };
         mtcaptcha_script_nonce?: string;
         seeded_relationships?: $ReadOnlyArray<SeededRelationshipT> | null | undefined;
+        seeded_release_data?: ReleaseEditorSeedT;
         series_ordering_types?: {
             [id: number]: SeriesOrderingTypeT;
         };
         server_languages?: $ReadOnlyArray<ServerLanguageT>;
-        source_entity?: RelatableEntityT | null | undefined;
+        source_entity?: SourceEntityDataT | null | undefined;
     };
     user: ActiveEditorT | null;
 };
@@ -146,4 +150,10 @@ export type ServerLanguageT = {
     name: string;
     native_language: string;
     native_territory: string;
+};
+export type SourceEntityDataT = RelatableEntityT | {
+    entityType: RelatableEntityTypeT;
+    isNewEntity: true;
+    name?: string;
+    orderingTypeID?: number;
 };

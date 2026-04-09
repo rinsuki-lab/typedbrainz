@@ -3,10 +3,8 @@ import { RelatableEntityTypeT } from "../../../../declared-types.js"
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../../../src/type-utils.js";
 import $ from "jquery";
 import { parse as tldtsParse } from "tldts";
-import { arraysEqual as arraysEqual } from "../common/utility/arrays.js";
-type EntityTypes = string | $ReadOnlyArray<string>;
 type EntityTypesMap = {
-    [entityType: RelatableEntityTypeT]: EntityTypes;
+    [entityType: RelatableEntityTypeT]: RelationshipTypeT;
 };
 type EntityTypeMap = {
     [entityType: RelatableEntityTypeT]: string;
@@ -56,11 +54,11 @@ export class Checker {
     url: string;
     entityType: RelatableEntityTypeT;
     cleanup: CleanupEntry | null | undefined;
+    possibleTypes: $ReadOnlyArray<RelationshipTypeT>;
     constructor(url: string, entityType: RelatableEntityTypeT): unknown;
-    guessType(): RelationshipTypeT | false;
-    getPossibleTypes(): Array<RelationshipTypeT> | false;
+    guessType(): RelationshipTypeT | null;
     checkRelationship(id: string, entityType: RelatableEntityTypeT = "WIP convertExpression: ThisExpression".entityType): ValidationResult;
-    checkRelationships(selectedTypes: $ReadOnlyArray<string>, allowedTypes: $ReadOnlyArray<RelationshipTypeT> | false): ValidationResult;
+    checkRelationships(selectedTypes: $ReadOnlyArray<string>, allowedTypes: $ReadOnlyArray<RelationshipTypeT> | null): ValidationResult;
     filterApplicableTypes(sourceType: RelatableEntityTypeT = "WIP convertExpression: ThisExpression".entityType): Array<RelationshipTypeT>;
 }
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

@@ -1,6 +1,6 @@
 // THIS FILE IS CONVERTED FROM Flow to TypeScript by TypedBrainz.
 import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $_$Spread } from "../../../src/type-utils.js";
-import path from "path";
+import path from "node:path";
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST: IfStatement";
 "WIP convertAST: VariableDeclaration";

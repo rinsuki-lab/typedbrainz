@@ -4,3 +4,4 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 "WIP convertAST: VariableDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";

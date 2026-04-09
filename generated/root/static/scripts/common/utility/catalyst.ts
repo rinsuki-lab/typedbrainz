@@ -3,5 +3,5 @@ import type { $ReadOnlyArray, $ReadOnly, $ReadOnlyMap, $Exact, $Keys, $Values, $
 import { createRelatableEntityObject as createRelatableEntityObject, createSeriesObject as createSeriesObject } from "../entity2.js";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
-"WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
+"WIP convertAST: VariableDeclaration";
 "WIP convertAST_ExportNamedDeclaration: FunctionDeclaration";
