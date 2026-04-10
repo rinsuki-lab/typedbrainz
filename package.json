@@ -38,7 +38,7 @@
     "glob": "^11.0.2",
     "tsimp": "^2.0.12",
     "typescript": "^5.8.3",
-    "weight-balanced-tree": "^0.6.1"
+    "weight-balanced-tree": "0.16.0"
   },
   "pnpm": {
     "patchedDependencies": {

@@ -38,8 +38,8 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       weight-balanced-tree:
-        specifier: ^0.6.1
-        version: 0.6.1(patch_hash=4fm3qpl25hzucq2pf2ks6ybgqa)
+        specifier: 0.16.0
+        version: 0.16.0(patch_hash=4fm3qpl25hzucq2pf2ks6ybgqa)
 
 packages:
 
@@ -266,8 +266,8 @@ packages:
     resolution: {integrity: sha512-3hu+tD8YzSLGuFYtPRb48vdhKMi0KQV5sn+uWr8+7dMEq/2G/dtLrdDinkLjqq5TIbIBjYJ4Ax/n3YiaW7QM8A==}
     engines: {node: 20 || >=22}
 
-  weight-balanced-tree@0.6.1:
-    resolution: {integrity: sha512-3FHKP1wai9P1KdPz/rM6RHIvTCB3qN4MQ3zWvM8pUu0tcHl3vwWX7RANUx3YqOTLvxmg3DszCeUNpO0gADtgfA==}
+  weight-balanced-tree@0.16.0:
+    resolution: {integrity: sha512-PAN9CX845j3gceU3VMLnBmi68FSQjIR7si7DSITh1b/AjtL72FCnR+SriDalTtYGWJc/MhRqUjRmwsP743nvVQ==}
 
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
@@ -510,7 +510,7 @@ snapshots:
 
   walk-up-path@4.0.0: {}
 
-  weight-balanced-tree@0.6.1(patch_hash=4fm3qpl25hzucq2pf2ks6ybgqa): {}
+  weight-balanced-tree@0.16.0(patch_hash=4fm3qpl25hzucq2pf2ks6ybgqa): {}
 
   which@2.0.2:
     dependencies:
